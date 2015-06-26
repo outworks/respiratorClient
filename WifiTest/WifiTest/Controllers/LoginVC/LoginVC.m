@@ -33,6 +33,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _tf_userName.text = [ShareValue sharedShareValue].member.username;
+}
+
 #pragma mark - private 
 
 -(void)loginRequest{

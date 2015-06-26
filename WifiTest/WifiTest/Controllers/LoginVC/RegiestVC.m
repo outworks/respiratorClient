@@ -37,7 +37,6 @@
     [MemberAPI MemberRegisterWithRequest:request completionBlockWithSuccess:^{
         [ShowHUD showSuccess:@"注册成功" configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
-        
         [[GCDQueue mainQueue] execute:^{
             //[self.navigationController popViewControllerAnimated:YES];
             [self loginRequest];

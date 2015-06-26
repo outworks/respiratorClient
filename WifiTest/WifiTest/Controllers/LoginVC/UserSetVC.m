@@ -17,8 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn_boy;
 @property (weak, nonatomic) IBOutlet UIButton *btn_girl;
 
-@property (weak, nonatomic) IBOutlet UITextField *tf_date;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *tf_age;
 
 @property(nonatomic,strong) NSString *birthDay;
 
@@ -28,9 +27,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"用户信息";
-    self.datePicker.datePickerMode = UIDatePickerModeDate;
-    _tf_date.text = [UserSetVC convertStringFromDate:self.datePicker.date];
+    self.title = @"用户信息设置";
+    if([ShareValue sharedShareValue].member){
+        _tf_age.text = [[ShareValue sharedShareValue].member.age stringValue];
+        _tf_height.text = [[ShareValue sharedShareValue].member.height stringValue];
+        _tf_weight.text = [[ShareValue sharedShareValue].member.weight stringValue];
+        if ([[ShareValue sharedShareValue].member.sex integerValue] == 0) {
+            [_btn_boy setSelected:YES];
+        }else{
+            [_btn_girl setSelected:YES];
+        }
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -46,7 +53,7 @@
     }
     request.weight = @([_tf_weight.text longLongValue]);
     request.height = @([_tf_height.text longLongValue]);
-    request.birthday = _tf_date.text;
+    request.age = @([_tf_age.text integerValue]);
     [MemberAPI MemberUpdateWithRequest:request completionBlockWithSuccess:^(Member *data) {
         
         _member = data;
@@ -59,11 +66,6 @@
     }];
 
 
-}
-
-- (IBAction)dateChanged:(UIDatePicker *)sender {
-    NSDate *date = sender.date;
-    _tf_date.text = [UserSetVC convertStringFromDate:date];
 }
 
 
@@ -79,18 +81,14 @@
 #pragma mark - buttonAciton
 
 - (IBAction)btnBoyAction:(id)sender {
-    _btn_boy.selected = !_btn_boy.selected;
-    if (_btn_boy.selected) {
-        _btn_girl.selected = NO;
-    }
+    _btn_boy.selected = YES;
+    _btn_girl.selected = NO;
     
 }
 
 - (IBAction)btnGirlAciton:(id)sender {
-    _btn_girl.selected = !_btn_girl.selected;
-    if (_btn_girl.selected) {
-        _btn_boy.selected = NO;
-    }
+    _btn_girl.selected = YES;
+    _btn_boy.selected = NO;
 }
 
 - (IBAction)OKAction:(id)sender {
@@ -109,6 +107,11 @@
     
     if (_tf_weight.text.length == 0) {
         [ShowHUD showError:@"请输入体重" configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:self.view];
+        return;
+    }
+    if (_tf_age.text.length == 0) {
+        [ShowHUD showError:@"请输入年龄" configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
         return;
     }

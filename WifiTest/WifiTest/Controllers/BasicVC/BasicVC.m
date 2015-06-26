@@ -7,6 +7,7 @@
 //
 
 #import "BasicVC.h"
+#import "UtilsMacro.h"
 
 @interface BasicVC ()
 
@@ -22,9 +23,9 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
     
      if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {        // Load resources for iOS 6.1 or earlier
-         self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.090 green:0.706 blue:0.839 alpha:1.000];
+         self.navigationController.navigationBar.tintColor = RGB(102, 168, 216);
      } else {        // Load resources for iOS 7 or later
-         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.090 green:0.706 blue:0.839 alpha:1.000];
+         self.navigationController.navigationBar.barTintColor = RGB(102, 168, 216);;
      }
     
     UIImage *image = [UIImage imageNamed:@"back"];

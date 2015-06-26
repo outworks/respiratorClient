@@ -7,9 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSetVC">
             <connections>
-                <outlet property="btn_boy" destination="UVD-co-baG" id="ZtE-Is-RIM"/>
-                <outlet property="btn_girl" destination="edp-ed-Sce" id="ofI-Eq-y4Q"/>
-                <outlet property="datePicker" destination="zgT-Qm-L7g" id="b6T-7l-GMJ"/>
+                <outlet property="btn_boy" destination="cNU-jD-2yE" id="upp-99-pPe"/>
+                <outlet property="btn_girl" destination="A9y-dJ-uv9" id="g18-bg-Dls"/>
+                <outlet property="tf_age" destination="oxO-76-QBY" id="t21-Iq-L1z"/>
                 <outlet property="tf_date" destination="oxO-76-QBY" id="7jb-iN-8Ya"/>
                 <outlet property="tf_height" destination="MFA-Ga-sAT" id="Jph-G6-Ztd"/>
                 <outlet property="tf_weight" destination="alx-MS-jdT" id="2te-PC-KJF"/>
@@ -21,34 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVD-co-baG">
-                    <rect key="frame" x="104" y="70" width="57" height="34"/>
-                    <state key="normal" title="男">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" title="男">
-                        <color key="titleColor" red="0.090196078430000007" green="0.70588235290000001" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnBoyAction:" destination="-1" eventType="touchUpInside" id="vc0-VL-05y"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM1-02-Baz">
-                    <rect key="frame" x="222" y="121" width="57" height="34"/>
-                    <state key="normal" title="厘米">
+                    <rect key="frame" x="231" y="219" width="57" height="34"/>
+                    <state key="normal" title="cm">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="0.090196078430000007" green="0.70588235290000001" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="btnBoyAction:" destination="-1" eventType="touchUpInside" id="vzR-Fz-LXH"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VR-eO-Kai">
-                    <rect key="frame" x="222" y="180" width="57" height="34"/>
+                    <rect key="frame" x="231" y="275" width="57" height="34"/>
                     <state key="normal" title="公斤">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,85 +40,93 @@
                     <state key="selected">
                         <color key="titleColor" red="0.090196078430000007" green="0.70588235290000001" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="btnBoyAction:" destination="-1" eventType="touchUpInside" id="Nqb-RQ-4gq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edp-ed-Sce">
-                    <rect key="frame" x="224" y="70" width="53" height="34"/>
-                    <state key="normal" title="女">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" title="女">
-                        <color key="titleColor" red="0.090196078430000007" green="0.70588235290000001" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnGirlAciton:" destination="-1" eventType="touchUpInside" id="S7p-u6-tKG"/>
-                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="身高:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLx-d4-8DC">
-                    <rect key="frame" x="23" y="130" width="42" height="21"/>
+                    <rect key="frame" x="32" y="225" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="体重:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcq-zb-WDb">
-                    <rect key="frame" x="23" y="186" width="42" height="21"/>
+                    <rect key="frame" x="32" y="281" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-Ga-sAT">
-                    <rect key="frame" x="84" y="126" width="127" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="175" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-Ga-sAT">
+                    <rect key="frame" x="93" y="221" width="127" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alx-MS-jdT">
-                    <rect key="frame" x="84" y="182" width="127" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="73" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alx-MS-jdT">
+                    <rect key="frame" x="93" y="277" width="127" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="出生年月:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7O-TF-kpC">
-                    <rect key="frame" x="23" y="250" width="69" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年龄：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7O-TF-kpC">
+                    <rect key="frame" x="32" y="345" width="69" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="周岁" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3v-rh-AZf">
+                    <rect key="frame" x="243" y="345" width="69" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="34" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-76-QBY">
+                    <rect key="frame" x="93" y="340" width="128" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="性别:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL1-lY-yPZ">
+                    <rect key="frame" x="32" y="123" width="64" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-jD-2yE">
+                    <rect key="frame" x="93" y="49" width="49" height="135"/>
+                    <state key="normal" title="Button" image="male">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="male_s"/>
+                    <connections>
+                        <action selector="btnBoyAction:" destination="-1" eventType="touchUpInside" id="dCM-hW-5s5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9y-dJ-uv9">
+                    <rect key="frame" x="191" y="49" width="49" height="135"/>
+                    <state key="normal" title="Button" image="female">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="female_s"/>
+                    <connections>
+                        <action selector="btnGirlAciton:" destination="-1" eventType="touchUpInside" id="ZZi-bJ-rES"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEz-4E-FAs">
-                    <rect key="frame" x="121" y="297" width="81" height="25"/>
-                    <state key="normal" title="确定">
+                    <rect key="frame" x="22" y="418" width="277" height="39"/>
+                    <color key="backgroundColor" red="0.17768449589999999" green="0.66176465510000004" blue="0.931640625" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="完成">
+                        <color key="titleColor" red="0.97526749319999995" green="0.97526749319999995" blue="0.97526749319999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="OKAction:" destination="-1" eventType="touchUpInside" id="j1e-KW-gMu"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="性别:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL1-lY-yPZ">
-                    <rect key="frame" x="23" y="76" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-Qm-L7g">
-                    <rect key="frame" x="1" y="406" width="320" height="162"/>
-                    <date key="date" timeIntervalSinceReferenceDate="456941914.79804999">
-                        <!--2015-06-25 16:18:34 +0000-->
-                    </date>
-                    <connections>
-                        <action selector="dateChanged:" destination="-1" eventType="valueChanged" id="vbT-3g-7yv"/>
-                    </connections>
-                </datePicker>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-76-QBY">
-                    <rect key="frame" x="99" y="245" width="187" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
-            <color key="backgroundColor" red="0.91737207340000004" green="0.91376630420000005" blue="0.91190878669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="201" y="236"/>
+            <point key="canvasLocation" x="135" y="195"/>
         </view>
     </objects>
+    <resources>
+        <image name="female" width="105" height="310"/>
+        <image name="female_s" width="105" height="310"/>
+        <image name="male" width="105" height="310"/>
+        <image name="male_s" width="105" height="310"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

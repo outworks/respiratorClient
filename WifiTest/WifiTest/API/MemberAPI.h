@@ -31,6 +31,7 @@
 @property(nonatomic,strong)NSString *nickname;//	String	IN	Y	昵称
 @property(nonatomic,strong)NSNumber * sex;//        int         性别（0:男  1:女）
 @property(nonatomic,strong)NSString * birthday;//	String		生日(yyyy-MM-dd)
+@property(nonatomic,strong)NSNumber *age;
 @property(nonatomic,strong)NSNumber * height;//     float		身高（单位:厘米）
 @property(nonatomic,strong)NSNumber * weight;//
 
