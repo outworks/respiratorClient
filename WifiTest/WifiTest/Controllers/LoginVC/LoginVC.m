@@ -35,7 +35,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    _tf_userName.text = [ShareValue sharedShareValue].member.username;
+    if([ShareValue sharedShareValue].member){
+        _tf_userName.text = [ShareValue sharedShareValue].member.username;
+    }
+    
 }
 
 #pragma mark - private 
@@ -61,8 +64,6 @@
         [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
     }];
-
-
 }
 
 #pragma mark - buttonAction 

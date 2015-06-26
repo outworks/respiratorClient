@@ -23,9 +23,9 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
     
      if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {        // Load resources for iOS 6.1 or earlier
-         self.navigationController.navigationBar.tintColor = RGB(102, 168, 216);
+         self.navigationController.navigationBar.tintColor = RGB(45, 169, 238);
      } else {        // Load resources for iOS 7 or later
-         self.navigationController.navigationBar.barTintColor = RGB(102, 168, 216);;
+         self.navigationController.navigationBar.barTintColor = RGB(45, 169, 238);
      }
     
     UIImage *image = [UIImage imageNamed:@"back"];
