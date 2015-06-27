@@ -7,6 +7,7 @@
 //
 
 #import "BasicVC.h"
+#import "PNChart.h"
 
 @interface PEFThirdVC : BasicVC
 

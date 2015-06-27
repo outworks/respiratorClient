@@ -72,12 +72,14 @@
     _mutArr = [NSMutableArray array];
     for (int i = 0; i < [_data count]; i++) {
         
-        DateMonidata *t_dateMonidata = [_data objectAtIndex:i];
-        
-        for (int j = 0; j < [t_dateMonidata.dataDetails count]; j++) {
-            Monidata *t_monidata = t_dateMonidata.dataDetails[j];
-            [_mutArr addObject:t_monidata];
+        if (i == 0) {
+            DateMonidata *t_dateMonidata = [_data objectAtIndex:i];
+            for (int j = 0; j < [t_dateMonidata.dataDetails count]; j++) {
+                Monidata *t_monidata = t_dateMonidata.dataDetails[j];
+                [_mutArr addObject:t_monidata];
+            }
         }
+        
     }
     
     NSMutableArray *t_dateArr = [NSMutableArray array];
