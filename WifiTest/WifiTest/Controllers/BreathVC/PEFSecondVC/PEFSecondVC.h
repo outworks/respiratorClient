@@ -7,7 +7,8 @@
 //
 
 #import "BasicVC.h"
+#import "PNChart.h"
 
-@interface PEFSecondVC : BasicVC
+@interface PEFSecondVC : BasicVC<PNChartDelegate>
 
 @end
