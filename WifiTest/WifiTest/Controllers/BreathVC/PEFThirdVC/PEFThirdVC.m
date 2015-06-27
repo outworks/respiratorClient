@@ -38,10 +38,25 @@
     _lb_title.text = @"PEF量测记录";
     
     NSMutableArray *t_dataArr = [NSMutableArray array];
+     NSMutableArray *t_dateArr = [NSMutableArray array];
     for (int i = 0; i < [_arr_motidatas count]; i++) {
         Monidata *t_monidata = _arr_motidatas[i];
        [t_dataArr addObject:t_monidata.pef];
     }
+    
+    for (int i = 0; i < [_arr_motidatas count]; i++) {
+        Monidata *t_monidata = _arr_motidatas[i];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
+        [dateFormatter setDateFormat:@"HH:mm"];
+        NSString *t_dateStr = [dateFormatter stringFromDate:date];
+        
+        [t_dateArr addObject:t_dateStr];
+        
+    }
+
     
     NSComparator cmptr = ^(id obj1, id obj2){
         if ([obj1 floatValue] > [obj2 floatValue]) {
@@ -58,7 +73,7 @@
     NSNumber *max = [array lastObject];
     NSLog(@"%@",max);
     self.lineChart.yFixedValueMax = [max floatValue]*1.25;
-    
+    [self.lineChart setXLabels:t_dateArr];
     PNLineChartData *data01 = [PNLineChartData new];
     data01.color = PNFreshGreen;
     data01.itemCount = t_dataArr.count;
@@ -78,11 +93,26 @@
     _lb_title.text = @"FEV1量测记录";
     
     NSMutableArray *t_dataArr = [NSMutableArray array];
+    NSMutableArray *t_dateArr = [NSMutableArray array];
     for (int i = 0; i < [_arr_motidatas count]; i++) {
         Monidata *t_monidata = _arr_motidatas[i];
         [t_dataArr addObject:t_monidata.fev1];
         
     }
+    
+    for (int i = 0; i < [_arr_motidatas count]; i++) {
+        Monidata *t_monidata = _arr_motidatas[i];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
+        [dateFormatter setDateFormat:@"HH:mm"];
+        NSString *t_dateStr = [dateFormatter stringFromDate:date];
+        
+        [t_dateArr addObject:t_dateStr];
+        
+    }
+
     
     NSComparator cmptr = ^(id obj1, id obj2){
         if ([obj1 floatValue] > [obj2 floatValue]) {
@@ -101,6 +131,7 @@
     NSLog(@"%@",max);
 
     self.lineChart.yFixedValueMax = [max floatValue]*1.25;
+    [self.lineChart setXLabels:t_dateArr];
     PNLineChartData *data01 = [PNLineChartData new];
     data01.color = PNFreshGreen;
     data01.itemCount = t_dataArr.count;
@@ -142,24 +173,9 @@
     self.lineChart.backgroundColor = [UIColor clearColor];
     [self.lineChart setXLabels:t_dateArr];
     self.lineChart.showCoordinateAxis = YES;
-    
-    //Use yFixedValueMax and yFixedValueMin to Fix the Max and Min Y Value
-    //Only if you needed
-//    self.lineChart.yFixedValueMax = 300.0;
+
     self.lineChart.yFixedValueMin = 0.0;
     
-//    [self.lineChart setYLabels:@[
-//                                 @"0 min",
-//                                 @"50 min",
-//                                 @"100 min",
-//                                 @"150 min",
-//                                 @"200 min",
-//                                 @"250 min",
-//                                 @"300 min",
-//                                 ]
-//     ];
-    
-    // Line Chart #1
     PNLineChartData *data01 = [PNLineChartData new];
     data01.dataTitle = @"Alpha";
     data01.color = PNLightBlue;
@@ -206,6 +222,14 @@
     }];
 }
 
+
+- (void)userClickedOnLineKeyPoint:(CGPoint)point lineIndex:(NSInteger)lineIndex pointIndex:(NSInteger)pointIndex{
+    NSLog(@"Click Key on line %f, %f line index is %d and point index is %d",point.x, point.y,(int)lineIndex, (int)pointIndex);
+}
+
+- (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex{
+    NSLog(@"Click on line %f, %f, line index is %d",point.x, point.y, (int)lineIndex);
+}
 
 #pragma mark - dealloc 
 

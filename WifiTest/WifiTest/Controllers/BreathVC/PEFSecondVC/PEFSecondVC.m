@@ -85,6 +85,7 @@
     NSMutableArray *t_dateArr = [NSMutableArray array];
     NSMutableArray *t_dataArr = [NSMutableArray array];
     NSMutableArray *t_colorArr = [NSMutableArray array];
+    
     for (int i = 0; i < [_mutArr count]; i++) {
         Monidata *t_monidata = _mutArr[i];
         
@@ -105,8 +106,9 @@
             [t_colorArr addObject:PNYellow];
         }else if ([t_monidata.level isEqualToNumber:@2]) {
             [t_colorArr addObject:PNRed];
+        }else{
+            [t_colorArr addObject:PNRed];
         }
-        
     }
 
     self.barChart.yMaxValue = [[ShareValue sharedShareValue].member.defPef floatValue];
