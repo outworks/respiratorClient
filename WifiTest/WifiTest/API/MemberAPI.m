@@ -10,13 +10,6 @@
 
 @implementation MemberLoginRequest
 
--(id)init{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 -(NSString *)_apiPath{
     return URL_MEMBER_LOGIN;
 }

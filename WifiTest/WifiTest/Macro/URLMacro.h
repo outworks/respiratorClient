@@ -12,5 +12,7 @@
 #define URL_MEMBER_LOGIN @"login"                             //登入
 #define URL_MEMBER_REGISTER @"register"                       //注册
 #define URL_MEMBER_MEMBERUPDATE @"memberUpdate" //用户信息修改
+#define URL_DATA_COMMIT @"dataCommit" //数据提交
+#define URL_DATA_DATAS @"dateDatas" //按日查询监测数据
 
 #endif

@@ -15,6 +15,7 @@
 
 #import "SetUserVC.h"
 #import "TestVC.h"
+#import "MainVC.h"
 
 @interface LoginVC ()
 
@@ -56,9 +57,10 @@
 //        SetUserVC *t_vc = [[SetUserVC alloc] init];
 //        [self.navigationController pushViewController:t_vc animated:YES];
         
-        TestVC *t_vc = [[TestVC alloc] init];
+//        TestVC *t_vc = [[TestVC alloc] init];
+//        [self.navigationController pushViewController:t_vc animated:YES];
+        MainVC *t_vc = [[MainVC alloc] init];
         [self.navigationController pushViewController:t_vc animated:YES];
-        
         
     } Fail:^(int code, NSString *failDescript) {
         [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
