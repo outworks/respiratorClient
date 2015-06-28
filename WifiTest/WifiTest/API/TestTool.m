@@ -9,16 +9,6 @@
 #import "TestTool.h"
 
 
-#pragma mark - DataItem
-
-@interface DataItem : NSObject
-
-@property(nonatomic,assign) int db;
-@property(nonatomic,assign) double timeInterval;
-
--(id)initWithDataString:(NSString *)dataString;
-
-@end
 
 @implementation DataItem
 

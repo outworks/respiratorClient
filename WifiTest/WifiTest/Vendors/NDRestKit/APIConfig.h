@@ -13,7 +13,7 @@
 //生产环境地址: http://121.199.27.117:1333/api
 
 #define URL_SERVER_BASE @"http://121.199.27.117:1333/api/"
-//#define URL_SERVER_BASE @"http://121.199.27.117:1333/api"
+//#define URL_SERVER_BASE @"http://192.168.1.5:1333/api/"
 
 #define TIMEOUT_DEFAULT 30
 #define NDAPI_METHOD @"POST"

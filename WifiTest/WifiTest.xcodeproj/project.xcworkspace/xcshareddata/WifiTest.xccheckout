@@ -12,6 +12,8 @@
 	<dict>
 		<key>2312A6A07B6A4A99915BC28AEDF6DA79F4905B35</key>
 		<string>https://github.com/outworks/respiratorClient.git</string>
+		<key>E25046D21B7380C10FABBAB463094932CC46F1FB</key>
+		<string>https://github.com/outworks/respirator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>WifiTest/WifiTest.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>2312A6A07B6A4A99915BC28AEDF6DA79F4905B35</key>
 		<string>../../..</string>
+		<key>E25046D21B7380C10FABBAB463094932CC46F1FB</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/outworks/respiratorClient.git</string>
@@ -32,9 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E25046D21B7380C10FABBAB463094932CC46F1FB</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2312A6A07B6A4A99915BC28AEDF6DA79F4905B35</string>
 			<key>IDESourceControlWCCName</key>
-			<string>respiratorClient</string>
+			<string>ios</string>
 		</dict>
 	</array>
 </dict>

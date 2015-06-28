@@ -11,6 +11,9 @@
 #import "TestTool.h"
 #import "ShareValue.h"
 #import "DataAPI.h"
+#import "DataTools.h"
+#import "NoticeMacro.h"
+#import "UtilsMacro.h"
 
 @interface PEFFirstVC ()
 
@@ -48,11 +51,11 @@
     }
     
     [self.circleChart removeFromSuperview];
-    self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10)
-                                                      total:@100
-                                                    current:[NSNumber numberWithFloat:number*100]
-                                                  clockwise:YES];
-    
+//    self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10)
+//                                                      total:@100
+//                                                    current:[NSNumber numberWithFloat:number*100]
+//                                                  clockwise:YES];
+    self.circleChart = [[PNCircleChart alloc]initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10) total:@100 current:[NSNumber numberWithFloat:number*100] clockwise:YES shadow:YES shadowColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
     self.circleChart.backgroundColor = [UIColor clearColor];
     self.circleChart.center = CGPointMake(_v_bg.frame.size.width/2, _v_bg.frame.size.width/2);
     [self.circleChart setStrokeColor:color];
@@ -69,32 +72,67 @@
     _v_bg.layer.masksToBounds = YES;
     _v_bg.layer.borderWidth = 1.0f;
     _v_bg.layer.borderColor = [RGB(45, 169, 238) CGColor];
-
-    _lb_info.text = @"您今天还没测试呼吸哦";
-    
-    [self loadCircleChart:0];
-    
+    [self reloadData];
 
 }
 
--(void)commitData:(float)t_state{
++(NSString*) convertStringFromDate:(NSDate*)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString=[formatter stringFromDate:date];
+    return dateString;
+}
+
+-(void)reloadData{
+    DateDatasRequest *request = [[DateDatasRequest alloc]init];
+    request.page = @1;
+    request.mid = [ShareValue sharedShareValue].member.mid;
+    __weak __typeof(self) weakSelf = self;
+    [DataAPI dateDatasWithRequest:request completionBlockWithSuccess:^(NSArray *datas) {
+        [DataTools sharedDataTools].dateDatas = datas;
+        [NotificationCenter postNotificationName:NOTIFICATION_DATACHANGE object:nil];
+        DateMonidata *dateMonidata = [datas firstObject];
+        Monidata *monidata = dateMonidata.bestMonidata;
+            if ([dateMonidata.saveDate isEqual:[PEFFirstVC convertStringFromDate:[NSDate date]]]) {
+                weakSelf.lb_pef.text = [NSString stringWithFormat:@"PEF值:%@",monidata.pef ];
+                weakSelf.lb_info.text = @"PEF值最佳状态";
+                weakSelf.lb_state.text = monidata.stateString;
+                if ([monidata.level integerValue] == 1) {
+                    weakSelf.lb_state.textColor = RGB(33, 211, 58);
+                }else  if ([monidata.level integerValue] == 2) {
+                    weakSelf.lb_state.textColor = RGB(237, 229, 107);
+                }else  if ([monidata.level integerValue] == 3) {
+                    weakSelf.lb_state.textColor = RGB(237, 14, 72);
+                }
+                float value =  [monidata.pef floatValue] / [[ShareValue sharedShareValue].member.defPef floatValue];
+                
+                [weakSelf loadCircleChart:value];
+            }else{
+                _lb_info.text = @"您今天还没测试呼吸哦";
+                [self loadCircleChart:0];
+            }
+        
+    } Fail:^(int code, NSString *failDescript) {
+        _lb_info.text = @"您今天还没测试呼吸哦";
+        
+        [self loadCircleChart:0];
+    }];
+}
+
+-(void)commitData:(float)t_state showHud:(ShowHUD *)hud{
 
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
     t_request.mid = [ShareValue sharedShareValue].member.mid;
     t_request.pef = @([TestTool sharedTestTool].pef);
     t_request.fev1 = @([TestTool sharedTestTool].fev1);
     t_request.fvc = @([TestTool sharedTestTool].fvc);
-    if (t_state > 0.8 ) {
-        t_request.level = @0;
-    }else if(t_state < 0.8 && t_state > 0.6){
-        t_request.level = @1;
-    }else if(t_state < 0.6){
-        t_request.level = @2;
-    }
-    
+    __weak __typeof(self) weak = self;
     [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
-        NSLog(@"提交成功");
+        [hud hide];
+        [weak reloadData];
     } Fail:^(int code, NSString *failDescript) {
+        [hud hide];
         [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
     }];
@@ -122,27 +160,8 @@
         if (t_state > 1) {
             t_state = 1;
         }
+        [self commitData:t_state showHud:hud];
         
-        [self commitData:t_state];
-        
-        [[GCDQueue mainQueue] execute:^{
-            
-             weakSelf.lb_pef.text = [NSString stringWithFormat:@"%f",[TestTool sharedTestTool].pef];
-            weakSelf.lb_info.text = @"PEF值最佳状态";
-            
-            if (t_state > 0.8 ) {
-                weakSelf.lb_state.text = @"良好";
-                weakSelf.lb_state.textColor = RGB(33, 211, 58);
-            }else if(t_state < 0.8 && t_state > 0.6){
-                weakSelf.lb_state.text = @"普通";
-                weakSelf.lb_state.textColor = RGB(237, 229, 107);
-            }else if(t_state < 0.6){
-                weakSelf.lb_state.text = @"危险";
-                weakSelf.lb_state.textColor = RGB(237, 14, 72);
-            }
-            [weakSelf loadCircleChart:t_state];
-            [hud hide];
-        }];
     }];
     
 }

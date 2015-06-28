@@ -9,13 +9,14 @@
 #import "PEFThirdVC.h"
 #import "ShareValue.h"
 #import "DataAPI.h"
+#import "NoticeMacro.h"
+#import "UtilsMacro.h"
+#import "DataTools.h"
 
 @interface PEFThirdVC ()<PNChartDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *v_bg;
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
-@property(nonatomic,strong) NSMutableArray *arr_data;
-@property(nonatomic,strong) NSMutableArray *arr_motidatas;
 
 @property (nonatomic) PNLineChart * lineChart;
 
@@ -25,10 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _arr_data = [NSMutableArray array];
-    _arr_motidatas = [NSMutableArray array];
-    [self loadDateMonidata];
-    [self loadLineChart];
+    [NotificationCenter addObserver:self selector:@selector(loadLineChart) name:NOTIFICATION_DATACHANGE object:nil];
 }
 
 #pragma mark - buttonAction 
@@ -36,7 +34,8 @@
 - (IBAction)pefAction:(id)sender {
     
     _lb_title.text = @"PEF量测记录";
-    
+    DateMonidata *dateData = [DataTools sharedDataTools].dateDatas.firstObject;
+    NSArray *_arr_motidatas = dateData.dataDetails;
     NSMutableArray *t_dataArr = [NSMutableArray array];
      NSMutableArray *t_dateArr = [NSMutableArray array];
     for (int i = 0; i < [_arr_motidatas count]; i++) {
@@ -91,7 +90,8 @@
 - (IBAction)fev1Action:(id)sender {
     
     _lb_title.text = @"FEV1量测记录";
-    
+    DateMonidata *dateData = [DataTools sharedDataTools].dateDatas.firstObject;
+    NSArray *_arr_motidatas = dateData.dataDetails;
     NSMutableArray *t_dataArr = [NSMutableArray array];
     NSMutableArray *t_dateArr = [NSMutableArray array];
     for (int i = 0; i < [_arr_motidatas count]; i++) {
@@ -149,10 +149,11 @@
 #pragma mark - private
 
 -(void)loadLineChart{
-
+    [self.lineChart removeFromSuperview];
     NSMutableArray *t_dateArr = [NSMutableArray array];
     NSMutableArray *t_dataArr = [NSMutableArray array];
-    
+    DateMonidata *dateData = [DataTools sharedDataTools].dateDatas.firstObject;
+    NSArray *_arr_motidatas = dateData.dataDetails;
     for (int i = 0; i < [_arr_motidatas count]; i++) {
         Monidata *t_monidata = _arr_motidatas[i];
         
@@ -190,36 +191,7 @@
     self.lineChart.chartData = @[data01];
     [self.lineChart strokeChart];
     [_v_bg addSubview:self.lineChart];
-}
-
-
--(void)loadDateMonidata{
-    
-    __weak typeof(self) weakSelf = self;
-    
-    DateDatasRequest *t_request = [[DateDatasRequest alloc] init];
-    t_request.mid = [ShareValue sharedShareValue].member.mid;
-    [DataAPI dateDatasWithRequest:t_request completionBlockWithSuccess:^(NSArray *data) {
-        
-        [weakSelf.arr_data addObjectsFromArray:data];
-        
-        for (int i = 0; i < [_arr_data count]; i++) {
-            
-            if (i == 0) {
-                DateMonidata *t_dateMonidata = [_arr_data objectAtIndex:i];
-                for (int j = 0; j < [t_dateMonidata.dataDetails count]; j++) {
-                    Monidata *t_monidata = t_dateMonidata.dataDetails[j];
-                    [_arr_motidatas addObject:t_monidata];
-                }
-            }
-            
-        }
-        [self pefAction:nil];
-        
-    } Fail:^(int code, NSString *failDescript) {
-        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
-        } duration:1.5f inView:self.view];
-    }];
+    [self pefAction:nil];
 }
 
 
@@ -234,8 +206,7 @@
 #pragma mark - dealloc 
 
 -(void)dealloc{
-
-
+    [NotificationCenter removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

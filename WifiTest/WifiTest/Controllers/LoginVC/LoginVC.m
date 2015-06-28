@@ -36,9 +36,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if([ShareValue sharedShareValue].member){
-        _tf_userName.text = [ShareValue sharedShareValue].member.username;
-    }
+    _tf_userName.text = [ShareValue sharedShareValue].m_username;
+    _tf_pwd.text = [ShareValue sharedShareValue].m_password;
     
 }
 
@@ -49,11 +48,13 @@
     
     MemberLoginRequest *request = [[MemberLoginRequest alloc] init];
     request.username = _tf_userName.text;
-    request.pwd =[_tf_pwd.text md5HexDigest];
+    request.pwd = [_tf_pwd.text md5HexDigest];
     [MemberAPI MemberLoginWithRequest:request completionBlockWithSuccess:^(Member *data) {
         NSLog(@"登录成功");
         
         [ShareValue sharedShareValue].member = data;
+        [ShareValue sharedShareValue].m_username = request.username;
+        [ShareValue sharedShareValue].m_password = _tf_pwd.text;
 //        SetUserVC *t_vc = [[SetUserVC alloc] init];
 //        [self.navigationController pushViewController:t_vc animated:YES];
         

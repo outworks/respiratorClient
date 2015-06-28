@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+
+#pragma mark - DataItem
+
+@interface DataItem : NSObject
+
+@property(nonatomic,assign) int db;
+@property(nonatomic,assign) double timeInterval;
+
+-(id)initWithDataString:(NSString *)dataString;
+
+@end
+
 @interface TestTool : NSObject
 
 SYNTHESIZE_SINGLETON_FOR_HEADER(TestTool)

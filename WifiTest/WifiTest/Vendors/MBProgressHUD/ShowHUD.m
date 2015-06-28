@@ -308,6 +308,7 @@
     return hud;
 }
 
+
 - (void)dealloc
 {
     NSLog(@"资源释放了,没有泄露^_^");

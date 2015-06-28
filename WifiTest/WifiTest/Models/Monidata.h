@@ -19,4 +19,6 @@
 @property(nonatomic,strong)NSString *username;//	String		用户名
 @property(nonatomic,strong)NSString *saveTime;//	String		保存时间(yyyy-MM-dd HH:mm:ss)
 
+-(NSString *)stateString;
+
 @end

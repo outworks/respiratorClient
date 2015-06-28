@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Monidata.h"
 
 @interface DateMonidata : NSObject
 
@@ -14,5 +15,7 @@
 @property(nonatomic,strong)NSString *username;//        String		用户名称
 @property(nonatomic,strong)NSString *saveDate;//        String		保存日期
 @property(nonatomic,strong)NSArray  *dataDetails;//     List< Monidata >		当天检测数据集
+
+-(Monidata *)bestMonidata;
 
 @end

@@ -35,6 +35,8 @@
     request.username = [_tf_userName.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     request.pwd = [_tf_pwd.text md5HexDigest];
     [MemberAPI MemberRegisterWithRequest:request completionBlockWithSuccess:^{
+        [ShareValue sharedShareValue].m_username = _tf_pwd.text;
+        [ShareValue sharedShareValue].m_username = _tf_userName.text;
         [ShowHUD showSuccess:@"注册成功" configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
         [[GCDQueue mainQueue] execute:^{

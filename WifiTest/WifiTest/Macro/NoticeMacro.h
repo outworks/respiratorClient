@@ -9,7 +9,7 @@
 #ifndef cmm_NoticeMacro_h
 #define cmm_NoticeMacro_h
 
-
+#define NOTIFICATION_DATACHANGE @"NOTIFICATION_DATACHANGE"
 
 
 
