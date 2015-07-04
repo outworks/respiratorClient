@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC">
             <connections>
+                <outlet property="imageV_logo" destination="6Wv-Yc-hip" id="m8X-5p-Oig"/>
                 <outlet property="tf_pwd" destination="QQr-t4-9cu" id="pgf-3I-N89"/>
                 <outlet property="tf_userName" destination="W3P-dB-B5S" id="J1N-pV-9GO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -18,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vd-dZ-vaq">
-                    <rect key="frame" x="0.0" y="26" width="320" height="104"/>
+                    <rect key="frame" x="0.0" y="302" width="320" height="104"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3P-dB-B5S">
                             <rect key="frame" x="76" y="15" width="218" height="30"/>
@@ -30,14 +31,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-Ka-QH9">
-                            <rect key="frame" x="26" y="21" width="42" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngj-Tr-I4D">
+                            <rect key="frame" x="26" y="72" width="42" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngj-Tr-I4D">
-                            <rect key="frame" x="26" y="72" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-Ka-QH9">
+                            <rect key="frame" x="26" y="21" width="42" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -61,7 +62,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZN-Jt-eIJ">
-                    <rect key="frame" x="22" y="165" width="277" height="39"/>
+                    <rect key="frame" x="22" y="441" width="277" height="39"/>
                     <color key="backgroundColor" red="0.17768449589999999" green="0.66176465510000004" blue="0.931640625" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="fLI-wG-Vak"/>
@@ -75,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBS-bA-Ebb">
-                    <rect key="frame" x="80" y="220" width="160" height="39"/>
+                    <rect key="frame" x="80" y="506" width="160" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="39" id="0dU-vn-4h4"/>
                     </constraints>
@@ -88,6 +89,13 @@
                         <action selector="regiestAciton:" destination="-1" eventType="touchUpInside" id="jB3-qe-Znh"/>
                     </connections>
                 </button>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Head.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-Yc-hip">
+                    <rect key="frame" x="59" y="68" width="202" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="6wA-MM-irh"/>
+                        <constraint firstAttribute="width" constant="202" id="DDK-yd-t4c"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -97,14 +105,19 @@
                 <constraint firstItem="YBS-bA-Ebb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="90" id="LUA-09-ktp"/>
                 <constraint firstItem="GZN-Jt-eIJ" firstAttribute="centerX" secondItem="1vd-dZ-vaq" secondAttribute="centerX" id="NWU-Dg-jeX"/>
                 <constraint firstAttribute="trailing" secondItem="1vd-dZ-vaq" secondAttribute="trailing" id="OPz-11-sQZ"/>
-                <constraint firstItem="1vd-dZ-vaq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="YCa-Yo-fSe"/>
+                <constraint firstAttribute="centerY" secondItem="6Wv-Yc-hip" secondAttribute="centerY" constant="116" id="OTH-iN-RQH"/>
+                <constraint firstItem="1vd-dZ-vaq" firstAttribute="top" secondItem="6Wv-Yc-hip" secondAttribute="bottom" constant="34" id="dCK-14-ScB"/>
                 <constraint firstItem="YBS-bA-Ebb" firstAttribute="top" secondItem="GZN-Jt-eIJ" secondAttribute="bottom" constant="13" id="na1-AD-SVP"/>
+                <constraint firstAttribute="centerX" secondItem="6Wv-Yc-hip" secondAttribute="centerX" id="y7l-XF-LuJ"/>
                 <constraint firstItem="1vd-dZ-vaq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zde-90-pfM"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="353" y="158"/>
+            <point key="canvasLocation" x="344" y="148"/>
         </view>
     </objects>
+    <resources>
+        <image name="Head.jpg" width="220" height="220"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

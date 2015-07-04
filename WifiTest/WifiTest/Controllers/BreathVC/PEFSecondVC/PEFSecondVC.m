@@ -84,13 +84,13 @@
         [t_dataArr addObject:t_monidata.pef];
         
         if ([t_monidata.level isEqualToNumber:@0]) {
-            [t_colorArr addObject:PNGreen];
+            [t_colorArr addObject:RGB(33, 211, 58)];
         }else if ([t_monidata.level isEqualToNumber:@1]) {
-            [t_colorArr addObject:PNYellow];
+            [t_colorArr addObject:RGB(237, 229, 107)];
         }else if ([t_monidata.level isEqualToNumber:@2]) {
-            [t_colorArr addObject:PNRed];
+            [t_colorArr addObject:RGB(237, 14, 72)];
         }else{
-            [t_colorArr addObject:PNRed];
+            [t_colorArr addObject:RGB(237, 14, 72)];
         }
     }
 
@@ -123,12 +123,13 @@
     Monidata *t_monidata = _mutArr[barIndex];
     _lb_pef.text = [t_monidata.pef stringValue];
     _lb_fev1.text = [t_monidata.fev1 stringValue];
-    _lb_fvc.text = [t_monidata.fvc stringValue];
+    _lb_fvc.text = [t_monidata.fvc stringValue];    
     _lb_time.text = t_monidata.saveTime;
     _lb_state.text = t_monidata.stateString;
 
     PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
     
+    /*
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     
     animation.fromValue = @1.0;
@@ -141,6 +142,7 @@
     animation.fillMode = kCAFillModeForwards;
     
     [bar.layer addAnimation:animation forKey:@"Float"];
+     */
 }
 
 

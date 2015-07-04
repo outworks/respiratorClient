@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E21B47A0C900B834A5 /* Head.jpg */; };
+		6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */; };
 		6D82199B1B3C1CB4007819CE /* UserSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8219991B3C1CB4007819CE /* UserSetVC.m */; };
 		6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D82199A1B3C1CB4007819CE /* UserSetVC.xib */; };
-		6D82199F1B3C20C7007819CE /* PickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D82199E1B3C20C7007819CE /* PickView.m */; };
-		6D8219A11B3C20DB007819CE /* PickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8219A01B3C20DB007819CE /* PickView.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
 		CE1CC0EB1B2C68180076C942 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0EA1B2C68180076C942 /* AppDelegate.m */; };
 		CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC0F21B2C68180076C942 /* Images.xcassets */; };
@@ -89,8 +89,6 @@
 		CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B31B2C92E00076C942 /* LoginVC.xib */; };
 		CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */; };
 		CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */; };
-		CE53159A1B38C08300EC0AAD /* SetUserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5315981B38C08300EC0AAD /* SetUserVC.m */; };
-		CE53159B1B38C08300EC0AAD /* SetUserVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5315991B38C08300EC0AAD /* SetUserVC.xib */; };
 		CE71927D1B388D7900087024 /* BaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71927C1B388D7900087024 /* BaseAPI.m */; };
 		CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192831B38905D00087024 /* AFHTTPClient.m */; };
 		CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192851B38905D00087024 /* AFHTTPRequestOperation.m */; };
@@ -157,12 +155,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D36A8E21B47A0C900B834A5 /* Head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Head.jpg; sourceTree = "<group>"; };
+		6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1432022533589@2x.jpg"; sourceTree = "<group>"; };
 		6D8219981B3C1CB4007819CE /* UserSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetVC.h; sourceTree = "<group>"; };
 		6D8219991B3C1CB4007819CE /* UserSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetVC.m; sourceTree = "<group>"; };
 		6D82199A1B3C1CB4007819CE /* UserSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSetVC.xib; sourceTree = "<group>"; };
-		6D82199D1B3C20C7007819CE /* PickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickView.h; sourceTree = "<group>"; };
-		6D82199E1B3C20C7007819CE /* PickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickView.m; sourceTree = "<group>"; };
-		6D8219A01B3C20DB007819CE /* PickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickView.xib; sourceTree = "<group>"; };
 		CE1CC0E21B2C68180076C942 /* WifiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CC0E61B2C68180076C942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1CC0E71B2C68180076C942 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -310,9 +307,6 @@
 		CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestVC.h; sourceTree = "<group>"; };
 		CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestVC.m; sourceTree = "<group>"; };
 		CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestVC.xib; sourceTree = "<group>"; };
-		CE5315971B38C08300EC0AAD /* SetUserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUserVC.h; sourceTree = "<group>"; };
-		CE5315981B38C08300EC0AAD /* SetUserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUserVC.m; sourceTree = "<group>"; };
-		CE5315991B38C08300EC0AAD /* SetUserVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetUserVC.xib; sourceTree = "<group>"; };
 		CE71927B1B388D7900087024 /* BaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAPI.h; sourceTree = "<group>"; };
 		CE71927C1B388D7900087024 /* BaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAPI.m; sourceTree = "<group>"; };
 		CE7192801B388EFE00087024 /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
@@ -797,12 +791,12 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE1CC2201B2C7AFD0076C942 /* Views */,
 				CE8970C01B3E2DBE008BB59D /* BreathVC */,
 				CE8970D81B3E2DCD008BB59D /* AirQualityVC */,
 				CE8970BA1B3E2DB7008BB59D /* NearbyPharVC */,
 				CE8970B41B3E2DB0008BB59D /* SetVC */,
 				CE8970AE1B3E2DA1008BB59D /* MainVC */,
-				CE1CC2201B2C7AFD0076C942 /* Views */,
 				CE1CC2B01B2C92E00076C942 /* LoginVC */,
 				CE1CC24F1B2C7C720076C942 /* BasicVC */,
 			);
@@ -812,9 +806,6 @@
 		CE1CC2201B2C7AFD0076C942 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6D82199D1B3C20C7007819CE /* PickView.h */,
-				6D82199E1B3C20C7007819CE /* PickView.m */,
-				6D8219A01B3C20DB007819CE /* PickView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -836,6 +827,8 @@
 			isa = PBXGroup;
 			children = (
 				CE1CC24B1B2C7BBA0076C942 /* 头像.jpg */,
+				6D36A8E21B47A0C900B834A5 /* Head.jpg */,
+				6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */,
 				CE1CC24C1B2C7BBA0076C942 /* 底板.jpg */,
 			);
 			path = Resources;
@@ -902,9 +895,6 @@
 				6D8219981B3C1CB4007819CE /* UserSetVC.h */,
 				6D8219991B3C1CB4007819CE /* UserSetVC.m */,
 				6D82199A1B3C1CB4007819CE /* UserSetVC.xib */,
-				CE5315971B38C08300EC0AAD /* SetUserVC.h */,
-				CE5315981B38C08300EC0AAD /* SetUserVC.m */,
-				CE5315991B38C08300EC0AAD /* SetUserVC.xib */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -1166,13 +1156,13 @@
 				CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */,
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
 				CE8970B91B3E2DB0008BB59D /* SetVC.xib in Resources */,
-				CE53159B1B38C08300EC0AAD /* SetUserVC.xib in Resources */,
 				CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */,
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
 				CE8970BF1B3E2DB7008BB59D /* NearbyPharVC.xib in Resources */,
 				CE8970D51B3E2DBE008BB59D /* PEFSecondVC.xib in Resources */,
+				6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */,
 				CE1CC1D61B2C6A320076C942 /* IQKeyboardManager.bundle in Resources */,
 				CE1CC24E1B2C7BBA0076C942 /* 底板.jpg in Resources */,
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
@@ -1183,7 +1173,7 @@
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
-				6D8219A11B3C20DB007819CE /* PickView.xib in Resources */,
+				6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,7 +1199,6 @@
 				CE1CC1CB1B2C6A320076C942 /* IQNSArray+Sort.m in Sources */,
 				CE1CC2011B2C6A320076C942 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CE1CC1D41B2C6A320076C942 /* IQToolbar.m in Sources */,
-				CE53159A1B38C08300EC0AAD /* SetUserVC.m in Sources */,
 				CE1CC1CF1B2C6A320076C942 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				CE1CC1E01B2C6A320076C942 /* LKDBUtils.m in Sources */,
 				CE8970FD1B3E35D0008BB59D /* PNBar.m in Sources */,
@@ -1279,7 +1268,6 @@
 				CE1CC1D21B2C6A320076C942 /* IQBarButtonItem.m in Sources */,
 				CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */,
 				CE1CC1FB1B2C6A320076C942 /* SDWebImageManager.m in Sources */,
-				6D82199F1B3C20C7007819CE /* PickView.m in Sources */,
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
 				CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */,

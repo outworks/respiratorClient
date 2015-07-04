@@ -13,7 +13,6 @@
 #import "ShareFun.h"
 #import "ShareValue.h"
 
-#import "SetUserVC.h"
 #import "TestVC.h"
 #import "MainVC.h"
 
@@ -21,6 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tf_userName;
 @property (weak, nonatomic) IBOutlet UITextField *tf_pwd;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_logo;
+
 
 @end
 
@@ -30,6 +32,10 @@
     [super viewDidLoad];
     self.title = @"登录";
     
+    _imageV_logo.layer.cornerRadius = _imageV_logo.frame.size.width/2;
+    _imageV_logo.layer.masksToBounds = YES;
+    _imageV_logo.layer.borderWidth = 1.0f;
+    _imageV_logo.layer.borderColor = [[UIColor clearColor] CGColor];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -55,11 +61,6 @@
         [ShareValue sharedShareValue].member = data;
         [ShareValue sharedShareValue].m_username = request.username;
         [ShareValue sharedShareValue].m_password = _tf_pwd.text;
-//        SetUserVC *t_vc = [[SetUserVC alloc] init];
-//        [self.navigationController pushViewController:t_vc animated:YES];
-        
-//        TestVC *t_vc = [[TestVC alloc] init];
-//        [self.navigationController pushViewController:t_vc animated:YES];
         MainVC *t_vc = [[MainVC alloc] init];
         [self.navigationController pushViewController:t_vc animated:YES];
         

@@ -29,6 +29,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (NSString *)tabTitle
+{
+    return @"呼吸量测";
+}
+
 #pragma mark - private 
 
 //设置Autolayout中的边距辅助方法

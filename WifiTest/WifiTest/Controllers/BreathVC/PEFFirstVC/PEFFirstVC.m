@@ -51,10 +51,6 @@
     }
     
     [self.circleChart removeFromSuperview];
-//    self.circleChart = [[PNCircleChart alloc] initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10)
-//                                                      total:@100
-//                                                    current:[NSNumber numberWithFloat:number*100]
-//                                                  clockwise:YES];
     self.circleChart = [[PNCircleChart alloc]initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10) total:@100 current:[NSNumber numberWithFloat:number*100] clockwise:YES shadow:YES shadowColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
     self.circleChart.backgroundColor = [UIColor clearColor];
     self.circleChart.center = CGPointMake(_v_bg.frame.size.width/2, _v_bg.frame.size.width/2);
@@ -72,6 +68,7 @@
     _v_bg.layer.masksToBounds = YES;
     _v_bg.layer.borderWidth = 1.0f;
     _v_bg.layer.borderColor = [RGB(45, 169, 238) CGColor];
+    
     [self reloadData];
 
 }

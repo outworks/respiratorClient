@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-aX-JLG">
-                    <rect key="frame" x="60" y="149" width="200" height="200"/>
+                    <rect key="frame" x="60" y="136" width="200" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PEF值最佳状态" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-wd-dPE">
                             <rect key="frame" x="42" y="66" width="117" height="21"/>
@@ -48,8 +48,8 @@
                         <constraint firstAttribute="width" constant="200" id="vWc-o3-GlY"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m9-rv-uyW">
-                    <rect key="frame" x="0.0" y="426" width="320" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m9-rv-uyW">
+                    <rect key="frame" x="0.0" y="390" width="320" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="DqE-3W-D3d"/>
                     </constraints>
@@ -58,7 +58,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日量测最佳值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE7-Ye-eFW">
-                    <rect key="frame" x="87" y="87" width="147" height="26"/>
+                    <rect key="frame" x="87" y="77" width="147" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="uHn-ic-Fhh"/>
                     </constraints>
@@ -67,7 +67,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-B1-YGB">
-                    <rect key="frame" x="223" y="39" width="89" height="30"/>
+                    <rect key="frame" x="223" y="28" width="89" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="89" id="Rk2-dm-hMa"/>
                         <constraint firstAttribute="height" constant="30" id="Xp6-zp-avb"/>
@@ -82,15 +82,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="3m9-rv-uyW" firstAttribute="top" secondItem="IlD-aX-JLG" secondAttribute="bottom" constant="77" id="6vS-tk-aMr"/>
+                <constraint firstItem="3m9-rv-uyW" firstAttribute="top" secondItem="IlD-aX-JLG" secondAttribute="bottom" constant="54" id="6vS-tk-aMr"/>
                 <constraint firstAttribute="trailing" secondItem="Hvt-B1-YGB" secondAttribute="trailing" constant="8" id="Ak2-g8-46z"/>
-                <constraint firstItem="GE7-Ye-eFW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="87" id="GYF-f3-urA"/>
+                <constraint firstItem="GE7-Ye-eFW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="GYF-f3-urA"/>
                 <constraint firstItem="3m9-rv-uyW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rls-Z3-f1X"/>
                 <constraint firstAttribute="trailing" secondItem="3m9-rv-uyW" secondAttribute="trailing" id="U1a-BN-sl3"/>
                 <constraint firstItem="GE7-Ye-eFW" firstAttribute="centerX" secondItem="IlD-aX-JLG" secondAttribute="centerX" id="Xmu-FV-3dg"/>
                 <constraint firstItem="GE7-Ye-eFW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="b8X-CT-tCM"/>
-                <constraint firstItem="IlD-aX-JLG" firstAttribute="top" secondItem="GE7-Ye-eFW" secondAttribute="bottom" constant="36" id="fUe-9h-33z"/>
-                <constraint firstItem="Hvt-B1-YGB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="39" id="iiG-Dt-mFe"/>
+                <constraint firstItem="IlD-aX-JLG" firstAttribute="top" secondItem="GE7-Ye-eFW" secondAttribute="bottom" constant="33" id="fUe-9h-33z"/>
+                <constraint firstItem="Hvt-B1-YGB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="iiG-Dt-mFe"/>
             </constraints>
             <point key="canvasLocation" x="607" y="445"/>
         </view>

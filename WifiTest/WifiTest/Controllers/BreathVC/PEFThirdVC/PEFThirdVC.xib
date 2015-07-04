@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -18,13 +18,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日量测记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-Vb-a0b">
-                    <rect key="frame" x="97" y="76" width="126" height="25.5"/>
+                    <rect key="frame" x="97" y="111" width="126" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-sx-sAY">
-                    <rect key="frame" x="0.0" y="135" width="320" height="230"/>
+                    <rect key="frame" x="0.0" y="157" width="320" height="230"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="230" id="sUS-1n-HAz"/>
@@ -61,9 +61,9 @@
                 <constraint firstItem="h8g-7n-5LY" firstAttribute="centerY" secondItem="hh1-xZ-d7T" secondAttribute="centerY" id="JVM-sb-9ff"/>
                 <constraint firstItem="h8g-7n-5LY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Krv-nP-Ivo"/>
                 <constraint firstAttribute="centerX" secondItem="oBw-Vb-a0b" secondAttribute="centerX" id="LH5-qW-t8e"/>
-                <constraint firstAttribute="centerY" secondItem="Bb6-sx-sAY" secondAttribute="centerY" constant="34" id="OZ6-3K-IQJ"/>
+                <constraint firstAttribute="centerY" secondItem="Bb6-sx-sAY" secondAttribute="centerY" constant="12" id="OZ6-3K-IQJ"/>
                 <constraint firstItem="Bb6-sx-sAY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RGe-oS-xxg"/>
-                <constraint firstAttribute="centerY" secondItem="oBw-Vb-a0b" secondAttribute="centerY" constant="195" id="gLH-Oe-QiJ"/>
+                <constraint firstAttribute="centerY" secondItem="oBw-Vb-a0b" secondAttribute="centerY" constant="160" id="gLH-Oe-QiJ"/>
                 <constraint firstAttribute="trailing" secondItem="hh1-xZ-d7T" secondAttribute="trailing" constant="8" id="hOx-KY-KQM"/>
                 <constraint firstAttribute="centerX" secondItem="Bb6-sx-sAY" secondAttribute="centerX" id="m7e-xR-KLO"/>
                 <constraint firstAttribute="trailing" secondItem="Bb6-sx-sAY" secondAttribute="trailing" id="t76-Zi-muu"/>
