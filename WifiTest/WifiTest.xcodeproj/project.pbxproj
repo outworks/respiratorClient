@@ -89,6 +89,8 @@
 		CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B31B2C92E00076C942 /* LoginVC.xib */; };
 		CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */; };
 		CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */; };
+		CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965B11B483AAD00F730C1 /* CCProgressView.m */; };
+		CE5965BD1B48421300F730C1 /* TestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965BC1B48421300F730C1 /* TestTool.m */; };
 		CE71927D1B388D7900087024 /* BaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71927C1B388D7900087024 /* BaseAPI.m */; };
 		CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192831B38905D00087024 /* AFHTTPClient.m */; };
 		CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192851B38905D00087024 /* AFHTTPRequestOperation.m */; };
@@ -140,7 +142,13 @@
 		CEA8E1141B3E534300A47BFC /* Monidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1131B3E534300A47BFC /* Monidata.m */; };
 		CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */; };
 		CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1191B3E54DD00A47BFC /* DataAPI.m */; };
-		DF509F6B1B3E752900A422E7 /* TestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DF509F6A1B3E752900A422E7 /* TestTool.m */; };
+		CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286131B47DB7F00355DEB /* BlueClientVC.m */; };
+		CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED286141B47DB7F00355DEB /* BlueClientVC.xib */; };
+		CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286181B47F6D800355DEB /* BlueCentralVC.m */; };
+		CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED286191B47F6D800355DEB /* BlueCentralVC.xib */; };
+		CED2861F1B47F6F400355DEB /* BluePeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */; };
+		CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */; };
+		CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED286221B48003800355DEB /* CoreBluetooth.framework */; };
 		DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF509F6D1B3E811900A422E7 /* DataTools.m */; };
 /* End PBXBuildFile section */
 
@@ -307,6 +315,10 @@
 		CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestVC.h; sourceTree = "<group>"; };
 		CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestVC.m; sourceTree = "<group>"; };
 		CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestVC.xib; sourceTree = "<group>"; };
+		CE5965B01B483AAD00F730C1 /* CCProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProgressView.h; sourceTree = "<group>"; };
+		CE5965B11B483AAD00F730C1 /* CCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProgressView.m; sourceTree = "<group>"; };
+		CE5965BB1B48421300F730C1 /* TestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTool.h; sourceTree = "<group>"; };
+		CE5965BC1B48421300F730C1 /* TestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTool.m; sourceTree = "<group>"; };
 		CE71927B1B388D7900087024 /* BaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAPI.h; sourceTree = "<group>"; };
 		CE71927C1B388D7900087024 /* BaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAPI.m; sourceTree = "<group>"; };
 		CE7192801B388EFE00087024 /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
@@ -406,8 +418,16 @@
 		CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateMonidata.m; sourceTree = "<group>"; };
 		CEA8E1181B3E54DD00A47BFC /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		CEA8E1191B3E54DD00A47BFC /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
-		DF509F691B3E752900A422E7 /* TestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTool.h; sourceTree = "<group>"; };
-		DF509F6A1B3E752900A422E7 /* TestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTool.m; sourceTree = "<group>"; };
+		CED286121B47DB7F00355DEB /* BlueClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueClientVC.h; sourceTree = "<group>"; };
+		CED286131B47DB7F00355DEB /* BlueClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueClientVC.m; sourceTree = "<group>"; };
+		CED286141B47DB7F00355DEB /* BlueClientVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueClientVC.xib; sourceTree = "<group>"; };
+		CED286171B47F6D800355DEB /* BlueCentralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueCentralVC.h; sourceTree = "<group>"; };
+		CED286181B47F6D800355DEB /* BlueCentralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueCentralVC.m; sourceTree = "<group>"; };
+		CED286191B47F6D800355DEB /* BlueCentralVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueCentralVC.xib; sourceTree = "<group>"; };
+		CED2861C1B47F6F400355DEB /* BluePeripheralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluePeripheralVC.h; sourceTree = "<group>"; };
+		CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluePeripheralVC.m; sourceTree = "<group>"; };
+		CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluePeripheralVC.xib; sourceTree = "<group>"; };
+		CED286221B48003800355DEB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DF509F6C1B3E811900A422E7 /* DataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTools.h; sourceTree = "<group>"; };
 		DF509F6D1B3E811900A422E7 /* DataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -417,6 +437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */,
 				CE1CC2991B2C83CA0076C942 /* MobileCoreServices.framework in Frameworks */,
 				CE1CC2971B2C83C20076C942 /* SystemConfiguration.framework in Frameworks */,
 				CE1CC2951B2C83B80076C942 /* Security.framework in Frameworks */,
@@ -447,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1CC0E41B2C68180076C942 /* WifiTest */,
+				CE1CC2551B2C82050076C942 /* FrameWork */,
 				CE1CC0FE1B2C68180076C942 /* WifiTestTests */,
 				CE1CC0E31B2C68180076C942 /* Products */,
 			);
@@ -475,7 +497,6 @@
 				CE1CC0F21B2C68180076C942 /* Images.xcassets */,
 				CE1CC0F41B2C68180076C942 /* LaunchScreen.xib */,
 				CE1CC10B1B2C6A320076C942 /* Vendors */,
-				CE1CC2551B2C82050076C942 /* FrameWork */,
 				CE1CC0E51B2C68180076C942 /* Supporting Files */,
 			);
 			path = WifiTest;
@@ -754,6 +775,8 @@
 		CE1CC2041B2C70360076C942 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CE5965BB1B48421300F730C1 /* TestTool.h */,
+				CE5965BC1B48421300F730C1 /* TestTool.m */,
 				CE1CC2051B2C70360076C942 /* ShareFun.h */,
 				CE1CC2061B2C70360076C942 /* ShareFun.m */,
 				CE1CC2071B2C70360076C942 /* ShareValue.h */,
@@ -778,8 +801,6 @@
 		CE1CC2141B2C7AEF0076C942 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				DF509F691B3E752900A422E7 /* TestTool.h */,
-				DF509F6A1B3E752900A422E7 /* TestTool.m */,
 				CE7192B31B389DF000087024 /* MemberAPI.h */,
 				CE7192B41B389DF000087024 /* MemberAPI.m */,
 				CEA8E1181B3E54DD00A47BFC /* DataAPI.h */,
@@ -791,7 +812,8 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE1CC2201B2C7AFD0076C942 /* Views */,
+				CE5965AF1B483A9200F730C1 /* Views */,
+				CED286111B47DB0700355DEB /* BluetoothVC */,
 				CE8970C01B3E2DBE008BB59D /* BreathVC */,
 				CE8970D81B3E2DCD008BB59D /* AirQualityVC */,
 				CE8970BA1B3E2DB7008BB59D /* NearbyPharVC */,
@@ -801,13 +823,6 @@
 				CE1CC24F1B2C7C720076C942 /* BasicVC */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CE1CC2201B2C7AFD0076C942 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		CE1CC22B1B2C7B9C0076C942 /* Models */ = {
@@ -847,6 +862,7 @@
 		CE1CC2551B2C82050076C942 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				CED286221B48003800355DEB /* CoreBluetooth.framework */,
 				CE1CC2981B2C83CA0076C942 /* MobileCoreServices.framework */,
 				CE1CC2961B2C83C20076C942 /* SystemConfiguration.framework */,
 				CE1CC2941B2C83B80076C942 /* Security.framework */,
@@ -864,7 +880,8 @@
 				CE1CC27C1B2C82F20076C942 /* libiconv.dylib */,
 				CE1CC27A1B2C82C60076C942 /* libz.dylib */,
 			);
-			path = FrameWork;
+			name = FrameWork;
+			path = WifiTest/FrameWork;
 			sourceTree = "<group>";
 		};
 		CE1CC29D1B2C8F7E0076C942 /* MMDrawerController */ = {
@@ -897,6 +914,15 @@
 				6D82199A1B3C1CB4007819CE /* UserSetVC.xib */,
 			);
 			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		CE5965AF1B483A9200F730C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE5965B01B483AAD00F730C1 /* CCProgressView.h */,
+				CE5965B11B483AAD00F730C1 /* CCProgressView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CE7192811B38905D00087024 /* AFNetworking */ = {
@@ -1072,6 +1098,22 @@
 			path = PNChart;
 			sourceTree = "<group>";
 		};
+		CED286111B47DB0700355DEB /* BluetoothVC */ = {
+			isa = PBXGroup;
+			children = (
+				CED286121B47DB7F00355DEB /* BlueClientVC.h */,
+				CED286131B47DB7F00355DEB /* BlueClientVC.m */,
+				CED286141B47DB7F00355DEB /* BlueClientVC.xib */,
+				CED286171B47F6D800355DEB /* BlueCentralVC.h */,
+				CED286181B47F6D800355DEB /* BlueCentralVC.m */,
+				CED286191B47F6D800355DEB /* BlueCentralVC.xib */,
+				CED2861C1B47F6F400355DEB /* BluePeripheralVC.h */,
+				CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */,
+				CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */,
+			);
+			path = BluetoothVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1156,6 +1198,7 @@
 				CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */,
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
 				CE8970B91B3E2DB0008BB59D /* SetVC.xib in Resources */,
+				CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */,
 				CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */,
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
@@ -1166,11 +1209,13 @@
 				CE1CC1D61B2C6A320076C942 /* IQKeyboardManager.bundle in Resources */,
 				CE1CC24E1B2C7BBA0076C942 /* 底板.jpg in Resources */,
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
+				CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */,
 				6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
+				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
 				6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */,
@@ -1214,6 +1259,7 @@
 				CE7192AC1B38994200087024 /* GCDTimer.m in Sources */,
 				CE8971001B3E35D0008BB59D /* PNCircleChart.m in Sources */,
 				CE1CC2031B2C6A320076C942 /* UIView+WebCacheOperation.m in Sources */,
+				CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */,
 				CE1CC1FA1B2C6A320076C942 /* SDWebImageDownloaderOperation.m in Sources */,
 				CE1CC1F91B2C6A320076C942 /* SDWebImageDownloader.m in Sources */,
 				CE1CC1D01B2C6A320076C942 /* IQSegmentedNextPrevious.m in Sources */,
@@ -1226,6 +1272,7 @@
 				CE71927D1B388D7900087024 /* BaseAPI.m in Sources */,
 				CE7192AA1B38994200087024 /* GCDQueue.m in Sources */,
 				CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */,
+				CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */,
 				CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */,
 				CE8971011B3E35D0008BB59D /* PNColor.m in Sources */,
 				CE1CC1FD1B2C6A320076C942 /* UIButton+WebCache.m in Sources */,
@@ -1237,7 +1284,6 @@
 				CE89710A1B3E35D0008BB59D /* PNScatterChartDataItem.m in Sources */,
 				CE1CC1E11B2C6A320076C942 /* NSObject+LKDBHelper.m in Sources */,
 				CE1CC20C1B2C70360076C942 /* ShareValue.m in Sources */,
-				DF509F6B1B3E752900A422E7 /* TestTool.m in Sources */,
 				CE1CC2A91B2C8F7E0076C942 /* MMDrawerVisualState.m in Sources */,
 				CE1CC1DF1B2C6A320076C942 /* LKDBHelper.m in Sources */,
 				CE1CC2531B2C7C7C0076C942 /* BasicVC.m in Sources */,
@@ -1255,6 +1301,7 @@
 				CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */,
 				CE1CC2021B2C6A320076C942 /* UIImageView+WebCache.m in Sources */,
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
+				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
 				CE8970D41B3E2DBE008BB59D /* PEFSecondVC.m in Sources */,
 				CE71929D1B38905D00087024 /* UIImageView+AFNetworking.m in Sources */,
@@ -1264,10 +1311,12 @@
 				CE7192991B38905D00087024 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CE1CC1D51B2C6A320076C942 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				CE1CC1CC1B2C6A320076C942 /* IQUIView+Hierarchy.m in Sources */,
+				CED2861F1B47F6F400355DEB /* BluePeripheralVC.m in Sources */,
 				CE1CC1CD1B2C6A320076C942 /* IQUIWindow+Hierarchy.m in Sources */,
 				CE1CC1D21B2C6A320076C942 /* IQBarButtonItem.m in Sources */,
 				CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */,
 				CE1CC1FB1B2C6A320076C942 /* SDWebImageManager.m in Sources */,
+				CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */,
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
 				CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */,

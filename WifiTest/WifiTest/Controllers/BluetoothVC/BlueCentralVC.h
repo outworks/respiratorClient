@@ -1,14 +1,13 @@
 //
-//  AirQualityVC.h
+//  BlueCentralVC.h
 //  WifiTest
 //
-//  Created by Hcat on 15/6/27.
+//  Created by Hcat on 15/7/4.
 //  Copyright (c) 2015年 CivetCatsTeam. All rights reserved.
 //
 
 #import "BasicVC.h"
-#import "BlueClientVC.h"
 
-@interface AirQualityVC : BasicVC
+@interface BlueCentralVC : BasicVC
 
 @end

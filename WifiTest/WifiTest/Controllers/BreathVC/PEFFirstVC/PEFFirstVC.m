@@ -14,6 +14,7 @@
 #import "DataTools.h"
 #import "NoticeMacro.h"
 #import "UtilsMacro.h"
+#import "CCProgressView.h"
 
 @interface PEFFirstVC ()
 
@@ -21,10 +22,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_state;
 @property (weak, nonatomic) IBOutlet UILabel *lb_info;
 
+@property (strong, nonatomic) IBOutlet CCProgressView *progress;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *lb_pef;
 
 @property (nonatomic) PNCircleChart * circleChart;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_bg;
 
 @end
 
@@ -37,6 +42,10 @@
 }
 
 #pragma mark - private 
+
+- (void) setTop:(CGFloat)t {
+    self.imageV_bg.frame = CGRectMake(self.imageV_bg.frame.origin.x, t, self.imageV_bg.frame.size.width, self.imageV_bg.frame.size.height);
+}
 
 -(void)loadCircleChart:(float)number{
     
@@ -62,12 +71,37 @@
     
 }
 
+-(void)loadPrecentView:(float)number{
+
+    UIColor *color;
+    if (number > 0.8) {
+        color = RGB(33, 211, 58);
+    }else if(number < 0.8 && number > 0.6){
+        color = RGB(237, 229, 107);
+    }else if(number < 0.6){
+        color = RGB(237, 14, 72);
+    }
+    
+    [_progress removeFromSuperview];
+    
+    _progress = [[CCProgressView alloc] initWithFrame:CGRectMake(14.5, 14.5, self.v_bg.frame.size.width-29, self.v_bg.frame.size.height-29) withColor:color];
+    _progress.backgroundColor = [UIColor clearColor];
+    [self.v_bg addSubview:_progress];
+    [self.v_bg sendSubviewToBack:_progress];
+    [_progress setProgress:number animated:YES];
+}
+
+
 -(void)loadUI{
 
     _v_bg.layer.cornerRadius = _v_bg.frame.size.width/2;
     _v_bg.layer.masksToBounds = YES;
     _v_bg.layer.borderWidth = 1.0f;
     _v_bg.layer.borderColor = [RGB(45, 169, 238) CGColor];
+    
+    _imageV_bg.layer.cornerRadius = _imageV_bg.frame.size.width/2;
+    _imageV_bg.layer.masksToBounds = YES;
+   
     
     [self reloadData];
 
@@ -105,9 +139,11 @@
                 float value =  [monidata.pef floatValue] / [[ShareValue sharedShareValue].member.defPef floatValue];
                 
                 [weakSelf loadCircleChart:value];
+                [self loadPrecentView:value];
             }else{
                 _lb_info.text = @"您今天还没测试呼吸哦";
                 [self loadCircleChart:0];
+                [self loadPrecentView:0];
             }
         
     } Fail:^(int code, NSString *failDescript) {

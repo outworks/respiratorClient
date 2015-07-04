@@ -17,6 +17,7 @@
 // 处理收到的APNS消息
 + (void)handleRemoteNotification:(NSDictionary *)remoteInfo;
 
++ (void)setEdge:(UIView*)superview view:(UIView*)view attr1:(NSLayoutAttribute)attr1 attr2:(NSLayoutAttribute)attr2 constant:(CGFloat)constant;
 
 
 @end

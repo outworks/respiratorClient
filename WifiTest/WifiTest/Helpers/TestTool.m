@@ -137,6 +137,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TestTool)
 -(NSString *)getRandData{
     NSString *dateString = [[self class] convertStringFromDate:[NSDate date]];
     NSString *data = [NSString stringWithFormat:@"%@ 68 dBC(impuls) LCPeak:%d db",dateString,[self randLCP:25]];
+    NSLog(@"%@ 68 dBC(impuls) LCPeak:%d db",dateString,[self randLCP:25]);
     return data;
 }
 

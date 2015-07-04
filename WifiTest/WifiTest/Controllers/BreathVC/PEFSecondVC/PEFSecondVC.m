@@ -129,7 +129,7 @@
 
     PNBar * bar = [self.barChart.bars objectAtIndex:barIndex];
     
-    /*
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     
     animation.fromValue = @1.0;
@@ -142,7 +142,7 @@
     animation.fillMode = kCAFillModeForwards;
     
     [bar.layer addAnimation:animation forKey:@"Float"];
-     */
+    
 }
 
 

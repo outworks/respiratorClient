@@ -7,8 +7,11 @@
 //
 
 #import "AirQualityVC.h"
+#import "ShareFun.h"
 
 @interface AirQualityVC ()
+
+@property(nonatomic,strong)  BlueClientVC *blueClient;
 
 @end
 
@@ -17,6 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"空气质量";
+    
+    _blueClient = [[BlueClientVC alloc] init];
+    _blueClient.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:_blueClient.view];
+    
+    [ShareFun setEdge:self.view view:_blueClient.view attr1:NSLayoutAttributeLeading attr2:NSLayoutAttributeLeading constant:0];
+    [ShareFun setEdge:self.view view:_blueClient.view attr1:NSLayoutAttributeTop attr2:NSLayoutAttributeTop constant:0];
+    [ShareFun setEdge:self.view view:_blueClient.view attr1:NSLayoutAttributeBottom attr2:NSLayoutAttributeBottom constant:0];
+    [ShareFun setEdge:self.view view:_blueClient.view attr1:NSLayoutAttributeTrailing attr2:NSLayoutAttributeTrailing constant:0];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
