@@ -86,10 +86,10 @@
         if ([t_monidata.level isEqualToNumber:@0]) {
             [t_colorArr addObject:RGB(33, 211, 58)];
         }else if ([t_monidata.level isEqualToNumber:@1]) {
-            [t_colorArr addObject:RGB(237, 229, 107)];
+            [t_colorArr addObject:[UIColor greenColor]];
         }else if ([t_monidata.level isEqualToNumber:@2]) {
-            [t_colorArr addObject:RGB(237, 14, 72)];
-        }else{
+            [t_colorArr addObject:RGB(237, 229, 107)];
+        }else if ([t_monidata.level isEqualToNumber:@3]){
             [t_colorArr addObject:RGB(237, 14, 72)];
         }
     }

@@ -79,7 +79,9 @@
 }
 
 - (void)disableService {
-    [self.peripheral removeService:self.service];
+    if (self.service) {
+        [self.peripheral removeService:self.service];
+    }
     self.service = nil;
     [self stopAdvertising];
 }
