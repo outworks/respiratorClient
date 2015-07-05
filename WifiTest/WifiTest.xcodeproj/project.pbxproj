@@ -1467,6 +1467,7 @@
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "94644db4-a9f7-4242-85b8-f5b765370662";
 			};
 			name = Debug;
 		};
@@ -1489,6 +1490,7 @@
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "176143e9-8004-41d7-bab9-fffd8fbea322";
 			};
 			name = Release;
 		};

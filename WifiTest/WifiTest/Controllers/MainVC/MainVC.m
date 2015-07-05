@@ -38,7 +38,7 @@
     self.vc_tab = [[UITabBarController alloc] init];
     [_vc_tab.tabBar setBackgroundColor:UIColorFromRGB(0xefefe)];
     [_vc_tab.view setFrame:self.view.frame];
-    [_vc_tab.tabBar setTranslucent:NO];
+    //[_vc_tab.tabBar setTranslucent:NO];
     [_vc_tab setDelegate:(id<UITabBarControllerDelegate>)self];
     [self.view addSubview:_vc_tab.view];
     
@@ -70,22 +70,26 @@
              case 0:
              {
                  ;
-                 item = [[UITabBarItem alloc] initWithTitle:@"呼吸测量" image:[UIImage imageNamed:@"主菜单栏_图标_首页_未选中.png"] selectedImage:[UIImage imageNamed:@"主菜单栏_图标_首页_选中.png"]];
+                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon1-n"] selectedImage:[UIImage imageNamed:@"icon1-s"]];
+                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
                  break;
              }
              case 1:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:@"空气质量" image:[UIImage imageNamed:@"主菜单栏_图标_我的工作_未选中.png"] selectedImage:[UIImage imageNamed:@"主菜单栏_图标_我的工作_选中.png"]];
+                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon2-n"] selectedImage:[UIImage imageNamed:@"icon2-s"]];
+                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
                  break;
              }
              case 2:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:@"附近药局" image:[UIImage imageNamed:@"主菜单栏_图标_走访地图_未选中.png"] selectedImage:[UIImage imageNamed:@"主菜单栏_图标_走访地图_选中.png"]];
+                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon3-n"] selectedImage:[UIImage imageNamed:@"icon3-s"]];
+                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
                  break;
              }
              case 3:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:@"系统设置" image:[UIImage imageNamed:@"主菜单栏_图标_通讯录_未选中.png"] selectedImage:[UIImage imageNamed:@"主菜单栏_图标_通讯录_选中.png"]];
+                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon4-n"] selectedImage:[UIImage imageNamed:@"icon4-s"]];
+                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
                  break;
              }
          }

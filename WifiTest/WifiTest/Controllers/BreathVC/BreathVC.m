@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"呼吸量测";
+    self.navigationItem.title = @"呼吸量测";
     [self loadUI];
     // Do any additional setup after loading the view from its nib.
 }

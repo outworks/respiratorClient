@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"空气质量";
+    self.navigationItem.title = @"空气质量";
     
     _blueClient = [[BlueClientVC alloc] init];
     _blueClient.view.translatesAutoresizingMaskIntoConstraints = NO;

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"系统设置";
+    self.navigationItem.title = @"系统设置";
     // Do any additional setup after loading the view from its nib.
 }
 

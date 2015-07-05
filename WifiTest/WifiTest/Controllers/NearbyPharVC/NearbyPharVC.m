@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"附近药局";
+    self.navigationItem.title = @"附近药局";
     // Do any additional setup after loading the view from its nib.
 }
 
