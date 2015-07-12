@@ -68,7 +68,7 @@
 
 - (IBAction)btnScanAciton:(id)sender {
     
-    
+    [self scan];
     
 }
 
@@ -225,10 +225,10 @@
     
     [self.tv_content setText:[[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
     
-    // Cancel our subscription to the characteristic
-    [peripheral setNotifyValue:NO forCharacteristic:characteristic];
-    // and disconnect from the peripehral
-    [self.centralManager cancelPeripheralConnection:peripheral];
+//    // Cancel our subscription to the characteristic
+//    [peripheral setNotifyValue:NO forCharacteristic:characteristic];
+//    // and disconnect from the peripehral
+//    [self.centralManager cancelPeripheralConnection:peripheral];
     
 }
 

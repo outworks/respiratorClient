@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -25,7 +25,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20F-Eq-Z8o">
-                    <rect key="frame" x="138" y="359" width="45" height="30"/>
+                    <rect key="frame" x="138" y="249" width="45" height="30"/>
                     <state key="normal" title="发送端">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -33,13 +33,24 @@
                         <action selector="bluePeripheralAction:" destination="-1" eventType="touchUpInside" id="co6-Iu-Pxi"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qft-Ac-oZZ">
+                    <rect key="frame" x="138" y="322" width="45" height="30"/>
+                    <state key="normal" title="心点图">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="HeartRateAction:" destination="-1" eventType="touchUpInside" id="Sas-Ne-s9Y"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Qft-Ac-oZZ" firstAttribute="top" secondItem="20F-Eq-Z8o" secondAttribute="bottom" constant="43" id="8JL-g0-BDM"/>
                 <constraint firstAttribute="centerX" secondItem="20F-Eq-Z8o" secondAttribute="centerX" id="Img-ln-6UR"/>
                 <constraint firstAttribute="centerY" secondItem="UAM-an-usw" secondAttribute="centerY" constant="98" id="Rq3-z8-huf"/>
+                <constraint firstAttribute="centerX" secondItem="Qft-Ac-oZZ" secondAttribute="centerX" constant="-0.5" id="WiW-FG-ATg"/>
                 <constraint firstAttribute="centerX" secondItem="UAM-an-usw" secondAttribute="centerX" id="bV8-SW-XtO"/>
-                <constraint firstAttribute="centerY" secondItem="20F-Eq-Z8o" secondAttribute="centerY" constant="-90" id="gjg-qx-t8k"/>
+                <constraint firstAttribute="centerY" secondItem="20F-Eq-Z8o" secondAttribute="centerY" constant="20" id="gjg-qx-t8k"/>
             </constraints>
             <point key="canvasLocation" x="420" y="316"/>
         </view>

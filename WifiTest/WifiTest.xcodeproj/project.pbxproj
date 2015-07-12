@@ -11,8 +11,13 @@
 		6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */; };
 		6D82199B1B3C1CB4007819CE /* UserSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8219991B3C1CB4007819CE /* UserSetVC.m */; };
 		6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D82199A1B3C1CB4007819CE /* UserSetVC.xib */; };
+		6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */; };
+		6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */; };
+		6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */; };
+		6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B21B525EA8000DD6D6 /* SetCell.m */; };
+		6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
-		CE1CC0EB1B2C68180076C942 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0EA1B2C68180076C942 /* AppDelegate.m */; };
+		CE1CC0EB1B2C68180076C942 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0EA1B2C68180076C942 /* AppDelegate.mm */; };
 		CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC0F21B2C68180076C942 /* Images.xcassets */; };
 		CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC0F41B2C68180076C942 /* LaunchScreen.xib */; };
 		CE1CC1021B2C68180076C942 /* WifiTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC1011B2C68180076C942 /* WifiTestTests.m */; };
@@ -170,11 +175,17 @@
 		6D8219981B3C1CB4007819CE /* UserSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetVC.h; sourceTree = "<group>"; };
 		6D8219991B3C1CB4007819CE /* UserSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetVC.m; sourceTree = "<group>"; };
 		6D82199A1B3C1CB4007819CE /* UserSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSetVC.xib; sourceTree = "<group>"; };
+		6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = WifiTest/BaiduMapAPI.framework; sourceTree = "<group>"; };
+		6DE9A7B11B525EA8000DD6D6 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
+		6DE9A7B21B525EA8000DD6D6 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
+		6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
 		CE1CC0E21B2C68180076C942 /* WifiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CC0E61B2C68180076C942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1CC0E71B2C68180076C942 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE1CC0E91B2C68180076C942 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CE1CC0EA1B2C68180076C942 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE1CC0EA1B2C68180076C942 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		CE1CC0F21B2C68180076C942 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE1CC0F51B2C68180076C942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CE1CC0FB1B2C68180076C942 /* WifiTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WifiTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -442,6 +453,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */,
+				6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */,
+				6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */,
 				CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */,
 				CE1CC2991B2C83CA0076C942 /* MobileCoreServices.framework in Frameworks */,
 				CE1CC2971B2C83C20076C942 /* SystemConfiguration.framework in Frameworks */,
@@ -472,6 +486,7 @@
 		CE1CC0D91B2C68180076C942 = {
 			isa = PBXGroup;
 			children = (
+				6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */,
 				CE1CC0E41B2C68180076C942 /* WifiTest */,
 				CE1CC2551B2C82050076C942 /* FrameWork */,
 				CE1CC0FE1B2C68180076C942 /* WifiTestTests */,
@@ -498,7 +513,7 @@
 				CE1CC2041B2C70360076C942 /* Helpers */,
 				CE1CC2151B2C7AFD0076C942 /* Controllers */,
 				CE1CC0E91B2C68180076C942 /* AppDelegate.h */,
-				CE1CC0EA1B2C68180076C942 /* AppDelegate.m */,
+				CE1CC0EA1B2C68180076C942 /* AppDelegate.mm */,
 				CE1CC0F21B2C68180076C942 /* Images.xcassets */,
 				CE1CC0F41B2C68180076C942 /* LaunchScreen.xib */,
 				CE1CC10B1B2C6A320076C942 /* Vendors */,
@@ -868,6 +883,8 @@
 		CE1CC2551B2C82050076C942 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */,
+				6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */,
 				CED286221B48003800355DEB /* CoreBluetooth.framework */,
 				CE1CC2981B2C83CA0076C942 /* MobileCoreServices.framework */,
 				CE1CC2961B2C83C20076C942 /* SystemConfiguration.framework */,
@@ -927,6 +944,9 @@
 			children = (
 				CE5965B01B483AAD00F730C1 /* CCProgressView.h */,
 				CE5965B11B483AAD00F730C1 /* CCProgressView.m */,
+				6DE9A7B11B525EA8000DD6D6 /* SetCell.h */,
+				6DE9A7B21B525EA8000DD6D6 /* SetCell.m */,
+				6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1215,6 +1235,7 @@
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
 				CE8970B91B3E2DB0008BB59D /* SetVC.xib in Resources */,
 				CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */,
+				6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */,
 				CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */,
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
@@ -1340,7 +1361,7 @@
 				CE8970B81B3E2DB0008BB59D /* SetVC.m in Sources */,
 				CE8970D21B3E2DBE008BB59D /* PEFFirstVC.m in Sources */,
 				CE8971091B3E35D0008BB59D /* PNScatterChartData.m in Sources */,
-				CE1CC0EB1B2C68180076C942 /* AppDelegate.m in Sources */,
+				CE1CC0EB1B2C68180076C942 /* AppDelegate.mm in Sources */,
 				CE71929C1B38905D00087024 /* AFXMLRequestOperation.m in Sources */,
 				6D82199B1B3C1CB4007819CE /* UserSetVC.m in Sources */,
 				CE8971031B3E35D0008BB59D /* PNLineChart.m in Sources */,
@@ -1351,6 +1372,7 @@
 				CE7192B21B389DCE00087024 /* Member.m in Sources */,
 				CE8970FE1B3E35D0008BB59D /* PNBarChart.m in Sources */,
 				CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */,
+				6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */,
 				CE7192971B38905D00087024 /* AFImageRequestOperation.m in Sources */,
 				DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */,
 				CE1CC0E81B2C68180076C942 /* main.m in Sources */,
@@ -1474,6 +1496,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
+					"/Users/nd/Downloads/BaiduMap_IOSSDK_v2.8.0_All/BaiduMap_IOSSDK_v2.8.0_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)/WifiTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WifiTest/WifiTest.pch";
@@ -1484,8 +1508,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94644db4-a9f7-4242-85b8-f5b765370662";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1497,6 +1522,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
+					"/Users/nd/Downloads/BaiduMap_IOSSDK_v2.8.0_All/BaiduMap_IOSSDK_v2.8.0_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)/WifiTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WifiTest/WifiTest.pch";
@@ -1507,8 +1534,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WifiTest/FrameWork",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "176143e9-8004-41d7-bab9-fffd8fbea322";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

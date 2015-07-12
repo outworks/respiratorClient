@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "BlueCentralVC.h"
 #import "BluePeripheralVC.h"
+#import "HeartRateVC.h"
 
 @interface BlueClientVC ()
 
@@ -36,6 +37,16 @@
     BluePeripheralVC *t_vc = [[BluePeripheralVC alloc] init];
     [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
 }
+
+- (IBAction)HeartRateAction:(id)sender {
+    
+    HeartRateVC *t_vc = [[HeartRateVC alloc] init];
+    [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
+    
+}
+
+
+
 
 
 #pragma mark - dealloc

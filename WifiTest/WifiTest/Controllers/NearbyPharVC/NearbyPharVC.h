@@ -8,6 +8,11 @@
 
 #import "BasicVC.h"
 
-@interface NearbyPharVC : BasicVC
+#import <BaiduMapAPI/BMapKit.h>
+
+@interface NearbyPharVC : BasicVC<BMKMapViewDelegate>{
+    IBOutlet BMKMapView* mapView;
+
+}
 
 @end

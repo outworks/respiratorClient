@@ -20,6 +20,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [mapView viewWillAppear];
+    mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+  
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [mapView viewWillDisappear];
+    mapView.delegate = nil; // 不用时，置nil
+}
 
 
 #pragma mark - navigationControllerDelegate
@@ -33,7 +44,9 @@
 #pragma mark - dealloc
 
 -(void)dealloc{
-    
+    if (mapView) {
+        mapView = nil;
+    }
     
 }
 
