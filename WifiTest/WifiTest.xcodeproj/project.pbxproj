@@ -142,6 +142,8 @@
 		CEA8E1141B3E534300A47BFC /* Monidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1131B3E534300A47BFC /* Monidata.m */; };
 		CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */; };
 		CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1191B3E54DD00A47BFC /* DataAPI.m */; };
+		CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */; };
+		CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */; };
 		CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286131B47DB7F00355DEB /* BlueClientVC.m */; };
 		CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED286141B47DB7F00355DEB /* BlueClientVC.xib */; };
 		CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286181B47F6D800355DEB /* BlueCentralVC.m */; };
@@ -418,6 +420,9 @@
 		CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateMonidata.m; sourceTree = "<group>"; };
 		CEA8E1181B3E54DD00A47BFC /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		CEA8E1191B3E54DD00A47BFC /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
+		CECE1DA91B5295E5009CBECD /* HeartRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateVC.h; sourceTree = "<group>"; };
+		CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateVC.m; sourceTree = "<group>"; };
+		CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeartRateVC.xib; sourceTree = "<group>"; };
 		CED286121B47DB7F00355DEB /* BlueClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueClientVC.h; sourceTree = "<group>"; };
 		CED286131B47DB7F00355DEB /* BlueClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueClientVC.m; sourceTree = "<group>"; };
 		CED286141B47DB7F00355DEB /* BlueClientVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueClientVC.xib; sourceTree = "<group>"; };
@@ -812,6 +817,7 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CECE1DA81B5295CB009CBECD /* HeartRateVC */,
 				CE5965AF1B483A9200F730C1 /* Views */,
 				CED286111B47DB0700355DEB /* BluetoothVC */,
 				CE8970C01B3E2DBE008BB59D /* BreathVC */,
@@ -1098,6 +1104,16 @@
 			path = PNChart;
 			sourceTree = "<group>";
 		};
+		CECE1DA81B5295CB009CBECD /* HeartRateVC */ = {
+			isa = PBXGroup;
+			children = (
+				CECE1DA91B5295E5009CBECD /* HeartRateVC.h */,
+				CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */,
+				CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */,
+			);
+			path = HeartRateVC;
+			sourceTree = "<group>";
+		};
 		CED286111B47DB0700355DEB /* BluetoothVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1203,6 +1219,7 @@
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
+				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
 				CE8970BF1B3E2DB7008BB59D /* NearbyPharVC.xib in Resources */,
 				CE8970D51B3E2DBE008BB59D /* PEFSecondVC.xib in Resources */,
 				6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */,
@@ -1333,6 +1350,7 @@
 				CE1CC2001B2C6A320076C942 /* UIImage+WebP.m in Sources */,
 				CE7192B21B389DCE00087024 /* Member.m in Sources */,
 				CE8970FE1B3E35D0008BB59D /* PNBarChart.m in Sources */,
+				CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */,
 				CE7192971B38905D00087024 /* AFImageRequestOperation.m in Sources */,
 				DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */,
 				CE1CC0E81B2C68180076C942 /* main.m in Sources */,
