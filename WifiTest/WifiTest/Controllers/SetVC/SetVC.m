@@ -72,7 +72,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row) {
+    if (indexPath.row == 3) {
         UserSetVC *t_vc = [[UserSetVC alloc] init];
         t_vc.member = [ShareValue sharedShareValue].member;
         [self.navigationController pushViewController:t_vc animated:YES];

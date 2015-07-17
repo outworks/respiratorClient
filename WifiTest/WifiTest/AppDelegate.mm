@@ -13,6 +13,8 @@
 #import "LoginVC.h"
 #import <BaiduMapAPI/BMapKit.h>
 
+
+
 @interface AppDelegate ()
 
 @property(nonatomic,strong)BMKMapManager* mapManager;
@@ -41,7 +43,7 @@
 
 -(void)thirdPartInit{
     _mapManager = [[BMKMapManager alloc]init];
-    BOOL ret = [_mapManager start:@"FufNFX9PxAmGkyKLPAEaCxmK"  generalDelegate:nil];
+    BOOL ret = [_mapManager start:BAIDUMAPKEY  generalDelegate:nil];
     if (!ret) {
         NSLog(@"manager start failed!");
     }

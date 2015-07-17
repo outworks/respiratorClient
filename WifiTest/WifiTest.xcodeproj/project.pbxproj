@@ -431,6 +431,7 @@
 		CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateMonidata.m; sourceTree = "<group>"; };
 		CEA8E1181B3E54DD00A47BFC /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		CEA8E1191B3E54DD00A47BFC /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
+		CECD02D61B587BEE0065B1B1 /* ThirdMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMacro.h; sourceTree = "<group>"; };
 		CECE1DA91B5295E5009CBECD /* HeartRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateVC.h; sourceTree = "<group>"; };
 		CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateVC.m; sourceTree = "<group>"; };
 		CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeartRateVC.xib; sourceTree = "<group>"; };
@@ -814,6 +815,7 @@
 				CE1CC20F1B2C705E0076C942 /* ARCSingletonTemplate.h */,
 				CE1CC2101B2C705E0076C942 /* NoticeMacro.h */,
 				CE1CC2121B2C705E0076C942 /* UtilsMacro.h */,
+				CECD02D61B587BEE0065B1B1 /* ThirdMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1510,7 +1512,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e76726c9-2ea1-4cdc-84ed-760a3be4d86e";
 			};
 			name = Debug;
 		};

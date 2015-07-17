@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"附近药局";
+    self.navigationItem.leftBarButtonItem = nil;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,7 +38,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if ([viewController isKindOfClass:[self class]]) {
-        self.navigationItem.leftBarButtonItem = nil;
+       
     }
 }
 

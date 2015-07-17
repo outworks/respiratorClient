@@ -17,6 +17,7 @@
 #import "UtilsMacro.h"
 #import "NoticeMacro.h"
 #import "ARCSingletonTemplate.h"
+#import "ThirdMacro.h"
 #import "URLMacro.h"
 #import "BaseAPI.h"
 #import "YXGCD.h"

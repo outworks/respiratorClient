@@ -24,7 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"心电图";
     _centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+}
+
+#pragma mark - buttonAction 
+
+
+-(void)backAction{
+    [self cleanup];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 #pragma mark - private method
@@ -88,46 +98,34 @@
             {
                 for (CBCharacteristic *characteristic in service.characteristics)
                 {
-                    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:TRANSFER_CHARACTERISTIC_UUID]])
+                    if (characteristic.isNotifying)
                     {
-                        if (characteristic.isNotifying)
-                        {
-                            [_peripheral setNotifyValue:NO forCharacteristic:characteristic];
-                            return;
-                        }
+                        [_peripheral setNotifyValue:NO forCharacteristic:characteristic];
+                        return;
                     }
+                    
+//                    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]])
+//                    {
+//                        if (characteristic.isNotifying)
+//                        {
+//                            [_peripheral setNotifyValue:NO forCharacteristic:characteristic];
+//                            return;
+//                        }
+//                    }
                 }
             }
         }
     }
     [_centralManager cancelPeripheralConnection:_peripheral];
+    [_peripheral setDelegate:nil];
+    _peripheral = nil;
+    
 }
 
 - (void) updateWithHRMData:(NSData *)data
 {
+        NSLog(@"%@",data);
     const uint8_t *reportData = [data bytes];
-    uint16_t bpm = 0;
-    
-    if ((reportData[0] & 0x01) == 0)
-    {
-        /* uint8 bpm */
-        bpm = reportData[1];
-    }
-    else
-    {
-        /* uint16 bpm */
-        bpm = CFSwapInt16LittleToHost(*(uint16_t *)(&reportData[1]));
-    }
-    
-//    uint16_t oldBpm = self.heartRate;
-//    self.heartRate = bpm;
-//    self.heartRateLabel.text = [NSString stringWithFormat: @"%d", self.heartRate];
-//    if (!self.pulseTimer) {
-//        self.pulseTimer = [NSTimer scheduledTimerWithTimeInterval:(60. / heartRate) target:self selector:@selector(pulse) userInfo:nil repeats: YES];
-//    } else if (oldBpm != self.heartRate) {
-//        [self.pulseTimer invalidate];
-//        self.pulseTimer = [NSTimer scheduledTimerWithTimeInterval:(60. / heartRate) target:self selector:@selector(pulse) userInfo:nil repeats: YES];
-//    }
 }
 
 
@@ -135,11 +133,15 @@
 #pragma mark - CBCentralManager delegate methods
 
 
+#pragma mark - 蓝牙状态改变
+
 - (void) centralManagerDidUpdateState:(CBCentralManager *)central
 {
     NSLog(@"centralManagerDidUpdateState");
     [self isLECapableHardware];
 }
+
+#pragma mark - 搜索到外设
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
@@ -157,29 +159,71 @@
     }
 }
 
+#pragma mark -  重连已知设备
+
+- (void)centralManager:(CBCentralManager *)central didRetrievePeripherals:(NSArray *)peripherals
+{
+     NSLog(@"didRetrievePeripherals");
+    NSLog(@"Retrieved peripheral: %u - %@", [peripherals count], peripherals);
+   
+    // If there are any known devices, automatically connect to it.
+    if([peripherals count] >= 1) {
+        _peripheral = [peripherals objectAtIndex:0];
+        [_centralManager connectPeripheral:_peripheral
+                                options:nil];
+    }
+}
+
+- (void)centralManager:(CBCentralManager *)central didRetrieveConnectedPeripherals:(NSArray *)peripherals
+{
+    
+    NSLog(@"didRetrieveConnectedPeripherals");
+    if ([peripherals count])
+    {
+        NSLog(@"connected peripherals: %@", peripherals);
+        CBPeripheral *aPeripheral = [peripherals objectAtIndex: 0];
+        /* reconnecting to the peripheral will break the connection. Cancelling the connection doesn't seem to work */
+        [_centralManager connectPeripheral: aPeripheral options: nil];
+    }
+    
+    [_centralManager retrieveConnectedPeripherals];
+}
+
+
+#pragma mark - 连接外设成功
+
 - (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)aPeripheral
 {
     NSLog(@"didConnectPeripheral");
+    [ShowHUD showTextOnly:@"连接成功" configParameter:^(ShowHUD *config) {
+    } duration:1.5f inView:self.view];
+    
     [aPeripheral setDelegate:self];
     [aPeripheral discoverServices:nil];
+    //[aPeripheral discoverServices:@[[CBUUID UUIDWithString:@"FF00"]]];
     
 }
 
+#pragma mark - 外设失去连接
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)aPeripheral error:(NSError *)error
 {
     NSLog(@"didDisconnectPeripheral");
-    if( _peripheral )
-    {
-        [_peripheral setDelegate:nil];
-        _peripheral = nil;
+    
+    [ShowHUD showTextOnly:@"失去连接，重新连接" configParameter:^(ShowHUD *config) {
+    } duration:1.5f inView:self.view];
+    if (_peripheral) {
+        
+        
+        [_centralManager retrievePeripherals:[NSArray arrayWithObject:(id)_peripheral.UUID]];
     }
 
 }
 
-/*
- Invoked whenever the central manager fails to create a connection with the peripheral.
- */
+
+
+#pragma mark - 外设连接失败
+
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)aPeripheral error:(NSError *)error
 {
     NSLog(@"Fail to connect to peripheral: %@ with error = %@", aPeripheral, [error localizedDescription]);
@@ -188,6 +232,7 @@
         [_peripheral setDelegate:nil];
         _peripheral = nil;
     }
+    [self startScan];
 }
 
 #pragma mark - CBPeripheral delegate methods
@@ -199,23 +244,15 @@
     {
         NSLog(@"Service found with UUID: %@", aService.UUID);
         
-        /* Heart Rate Service */
-        if ([aService.UUID isEqual:[CBUUID UUIDWithString:@"180D"]])
-        {
-            [aPeripheral discoverCharacteristics:nil forService:aService];
-        }
         
+        [aPeripheral discoverCharacteristics:nil forService:aService];
         /* Device Information Service */
-        if ([aService.UUID isEqual:[CBUUID UUIDWithString:@"180A"]])
-        {
-            [aPeripheral discoverCharacteristics:nil forService:aService];
-        }
+//        if ([aService.UUID isEqual:[CBUUID UUIDWithString:@"FF00"]])
+//        {
+//            [aPeripheral discoverCharacteristics:nil forService:aService];
+//            //[aPeripheral discoverCharacteristics:@[[CBUUID UUIDWithString:@"FF02"]] forService:aService];
+//        }
         
-        /* GAP (Generic Access Profile) for Device Name */
-        if ( [aService.UUID isEqual:[CBUUID UUIDWithString:CBUUIDGenericAccessProfileString]] )
-        {
-            [aPeripheral discoverCharacteristics:nil forService:aService];
-        }
     }
 }
 
@@ -224,94 +261,53 @@
 {
     NSLog(@"service.UUID: %@", service.UUID);
     
-    if ( [service.UUID isEqual:[CBUUID UUIDWithString:CBUUIDGenericAccessProfileString]] )
+    for (CBCharacteristic *aChar in service.characteristics)
     {
-        for (CBCharacteristic *aChar in service.characteristics)
-        {
-            /* Read device name */
-            NSLog(@"characteristics.UUID: %@", aChar.UUID);
-            if ([aChar.UUID isEqual:[CBUUID UUIDWithString:CBUUIDDeviceNameString]])
-            {
-                [aPeripheral readValueForCharacteristic:aChar];
-                NSLog(@"Found a Device Name Characteristic");
-            }
-        }
+        
+        [aPeripheral readValueForCharacteristic:aChar];
+        /* Read device name */
+//        NSLog(@"characteristics.UUID: %@", aChar.UUID);
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF01"]])
+//        {
+//            [aPeripheral readValueForCharacteristic:aChar];
+//           
+//        }
+//        
+//        if ([aChar.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]])
+//        {
+//            [aPeripheral readValueForCharacteristic:aChar];
+//        }
     }
-    
-    if ([service.UUID isEqual:[CBUUID UUIDWithString:@"FFF0"]])
-    {
-        for (CBCharacteristic *aChar in service.characteristics)
-        {
-            /* Read manufacturer name */
-             NSLog(@"characteristics.UUID: %@", aChar.UUID);
-            
-           
-        }
-    }
+
 }
 
 - (void) peripheral:(CBPeripheral *)aPeripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
     
     /* Updated value for heart rate measurement received */
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"2A37"]])
+    
+    NSLog(@"didUpdateValueForCharacteristic----%@",characteristic.UUID);
+    
+    if( (characteristic.value)  || !error )
     {
-        if( (characteristic.value)  || !error )
-        {
-            /* Update UI with heart rate data */
-            [self updateWithHRMData:characteristic.value];
-        }
+        /* Update UI with heart rate data */
+        [self updateWithHRMData:characteristic.value];
     }
-    /* Value for body sensor location received */
-    else  if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"2A38"]])
-    {
-        NSData * updatedValue = characteristic.value;
-        uint8_t* dataPointer = (uint8_t*)[updatedValue bytes];
-        if(dataPointer)
-        {
-            uint8_t location = dataPointer[0];
-            NSString*  locationString;
-            switch (location)
-            {
-                case 0:
-                    locationString = @"Other";
-                    break;
-                case 1:
-                    locationString = @"Chest";
-                    break;
-                case 2:
-                    locationString = @"Wrist";
-                    break;
-                case 3:
-                    locationString = @"Finger";
-                    break;
-                case 4:
-                    locationString = @"Hand";
-                    break;
-                case 5:
-                    locationString = @"Ear Lobe";
-                    break;
-                case 6:
-                    locationString = @"Foot";
-                    break;
-                default:
-                    locationString = @"Reserved";
-                    break;
-            }
-            NSLog(@"Body Sensor Location = %@ (%d)", locationString, location);
-        }
-    }
-    /* Value for device Name received */
-    else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:CBUUIDDeviceNameString]])
-    {
-        NSString * deviceName = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
-        NSLog(@"Device Name = %@", deviceName);
-    }
-    /* Value for manufacturer name received */
-    else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"2A29"]])
-    {
-       
-    }
+    
+//    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF01"]])
+//    {
+//        
+//    }
+//    
+//    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FF02"]])
+//    {
+//        if( (characteristic.value)  || !error )
+//        {
+//            /* Update UI with heart rate data */
+//            [self updateWithHRMData:characteristic.value];
+//        }
+//    }
+    
 }
 
 
@@ -319,6 +315,15 @@
 #pragma mark - ButtonAciton 
 
 - (IBAction)connectAction:(id)sender {
+    
+    if (_peripheral) {
+        [_centralManager cancelPeripheralConnection:_peripheral];
+
+        [_peripheral setDelegate:nil];
+        _peripheral = nil;
+    }
+   
+    
     [self startScan];
 }
 
@@ -334,6 +339,7 @@
         if (buttonIndex == 1) {
             NSLog(@"Connecting to peripheral %@", _peripheral);
             //第二步连接外设
+            
             [_centralManager connectPeripheral:_peripheral options:nil];
         }
     }
