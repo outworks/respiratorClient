@@ -124,7 +124,8 @@
 
 - (void) updateWithHRMData:(NSData *)data
 {
-        NSLog(@"%@",data);
+    NSLog(@"%@",data);
+    self.lb_heartRate.text = [NSString stringWithFormat:@"%@",data];
     const uint8_t *reportData = [data bytes];
 }
 
@@ -213,8 +214,6 @@
     [ShowHUD showTextOnly:@"失去连接，重新连接" configParameter:^(ShowHUD *config) {
     } duration:1.5f inView:self.view];
     if (_peripheral) {
-        
-        
         [_centralManager retrievePeripherals:[NSArray arrayWithObject:(id)_peripheral.UUID]];
     }
 
