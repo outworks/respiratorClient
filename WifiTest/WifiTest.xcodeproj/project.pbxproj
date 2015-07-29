@@ -114,6 +114,8 @@
 		CE7192B51B389DF000087024 /* MemberAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192B41B389DF000087024 /* MemberAPI.m */; };
 		CE7192BF1B38BA0700087024 /* TRSDialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192BC1B38BA0700087024 /* TRSDialScrollView.m */; };
 		CE7192C01B38BA0700087024 /* TRSDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192BE1B38BA0700087024 /* TRSDialView.m */; };
+		CE85B34D1B698C4600EB5D8F /* ProductVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE85B34B1B698C4600EB5D8F /* ProductVC.m */; };
+		CE85B34E1B698C4600EB5D8F /* ProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE85B34C1B698C4600EB5D8F /* ProductVC.xib */; };
 		CE8970B21B3E2DA1008BB59D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970B01B3E2DA1008BB59D /* MainVC.m */; };
 		CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8970B11B3E2DA1008BB59D /* MainVC.xib */; };
 		CE8970B81B3E2DB0008BB59D /* SetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970B61B3E2DB0008BB59D /* SetVC.m */; };
@@ -371,6 +373,9 @@
 		CE7192BC1B38BA0700087024 /* TRSDialScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSDialScrollView.m; sourceTree = "<group>"; };
 		CE7192BD1B38BA0700087024 /* TRSDialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSDialView.h; sourceTree = "<group>"; };
 		CE7192BE1B38BA0700087024 /* TRSDialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSDialView.m; sourceTree = "<group>"; };
+		CE85B34A1B698C4600EB5D8F /* ProductVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductVC.h; sourceTree = "<group>"; };
+		CE85B34B1B698C4600EB5D8F /* ProductVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductVC.m; sourceTree = "<group>"; };
+		CE85B34C1B698C4600EB5D8F /* ProductVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductVC.xib; sourceTree = "<group>"; };
 		CE8970AF1B3E2DA1008BB59D /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		CE8970B01B3E2DA1008BB59D /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		CE8970B11B3E2DA1008BB59D /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -834,6 +839,7 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE85B3491B698C3000EB5D8F /* ProductVC */,
 				CECE1DA81B5295CB009CBECD /* HeartRateVC */,
 				CE5965AF1B483A9200F730C1 /* Views */,
 				CED286111B47DB0700355DEB /* BluetoothVC */,
@@ -1004,6 +1010,16 @@
 				CE7192BE1B38BA0700087024 /* TRSDialView.m */,
 			);
 			path = TRSDialScrollView;
+			sourceTree = "<group>";
+		};
+		CE85B3491B698C3000EB5D8F /* ProductVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE85B34A1B698C4600EB5D8F /* ProductVC.h */,
+				CE85B34B1B698C4600EB5D8F /* ProductVC.m */,
+				CE85B34C1B698C4600EB5D8F /* ProductVC.xib */,
+			);
+			path = ProductVC;
 			sourceTree = "<group>";
 		};
 		CE8970AE1B3E2DA1008BB59D /* MainVC */ = {
@@ -1232,6 +1248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE85B34E1B698C4600EB5D8F /* ProductVC.xib in Resources */,
 				CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */,
 				CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */,
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
@@ -1302,6 +1319,7 @@
 				CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */,
 				CE1CC1FA1B2C6A320076C942 /* SDWebImageDownloaderOperation.m in Sources */,
 				CE1CC1F91B2C6A320076C942 /* SDWebImageDownloader.m in Sources */,
+				CE85B34D1B698C4600EB5D8F /* ProductVC.m in Sources */,
 				CE1CC1D01B2C6A320076C942 /* IQSegmentedNextPrevious.m in Sources */,
 				CE7192981B38905D00087024 /* AFJSONRequestOperation.m in Sources */,
 				CE1CC1F61B2C6A320076C942 /* SDImageCache.m in Sources */,

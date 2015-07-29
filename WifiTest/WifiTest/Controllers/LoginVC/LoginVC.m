@@ -101,9 +101,8 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if ([viewController isKindOfClass:[self class]]) {
-        //self.navigationController.navigationBarHidden = YES;
-        self.navigationItem.leftBarButtonItem = nil;
-
+        self.navigationController.navigationBarHidden = NO;
+    
     }
     
 }

@@ -10,7 +10,7 @@
 
 #import "IQKeyboardManager.h"
 
-#import "LoginVC.h"
+#import "ProductVC.h"
 #import <BaiduMapAPI/BMapKit.h>
 
 
@@ -33,7 +33,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    LoginVC *t_vc = [[LoginVC alloc]init];
+    ProductVC *t_vc = [[ProductVC alloc]init];
     _nav = [[UINavigationController alloc]initWithRootViewController:t_vc];
     self.window.rootViewController = _nav;
     [self.window makeKeyAndVisible];
