@@ -16,6 +16,8 @@
 		6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */; };
 		6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B21B525EA8000DD6D6 /* SetCell.m */; };
 		6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */; };
+		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
+		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
 		CE1CC0EB1B2C68180076C942 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0EA1B2C68180076C942 /* AppDelegate.mm */; };
 		CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC0F21B2C68180076C942 /* Images.xcassets */; };
@@ -94,6 +96,12 @@
 		CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B31B2C92E00076C942 /* LoginVC.xib */; };
 		CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */; };
 		CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */; };
+		CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */; };
+		CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */; };
+		CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816291B6C2BF0007CC332 /* UserInfoVC.m */; };
+		CE48162C1B6C2BF0007CC332 /* UserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */; };
+		CE4816301B6C35BC007CC332 /* RegiestSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */; };
+		CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */; };
 		CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965B11B483AAD00F730C1 /* CCProgressView.m */; };
 		CE5965BD1B48421300F730C1 /* TestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965BC1B48421300F730C1 /* TestTool.m */; };
 		CE71927D1B388D7900087024 /* BaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71927C1B388D7900087024 /* BaseAPI.m */; };
@@ -183,6 +191,9 @@
 		6DE9A7B11B525EA8000DD6D6 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		6DE9A7B21B525EA8000DD6D6 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
+		CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgreementVC.h; sourceTree = "<group>"; };
+		CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgreementVC.m; sourceTree = "<group>"; };
+		CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgreementVC.xib; sourceTree = "<group>"; };
 		CE1CC0E21B2C68180076C942 /* WifiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1CC0E61B2C68180076C942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1CC0E71B2C68180076C942 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -330,6 +341,15 @@
 		CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestVC.h; sourceTree = "<group>"; };
 		CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestVC.m; sourceTree = "<group>"; };
 		CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestVC.xib; sourceTree = "<group>"; };
+		CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexSelectionVC.h; sourceTree = "<group>"; };
+		CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexSelectionVC.m; sourceTree = "<group>"; };
+		CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexSelectionVC.xib; sourceTree = "<group>"; };
+		CE4816281B6C2BF0007CC332 /* UserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoVC.h; sourceTree = "<group>"; };
+		CE4816291B6C2BF0007CC332 /* UserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoVC.m; sourceTree = "<group>"; };
+		CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoVC.xib; sourceTree = "<group>"; };
+		CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestSuccessVC.h; sourceTree = "<group>"; };
+		CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestSuccessVC.m; sourceTree = "<group>"; };
+		CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestSuccessVC.xib; sourceTree = "<group>"; };
 		CE5965B01B483AAD00F730C1 /* CCProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProgressView.h; sourceTree = "<group>"; };
 		CE5965B11B483AAD00F730C1 /* CCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProgressView.m; sourceTree = "<group>"; };
 		CE5965BB1B48421300F730C1 /* TestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTool.h; sourceTree = "<group>"; };
@@ -940,6 +960,18 @@
 				CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */,
 				CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */,
 				CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */,
+				CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */,
+				CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */,
+				CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */,
+				CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */,
+				CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */,
+				CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */,
+				CE4816281B6C2BF0007CC332 /* UserInfoVC.h */,
+				CE4816291B6C2BF0007CC332 /* UserInfoVC.m */,
+				CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */,
+				CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */,
+				CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */,
+				CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */,
 				6D8219981B3C1CB4007819CE /* UserSetVC.h */,
 				6D8219991B3C1CB4007819CE /* UserSetVC.m */,
 				6D82199A1B3C1CB4007819CE /* UserSetVC.xib */,
@@ -1249,6 +1281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE85B34E1B698C4600EB5D8F /* ProductVC.xib in Resources */,
+				CE48162C1B6C2BF0007CC332 /* UserInfoVC.xib in Resources */,
 				CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */,
 				CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */,
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
@@ -1257,6 +1290,7 @@
 				6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */,
 				CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */,
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
+				CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
 				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
@@ -1268,6 +1302,7 @@
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
 				CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */,
 				6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */,
+				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
@@ -1276,6 +1311,7 @@
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
 				6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */,
+				CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,12 +1335,14 @@
 				CE7192A91B38994200087024 /* GCDGroup.m in Sources */,
 				CE8970B21B3E2DA1008BB59D /* MainVC.m in Sources */,
 				CE1CC1CB1B2C6A320076C942 /* IQNSArray+Sort.m in Sources */,
+				CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */,
 				CE1CC2011B2C6A320076C942 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CE1CC1D41B2C6A320076C942 /* IQToolbar.m in Sources */,
 				CE1CC1CF1B2C6A320076C942 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				CE1CC1E01B2C6A320076C942 /* LKDBUtils.m in Sources */,
 				CE8970FD1B3E35D0008BB59D /* PNBar.m in Sources */,
 				CE1CC1F71B2C6A320076C942 /* SDWebImageCompat.m in Sources */,
+				CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */,
 				CE1CC1F81B2C6A320076C942 /* SDWebImageDecoder.m in Sources */,
 				CE1CC1DE1B2C6A320076C942 /* LKDB+Mapping.m in Sources */,
 				CE71929B1B38905D00087024 /* AFURLConnectionOperation.m in Sources */,
@@ -1312,6 +1350,7 @@
 				CE1CC1FF1B2C6A320076C942 /* UIImage+MultiFormat.m in Sources */,
 				CE1CC1D11B2C6A320076C942 /* IQTextView.m in Sources */,
 				CE1CC1F51B2C6A320076C942 /* NSData+ImageContentType.m in Sources */,
+				CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */,
 				CE8971021B3E35D0008BB59D /* PNGenericChart.m in Sources */,
 				CE7192AC1B38994200087024 /* GCDTimer.m in Sources */,
 				CE8971001B3E35D0008BB59D /* PNCircleChart.m in Sources */,
@@ -1378,6 +1417,7 @@
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
 				CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */,
+				CE4816301B6C35BC007CC332 /* RegiestSuccessVC.m in Sources */,
 				CE8970B81B3E2DB0008BB59D /* SetVC.m in Sources */,
 				CE8970D21B3E2DBE008BB59D /* PEFFirstVC.m in Sources */,
 				CE8971091B3E35D0008BB59D /* PNScatterChartData.m in Sources */,

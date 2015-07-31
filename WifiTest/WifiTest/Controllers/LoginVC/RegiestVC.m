@@ -7,8 +7,10 @@
 //
 
 #import "RegiestVC.h"
+#import "UserAgreementVC.h"
 #import "MemberAPI.h"
 #import "UserSetVC.h"
+#import "SexSelectionVC.h"
 
 #import "ShareFun.h"
 #import "ShareValue.h"
@@ -82,6 +84,21 @@
 
 #pragma mark - buttonAction
 
+- (IBAction)userAgreementAction:(id)sender {
+    
+    UserAgreementVC *t_vc = [[UserAgreementVC alloc] init];
+    [self.navigationController pushViewController:t_vc animated:YES];
+}
+
+
+- (IBAction)nextAction:(id)sender {
+    
+    SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
+    [self.navigationController pushViewController:t_vc animated:YES];
+
+}
+
+
 - (IBAction)registerAction:(id)sender {
     if (_tf_userName.text.length == 0) {
         [ShowHUD showError:@"请输入用户名" configParameter:^(ShowHUD *config) {
@@ -105,6 +122,11 @@
 }
 
 #pragma mark - dealloc
+
+-(void)dealloc{
+    
+    NSLog(@"RegiestVC dealloc");
+}
 
 
 - (void)didReceiveMemoryWarning {

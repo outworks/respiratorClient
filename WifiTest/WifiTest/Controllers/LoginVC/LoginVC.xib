@@ -21,25 +21,24 @@
                     <rect key="frame" x="0.0" y="97" width="320" height="104"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3P-dB-B5S">
-                            <rect key="frame" x="42" y="15" width="241" height="30"/>
+                            <rect key="frame" x="37" y="15" width="246" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-t4-9cu">
-                            <rect key="frame" x="42" y="68" width="241" height="30"/>
+                            <rect key="frame" x="37" y="68" width="246" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="W3P-dB-B5S" firstAttribute="leading" secondItem="1vd-dZ-vaq" secondAttribute="leading" constant="42" id="4I4-yd-qRH"/>
+                        <constraint firstItem="W3P-dB-B5S" firstAttribute="leading" secondItem="1vd-dZ-vaq" secondAttribute="leading" constant="37" id="4I4-yd-qRH"/>
                         <constraint firstItem="QQr-t4-9cu" firstAttribute="leading" secondItem="W3P-dB-B5S" secondAttribute="leading" id="4jL-Xa-mR6"/>
                         <constraint firstAttribute="bottom" secondItem="QQr-t4-9cu" secondAttribute="bottom" constant="6" id="6nf-7w-iA7"/>
                         <constraint firstAttribute="trailing" secondItem="W3P-dB-B5S" secondAttribute="trailing" constant="37" id="IOA-mD-Jb6"/>
                         <constraint firstItem="QQr-t4-9cu" firstAttribute="top" secondItem="W3P-dB-B5S" secondAttribute="bottom" constant="23" id="Imi-UW-KtS"/>
                         <constraint firstItem="QQr-t4-9cu" firstAttribute="trailing" secondItem="W3P-dB-B5S" secondAttribute="trailing" id="h6R-gW-WId"/>
-                        <constraint firstAttribute="centerX" secondItem="W3P-dB-B5S" secondAttribute="centerX" constant="-2" id="oIA-T7-VsC"/>
                         <constraint firstItem="W3P-dB-B5S" firstAttribute="top" secondItem="1vd-dZ-vaq" secondAttribute="top" constant="15" id="qlr-CZ-Qzu"/>
                     </constraints>
                 </view>
