@@ -33,11 +33,12 @@
 #pragma mark - private
 
 -(void)registerRequest{
+    
     MemberRegisterRequest *request = [[MemberRegisterRequest alloc] init];
     request.username = [_tf_userName.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     request.pwd = [_tf_pwd.text md5HexDigest];
     [MemberAPI MemberRegisterWithRequest:request completionBlockWithSuccess:^{
-        [ShareValue sharedShareValue].m_username = _tf_pwd.text;
+        [ShareValue sharedShareValue].m_password = _tf_pwd.text;
         [ShareValue sharedShareValue].m_username = _tf_userName.text;
         [ShowHUD showSuccess:@"注册成功" configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
@@ -93,6 +94,24 @@
 
 - (IBAction)nextAction:(id)sender {
     
+    if (_tf_userName.text.length == 0) {
+        [ShowHUD showError:@"请输入邮箱/手机号" configParameter:^(ShowHUD *config) {
+        } duration:1.5 inView:self.view];
+        return;
+    }
+    
+    if (_tf_pwd.text.length == 0) {
+        [ShowHUD showError:@"请输入密码" configParameter:^(ShowHUD *config) {
+        } duration:1.5 inView:self.view];
+        return;
+    }
+    
+    if (![_tf_pwd.text isEqual:_tf_pwdAgain.text]) {
+        [ShowHUD showError:@"两次输入密码不一致" configParameter:^(ShowHUD *config) {
+        } duration:1.5 inView:self.view];
+        return;
+    }
+    
     SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
     [self.navigationController pushViewController:t_vc animated:YES];
 
@@ -101,7 +120,7 @@
 
 - (IBAction)registerAction:(id)sender {
     if (_tf_userName.text.length == 0) {
-        [ShowHUD showError:@"请输入用户名" configParameter:^(ShowHUD *config) {
+        [ShowHUD showError:@"请输入邮箱/手机号" configParameter:^(ShowHUD *config) {
         } duration:1.5 inView:self.view];
         return;
     }

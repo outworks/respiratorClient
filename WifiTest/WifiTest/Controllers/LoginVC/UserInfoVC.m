@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoVC.h"
+#import "RegiestSuccessVC.h"
 
 @interface UserInfoVC ()
 
@@ -22,6 +23,12 @@
 
 
 
+#pragma mark - buttonAction
+
+- (IBAction)nextAction:(id)sender {
+    RegiestSuccessVC *t_vc = [[RegiestSuccessVC alloc] init];
+    [self.navigationController pushViewController:t_vc animated:YES];
+}
 
 
 

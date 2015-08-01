@@ -26,6 +26,9 @@
                         <color key="titleColor" red="0.97526749319999995" green="0.97526749319999995" blue="0.97526749319999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="SuccessAction:" destination="-1" eventType="touchUpInside" id="FJD-7F-Cjz"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎使用" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVE-un-VGK">
                     <rect key="frame" x="127" y="222" width="68" height="21"/>

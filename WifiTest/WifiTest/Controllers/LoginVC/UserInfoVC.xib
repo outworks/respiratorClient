@@ -15,21 +15,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9z-Y5-5Di">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9z-Y5-5Di">
                     <rect key="frame" x="0.0" y="183" width="320" height="118"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-AW-hDg">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的体重" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-AW-hDg">
                             <rect key="frame" x="37" y="44" width="246" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确定密码" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpl-nR-erd">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的年龄" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpl-nR-erd">
                             <rect key="frame" x="37" y="88" width="246" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="邮箱/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-fq-Wug">
-                            <rect key="frame" x="37" y="-1" width="246" height="30"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的身高" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDE-fq-Wug">
+                            <rect key="frame" x="37" y="0.0" width="246" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -56,10 +56,13 @@
                         <constraint firstAttribute="height" constant="39" id="lVc-Lw-Y6L"/>
                         <constraint firstAttribute="width" constant="206" id="zLd-Bt-XHV"/>
                     </constraints>
-                    <state key="normal" title="下一步">
+                    <state key="normal" title="提交">
                         <color key="titleColor" red="0.97526749319999995" green="0.97526749319999995" blue="0.97526749319999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="Adn-vP-GQe"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -67,6 +70,7 @@
                 <constraint firstAttribute="trailing" secondItem="s9z-Y5-5Di" secondAttribute="trailing" id="7sc-eC-c7x"/>
                 <constraint firstAttribute="centerX" secondItem="t8L-Fy-gbD" secondAttribute="centerX" id="H9R-hl-ktf"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="t8L-Fy-gbD" secondAttribute="bottom" constant="53" id="N9f-QI-c1U"/>
+                <constraint firstAttribute="centerY" secondItem="s9z-Y5-5Di" secondAttribute="centerY" constant="42" id="VBC-yJ-qL3"/>
                 <constraint firstItem="s9z-Y5-5Di" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tgG-h2-qSQ"/>
                 <constraint firstAttribute="centerY" secondItem="t8L-Fy-gbD" secondAttribute="centerY" priority="750" constant="-171.5" id="y5O-4T-wwv"/>
             </constraints>

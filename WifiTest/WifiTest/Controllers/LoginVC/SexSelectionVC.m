@@ -7,6 +7,7 @@
 //
 
 #import "SexSelectionVC.h"
+#import "UserInfoVC.h"
 
 @interface SexSelectionVC ()
 
@@ -20,6 +21,17 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+
+#pragma mark - buttonAction 
+
+
+- (IBAction)nextAction:(id)sender {
+    
+    UserInfoVC *t_vc = [[UserInfoVC alloc] init];
+    [self.navigationController pushViewController:t_vc animated:YES];
+}
+
+
 
 #pragma mark - dealloc 
 

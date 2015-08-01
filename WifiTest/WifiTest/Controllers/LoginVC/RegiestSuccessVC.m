@@ -7,6 +7,7 @@
 //
 
 #import "RegiestSuccessVC.h"
+#import "LoginVC.h"
 
 @interface RegiestSuccessVC ()
 
@@ -16,7 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"注册";
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark - buttonAciton 
+
+- (IBAction)SuccessAction:(id)sender {
+    
+    for (UIViewController *t_vc in self.navigationController.viewControllers) {
+        if ([t_vc isKindOfClass: [LoginVC class]]) {
+            [self.navigationController popToViewController:t_vc animated:YES];
+            return;
+        }
+    }
+}
+
+#pragma mark - dealloc
+
+-(void)dealloc{
+    
+    NSLog(@"RegiestSuccessVC dealloc");
+
 }
 
 - (void)didReceiveMemoryWarning {
