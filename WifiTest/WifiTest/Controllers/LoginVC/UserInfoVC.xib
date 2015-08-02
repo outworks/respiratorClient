@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoVC">
             <connections>
+                <outlet property="tf_age" destination="Zpl-nR-erd" id="A39-qL-y70"/>
+                <outlet property="tf_height" destination="vDE-fq-Wug" id="WGY-rk-4Xo"/>
+                <outlet property="tf_weight" destination="Pbg-AW-hDg" id="nk9-mQ-4PA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,7 +64,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="Adn-vP-GQe"/>
+                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="cm7-WR-Oyd"/>
                     </connections>
                 </button>
             </subviews>

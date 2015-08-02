@@ -22,6 +22,8 @@
 #import "BaseAPI.h"
 #import "YXGCD.h"
 #import "ShowHUD.h"
+#import "ShareFun.h"
+#import "ShareValue.h"
 
 #import <UIKit/UIKit.h>
 

@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SexSelectionVC">
             <connections>
+                <outlet property="btn_boy" destination="pIy-TJ-9fh" id="LAO-29-g74"/>
+                <outlet property="btn_girl" destination="ImW-qy-Hc9" id="d1K-E9-eg6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,6 +42,9 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" image="male_s"/>
+                    <connections>
+                        <action selector="btnBoyAction:" destination="-1" eventType="touchUpInside" id="te7-gg-ocb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-qy-Hc9">
                     <rect key="frame" x="194" y="216" width="49" height="135"/>
@@ -47,6 +52,9 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" image="female_s"/>
+                    <connections>
+                        <action selector="btnGirlAction:" destination="-1" eventType="touchUpInside" id="KhT-hk-EWm"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择性别" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-R4-jL0">
                     <rect key="frame" x="108" y="94" width="105" height="26"/>

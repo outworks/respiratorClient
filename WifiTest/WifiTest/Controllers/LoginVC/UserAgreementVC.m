@@ -24,10 +24,10 @@
 #pragma mark - butttonAction 
 
 - (IBAction)determineActtion:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
+
+
 
 
 

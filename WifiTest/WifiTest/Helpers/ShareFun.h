@@ -11,8 +11,9 @@
 @interface ShareFun : NSObject
 
 //获取版本号
-
 +(NSString *)getVerison;
++ (BOOL) validateEmail: (NSString *) candidate; //验证邮箱的有效性
++ (BOOL) validatePhone: (NSString *) phone; //验证手机号码的有效性
 
 // 处理收到的APNS消息
 + (void)handleRemoteNotification:(NSDictionary *)remoteInfo;

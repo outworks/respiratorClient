@@ -10,4 +10,8 @@
 
 @interface UserInfoVC : BasicVC
 
+@property(nonatomic,strong) NSNumber *sex;
+@property(nonatomic,strong) Member *member;
+@property(nonatomic,assign) BOOL isRegiest;
+
 @end

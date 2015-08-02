@@ -8,8 +8,10 @@
 
 #import "SetVC.h"
 #import "SetCell.h"
-#import "UserSetVC.h"
 #import "ShareValue.h"
+#import "SexSelectionVC.h"
+#import "AppDelegate.h"
+
 
 @interface SetVC ()
 
@@ -73,9 +75,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row == 3) {
-        UserSetVC *t_vc = [[UserSetVC alloc] init];
+        SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
         t_vc.member = [ShareValue sharedShareValue].member;
-        [self.navigationController pushViewController:t_vc animated:YES];
+        t_vc.isRegiest = NO;
+        [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
     }
     
 }

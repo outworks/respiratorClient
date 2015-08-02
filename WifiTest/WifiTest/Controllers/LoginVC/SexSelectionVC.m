@@ -17,21 +17,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"注册";
     
-    // Do any additional setup after loading the view from its nib.
+    if (_isRegiest) {
+        self.navigationItem.title = @"注册";
+    }else{
+        self.navigationItem.title = @"用户信息";
+    }
+
+    
+    if (_member) {
+        if ([_member.sex integerValue] == 0) {
+            [_btn_boy setSelected:YES];
+        }else{
+            [_btn_girl setSelected:YES];
+        }
+    }
 }
 
 #pragma mark - buttonAction 
 
+- (IBAction)btnBoyAction:(id)sender {
+    _btn_boy.selected = YES;
+    _btn_girl.selected = NO;
+}
 
-- (IBAction)nextAction:(id)sender {
-    
-    UserInfoVC *t_vc = [[UserInfoVC alloc] init];
-    [self.navigationController pushViewController:t_vc animated:YES];
+- (IBAction)btnGirlAction:(id)sender {
+    _btn_girl.selected = YES;
+    _btn_boy.selected = NO;
 }
 
 
+
+- (IBAction)nextAction:(id)sender {
+    
+    if (!_btn_girl.selected && !_btn_boy.selected) {
+        [ShowHUD showError:@"请选择性别" configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:self.view];
+        return;
+    }
+    
+    UserInfoVC *t_vc = [[UserInfoVC alloc] init];
+    if (_btn_boy.selected) {
+        t_vc.sex = @0;
+    }else if(_btn_girl.selected){
+        t_vc.sex = @1;
+    }
+    t_vc.member = _member;
+    t_vc.isRegiest = _isRegiest;
+    [self.navigationController pushViewController:t_vc animated:YES];
+}
 
 #pragma mark - dealloc 
 

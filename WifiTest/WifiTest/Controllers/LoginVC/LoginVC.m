@@ -13,7 +13,6 @@
 #import "ShareFun.h"
 #import "ShareValue.h"
 
-#import "TestVC.h"
 #import "MainVC.h"
 
 @interface LoginVC ()

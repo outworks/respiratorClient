@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E21B47A0C900B834A5 /* Head.jpg */; };
 		6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */; };
-		6D82199B1B3C1CB4007819CE /* UserSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8219991B3C1CB4007819CE /* UserSetVC.m */; };
-		6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D82199A1B3C1CB4007819CE /* UserSetVC.xib */; };
 		6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */; };
 		6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */; };
 		6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */; };
@@ -182,9 +180,6 @@
 /* Begin PBXFileReference section */
 		6D36A8E21B47A0C900B834A5 /* Head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Head.jpg; sourceTree = "<group>"; };
 		6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1432022533589@2x.jpg"; sourceTree = "<group>"; };
-		6D8219981B3C1CB4007819CE /* UserSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetVC.h; sourceTree = "<group>"; };
-		6D8219991B3C1CB4007819CE /* UserSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetVC.m; sourceTree = "<group>"; };
-		6D82199A1B3C1CB4007819CE /* UserSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSetVC.xib; sourceTree = "<group>"; };
 		6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = WifiTest/BaiduMapAPI.framework; sourceTree = "<group>"; };
@@ -960,9 +955,6 @@
 				CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */,
 				CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */,
 				CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */,
-				CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */,
-				CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */,
-				CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */,
 				CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */,
 				CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */,
 				CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */,
@@ -972,9 +964,9 @@
 				CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */,
 				CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */,
 				CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */,
-				6D8219981B3C1CB4007819CE /* UserSetVC.h */,
-				6D8219991B3C1CB4007819CE /* UserSetVC.m */,
-				6D82199A1B3C1CB4007819CE /* UserSetVC.xib */,
+				CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */,
+				CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */,
+				CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */,
 			);
 			path = LoginVC;
 			sourceTree = "<group>";
@@ -1301,7 +1293,6 @@
 				CE1CC24E1B2C7BBA0076C942 /* 底板.jpg in Resources */,
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
 				CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */,
-				6D82199C1B3C1CB4007819CE /* UserSetVC.xib in Resources */,
 				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
@@ -1423,7 +1414,6 @@
 				CE8971091B3E35D0008BB59D /* PNScatterChartData.m in Sources */,
 				CE1CC0EB1B2C68180076C942 /* AppDelegate.mm in Sources */,
 				CE71929C1B38905D00087024 /* AFXMLRequestOperation.m in Sources */,
-				6D82199B1B3C1CB4007819CE /* UserSetVC.m in Sources */,
 				CE8971031B3E35D0008BB59D /* PNLineChart.m in Sources */,
 				CE71929A1B38905D00087024 /* AFPropertyListRequestOperation.m in Sources */,
 				CE1CC1FC1B2C6A320076C942 /* SDWebImagePrefetcher.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "RegiestSuccessVC.h"
 #import "LoginVC.h"
+#import "MemberAPI.h"
 
 @interface RegiestSuccessVC ()
 
@@ -21,16 +22,21 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+#pragma mark - private methods
+
+
+
 #pragma mark - buttonAciton 
 
 - (IBAction)SuccessAction:(id)sender {
-    
+
     for (UIViewController *t_vc in self.navigationController.viewControllers) {
         if ([t_vc isKindOfClass: [LoginVC class]]) {
             [self.navigationController popToViewController:t_vc animated:YES];
             return;
         }
     }
+    
 }
 
 #pragma mark - dealloc

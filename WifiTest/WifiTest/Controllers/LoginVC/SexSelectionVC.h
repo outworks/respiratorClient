@@ -10,4 +10,11 @@
 
 @interface SexSelectionVC : BasicVC
 
+
+@property (weak, nonatomic) IBOutlet UIButton *btn_boy;
+@property (weak, nonatomic) IBOutlet UIButton *btn_girl;
+
+@property(nonatomic,strong) Member *member;
+@property(nonatomic,assign) BOOL isRegiest;
+
 @end
