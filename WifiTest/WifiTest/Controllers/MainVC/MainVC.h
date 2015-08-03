@@ -8,8 +8,15 @@
 
 #import "BasicVC.h"
 
+typedef NS_ENUM(NSInteger, ContentType){
+    MotionType = 0,
+    DailyType,
+    MedicationType,
+};
+
 @interface MainVC : BasicVC
 
 @property(strong,nonatomic)UITabBarController *vc_tab;
+@property(nonatomic,assign) ContentType contentType;
 
 @end

@@ -150,6 +150,7 @@
 
 -(void)dealloc{
     [NotificationCenter removeObserver:self];
+    NSLog(@"MotionThirdVC dealloc");
 }
 
 - (void)didReceiveMemoryWarning {

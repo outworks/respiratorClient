@@ -72,7 +72,7 @@
  *  @param fail   失败block
  */
 +(void)MemberUpdateWithRequest:(MemberUpdateRequest *)request completionBlockWithSuccess:(void(^)(Member *))sucess  Fail:(void(^)(int code,NSString *failDescript))fail{
-    [self request:request resultClass:[NSObject class] completionBlockWithSuccess:^(NSObject *result, NSString *message) {
+    [self request:request resultClass:[Member class] completionBlockWithSuccess:^(NSObject *result, NSString *message) {
         Member *data = (Member *)result;
         sucess(data);
     } Fail:^(int code, NSString *failDescript) {

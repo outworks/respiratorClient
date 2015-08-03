@@ -152,9 +152,23 @@
 		CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970F81B3E35D0008BB59D /* PNScatterChart.m */; };
 		CE8971091B3E35D0008BB59D /* PNScatterChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970FA1B3E35D0008BB59D /* PNScatterChartData.m */; };
 		CE89710A1B3E35D0008BB59D /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970FC1B3E35D0008BB59D /* PNScatterChartDataItem.m */; };
+		CE96B76E1B6F96DA004E341B /* MotionDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96B76C1B6F96DA004E341B /* MotionDetectionVC.m */; };
+		CE96B76F1B6F96DA004E341B /* MotionDetectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE96B76D1B6F96DA004E341B /* MotionDetectionVC.xib */; };
+		CE96B7761B6F9827004E341B /* MotionFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96B7741B6F9827004E341B /* MotionFirstVC.m */; };
+		CE96B7771B6F9827004E341B /* MotionFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE96B7751B6F9827004E341B /* MotionFirstVC.xib */; };
+		CE96B77B1B6F983A004E341B /* MotionSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96B7791B6F983A004E341B /* MotionSecondVC.m */; };
+		CE96B77C1B6F983A004E341B /* MotionSecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE96B77A1B6F983A004E341B /* MotionSecondVC.xib */; };
+		CE96B7801B6F984B004E341B /* MotionThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96B77E1B6F984B004E341B /* MotionThirdVC.m */; };
+		CE96B7811B6F984B004E341B /* MotionThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE96B77F1B6F984B004E341B /* MotionThirdVC.xib */; };
+		CEA7946D1B6FDF3300B3774B /* DrugDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA7946B1B6FDF3300B3774B /* DrugDetectionVC.m */; };
+		CEA7946E1B6FDF3300B3774B /* DrugDetectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA7946C1B6FDF3300B3774B /* DrugDetectionVC.xib */; };
+		CEA794721B6FF56400B3774B /* DailyDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA794701B6FF56400B3774B /* DailyDetectionVC.m */; };
+		CEA794731B6FF56400B3774B /* DailyDetectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA794711B6FF56400B3774B /* DailyDetectionVC.xib */; };
 		CEA8E1141B3E534300A47BFC /* Monidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1131B3E534300A47BFC /* Monidata.m */; };
 		CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */; };
 		CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8E1191B3E54DD00A47BFC /* DataAPI.m */; };
+		CEC0CF721B6E6FEA00ACDCE3 /* FunctionSwitchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC0CF701B6E6FEA00ACDCE3 /* FunctionSwitchVC.m */; };
+		CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC0CF711B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib */; };
 		CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */; };
 		CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */; };
 		CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286131B47DB7F00355DEB /* BlueClientVC.m */; };
@@ -445,12 +459,33 @@
 		CE8970FA1B3E35D0008BB59D /* PNScatterChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNScatterChartData.m; sourceTree = "<group>"; };
 		CE8970FB1B3E35D0008BB59D /* PNScatterChartDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNScatterChartDataItem.h; sourceTree = "<group>"; };
 		CE8970FC1B3E35D0008BB59D /* PNScatterChartDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNScatterChartDataItem.m; sourceTree = "<group>"; };
+		CE96B76B1B6F96DA004E341B /* MotionDetectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionDetectionVC.h; sourceTree = "<group>"; };
+		CE96B76C1B6F96DA004E341B /* MotionDetectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionDetectionVC.m; sourceTree = "<group>"; };
+		CE96B76D1B6F96DA004E341B /* MotionDetectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotionDetectionVC.xib; sourceTree = "<group>"; };
+		CE96B7731B6F9827004E341B /* MotionFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionFirstVC.h; sourceTree = "<group>"; };
+		CE96B7741B6F9827004E341B /* MotionFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionFirstVC.m; sourceTree = "<group>"; };
+		CE96B7751B6F9827004E341B /* MotionFirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotionFirstVC.xib; sourceTree = "<group>"; };
+		CE96B7781B6F983A004E341B /* MotionSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionSecondVC.h; sourceTree = "<group>"; };
+		CE96B7791B6F983A004E341B /* MotionSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionSecondVC.m; sourceTree = "<group>"; };
+		CE96B77A1B6F983A004E341B /* MotionSecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotionSecondVC.xib; sourceTree = "<group>"; };
+		CE96B77D1B6F984B004E341B /* MotionThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionThirdVC.h; sourceTree = "<group>"; };
+		CE96B77E1B6F984B004E341B /* MotionThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionThirdVC.m; sourceTree = "<group>"; };
+		CE96B77F1B6F984B004E341B /* MotionThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MotionThirdVC.xib; sourceTree = "<group>"; };
+		CEA7946A1B6FDF3300B3774B /* DrugDetectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetectionVC.h; sourceTree = "<group>"; };
+		CEA7946B1B6FDF3300B3774B /* DrugDetectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetectionVC.m; sourceTree = "<group>"; };
+		CEA7946C1B6FDF3300B3774B /* DrugDetectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugDetectionVC.xib; sourceTree = "<group>"; };
+		CEA7946F1B6FF56400B3774B /* DailyDetectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDetectionVC.h; sourceTree = "<group>"; };
+		CEA794701B6FF56400B3774B /* DailyDetectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDetectionVC.m; sourceTree = "<group>"; };
+		CEA794711B6FF56400B3774B /* DailyDetectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyDetectionVC.xib; sourceTree = "<group>"; };
 		CEA8E1121B3E534300A47BFC /* Monidata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monidata.h; sourceTree = "<group>"; };
 		CEA8E1131B3E534300A47BFC /* Monidata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monidata.m; sourceTree = "<group>"; };
 		CEA8E1151B3E53DA00A47BFC /* DateMonidata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateMonidata.h; sourceTree = "<group>"; };
 		CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateMonidata.m; sourceTree = "<group>"; };
 		CEA8E1181B3E54DD00A47BFC /* DataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAPI.h; sourceTree = "<group>"; };
 		CEA8E1191B3E54DD00A47BFC /* DataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAPI.m; sourceTree = "<group>"; };
+		CEC0CF6F1B6E6FEA00ACDCE3 /* FunctionSwitchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionSwitchVC.h; sourceTree = "<group>"; };
+		CEC0CF701B6E6FEA00ACDCE3 /* FunctionSwitchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionSwitchVC.m; sourceTree = "<group>"; };
+		CEC0CF711B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunctionSwitchVC.xib; sourceTree = "<group>"; };
 		CECD02D61B587BEE0065B1B1 /* ThirdMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMacro.h; sourceTree = "<group>"; };
 		CECE1DA91B5295E5009CBECD /* HeartRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateVC.h; sourceTree = "<group>"; };
 		CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateVC.m; sourceTree = "<group>"; };
@@ -532,6 +567,7 @@
 				CE1CC22B1B2C7B9C0076C942 /* Models */,
 				CE1CC2141B2C7AEF0076C942 /* API */,
 				CE1CC2041B2C70360076C942 /* Helpers */,
+				CE5965AF1B483A9200F730C1 /* Views */,
 				CE1CC2151B2C7AFD0076C942 /* Controllers */,
 				CE1CC0E91B2C68180076C942 /* AppDelegate.h */,
 				CE1CC0EA1B2C68180076C942 /* AppDelegate.mm */,
@@ -854,17 +890,20 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE1CC24F1B2C7C720076C942 /* BasicVC */,
 				CE85B3491B698C3000EB5D8F /* ProductVC */,
-				CECE1DA81B5295CB009CBECD /* HeartRateVC */,
-				CE5965AF1B483A9200F730C1 /* Views */,
-				CED286111B47DB0700355DEB /* BluetoothVC */,
+				CE1CC2B01B2C92E00076C942 /* LoginVC */,
+				CEC0CF6E1B6E6FD900ACDCE3 /* FunctionSwitchVC */,
+				CE8970AE1B3E2DA1008BB59D /* MainVC */,
+				CE96B7681B6F9657004E341B /* MotionDetectionVC */,
+				CE96B7691B6F968B004E341B /* DailyDetectionVC */,
+				CE96B76A1B6F96B8004E341B /* DrugDetectionVC */,
 				CE8970C01B3E2DBE008BB59D /* BreathVC */,
 				CE8970D81B3E2DCD008BB59D /* AirQualityVC */,
 				CE8970BA1B3E2DB7008BB59D /* NearbyPharVC */,
 				CE8970B41B3E2DB0008BB59D /* SetVC */,
-				CE8970AE1B3E2DA1008BB59D /* MainVC */,
-				CE1CC2B01B2C92E00076C942 /* LoginVC */,
-				CE1CC24F1B2C7C720076C942 /* BasicVC */,
+				CECE1DA81B5295CB009CBECD /* HeartRateVC */,
+				CED286111B47DB0700355DEB /* BluetoothVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -980,7 +1019,8 @@
 				6DE9A7B21B525EA8000DD6D6 /* SetCell.m */,
 				6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */,
 			);
-			path = Views;
+			name = Views;
+			path = Controllers/Views;
 			sourceTree = "<group>";
 		};
 		CE7192811B38905D00087024 /* AFNetworking */ = {
@@ -1166,6 +1206,79 @@
 			path = PNChart;
 			sourceTree = "<group>";
 		};
+		CE96B7681B6F9657004E341B /* MotionDetectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE96B76B1B6F96DA004E341B /* MotionDetectionVC.h */,
+				CE96B76C1B6F96DA004E341B /* MotionDetectionVC.m */,
+				CE96B76D1B6F96DA004E341B /* MotionDetectionVC.xib */,
+				CE96B7711B6F980A004E341B /* MotionFirstVC */,
+				CE96B7721B6F980A004E341B /* MotionSecondVC */,
+				CE96B7701B6F980A004E341B /* MothonThirdVC */,
+			);
+			path = MotionDetectionVC;
+			sourceTree = "<group>";
+		};
+		CE96B7691B6F968B004E341B /* DailyDetectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7946F1B6FF56400B3774B /* DailyDetectionVC.h */,
+				CEA794701B6FF56400B3774B /* DailyDetectionVC.m */,
+				CEA794711B6FF56400B3774B /* DailyDetectionVC.xib */,
+			);
+			path = DailyDetectionVC;
+			sourceTree = "<group>";
+		};
+		CE96B76A1B6F96B8004E341B /* DrugDetectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7946A1B6FDF3300B3774B /* DrugDetectionVC.h */,
+				CEA7946B1B6FDF3300B3774B /* DrugDetectionVC.m */,
+				CEA7946C1B6FDF3300B3774B /* DrugDetectionVC.xib */,
+			);
+			path = DrugDetectionVC;
+			sourceTree = "<group>";
+		};
+		CE96B7701B6F980A004E341B /* MothonThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE96B77D1B6F984B004E341B /* MotionThirdVC.h */,
+				CE96B77E1B6F984B004E341B /* MotionThirdVC.m */,
+				CE96B77F1B6F984B004E341B /* MotionThirdVC.xib */,
+			);
+			path = MothonThirdVC;
+			sourceTree = "<group>";
+		};
+		CE96B7711B6F980A004E341B /* MotionFirstVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE96B7731B6F9827004E341B /* MotionFirstVC.h */,
+				CE96B7741B6F9827004E341B /* MotionFirstVC.m */,
+				CE96B7751B6F9827004E341B /* MotionFirstVC.xib */,
+			);
+			path = MotionFirstVC;
+			sourceTree = "<group>";
+		};
+		CE96B7721B6F980A004E341B /* MotionSecondVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE96B7781B6F983A004E341B /* MotionSecondVC.h */,
+				CE96B7791B6F983A004E341B /* MotionSecondVC.m */,
+				CE96B77A1B6F983A004E341B /* MotionSecondVC.xib */,
+			);
+			path = MotionSecondVC;
+			sourceTree = "<group>";
+		};
+		CEC0CF6E1B6E6FD900ACDCE3 /* FunctionSwitchVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0CF6F1B6E6FEA00ACDCE3 /* FunctionSwitchVC.h */,
+				CEC0CF701B6E6FEA00ACDCE3 /* FunctionSwitchVC.m */,
+				CEC0CF711B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib */,
+			);
+			path = FunctionSwitchVC;
+			sourceTree = "<group>";
+		};
 		CECE1DA81B5295CB009CBECD /* HeartRateVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1287,13 +1400,19 @@
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
 				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
 				CE8970BF1B3E2DB7008BB59D /* NearbyPharVC.xib in Resources */,
+				CEA794731B6FF56400B3774B /* DailyDetectionVC.xib in Resources */,
 				CE8970D51B3E2DBE008BB59D /* PEFSecondVC.xib in Resources */,
+				CEA7946E1B6FDF3300B3774B /* DrugDetectionVC.xib in Resources */,
+				CE96B76F1B6F96DA004E341B /* MotionDetectionVC.xib in Resources */,
 				6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */,
 				CE1CC1D61B2C6A320076C942 /* IQKeyboardManager.bundle in Resources */,
 				CE1CC24E1B2C7BBA0076C942 /* 底板.jpg in Resources */,
+				CE96B7811B6F984B004E341B /* MotionThirdVC.xib in Resources */,
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
+				CE96B7771B6F9827004E341B /* MotionFirstVC.xib in Resources */,
 				CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */,
 				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
+				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
@@ -1301,6 +1420,7 @@
 				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
+				CE96B77C1B6F983A004E341B /* MotionSecondVC.xib in Resources */,
 				6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */,
 				CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */,
 			);
@@ -1320,10 +1440,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE96B7801B6F984B004E341B /* MotionThirdVC.m in Sources */,
 				CEA8E1141B3E534300A47BFC /* Monidata.m in Sources */,
+				CE96B7761B6F9827004E341B /* MotionFirstVC.m in Sources */,
 				CE8970D01B3E2DBE008BB59D /* BreathVC.m in Sources */,
 				CE8971051B3E35D0008BB59D /* PNLineChartDataItem.m in Sources */,
 				CE7192A91B38994200087024 /* GCDGroup.m in Sources */,
+				CEC0CF721B6E6FEA00ACDCE3 /* FunctionSwitchVC.m in Sources */,
 				CE8970B21B3E2DA1008BB59D /* MainVC.m in Sources */,
 				CE1CC1CB1B2C6A320076C942 /* IQNSArray+Sort.m in Sources */,
 				CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */,
@@ -1357,6 +1480,7 @@
 				CE1CC1D81B2C6A320076C942 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				CE7192B51B389DF000087024 /* MemberAPI.m in Sources */,
 				CE1CC1F41B2C6A320076C942 /* MKAnnotationView+WebCache.m in Sources */,
+				CEA794721B6FF56400B3774B /* DailyDetectionVC.m in Sources */,
 				CE71927D1B388D7900087024 /* BaseAPI.m in Sources */,
 				CE7192AA1B38994200087024 /* GCDQueue.m in Sources */,
 				CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */,
@@ -1389,6 +1513,7 @@
 				CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */,
 				CE1CC2021B2C6A320076C942 /* UIImageView+WebCache.m in Sources */,
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
+				CE96B77B1B6F983A004E341B /* MotionSecondVC.m in Sources */,
 				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
 				CE8970D41B3E2DBE008BB59D /* PEFSecondVC.m in Sources */,
@@ -1407,6 +1532,7 @@
 				CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */,
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
+				CE96B76E1B6F96DA004E341B /* MotionDetectionVC.m in Sources */,
 				CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */,
 				CE4816301B6C35BC007CC332 /* RegiestSuccessVC.m in Sources */,
 				CE8970B81B3E2DB0008BB59D /* SetVC.m in Sources */,
@@ -1416,6 +1542,7 @@
 				CE71929C1B38905D00087024 /* AFXMLRequestOperation.m in Sources */,
 				CE8971031B3E35D0008BB59D /* PNLineChart.m in Sources */,
 				CE71929A1B38905D00087024 /* AFPropertyListRequestOperation.m in Sources */,
+				CEA7946D1B6FDF3300B3774B /* DrugDetectionVC.m in Sources */,
 				CE1CC1FC1B2C6A320076C942 /* SDWebImagePrefetcher.m in Sources */,
 				CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */,
 				CE1CC2001B2C6A320076C942 /* UIImage+WebP.m in Sources */,

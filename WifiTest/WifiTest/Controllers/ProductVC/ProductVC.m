@@ -65,7 +65,7 @@
 
 -(void)dealloc{
 
-
+    NSLog(@"ProductVC dealloc");
 
 }
 

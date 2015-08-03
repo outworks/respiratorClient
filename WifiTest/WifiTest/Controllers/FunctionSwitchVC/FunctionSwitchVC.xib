@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FunctionSwitchVC">
+            <connections>
+                <outlet property="btn_daily" destination="EVB-kR-MAa" id="y8v-Wi-KHI"/>
+                <outlet property="btn_medication" destination="dai-d4-3hH" id="peH-g3-D1y"/>
+                <outlet property="btn_motion" destination="g3N-WK-ZXo" id="2CF-fZ-e9o"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-AV-BH0">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广告栏" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84E-C2-diQ">
+                            <rect key="frame" x="135" y="14" width="51" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.17768449589999999" green="0.66176465510000004" blue="0.931640625" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="84E-C2-diQ" secondAttribute="centerY" id="7X8-vY-U6h"/>
+                        <constraint firstAttribute="centerX" secondItem="84E-C2-diQ" secondAttribute="centerX" id="R30-os-98F"/>
+                        <constraint firstAttribute="height" constant="49" id="cK1-Wg-aOo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dai-d4-3hH">
+                    <rect key="frame" x="175" y="351" width="110" height="110"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dai-d4-3hH" secondAttribute="height" multiplier="1:1" id="1jC-An-oS9"/>
+                        <constraint firstAttribute="width" constant="110" id="hM6-Kp-Txe"/>
+                    </constraints>
+                    <state key="normal" title="用药">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="medicationAction:" destination="-1" eventType="touchUpInside" id="4Xr-IK-FDT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVB-kR-MAa">
+                    <rect key="frame" x="175" y="63" width="110" height="110"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="3di-ok-DD0"/>
+                        <constraint firstAttribute="width" secondItem="EVB-kR-MAa" secondAttribute="height" multiplier="1:1" id="t1a-mO-YXX"/>
+                    </constraints>
+                    <state key="normal">
+                        <string key="title" base64-UTF8="YES">
+EOaXpeW4uA
+</string>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dailyAction:" destination="-1" eventType="touchUpInside" id="0B5-pR-OkU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3N-WK-ZXo">
+                    <rect key="frame" x="35" y="207" width="110" height="110"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="g3N-WK-ZXo" secondAttribute="height" multiplier="1:1" id="mqe-2K-6IT"/>
+                        <constraint firstAttribute="width" constant="110" id="wUw-f6-0fc"/>
+                    </constraints>
+                    <state key="normal" title="运动">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="motionAction:" destination="-1" eventType="touchUpInside" id="Nx7-b9-cEY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="dai-d4-3hH" secondAttribute="centerX" constant="-70" id="7sM-JU-oE7"/>
+                <constraint firstAttribute="centerX" secondItem="EVB-kR-MAa" secondAttribute="centerX" constant="-70" id="8t3-KJ-t8p"/>
+                <constraint firstAttribute="trailing" secondItem="qhn-AV-BH0" secondAttribute="trailing" id="CsR-by-64q"/>
+                <constraint firstAttribute="bottom" secondItem="qhn-AV-BH0" secondAttribute="bottom" id="KC1-PE-jo3"/>
+                <constraint firstAttribute="centerY" secondItem="EVB-kR-MAa" secondAttribute="centerY" constant="166" id="XHV-dz-sFx"/>
+                <constraint firstAttribute="centerY" secondItem="g3N-WK-ZXo" secondAttribute="centerY" constant="22" id="Yac-1W-lyG"/>
+                <constraint firstAttribute="centerY" secondItem="dai-d4-3hH" secondAttribute="centerY" constant="-122" id="fSM-QC-PWz"/>
+                <constraint firstAttribute="centerX" secondItem="g3N-WK-ZXo" secondAttribute="centerX" constant="70" id="ixt-Ja-RaC"/>
+                <constraint firstItem="qhn-AV-BH0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="swA-7E-iIn"/>
+            </constraints>
+            <point key="canvasLocation" x="470" y="453"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

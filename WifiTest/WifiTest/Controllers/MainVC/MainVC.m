@@ -13,6 +13,10 @@
 #import "SetVC.h"
 #import "DataTools.h"
 
+#import "MotionDetectionVC.h"
+#import "DrugDetectionVC.h"
+#import "DailyDetectionVC.h"
+
 @interface MainVC ()
 
 @end
@@ -43,17 +47,28 @@
     [self.view addSubview:_vc_tab.view];
     
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeLeading attr2:NSLayoutAttributeLeading constant:0];
-    [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeTop attr2:NSLayoutAttributeTop constant:0];
+    
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeBottom attr2: NSLayoutAttributeBottom constant:0];
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeTrailing attr2:NSLayoutAttributeTrailing constant:0];
         
-    BreathVC *breathVC = [[BreathVC alloc] init];
+    MotionDetectionVC *breathVC = [[MotionDetectionVC alloc] init];
     AirQualityVC *airQualityVC = [[AirQualityVC alloc] init];
     NearbyPharVC *nearbyPharVC = [[NearbyPharVC alloc] init];
     SetVC *setVC = [[SetVC alloc] init];
+    UINavigationController *nav_breath;
+    
+    if (_contentType == DailyType) {
+        DailyDetectionVC *breathVC = [[DailyDetectionVC alloc] init];
+        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+    }else if (_contentType == MotionType){
+        MotionDetectionVC *breathVC = [[MotionDetectionVC alloc] init];
+        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+    }else if (_contentType == MedicationType){
+        DrugDetectionVC *breathVC = [[DrugDetectionVC alloc] init];
+        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+    }
     
     
-     UINavigationController *nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
      UINavigationController *nav_airQuality = [[UINavigationController  alloc]initWithRootViewController:airQualityVC];
      UINavigationController *nav_visitMap = [[UINavigationController alloc]initWithRootViewController:nearbyPharVC];
      UINavigationController *nav_set = [[UINavigationController alloc]initWithRootViewController:setVC];
@@ -123,8 +138,7 @@
 #pragma mark - dealloc 
 
 -(void)dealloc{
-
-
+    NSLog(@"MainVC dealloc");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,7 +13,8 @@
 #import "ShareFun.h"
 #import "ShareValue.h"
 
-#import "MainVC.h"
+
+#import "FunctionSwitchVC.h"
 
 @interface LoginVC ()
 
@@ -60,7 +61,7 @@
         [ShareValue sharedShareValue].member = data;
         [ShareValue sharedShareValue].m_username = request.username;
         [ShareValue sharedShareValue].m_password = _tf_pwd.text;
-        MainVC *t_vc = [[MainVC alloc] init];
+        FunctionSwitchVC *t_vc = [[FunctionSwitchVC alloc] init];
         [self.navigationController pushViewController:t_vc animated:YES];
         
     } Fail:^(int code, NSString *failDescript) {

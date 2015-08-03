@@ -30,6 +30,80 @@
 }
 
 
++ (UIImage *) getUIImagewithColor:(UIColor *)color withSize:(CGSize) size{
+    CGSize imageSize = size;
+    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *pressedColorImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return pressedColorImg;
+}
+
++ (void) getCorner:(id)sender{
+    [ShareFun getCorner:sender withBorderWidth:0.5f withBorderColor:RGB(45, 169, 238)];
+}
+
++ (void) getCorner:(id)sender withCorner:(float)corner withBorderWidth:(float)borderWidth withBorderColor:(UIColor *)borderColor{
+    if ([sender isKindOfClass:[UIButton class]]) {
+        UIButton * t_btn = (UIButton *)sender;
+        t_btn.layer.cornerRadius = corner;
+        t_btn.layer.masksToBounds = YES;
+        t_btn.layer.borderWidth = borderWidth;
+        t_btn.layer.borderColor = [borderColor CGColor];
+    }else if([sender isKindOfClass:[UIImageView class]]){
+        UIImageView * t_imageV = (UIImageView *)sender;
+        t_imageV.layer.cornerRadius = corner;
+        t_imageV.layer.masksToBounds = YES;
+        t_imageV.layer.borderWidth = borderWidth;
+        t_imageV.layer.borderColor = [borderColor CGColor];
+        
+    }else if([sender isKindOfClass:[UIView class]]){
+        UIView * t_view = (UIImageView *)sender;
+        t_view.layer.cornerRadius = corner;
+        t_view.layer.masksToBounds = YES;
+        t_view.layer.borderWidth = borderWidth;
+        t_view.layer.borderColor = [borderColor CGColor];
+        
+    }
+
+}
+
+
++ (void) getCorner:(id)sender withBorderWidth:(float)borderWidth withBorderColor:(UIColor *)borderColor {
+    if ([sender isKindOfClass:[UIButton class]]) {
+        UIButton * t_btn = (UIButton *)sender;
+        t_btn.layer.cornerRadius = t_btn.frame.size.width/2;
+        t_btn.layer.masksToBounds = YES;
+        t_btn.layer.borderWidth = borderWidth;
+        t_btn.layer.borderColor = [borderColor CGColor];
+    }else if([sender isKindOfClass:[UIImageView class]]){
+        UIImageView * t_imageV = (UIImageView *)sender;
+        t_imageV.layer.cornerRadius = t_imageV.frame.size.width/2;
+        t_imageV.layer.masksToBounds = YES;
+        t_imageV.layer.borderWidth = borderWidth;
+        t_imageV.layer.borderColor = [borderColor CGColor];
+    
+    }else if([sender isKindOfClass:[UIView class]]){
+        UIView * t_view = (UIImageView *)sender;
+        t_view.layer.cornerRadius = t_view.frame.size.width/2;
+        t_view.layer.masksToBounds = YES;
+        t_view.layer.borderWidth = borderWidth;
+        t_view.layer.borderColor = [borderColor CGColor];
+        
+    }
+
+}
+
++(NSString*) convertStringFromDate:(NSDate*)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString=[formatter stringFromDate:date];
+    return dateString;
+}
+
 + (void)handleRemoteNotification:(NSDictionary *)remoteInfo{
 
 
