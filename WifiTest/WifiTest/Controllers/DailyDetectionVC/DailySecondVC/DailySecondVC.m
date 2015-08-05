@@ -1,36 +1,34 @@
 //
-//  MotionSecondVC.m
+//  DailySecondVC.m
 //  WifiTest
 //
-//  Created by Hcat on 15/8/3.
+//  Created by nd on 15/8/5.
 //  Copyright (c) 2015年 CivetCatsTeam. All rights reserved.
 //
 
-#import "MotionSecondVC.h"
+#import "DailySecondVC.h"
 #import "DataTools.h"
+#import "HCatChart.h"
 
-@interface MotionSecondVC ()<HCatChartDataSource>
+@interface DailySecondVC ()<HCatChartDataSource>
 
 @property (weak, nonatomic) IBOutlet UIView *v_barChart;
-@property (weak, nonatomic) IBOutlet UILabel *lb_time;
-@property (weak, nonatomic) IBOutlet UILabel *lb_fvc;
-@property (weak, nonatomic) IBOutlet UILabel *lb_state;
+
 
 @property (nonatomic,strong) HCatChart * chartView; //图表
 @property (nonatomic,strong) NSMutableArray *mutArr;
 
 @end
 
-@implementation MotionSecondVC
+@implementation DailySecondVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [NotificationCenter addObserver:self selector:@selector(loadBarChart) name:NOTIFICATION_DATACHANGE object:nil];
-    
     // Do any additional setup after loading the view from its nib.
 }
 
-#pragma mark - private methods 
+#pragma mark - private methods
 
 -(void)loadData{
     
@@ -52,12 +50,10 @@
     }
 }
 
-
-
 -(void)loadBarChart{
     
     [self loadData];
-
+    
     if (_chartView) {
         [_chartView removeFromSuperview];
         _chartView = nil;
@@ -69,8 +65,8 @@
     _chartView.barStorkColor = [UIColor grayColor];
     _chartView.chartMargin = 10.0f;
     [_chartView showInView:_v_barChart];
-
-
+    
+    
 }
 
 
@@ -98,22 +94,25 @@
 //数值多重数组
 - (NSArray *)HCatChart_yValueArray:(HCatChart *)chart{
     
-    NSMutableArray *t_dataArr = [NSMutableArray array];
+    NSMutableArray *t_PEFArr = [NSMutableArray array];
+    NSMutableArray *t_FEVArr = [NSMutableArray array];
     
     for (int i = 0; i < [_mutArr count]; i++) {
         Monidata *t_monidata = _mutArr[i];
-        [t_dataArr addObject:t_monidata.fvc];
+        [t_PEFArr addObject:t_monidata.pef];
+        [t_FEVArr addObject:t_monidata.fev1];
     }
     
-    return @[t_dataArr];
+    return @[t_PEFArr,t_FEVArr];
     
 }
+
 
 #pragma mark - @optional
 //颜色数组
 - (NSArray *)HCatChart_ColorArray:(HCatChart *)chart
 {
-    return @[HCatGreen,HCatBrown,HCatBrown];
+    return @[HCatGreen,HCatRed,HCatBrown];
 }
 
 
@@ -121,17 +120,18 @@
     NSLog(@"Click on bar %@", @(barIndex));
     
     Monidata *t_monidata = _mutArr[barIndex];
-    _lb_fvc.text = [t_monidata.fvc stringValue];
-    _lb_time.text = t_monidata.saveTime;
-    _lb_state.text = t_monidata.stateString;
+
+
 
 }
 
-#pragma mark - dealloc 
+
+
+#pragma mark - dealloc
 
 -(void)dealloc{
     [NotificationCenter removeObserver:self];
-    NSLog(@"MotionSecondVC dealloc");
+    NSLog(@"DailySecondVC dealloc");
 }
 
 - (void)didReceiveMemoryWarning {

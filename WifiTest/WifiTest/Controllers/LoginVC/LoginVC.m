@@ -51,13 +51,16 @@
 
 -(void)loginRequest{
     
+    ShowHUD *hud = [ShowHUD showText:@"登录中..." configParameter:^(ShowHUD *config) {
+    } inView:self.view];
+    
     
     MemberLoginRequest *request = [[MemberLoginRequest alloc] init];
     request.username = _tf_userName.text;
     request.pwd = [_tf_pwd.text md5HexDigest];
     [MemberAPI MemberLoginWithRequest:request completionBlockWithSuccess:^(Member *data) {
         NSLog(@"登录成功");
-        
+        [hud hide];
         [ShareValue sharedShareValue].member = data;
         [ShareValue sharedShareValue].m_username = request.username;
         [ShareValue sharedShareValue].m_password = _tf_pwd.text;
@@ -65,6 +68,7 @@
         [self.navigationController pushViewController:t_vc animated:YES];
         
     } Fail:^(int code, NSString *failDescript) {
+        [hud hide];
         [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
     }];

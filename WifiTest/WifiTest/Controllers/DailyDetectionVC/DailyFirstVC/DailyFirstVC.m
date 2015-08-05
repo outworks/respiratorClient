@@ -1,12 +1,12 @@
 //
-//  MotionFirstVC.m
+//  DailyFirstVC.m
 //  WifiTest
 //
-//  Created by Hcat on 15/8/3.
+//  Created by nd on 15/8/5.
 //  Copyright (c) 2015年 CivetCatsTeam. All rights reserved.
 //
 
-#import "MotionFirstVC.h"
+#import "DailyFirstVC.h"
 
 #import "CCProgressView.h"
 #import "PNChart.h"
@@ -15,7 +15,7 @@
 #import "TestTool.h"
 #import "DataTools.h"
 
-@interface MotionFirstVC (){
+@interface DailyFirstVC (){
     ShowHUD *_hud;
 }
 
@@ -26,10 +26,9 @@
 @property (strong,nonatomic) CCProgressView *progress;
 @property (nonatomic,strong) PNCircleChart * circleChart;
 
-
 @end
 
-@implementation MotionFirstVC
+@implementation DailyFirstVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -85,14 +84,14 @@
 }
 
 
-
 #pragma mark - private methods
 
 - (void) initUI{
-
+    
     [ShareFun getCorner:_v_bg withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     [self reloadData];
 }
+
 
 -(void) reloadData{
     
@@ -107,8 +106,8 @@
         DateMonidata *dateMonidata = [datas firstObject];
         Monidata *monidata = dateMonidata.bestMonidata;
         if ([dateMonidata.saveDate isEqual:[ShareFun convertStringFromDate:[NSDate date]]]) {
-    
-            weakSelf.lb_info.text = @"用力肺活量状态";
+            
+            weakSelf.lb_info.text = @"PEF值最佳状态";
             weakSelf.lb_state.text = monidata.stateString;
             if ([monidata.level integerValue] == 1) {
                 weakSelf.lb_state.textColor = RGB(33, 211, 58);
@@ -134,53 +133,11 @@
     }];
 }
 
--(void)commitData{
-    
-    DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
-    t_request.mid = [ShareValue sharedShareValue].member.mid;
-    t_request.pef = @([TestTool sharedTestTool].pef);
-    t_request.fev1 = @([TestTool sharedTestTool].fev1);
-    t_request.fvc = @([TestTool sharedTestTool].fvc);
-    t_request.inputType = @1;
-    __weak __typeof(self) weak = self;
-    [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
-        [_hud hide];
-        [weak reloadData];
-    } Fail:^(int code, NSString *failDescript) {
-        [_hud hide];
-        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
-        } duration:1.5f inView:self.view];
-    }];
-}
-
-#pragma mark - buttonAction 
-
-- (IBAction)testAcion:(id)sender {
-    
-    _hud = [ShowHUD showText:@"测试中.." configParameter:^(ShowHUD *config) {
-    } inView:self.view];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    [[GCDQueue globalQueue] execute:^{
-        
-        [[TestTool sharedTestTool] test];
-        
-        NSLog(@"%f",[TestTool sharedTestTool].pef);
-        NSLog(@"%f",[TestTool sharedTestTool].fvc);
-        
-        NSLog(@"%2f",[TestTool sharedTestTool].pef/[[ShareValue sharedShareValue].member.defPef floatValue]);
-        [weakSelf commitData];
-        
-    }];
-    
-}
-
-
-#pragma mark - dealloc
+#pragma mark - dealloc 
 
 -(void)dealloc{
-    NSLog(@"MotionFirst dealloc");
+    
+    NSLog(@"DailyFirstVC dealloc ");
 }
 
 - (void)didReceiveMemoryWarning {

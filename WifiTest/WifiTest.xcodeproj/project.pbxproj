@@ -20,6 +20,12 @@
 		6DF733FB1B71E02800F94397 /* HCatChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F31B71E02800F94397 /* HCatChartLabel.m */; };
 		6DF733FC1B71E02800F94397 /* HCatColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F51B71E02800F94397 /* HCatColor.m */; };
 		6DF733FD1B71E02800F94397 /* HCatLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F71B71E02800F94397 /* HCatLineChart.m */; };
+		6DF734041B71F8ED00F94397 /* DailyFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF734021B71F8ED00F94397 /* DailyFirstVC.m */; };
+		6DF734051B71F8ED00F94397 /* DailyFirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF734031B71F8ED00F94397 /* DailyFirstVC.xib */; };
+		6DF734091B71F91800F94397 /* DailySecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF734071B71F91800F94397 /* DailySecondVC.m */; };
+		6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF734081B71F91800F94397 /* DailySecondVC.xib */; };
+		6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */; };
+		6DF7340F1B71F92A00F94397 /* DailyThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */; };
 		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
 		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
@@ -218,6 +224,15 @@
 		6DF733F51B71E02800F94397 /* HCatColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatColor.m; sourceTree = "<group>"; };
 		6DF733F61B71E02800F94397 /* HCatLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatLineChart.h; sourceTree = "<group>"; };
 		6DF733F71B71E02800F94397 /* HCatLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatLineChart.m; sourceTree = "<group>"; };
+		6DF734011B71F8ED00F94397 /* DailyFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFirstVC.h; sourceTree = "<group>"; };
+		6DF734021B71F8ED00F94397 /* DailyFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyFirstVC.m; sourceTree = "<group>"; };
+		6DF734031B71F8ED00F94397 /* DailyFirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyFirstVC.xib; sourceTree = "<group>"; };
+		6DF734061B71F91800F94397 /* DailySecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySecondVC.h; sourceTree = "<group>"; };
+		6DF734071B71F91800F94397 /* DailySecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySecondVC.m; sourceTree = "<group>"; };
+		6DF734081B71F91800F94397 /* DailySecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailySecondVC.xib; sourceTree = "<group>"; };
+		6DF7340B1B71F92A00F94397 /* DailyThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyThirdVC.h; sourceTree = "<group>"; };
+		6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyThirdVC.m; sourceTree = "<group>"; };
+		6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyThirdVC.xib; sourceTree = "<group>"; };
 		CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgreementVC.h; sourceTree = "<group>"; };
 		CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgreementVC.m; sourceTree = "<group>"; };
 		CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgreementVC.xib; sourceTree = "<group>"; };
@@ -574,6 +589,36 @@
 				6DF733F71B71E02800F94397 /* HCatLineChart.m */,
 			);
 			path = ChartView;
+			sourceTree = "<group>";
+		};
+		6DF733FE1B71F8C900F94397 /* DailyFirstVC */ = {
+			isa = PBXGroup;
+			children = (
+				6DF734011B71F8ED00F94397 /* DailyFirstVC.h */,
+				6DF734021B71F8ED00F94397 /* DailyFirstVC.m */,
+				6DF734031B71F8ED00F94397 /* DailyFirstVC.xib */,
+			);
+			path = DailyFirstVC;
+			sourceTree = "<group>";
+		};
+		6DF733FF1B71F8C900F94397 /* DailySecondVC */ = {
+			isa = PBXGroup;
+			children = (
+				6DF734061B71F91800F94397 /* DailySecondVC.h */,
+				6DF734071B71F91800F94397 /* DailySecondVC.m */,
+				6DF734081B71F91800F94397 /* DailySecondVC.xib */,
+			);
+			path = DailySecondVC;
+			sourceTree = "<group>";
+		};
+		6DF734001B71F8C900F94397 /* DailyThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				6DF7340B1B71F92A00F94397 /* DailyThirdVC.h */,
+				6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */,
+				6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */,
+			);
+			path = DailyThirdVC;
 			sourceTree = "<group>";
 		};
 		CE1CC0D91B2C68180076C942 = {
@@ -1263,6 +1308,9 @@
 				CEA7946F1B6FF56400B3774B /* DailyDetectionVC.h */,
 				CEA794701B6FF56400B3774B /* DailyDetectionVC.m */,
 				CEA794711B6FF56400B3774B /* DailyDetectionVC.xib */,
+				6DF733FE1B71F8C900F94397 /* DailyFirstVC */,
+				6DF733FF1B71F8C900F94397 /* DailySecondVC */,
+				6DF734001B71F8C900F94397 /* DailyThirdVC */,
 			);
 			path = DailyDetectionVC;
 			sourceTree = "<group>";
@@ -1434,6 +1482,7 @@
 				CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */,
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */,
+				6DF734051B71F8ED00F94397 /* DailyFirstVC.xib in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
 				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
@@ -1449,6 +1498,7 @@
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
 				CE96B7771B6F9827004E341B /* MotionFirstVC.xib in Resources */,
 				CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */,
+				6DF7340F1B71F92A00F94397 /* DailyThirdVC.xib in Resources */,
 				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
 				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
@@ -1456,6 +1506,7 @@
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
 				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
+				6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
 				CE96B77C1B6F983A004E341B /* MotionSecondVC.xib in Resources */,
@@ -1490,6 +1541,7 @@
 				CE1CC1CB1B2C6A320076C942 /* IQNSArray+Sort.m in Sources */,
 				CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */,
 				CE1CC2011B2C6A320076C942 /* UIImageView+HighlightedWebCache.m in Sources */,
+				6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */,
 				CE1CC1D41B2C6A320076C942 /* IQToolbar.m in Sources */,
 				CE1CC1CF1B2C6A320076C942 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				CE1CC1E01B2C6A320076C942 /* LKDBUtils.m in Sources */,
@@ -1522,6 +1574,7 @@
 				CE7192B51B389DF000087024 /* MemberAPI.m in Sources */,
 				CE1CC1F41B2C6A320076C942 /* MKAnnotationView+WebCache.m in Sources */,
 				CEA794721B6FF56400B3774B /* DailyDetectionVC.m in Sources */,
+				6DF734041B71F8ED00F94397 /* DailyFirstVC.m in Sources */,
 				CE71927D1B388D7900087024 /* BaseAPI.m in Sources */,
 				CE7192AA1B38994200087024 /* GCDQueue.m in Sources */,
 				CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */,
@@ -1551,6 +1604,7 @@
 				CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */,
 				CE7192BF1B38BA0700087024 /* TRSDialScrollView.m in Sources */,
 				CE7192AB1B38994200087024 /* GCDSemaphore.m in Sources */,
+				6DF734091B71F91800F94397 /* DailySecondVC.m in Sources */,
 				CE8970DC1B3E2DCD008BB59D /* AirQualityVC.m in Sources */,
 				CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */,
 				CE1CC2021B2C6A320076C942 /* UIImageView+WebCache.m in Sources */,
