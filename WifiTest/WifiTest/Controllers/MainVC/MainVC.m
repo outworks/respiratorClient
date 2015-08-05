@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [NotificationCenter addObserver:self selector:@selector(loadFunction:) name:NOTIFICATION_FUNCTIONCHANGE object:nil];
     [self initTabBar];
     [_vc_tab setSelectedIndex:0];
     // Do any additional setup after loading the view from its nib.
@@ -39,6 +40,11 @@
 }
 
 -(void)initTabBar{
+    if (self.vc_tab ) {
+        [_vc_tab.view removeFromSuperview];
+        self.vc_tab = nil;
+    }
+    
     self.vc_tab = [[UITabBarController alloc] init];
     [_vc_tab.tabBar setBackgroundColor:UIColorFromRGB(0xefefe)];
     [_vc_tab.view setFrame:self.view.frame];
@@ -124,6 +130,30 @@
     
 }
 
+#pragma mark - 
+
+-(void)loadFunction:(NSNotification *)note{
+    
+    NSDictionary *t_dic = [note userInfo];
+    
+    if (t_dic != nil) {
+        
+        NSString *contentType = [t_dic objectForKey:@"contentType"];
+        if ([contentType isEqualToString:@"daily"]) {
+            _contentType = DailyType;
+        }else if ([contentType isEqualToString:@"motion"]) {
+            _contentType = MotionType;
+        }else{
+            _contentType = MedicationType;
+           
+        }
+        
+        [self initTabBar];
+        [_vc_tab setSelectedIndex:0];
+    }
+
+}
+
 #pragma mark - navigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
@@ -138,6 +168,7 @@
 #pragma mark - dealloc 
 
 -(void)dealloc{
+     [NotificationCenter removeObserver:self];
     NSLog(@"MainVC dealloc");
 }
 

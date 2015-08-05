@@ -137,19 +137,21 @@
 
 //日常
 - (IBAction)dailyAction:(id)sender {
-    
-    
+    NSDictionary *t_dic = @{@"contentType":@"daily"};
+    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
 }
 
 //运动
 - (IBAction)motionAction:(id)sender {
-    
+    NSDictionary *t_dic = @{@"contentType":@"motion"};
+    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
     
 }
 
 //用药
 - (IBAction)DrugAction:(id)sender {
-    
+    NSDictionary *t_dic = @{@"contentType":@"drug"};
+    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
     
 }
 

@@ -14,6 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *v_barChart;
 
+@property (weak, nonatomic) IBOutlet UILabel *lb_time;
+@property (weak, nonatomic) IBOutlet UILabel *lb_pef;
+@property (weak, nonatomic) IBOutlet UILabel *lb_fev1;
+@property (weak, nonatomic) IBOutlet UILabel *lb_state;
+
 
 @property (nonatomic,strong) HCatChart * chartView; //图表
 @property (nonatomic,strong) NSMutableArray *mutArr;
@@ -66,7 +71,7 @@
     _chartView.chartMargin = 10.0f;
     [_chartView showInView:_v_barChart];
     
-    
+    [self ClickedOnBarAtIndex:0];
 }
 
 
@@ -119,9 +124,15 @@
 - (void)ClickedOnBarAtIndex:(NSInteger)barIndex{
     NSLog(@"Click on bar %@", @(barIndex));
     
-    Monidata *t_monidata = _mutArr[barIndex];
+    if (_mutArr && [_mutArr count] > 0) {
+        Monidata *t_monidata = _mutArr[barIndex];
+        _lb_pef.text = [t_monidata.pef stringValue];
+        _lb_fev1.text = [t_monidata.fev1 stringValue];
+        _lb_time.text = t_monidata.saveTime;
+        _lb_state.text = t_monidata.stateString;
 
-
+    }
+    
 
 }
 

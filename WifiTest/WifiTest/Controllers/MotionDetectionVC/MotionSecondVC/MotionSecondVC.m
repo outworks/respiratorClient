@@ -119,11 +119,12 @@
 
 - (void)ClickedOnBarAtIndex:(NSInteger)barIndex{
     NSLog(@"Click on bar %@", @(barIndex));
-    
+    if (_mutArr && [_mutArr count] > 0) {
     Monidata *t_monidata = _mutArr[barIndex];
     _lb_fvc.text = [t_monidata.fvc stringValue];
     _lb_time.text = t_monidata.saveTime;
     _lb_state.text = t_monidata.stateString;
+    }
 
 }
 

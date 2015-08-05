@@ -10,6 +10,7 @@
                 <outlet property="btn_back" destination="Jp9-3d-BmR" id="aZb-rQ-MsH"/>
                 <outlet property="btn_commodity" destination="Twd-wN-IsS" id="jbl-8F-uBq"/>
                 <outlet property="btn_drugDetail" destination="UgZ-0j-LqJ" id="mLr-qn-hvf"/>
+                <outlet property="btn_test" destination="hiv-qH-GdC" id="uin-Do-eBf"/>
                 <outlet property="btn_upOrDown" destination="nbR-dj-7WL" id="09K-Ni-zXy"/>
                 <outlet property="lb_state" destination="Hxf-IO-2Wn" id="lZi-1P-8BV"/>
                 <outlet property="lb_stateContent" destination="mQ7-DG-hma" id="AQa-XE-2la"/>
@@ -64,6 +65,7 @@
                     <state key="normal" title="药物咨询">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" title="关闭"/>
                     <connections>
                         <action selector="drugDetailAction:" destination="-1" eventType="touchUpInside" id="e1O-yt-9xs"/>
                     </connections>
@@ -74,7 +76,9 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HyX-Pi-2Xd">
                             <rect key="frame" x="11" y="8" width="299" height="355"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <mutableString key="text">MONTELUKAST孟鲁司特钠                                     Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療氣喘(哮喘)的 症狀。當您吸入花粉或動物毛髮等過敏原 後,體內會自然釋放出Leukotrienes的化 學物質,結果使呼吸道發炎腫脹,使空體 不易由支气管進入肺部,最後導致氣喘( 哮喘)的發作。此藥的作用在於阻止 leukotriene的釋放,使呼吸道保持流暢, 因此可以用來預防過敏症狀或氣喘(哮喘) 的發生。此藥同時用來解除季節性過敏性 鼻炎引起的症狀如打噴嚏、鼻塞、流鼻水 與鼻子癢等,並且可以用來預防運動引起</mutableString>
+                            <string key="text">MONTELUKAST
+孟鲁司特钠                                     
+Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療氣喘(哮喘)的 症狀。當您吸入花粉或動物毛髮等過敏原 後,體內會自然釋放出Leukotrienes的化 學物質,結果使呼吸道發炎腫脹,使空體 不易由支气管進入肺部,最後導致氣喘( 哮喘)的發作。此藥的作用在於阻止 leukotriene的釋放,使呼吸道保持流暢, 因此可以用來預防過敏症狀或氣喘(哮喘) 的發生。此藥同時用來解除季節性過敏性 鼻炎引起的症狀如打噴嚏、鼻塞、流鼻水 與鼻子癢等,並且可以用來預防運動引起</string>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -99,14 +103,17 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btnTestAction:" destination="-1" eventType="touchUpInside" id="Z45-Rc-eF2"/>
+                            </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟量测开始" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxf-IO-2Wn">
-                            <rect key="frame" x="18" y="22" width="197" height="36"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始测量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxf-IO-2Wn">
+                            <rect key="frame" x="57" y="22" width="120" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请吹气..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ7-DG-hma">
-                            <rect key="frame" x="76" y="71" width="81" height="26"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用药前呼吸状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ7-DG-hma">
+                            <rect key="frame" x="43" y="71" width="147" height="26"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                             <color key="textColor" red="0.1764705882" green="0.6588235294" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
