@@ -14,6 +14,12 @@
 		6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */; };
 		6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B21B525EA8000DD6D6 /* SetCell.m */; };
 		6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */; };
+		6DF733F81B71E02800F94397 /* HCatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733ED1B71E02800F94397 /* HCatBar.m */; };
+		6DF733F91B71E02800F94397 /* HCatBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733EF1B71E02800F94397 /* HCatBarChart.m */; };
+		6DF733FA1B71E02800F94397 /* HCatChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F11B71E02800F94397 /* HCatChart.m */; };
+		6DF733FB1B71E02800F94397 /* HCatChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F31B71E02800F94397 /* HCatChartLabel.m */; };
+		6DF733FC1B71E02800F94397 /* HCatColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F51B71E02800F94397 /* HCatColor.m */; };
+		6DF733FD1B71E02800F94397 /* HCatLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733F71B71E02800F94397 /* HCatLineChart.m */; };
 		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
 		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
@@ -200,6 +206,18 @@
 		6DE9A7B11B525EA8000DD6D6 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		6DE9A7B21B525EA8000DD6D6 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
+		6DF733EC1B71E02800F94397 /* HCatBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatBar.h; sourceTree = "<group>"; };
+		6DF733ED1B71E02800F94397 /* HCatBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatBar.m; sourceTree = "<group>"; };
+		6DF733EE1B71E02800F94397 /* HCatBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatBarChart.h; sourceTree = "<group>"; };
+		6DF733EF1B71E02800F94397 /* HCatBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatBarChart.m; sourceTree = "<group>"; };
+		6DF733F01B71E02800F94397 /* HCatChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatChart.h; sourceTree = "<group>"; };
+		6DF733F11B71E02800F94397 /* HCatChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatChart.m; sourceTree = "<group>"; };
+		6DF733F21B71E02800F94397 /* HCatChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatChartLabel.h; sourceTree = "<group>"; };
+		6DF733F31B71E02800F94397 /* HCatChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatChartLabel.m; sourceTree = "<group>"; };
+		6DF733F41B71E02800F94397 /* HCatColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatColor.h; sourceTree = "<group>"; };
+		6DF733F51B71E02800F94397 /* HCatColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatColor.m; sourceTree = "<group>"; };
+		6DF733F61B71E02800F94397 /* HCatLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCatLineChart.h; sourceTree = "<group>"; };
+		6DF733F71B71E02800F94397 /* HCatLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCatLineChart.m; sourceTree = "<group>"; };
 		CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgreementVC.h; sourceTree = "<group>"; };
 		CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgreementVC.m; sourceTree = "<group>"; };
 		CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgreementVC.xib; sourceTree = "<group>"; };
@@ -539,6 +557,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DF733EB1B71E02800F94397 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				6DF733EC1B71E02800F94397 /* HCatBar.h */,
+				6DF733ED1B71E02800F94397 /* HCatBar.m */,
+				6DF733EE1B71E02800F94397 /* HCatBarChart.h */,
+				6DF733EF1B71E02800F94397 /* HCatBarChart.m */,
+				6DF733F01B71E02800F94397 /* HCatChart.h */,
+				6DF733F11B71E02800F94397 /* HCatChart.m */,
+				6DF733F21B71E02800F94397 /* HCatChartLabel.h */,
+				6DF733F31B71E02800F94397 /* HCatChartLabel.m */,
+				6DF733F41B71E02800F94397 /* HCatColor.h */,
+				6DF733F51B71E02800F94397 /* HCatColor.m */,
+				6DF733F61B71E02800F94397 /* HCatLineChart.h */,
+				6DF733F71B71E02800F94397 /* HCatLineChart.m */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
 		CE1CC0D91B2C68180076C942 = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +646,7 @@
 		CE1CC10B1B2C6A320076C942 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				6DF733EB1B71E02800F94397 /* ChartView */,
 				CE8970DE1B3E35D0008BB59D /* PNChart */,
 				CE7192BA1B38BA0700087024 /* TRSDialScrollView */,
 				CE71929F1B38994200087024 /* YXGCD */,
@@ -1442,6 +1480,7 @@
 			files = (
 				CE96B7801B6F984B004E341B /* MotionThirdVC.m in Sources */,
 				CEA8E1141B3E534300A47BFC /* Monidata.m in Sources */,
+				6DF733FD1B71E02800F94397 /* HCatLineChart.m in Sources */,
 				CE96B7761B6F9827004E341B /* MotionFirstVC.m in Sources */,
 				CE8970D01B3E2DBE008BB59D /* BreathVC.m in Sources */,
 				CE8971051B3E35D0008BB59D /* PNLineChartDataItem.m in Sources */,
@@ -1462,6 +1501,7 @@
 				CE71929B1B38905D00087024 /* AFURLConnectionOperation.m in Sources */,
 				CE1CC1F31B2C6A320076C942 /* Reachability.m in Sources */,
 				CE1CC1FF1B2C6A320076C942 /* UIImage+MultiFormat.m in Sources */,
+				6DF733F81B71E02800F94397 /* HCatBar.m in Sources */,
 				CE1CC1D11B2C6A320076C942 /* IQTextView.m in Sources */,
 				CE1CC1F51B2C6A320076C942 /* NSData+ImageContentType.m in Sources */,
 				CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */,
@@ -1470,6 +1510,7 @@
 				CE8971001B3E35D0008BB59D /* PNCircleChart.m in Sources */,
 				CE1CC2031B2C6A320076C942 /* UIView+WebCacheOperation.m in Sources */,
 				CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */,
+				6DF733FA1B71E02800F94397 /* HCatChart.m in Sources */,
 				CE1CC1FA1B2C6A320076C942 /* SDWebImageDownloaderOperation.m in Sources */,
 				CE1CC1F91B2C6A320076C942 /* SDWebImageDownloader.m in Sources */,
 				CE85B34D1B698C4600EB5D8F /* ProductVC.m in Sources */,
@@ -1499,6 +1540,7 @@
 				CE1CC2A91B2C8F7E0076C942 /* MMDrawerVisualState.m in Sources */,
 				CE1CC1DF1B2C6A320076C942 /* LKDBHelper.m in Sources */,
 				CE1CC2531B2C7C7C0076C942 /* BasicVC.m in Sources */,
+				6DF733FB1B71E02800F94397 /* HCatChartLabel.m in Sources */,
 				CE7192C01B38BA0700087024 /* TRSDialView.m in Sources */,
 				CE1CC1CE1B2C6A320076C942 /* IQKeyboardManager.m in Sources */,
 				CE1CC1DA1B2C6A320076C942 /* FMDatabaseAdditions.m in Sources */,
@@ -1515,6 +1557,7 @@
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
 				CE96B77B1B6F983A004E341B /* MotionSecondVC.m in Sources */,
 				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
+				6DF733F91B71E02800F94397 /* HCatBarChart.m in Sources */,
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
 				CE8970D41B3E2DBE008BB59D /* PEFSecondVC.m in Sources */,
 				CE71929D1B38905D00087024 /* UIImageView+AFNetworking.m in Sources */,
@@ -1535,6 +1578,7 @@
 				CE96B76E1B6F96DA004E341B /* MotionDetectionVC.m in Sources */,
 				CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */,
 				CE4816301B6C35BC007CC332 /* RegiestSuccessVC.m in Sources */,
+				6DF733FC1B71E02800F94397 /* HCatColor.m in Sources */,
 				CE8970B81B3E2DB0008BB59D /* SetVC.m in Sources */,
 				CE8970D21B3E2DBE008BB59D /* PEFFirstVC.m in Sources */,
 				CE8971091B3E35D0008BB59D /* PNScatterChartData.m in Sources */,

@@ -142,7 +142,7 @@
     t_request.pef = @([TestTool sharedTestTool].pef);
     t_request.fev1 = @([TestTool sharedTestTool].fev1);
     t_request.fvc = @([TestTool sharedTestTool].fvc);
-    t_request.inputType = @0;
+    t_request.inputType = @1;
     __weak __typeof(self) weak = self;
     [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
         [_hud hide];

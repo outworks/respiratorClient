@@ -7,6 +7,7 @@
 //
 
 #import "BasicVC.h"
+#import "HCatChart.h"
 
 @interface MotionSecondVC : BasicVC
 
