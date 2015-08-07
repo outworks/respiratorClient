@@ -11,6 +11,8 @@
 #import "DataAPI.h"
 #import "TestTool.h"
 
+#import "CommodityVC.h"
+
 @interface DrugDetectionVC ()
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_drugDetail;
@@ -28,6 +30,28 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_test;
 @property (nonatomic,assign) BOOL isTesting; //是否在测量
+
+// 测试结果
+
+@property (weak, nonatomic) IBOutlet UILabel *lb_date;
+
+@property (weak, nonatomic) IBOutlet UILabel *lb_beforeTime;
+@property (weak, nonatomic) IBOutlet UILabel *lb_beforePEF;
+@property (weak, nonatomic) IBOutlet UILabel *lb_beforeFEV1;
+@property (weak, nonatomic) IBOutlet UILabel *lb_beforeFVC;
+@property (weak, nonatomic) IBOutlet UILabel *lb_beforeFEV1FVC;
+
+@property (weak, nonatomic) IBOutlet UILabel *lb_afterTime;
+@property (weak, nonatomic) IBOutlet UILabel *lb_afterPEF;
+@property (weak, nonatomic) IBOutlet UILabel *lb_afterFEV1;
+@property (weak, nonatomic) IBOutlet UILabel *lb_afterFVC;
+@property (weak, nonatomic) IBOutlet UILabel *lb_afterFEV1FVC;
+
+@property (weak, nonatomic) IBOutlet UILabel *lb_level; //测评结果
+
+@property (nonatomic,strong) Monidata *beforeMonidata;
+@property (nonatomic,strong) Monidata *afterMonidata;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_commodity;
 @property (weak, nonatomic) IBOutlet UIButton *btn_back;
@@ -62,6 +86,45 @@
     _v_drugDetail.hidden = YES;
     _v_measureResults.hidden = NO;
     _v_measure.hidden = YES;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSDate *date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *t_dateStr = [dateFormatter stringFromDate:date];
+    
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSString *t_beforeTime = [dateFormatter stringFromDate:date];
+    
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    date= [dateFormatter dateFromString:_afterMonidata.saveTime];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSString *t_afterTime = [dateFormatter stringFromDate:date];
+    
+    _lb_date.text = t_dateStr;
+    _lb_beforeTime.text = t_beforeTime;
+    _lb_beforePEF.text = [NSString stringWithFormat:@"PEF:%@",[_beforeMonidata.pef stringValue]];
+    _lb_beforeFEV1.text = [NSString stringWithFormat:@"FEV1:%@",[_beforeMonidata.fev1 stringValue]];
+    _lb_beforeFVC.text = [NSString stringWithFormat:@"FVC:%@",[_beforeMonidata.fvc stringValue]];
+    _lb_beforeFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC:%.2f%%",[_beforeMonidata.fev1 floatValue]/[_beforeMonidata.fvc floatValue]*100];
+    
+    _lb_afterTime.text = t_afterTime;
+    _lb_afterPEF.text = [NSString stringWithFormat:@"PEF:%@",[_afterMonidata.pef stringValue]];
+    _lb_afterFEV1.text = [NSString stringWithFormat:@"FEV1:%@",[_afterMonidata.fev1 stringValue]];
+    _lb_afterFVC.text = [NSString stringWithFormat:@"FVC:%@",[_afterMonidata.fvc stringValue]];
+    _lb_afterFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC:%.2f%%",[_afterMonidata.fev1 floatValue]/[_afterMonidata.fvc floatValue]*100];
+    if ([_afterMonidata.level integerValue] == 0) {
+        _lb_level.text = @"良好";
+    }else  if ([_afterMonidata.level integerValue] == 1) {
+        _lb_level.text = @"正常";
+    }else  if ([_afterMonidata.level integerValue] == 2) {
+        _lb_level.text = @"危险";
+    }
+    
+    
+    
 }
 
 -(void) reloadData{
@@ -93,14 +156,16 @@
             weak.lb_state.text = @"量测完成";
             weak.lb_stateContent.text = @"请服药";
             weak.isTesting = YES;
+            weak.beforeMonidata = data;
         }else{
             weak.lb_state.text = @"";
             weak.lb_stateContent.text = @"量测完成!";
+            weak.afterMonidata = data;
             [[GCDQueue mainQueue] execute:^{
                 weak.isTesting = NO;
                 weak.lb_state.text = @"量测开始";
                 weak.lb_stateContent.text = @"请吹气";
-                [self reloadData];
+                //[self reloadData];
                 [weak showGrugResults];
             } afterDelay:3.0f*NSEC_PER_SEC];
             
@@ -190,7 +255,10 @@
 
 //商品
 - (IBAction)commodityAction:(id)sender {
-    
+    CommodityVC *t_vc = [[CommodityVC alloc] init];
+    UINavigationController *t_nav = [[UINavigationController alloc] initWithRootViewController:t_vc];
+    [ApplicationDelegate.nav presentViewController:t_nav animated:YES completion:^{
+    }];
     
     
 }

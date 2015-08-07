@@ -190,6 +190,8 @@
 		CED2861F1B47F6F400355DEB /* BluePeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */; };
 		CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */; };
 		CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED286221B48003800355DEB /* CoreBluetooth.framework */; };
+		CEE645AB1B7500EF00E4A335 /* CommodityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE645A91B7500EF00E4A335 /* CommodityVC.m */; };
+		CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE645AA1B7500EF00E4A335 /* CommodityVC.xib */; };
 		DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF509F6D1B3E811900A422E7 /* DataTools.m */; };
 		DF57F1321B73B548001B1536 /* DeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF57F1301B73B548001B1536 /* DeviceVC.m */; };
 		DF57F1331B73B548001B1536 /* DeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF57F1311B73B548001B1536 /* DeviceVC.xib */; };
@@ -536,6 +538,9 @@
 		CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluePeripheralVC.m; sourceTree = "<group>"; };
 		CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluePeripheralVC.xib; sourceTree = "<group>"; };
 		CED286221B48003800355DEB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CEE645A81B7500EF00E4A335 /* CommodityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityVC.h; sourceTree = "<group>"; };
+		CEE645A91B7500EF00E4A335 /* CommodityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityVC.m; sourceTree = "<group>"; };
+		CEE645AA1B7500EF00E4A335 /* CommodityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommodityVC.xib; sourceTree = "<group>"; };
 		DF509F6C1B3E811900A422E7 /* DataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTools.h; sourceTree = "<group>"; };
 		DF509F6D1B3E811900A422E7 /* DataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTools.m; sourceTree = "<group>"; };
 		DF57F12F1B73B548001B1536 /* DeviceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceVC.h; sourceTree = "<group>"; };
@@ -983,6 +988,7 @@
 		CE1CC2151B2C7AFD0076C942 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE645A71B7500B700E4A335 /* CommodityVC */,
 				CE1CC24F1B2C7C720076C942 /* BasicVC */,
 				CE85B3491B698C3000EB5D8F /* ProductVC */,
 				CE1CC2B01B2C92E00076C942 /* LoginVC */,
@@ -1404,6 +1410,16 @@
 			path = BluetoothVC;
 			sourceTree = "<group>";
 		};
+		CEE645A71B7500B700E4A335 /* CommodityVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEE645A81B7500EF00E4A335 /* CommodityVC.h */,
+				CEE645A91B7500EF00E4A335 /* CommodityVC.m */,
+				CEE645AA1B7500EF00E4A335 /* CommodityVC.xib */,
+			);
+			path = CommodityVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1516,6 +1532,7 @@
 				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
 				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
+				CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
@@ -1661,6 +1678,7 @@
 				CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */,
 				CE1CC2001B2C6A320076C942 /* UIImage+WebP.m in Sources */,
 				CE7192B21B389DCE00087024 /* Member.m in Sources */,
+				CEE645AB1B7500EF00E4A335 /* CommodityVC.m in Sources */,
 				CE8970FE1B3E35D0008BB59D /* PNBarChart.m in Sources */,
 				CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */,
 				6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */,

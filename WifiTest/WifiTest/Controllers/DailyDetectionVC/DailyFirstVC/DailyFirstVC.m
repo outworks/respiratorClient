@@ -113,11 +113,11 @@
             
             weakSelf.lb_info.text = @"尖峰呼气流量状态";
             weakSelf.lb_state.text = monidata.stateString;
-            if ([monidata.level integerValue] == 1) {
+            if ([monidata.level integerValue] == 0) {
                 weakSelf.lb_state.textColor = RGB(33, 211, 58);
-            }else  if ([monidata.level integerValue] == 2) {
+            }else  if ([monidata.level integerValue] == 1) {
                 weakSelf.lb_state.textColor = RGB(237, 229, 107);
-            }else  if ([monidata.level integerValue] == 3) {
+            }else  if ([monidata.level integerValue] == 2) {
                 weakSelf.lb_state.textColor = RGB(237, 14, 72);
             }
             float value =  [monidata.pef floatValue] / [[ShareValue sharedShareValue].member.defPef floatValue];

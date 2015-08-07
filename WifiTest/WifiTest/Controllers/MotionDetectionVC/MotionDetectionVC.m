@@ -13,6 +13,8 @@
 #import "MotionThirdVC.h"
 #import "MainVC.h"
 
+#import "CommodityVC.h"
+
 @interface MotionDetectionVC ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -89,7 +91,10 @@
 //商品
 - (IBAction)commodityAction:(id)sender {
     
-    
+    CommodityVC *t_vc = [[CommodityVC alloc] init];
+    UINavigationController *t_nav = [[UINavigationController alloc] initWithRootViewController:t_vc];
+    [ApplicationDelegate.nav presentViewController:t_nav animated:YES completion:^{
+    }];
     
 }
 
