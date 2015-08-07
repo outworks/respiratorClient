@@ -191,6 +191,9 @@
 		CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */; };
 		CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED286221B48003800355DEB /* CoreBluetooth.framework */; };
 		DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF509F6D1B3E811900A422E7 /* DataTools.m */; };
+		DF57F1321B73B548001B1536 /* DeviceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF57F1301B73B548001B1536 /* DeviceVC.m */; };
+		DF57F1331B73B548001B1536 /* DeviceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF57F1311B73B548001B1536 /* DeviceVC.xib */; };
+		DF57F1371B73B611001B1536 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF57F1361B73B611001B1536 /* DeviceHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -535,6 +538,11 @@
 		CED286221B48003800355DEB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		DF509F6C1B3E811900A422E7 /* DataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTools.h; sourceTree = "<group>"; };
 		DF509F6D1B3E811900A422E7 /* DataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTools.m; sourceTree = "<group>"; };
+		DF57F12F1B73B548001B1536 /* DeviceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceVC.h; sourceTree = "<group>"; };
+		DF57F1301B73B548001B1536 /* DeviceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceVC.m; sourceTree = "<group>"; };
+		DF57F1311B73B548001B1536 /* DeviceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceVC.xib; sourceTree = "<group>"; };
+		DF57F1351B73B611001B1536 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		DF57F1361B73B611001B1536 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -935,6 +943,8 @@
 		CE1CC2041B2C70360076C942 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DF57F1351B73B611001B1536 /* DeviceHelper.h */,
+				DF57F1361B73B611001B1536 /* DeviceHelper.m */,
 				CE5965BB1B48421300F730C1 /* TestTool.h */,
 				CE5965BC1B48421300F730C1 /* TestTool.m */,
 				CE1CC2051B2C70360076C942 /* ShareFun.h */,
@@ -1185,6 +1195,9 @@
 				CE8970B51B3E2DB0008BB59D /* SetVC.h */,
 				CE8970B61B3E2DB0008BB59D /* SetVC.m */,
 				CE8970B71B3E2DB0008BB59D /* SetVC.xib */,
+				DF57F12F1B73B548001B1536 /* DeviceVC.h */,
+				DF57F1301B73B548001B1536 /* DeviceVC.m */,
+				DF57F1311B73B548001B1536 /* DeviceVC.xib */,
 			);
 			path = SetVC;
 			sourceTree = "<group>";
@@ -1485,6 +1498,7 @@
 				6DF734051B71F8ED00F94397 /* DailyFirstVC.xib in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
+				DF57F1331B73B548001B1536 /* DeviceVC.xib in Resources */,
 				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
 				CE8970BF1B3E2DB7008BB59D /* NearbyPharVC.xib in Resources */,
 				CEA794731B6FF56400B3774B /* DailyDetectionVC.xib in Resources */,
@@ -1615,6 +1629,7 @@
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
 				CE8970D41B3E2DBE008BB59D /* PEFSecondVC.m in Sources */,
 				CE71929D1B38905D00087024 /* UIImageView+AFNetworking.m in Sources */,
+				DF57F1371B73B611001B1536 /* DeviceHelper.m in Sources */,
 				CE1CC1D91B2C6A320076C942 /* FMDatabase.m in Sources */,
 				CE8970D61B3E2DBE008BB59D /* PEFThirdVC.m in Sources */,
 				CE1CC1FE1B2C6A320076C942 /* UIImage+GIF.m in Sources */,
@@ -1641,6 +1656,7 @@
 				CE8971031B3E35D0008BB59D /* PNLineChart.m in Sources */,
 				CE71929A1B38905D00087024 /* AFPropertyListRequestOperation.m in Sources */,
 				CEA7946D1B6FDF3300B3774B /* DrugDetectionVC.m in Sources */,
+				DF57F1321B73B548001B1536 /* DeviceVC.m in Sources */,
 				CE1CC1FC1B2C6A320076C942 /* SDWebImagePrefetcher.m in Sources */,
 				CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */,
 				CE1CC2001B2C6A320076C942 /* UIImage+WebP.m in Sources */,
