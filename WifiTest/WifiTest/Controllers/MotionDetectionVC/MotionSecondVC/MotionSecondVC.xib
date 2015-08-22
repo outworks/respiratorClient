@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MotionSecondVC">
             <connections>
                 <outlet property="lb_fvc" destination="h3X-LJ-Dzz" id="fe9-Me-RMG"/>
-                <outlet property="lb_state" destination="cEU-Fl-yXJ" id="5Me-qE-dIh"/>
                 <outlet property="lb_time" destination="5Ez-xz-mkk" id="A4w-n7-guF"/>
                 <outlet property="v_barChart" destination="Gye-oc-33E" id="dzc-pE-A29"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,26 +40,14 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用力肺活量:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-eT-j0y">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="用力肺活量:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-eT-j0y">
                     <rect key="frame" x="26" y="396" width="90" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尖峰呼气流量状态:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-O8-khg">
-                    <rect key="frame" x="26" y="427" width="141" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3X-LJ-Dzz">
                     <rect key="frame" x="225" y="396" width="29" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="危险" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-Fl-yXJ">
-                    <rect key="frame" x="222" y="427" width="34" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -76,11 +63,7 @@
             <constraints>
                 <constraint firstItem="fDN-Fm-hIV" firstAttribute="top" secondItem="Gye-oc-33E" secondAttribute="bottom" constant="20" id="67P-O9-847"/>
                 <constraint firstItem="fDN-Fm-hIV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="EzK-3c-Vku"/>
-                <constraint firstItem="3ay-O8-khg" firstAttribute="top" secondItem="eZg-eT-j0y" secondAttribute="bottom" constant="10" id="FMW-x3-cKN"/>
-                <constraint firstItem="3ay-O8-khg" firstAttribute="leading" secondItem="eZg-eT-j0y" secondAttribute="leading" id="J5P-MT-QCg"/>
-                <constraint firstItem="cEU-Fl-yXJ" firstAttribute="centerY" secondItem="3ay-O8-khg" secondAttribute="centerY" id="JSE-el-y9y"/>
                 <constraint firstAttribute="trailing" secondItem="Gye-oc-33E" secondAttribute="trailing" id="MF6-OK-Kca"/>
-                <constraint firstItem="3ay-O8-khg" firstAttribute="leading" secondItem="fDN-Fm-hIV" secondAttribute="leading" id="SsR-7B-vcc"/>
                 <constraint firstAttribute="centerY" secondItem="Gye-oc-33E" secondAttribute="centerY" constant="35" id="bCZ-SN-k4g"/>
                 <constraint firstAttribute="centerX" secondItem="5Ez-xz-mkk" secondAttribute="centerX" constant="-79" id="d4F-6a-hQV"/>
                 <constraint firstAttribute="centerY" secondItem="Mst-az-k33" secondAttribute="centerY" constant="175" id="doz-VJ-Hx2"/>
@@ -89,7 +72,6 @@
                 <constraint firstItem="5Ez-xz-mkk" firstAttribute="centerY" secondItem="fDN-Fm-hIV" secondAttribute="centerY" id="pQ6-tE-bGK"/>
                 <constraint firstAttribute="centerX" secondItem="Gye-oc-33E" secondAttribute="centerX" id="rK7-Uo-BF3"/>
                 <constraint firstAttribute="centerX" secondItem="Mst-az-k33" secondAttribute="centerX" id="sBf-Ek-V78"/>
-                <constraint firstItem="cEU-Fl-yXJ" firstAttribute="centerX" secondItem="h3X-LJ-Dzz" secondAttribute="centerX" id="tlY-X3-knm"/>
                 <constraint firstItem="5Ez-xz-mkk" firstAttribute="centerX" secondItem="h3X-LJ-Dzz" secondAttribute="centerX" id="uMJ-n5-P5X"/>
                 <constraint firstItem="eZg-eT-j0y" firstAttribute="centerY" secondItem="h3X-LJ-Dzz" secondAttribute="centerY" id="ugL-wn-et4"/>
             </constraints>

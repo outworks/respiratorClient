@@ -38,6 +38,17 @@
     [super viewDidLoad];
     [self initUI];
     _isUp = NO;
+    
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [[self view] addGestureRecognizer:recognizer];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [[self view] addGestureRecognizer:recognizer];
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -99,13 +110,17 @@
 }
 
 
-//向上或向下
-- (IBAction)upOrdownAction:(id)sender {
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
     
-    _isUp = !_isUp;
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
+        _isUp = NO;
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
+        _isUp = YES;
+    }
     
     if (_isUp) {
-       
+        [_btn_upOrDown setTitle:@"向下" forState:UIControlStateNormal];
         NSArray *array = self.view.constraints;
         for (NSLayoutConstraint *constraint in array) {
             //NSLog(@"%@", constraint.identifier);
@@ -118,10 +133,8 @@
         t_bottom.identifier = @"11121";
         [self.view addConstraint:t_bottom];
         
-       
-        
     }else{
-        
+        [_btn_upOrDown setTitle:@"向上" forState:UIControlStateNormal];
         NSArray *array = self.view.constraints;
         for (NSLayoutConstraint *constraint in array) {
             //NSLog(@"%@", constraint.identifier);
@@ -133,10 +146,11 @@
         NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
         t_bottom.identifier = @"1112";
         [self.view addConstraint:t_bottom];
-    
+        
     }
     
 }
+
 
 //日常
 - (IBAction)dailyAction:(id)sender {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrugDetectionVC">
@@ -10,6 +10,7 @@
                 <outlet property="btn_back" destination="Jp9-3d-BmR" id="aZb-rQ-MsH"/>
                 <outlet property="btn_commodity" destination="Twd-wN-IsS" id="jbl-8F-uBq"/>
                 <outlet property="btn_drugDetail" destination="UgZ-0j-LqJ" id="mLr-qn-hvf"/>
+                <outlet property="btn_drugResult" destination="NDn-kc-8WD" id="f4w-tZ-jK7"/>
                 <outlet property="btn_test" destination="hiv-qH-GdC" id="uin-Do-eBf"/>
                 <outlet property="btn_upOrDown" destination="nbR-dj-7WL" id="09K-Ni-zXy"/>
                 <outlet property="lb_afterFEV1" destination="L6C-00-D4D" id="rto-gx-SEl"/>
@@ -277,18 +278,28 @@ Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療�
                         <constraint firstAttribute="centerY" secondItem="Hxf-IO-2Wn" secondAttribute="centerY" constant="29.5" id="xUW-1l-HN5"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDn-kc-8WD">
+                    <rect key="frame" x="110" y="446" width="100" height="30"/>
+                    <color key="backgroundColor" red="0.1764705882" green="0.66274509800000003" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="4QQ-Cd-6XZ"/>
+                    </constraints>
+                    <state key="normal" title="用药报告">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="drugResultAction:" destination="-1" eventType="touchUpInside" id="Ib4-C2-aVw"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-0G-JeO">
                     <rect key="frame" x="-2" y="489" width="320" height="142"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-dj-7WL">
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-dj-7WL">
                             <rect key="frame" x="124" y="-2" width="72" height="34"/>
-                            <state key="normal" title="向上按钮">
+                            <state key="normal" title="向上">
                                 <color key="titleColor" red="0.1764705882" green="0.6588235294" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <action selector="upOrdownAction:" destination="-1" eventType="touchUpInside" id="I1F-Yg-QkW"/>
-                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d95-YT-SrU">
                             <rect key="frame" x="0.0" y="28" width="320" height="1"/>
@@ -396,6 +407,7 @@ Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療�
                 <constraint firstAttribute="trailing" secondItem="gul-Bn-NG0" secondAttribute="trailing" id="5tV-Mi-6F2"/>
                 <constraint firstAttribute="centerX" secondItem="e9T-3x-eHx" secondAttribute="centerX" id="7g4-tR-9JF"/>
                 <constraint firstAttribute="trailing" secondItem="Twd-wN-IsS" secondAttribute="trailing" constant="10" id="Dro-j5-NGg"/>
+                <constraint firstItem="NDn-kc-8WD" firstAttribute="top" secondItem="ozI-M9-JeD" secondAttribute="bottom" constant="37" id="FT8-La-dBI"/>
                 <constraint firstItem="ul1-mh-9nN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fwr-rz-JYt"/>
                 <constraint firstAttribute="centerY" secondItem="ozI-M9-JeD" secondAttribute="centerY" priority="750" constant="-54.5" id="HYe-wq-DhQ"/>
                 <constraint firstItem="4kQ-36-ETY" firstAttribute="centerY" secondItem="UgZ-0j-LqJ" secondAttribute="centerY" id="Hsz-nb-FwA"/>
@@ -412,6 +424,7 @@ Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療�
                 <constraint firstAttribute="bottom" secondItem="tVi-BC-nSm" secondAttribute="bottom" id="fUB-yn-JwM"/>
                 <constraint firstAttribute="centerY" secondItem="e9T-3x-eHx" secondAttribute="centerY" priority="750" constant="175" id="kCY-Ux-O2Q"/>
                 <constraint firstAttribute="trailing" secondItem="UgZ-0j-LqJ" secondAttribute="trailing" constant="8" id="lMs-j7-rp9"/>
+                <constraint firstAttribute="centerX" secondItem="NDn-kc-8WD" secondAttribute="centerX" id="pG4-Kc-3pe"/>
                 <constraint firstAttribute="trailing" secondItem="WeQ-0G-JeO" secondAttribute="trailing" constant="2" id="qSA-Sl-773"/>
                 <constraint firstItem="4kQ-36-ETY" firstAttribute="leading" secondItem="160-D7-Wku" secondAttribute="trailing" constant="5" id="qX1-ZY-gUX"/>
                 <constraint firstAttribute="bottom" secondItem="gul-Bn-NG0" secondAttribute="bottom" id="vRp-m9-yFP"/>

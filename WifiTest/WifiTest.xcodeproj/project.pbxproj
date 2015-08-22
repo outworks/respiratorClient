@@ -106,6 +106,8 @@
 		CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B31B2C92E00076C942 /* LoginVC.xib */; };
 		CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */; };
 		CE1CC2BA1B2C96AF0076C942 /* RegiestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */; };
+		CE326F241B87F52400ABECD0 /* DrugResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE326F221B87F52400ABECD0 /* DrugResultVC.m */; };
+		CE326F251B87F52400ABECD0 /* DrugResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE326F231B87F52400ABECD0 /* DrugResultVC.xib */; };
 		CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */; };
 		CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */; };
 		CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816291B6C2BF0007CC332 /* UserInfoVC.m */; };
@@ -388,6 +390,9 @@
 		CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestVC.h; sourceTree = "<group>"; };
 		CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestVC.m; sourceTree = "<group>"; };
 		CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestVC.xib; sourceTree = "<group>"; };
+		CE326F211B87F52400ABECD0 /* DrugResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugResultVC.h; sourceTree = "<group>"; };
+		CE326F221B87F52400ABECD0 /* DrugResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugResultVC.m; sourceTree = "<group>"; };
+		CE326F231B87F52400ABECD0 /* DrugResultVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugResultVC.xib; sourceTree = "<group>"; };
 		CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexSelectionVC.h; sourceTree = "<group>"; };
 		CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexSelectionVC.m; sourceTree = "<group>"; };
 		CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexSelectionVC.xib; sourceTree = "<group>"; };
@@ -1340,6 +1345,9 @@
 				CEA7946A1B6FDF3300B3774B /* DrugDetectionVC.h */,
 				CEA7946B1B6FDF3300B3774B /* DrugDetectionVC.m */,
 				CEA7946C1B6FDF3300B3774B /* DrugDetectionVC.xib */,
+				CE326F211B87F52400ABECD0 /* DrugResultVC.h */,
+				CE326F221B87F52400ABECD0 /* DrugResultVC.m */,
+				CE326F231B87F52400ABECD0 /* DrugResultVC.xib */,
 			);
 			path = DrugDetectionVC;
 			sourceTree = "<group>";
@@ -1539,6 +1547,7 @@
 				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
 				6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
+				CE326F251B87F52400ABECD0 /* DrugResultVC.xib in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
 				CE96B77C1B6F983A004E341B /* MotionSecondVC.xib in Resources */,
 				6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */,
@@ -1651,6 +1660,7 @@
 				CE8970D61B3E2DBE008BB59D /* PEFThirdVC.m in Sources */,
 				CE1CC1FE1B2C6A320076C942 /* UIImage+GIF.m in Sources */,
 				CE7192991B38905D00087024 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				CE326F241B87F52400ABECD0 /* DrugResultVC.m in Sources */,
 				CE1CC1D51B2C6A320076C942 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				CE1CC1CC1B2C6A320076C942 /* IQUIView+Hierarchy.m in Sources */,
 				CED2861F1B47F6F400355DEB /* BluePeripheralVC.m in Sources */,

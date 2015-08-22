@@ -38,7 +38,7 @@
     [MemberAPI MemberRegisterWithRequest:request completionBlockWithSuccess:^{
         NSLog(@"注册成功");
 
-        [ShareValue sharedShareValue].m_password = [_tf_pwd.text md5HexDigest];
+        [ShareValue sharedShareValue].m_password = _tf_pwd.text;
         [ShareValue sharedShareValue].m_username = _tf_userName.text;
         [weakSelf loginRequest];
     
@@ -55,7 +55,7 @@
     __weak typeof(*&self) weakSelf = self;
     MemberLoginRequest *request = [[MemberLoginRequest alloc] init];
     request.username = [ShareValue sharedShareValue].m_username;
-    request.pwd =[ShareValue sharedShareValue].m_password;
+    request.pwd = [[ShareValue sharedShareValue].m_password md5HexDigest];
     [MemberAPI MemberLoginWithRequest:request completionBlockWithSuccess:^(Member *data) {
         NSLog(@"登录成功");
         [ShareValue sharedShareValue].member = data;

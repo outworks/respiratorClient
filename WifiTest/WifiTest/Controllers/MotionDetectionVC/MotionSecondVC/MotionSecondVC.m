@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *v_barChart;
 @property (weak, nonatomic) IBOutlet UILabel *lb_time;
 @property (weak, nonatomic) IBOutlet UILabel *lb_fvc;
-@property (weak, nonatomic) IBOutlet UILabel *lb_state;
+
 
 @property (nonatomic,strong) HCatChart * chartView; //图表
 @property (nonatomic,strong) NSMutableArray *mutArr;
@@ -123,7 +123,6 @@
     Monidata *t_monidata = _mutArr[barIndex];
     _lb_fvc.text = [t_monidata.fvc stringValue];
     _lb_time.text = t_monidata.saveTime;
-    _lb_state.text = t_monidata.stateString;
     }
 
 }

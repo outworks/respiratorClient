@@ -32,7 +32,6 @@
 @property (nonatomic,assign) BOOL isTesting; //是否在测量
 
 // 测试结果
-
 @property (weak, nonatomic) IBOutlet UILabel *lb_date;
 
 @property (weak, nonatomic) IBOutlet UILabel *lb_beforeTime;
@@ -55,6 +54,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_commodity;
 @property (weak, nonatomic) IBOutlet UIButton *btn_back;
+@property (weak, nonatomic) IBOutlet UIButton *btn_drugResult;
+
+
 @property (nonatomic,strong) GCDTimer *timer;
 @end
 
@@ -64,6 +66,15 @@
     [super viewDidLoad];
     _isUp = NO;
     [self initUI];
+    
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [[self view] addGestureRecognizer:recognizer];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [[self view] addGestureRecognizer:recognizer];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -71,6 +82,7 @@
 
 -(void)initUI{
     [ShareFun getCorner:_btn_commodity withCorner:_btn_commodity.frame.size.height/2 withBorderWidth:1.f withBorderColor:[UIColor clearColor]];
+    [ShareFun getCorner:_btn_drugResult withCorner:_btn_drugResult.frame.size.height/2 withBorderWidth:1.f withBorderColor:[UIColor clearColor]];
     [ShareFun getCorner:_btn_back];
     [ShareFun getCorner:_v_measure withCorner: 10.0f withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     [ShareFun getCorner:_btn_drugDetail withCorner: _btn_drugDetail.frame.size.height/2 withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
@@ -170,8 +182,7 @@
             } afterDelay:3.0f*NSEC_PER_SEC];
             
         }
-        
-        
+    
     } Fail:^(int code, NSString *failDescript) {
         weak.isTesting = NO;
         weak.lb_state.text = @"量测开始";
@@ -194,10 +205,12 @@
         _v_drugDetail.hidden = NO;
         _v_measureResults.hidden = YES;
         _v_measure.hidden = YES;
+        _btn_drugResult.hidden = YES;
     }else{
         _v_drugDetail.hidden = YES;
         _v_measureResults.hidden = YES;
         _v_measure.hidden = NO;
+        _btn_drugResult.hidden = NO;
     }
 
 }
@@ -263,7 +276,62 @@
     
 }
 
+- (IBAction)drugResultAction:(id)sender {
+    
+    
+    
+}
+
+
+
 #pragma mark - buttonActionNormal
+
+
+//向上或向下
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
+        _isUp = NO;
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
+        _isUp = YES;
+    }
+    
+    if (_isUp) {
+        [_btn_upOrDown setTitle:@"向下" forState:UIControlStateNormal];
+        NSArray *array = self.view.constraints;
+        for (NSLayoutConstraint *constraint in array) {
+            //NSLog(@"%@", constraint.identifier);
+            if ([constraint.identifier isEqual:@"1112"]) {
+                [self.view removeConstraint:constraint];
+            }
+        }
+        
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:49];
+        t_bottom.identifier = @"11121";
+        [self.view addConstraint:t_bottom];
+        
+    }else{
+        [_btn_upOrDown setTitle:@"向上" forState:UIControlStateNormal];
+        NSArray *array = self.view.constraints;
+        for (NSLayoutConstraint *constraint in array) {
+            //NSLog(@"%@", constraint.identifier);
+            if ([constraint.identifier isEqual:@"11121"]) {
+                [self.view removeConstraint:constraint];
+            }
+        }
+        
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
+        t_bottom.identifier = @"1112";
+        [self.view addConstraint:t_bottom];
+        
+    }
+    
+}
+
+
+
 //向上或向下
 - (IBAction)upOrdownAction:(id)sender {
     
