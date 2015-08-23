@@ -10,4 +10,6 @@
 
 @interface DrugResultVC : BasicVC
 
+@property(nonatomic,strong) NSMutableArray *arr_data;
+
 @end

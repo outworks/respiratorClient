@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "DataAPI.h"
 #import "TestTool.h"
+#import "DrugResultVC.h"
 
 #import "CommodityVC.h"
 
@@ -277,8 +278,8 @@
 }
 
 - (IBAction)drugResultAction:(id)sender {
-    
-    
+    DrugResultVC *t_vc = [[DrugResultVC alloc] init];
+    [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
     
 }
 
@@ -390,8 +391,6 @@
     [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
     
 }
-
-
 
 
 #pragma mark - navigationControllerDelegate

@@ -192,6 +192,8 @@
 		CED2861F1B47F6F400355DEB /* BluePeripheralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */; };
 		CED286201B47F6F400355DEB /* BluePeripheralVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */; };
 		CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED286221B48003800355DEB /* CoreBluetooth.framework */; };
+		CED8BE1F1B89216E0071ECEC /* DrugResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8BE1E1B89216E0071ECEC /* DrugResultView.m */; };
+		CED8BE211B8921AB0071ECEC /* DrugResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED8BE201B8921AB0071ECEC /* DrugResultView.xib */; };
 		CEE645AB1B7500EF00E4A335 /* CommodityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE645A91B7500EF00E4A335 /* CommodityVC.m */; };
 		CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE645AA1B7500EF00E4A335 /* CommodityVC.xib */; };
 		DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF509F6D1B3E811900A422E7 /* DataTools.m */; };
@@ -543,6 +545,9 @@
 		CED2861D1B47F6F400355DEB /* BluePeripheralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluePeripheralVC.m; sourceTree = "<group>"; };
 		CED2861E1B47F6F400355DEB /* BluePeripheralVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluePeripheralVC.xib; sourceTree = "<group>"; };
 		CED286221B48003800355DEB /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CED8BE1D1B89216E0071ECEC /* DrugResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugResultView.h; sourceTree = "<group>"; };
+		CED8BE1E1B89216E0071ECEC /* DrugResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugResultView.m; sourceTree = "<group>"; };
+		CED8BE201B8921AB0071ECEC /* DrugResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugResultView.xib; sourceTree = "<group>"; };
 		CEE645A81B7500EF00E4A335 /* CommodityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityVC.h; sourceTree = "<group>"; };
 		CEE645A91B7500EF00E4A335 /* CommodityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityVC.m; sourceTree = "<group>"; };
 		CEE645AA1B7500EF00E4A335 /* CommodityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommodityVC.xib; sourceTree = "<group>"; };
@@ -1348,6 +1353,9 @@
 				CE326F211B87F52400ABECD0 /* DrugResultVC.h */,
 				CE326F221B87F52400ABECD0 /* DrugResultVC.m */,
 				CE326F231B87F52400ABECD0 /* DrugResultVC.xib */,
+				CED8BE1D1B89216E0071ECEC /* DrugResultView.h */,
+				CED8BE1E1B89216E0071ECEC /* DrugResultView.m */,
+				CED8BE201B8921AB0071ECEC /* DrugResultView.xib */,
 			);
 			path = DrugDetectionVC;
 			sourceTree = "<group>";
@@ -1541,6 +1549,7 @@
 				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */,
+				CED8BE211B8921AB0071ECEC /* DrugResultView.xib in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
@@ -1648,6 +1657,7 @@
 				CE8970DC1B3E2DCD008BB59D /* AirQualityVC.m in Sources */,
 				CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */,
 				CE1CC2021B2C6A320076C942 /* UIImageView+WebCache.m in Sources */,
+				CED8BE1F1B89216E0071ECEC /* DrugResultView.m in Sources */,
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
 				CE96B77B1B6F983A004E341B /* MotionSecondVC.m in Sources */,
 				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
