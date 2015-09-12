@@ -38,12 +38,10 @@
 
 @property(nonatomic,strong) CBCharacteristic *notifyCharacteristic;
 
-@property(nonatomic,strong) CBCharacteristic *readCharacteristic2;
-
 @property(nonatomic,strong) NSMutableData *recvData;
 @property(nonatomic,assign) int packLength;
 
-@property(nonatomic,strong) NSTimer *ackTimer;
+//@property(nonatomic,strong) NSTimer *ackTimer;
 
 
 @end
@@ -65,6 +63,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     return self;
 }
 
+-(BOOL)isConnected{
+    return _testPeripheral;
+}
+
 -(void)scan{
     [_manager scanForPeripheralsWithServices:nil options:nil];
 }
@@ -79,24 +81,36 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     if (central.state == CBCentralManagerStatePoweredOn) {
         [_manager scanForPeripheralsWithServices:nil options:nil];
     }else if (central.state == CBCentralManagerStatePoweredOff) {
-        
+        [[NSNotificationCenter defaultCenter]postNotificationName:BLE_POWER_OFF object:nil];
+        [_manager stopScan];
+        [self clear];
     }else if (central.state == CBCentralManagerStateUnknown) {
         
-    }else {
-        
     }
-    
 }
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI{
     NSLog(@"dicoveredPeripherals:%@", peripheral);
-    if(![self.peripheralList containsObject:peripheral]){
+    if(![self.peripheralList containsObject:peripheral] && [peripheral.name isEqual:@"ForeverStrong"]){
         [self.peripheralList addObject:peripheral];
         NSString *perpheralName = [self peripheralName:peripheral];
         [self.deviceNames addObject:perpheralName];
         [self.deviceDict setObject:peripheral forKey:perpheralName];
+        [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICE_FOUND object:nil];
     }
-    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICE_FOUND object:nil];
+}
+
+-(void)clear{
+    self.broadcastCharacteristic = nil;
+    self.readCharacteristic = nil;
+    
+    self.writeCharacteristic = nil;
+    
+   self.notifyCharacteristic = nil;
+    self.testPeripheral = nil;
+    [self.peripheralList removeAllObjects];
+    [self.deviceNames removeAllObjects];
+    [self.deviceDict removeAllObjects];
 }
 
 -(NSString *)peripheralName:(CBPeripheral *)peripheral{
@@ -110,6 +124,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     _testPeripheral = peripheral;
     [peripheral setDelegate:self];
     [peripheral discoverServices:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICE_CONNECTED object:nil];
 }
 
 #pragma mark - CBPeripheralDelegate
@@ -315,12 +330,53 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
-           [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data]}];
+//           [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data]}];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x02){
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_POWERLOW object:nil userInfo:nil];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x41){
-//            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"data":[self dataToString:data]}];
+            int month = txbuf[3];
+            int day = txbuf[4];
+            int hour = txbuf[5];
+            int minute = txbuf[6];
+            int second = txbuf[7];
+            NSString *dateString = [NSString stringWithFormat:@"%02d%02d%02d%02d%02d",month,day,hour,minute,second];
+            int x = txbuf[8] & 0xFF;
+            x |= ((txbuf[9] << 8) & 0xFF00);
+            int x1 = txbuf[10] & 0xFF;
+            x1 |= ((txbuf[11] << 8) & 0xFF00);
+            int x2 = txbuf[12] & 0xFF;
+            x2 |= ((txbuf[13] << 8) & 0xFF00);
+            
+            unsigned char mbytes[16];
+            mbytes[0] = txbuf[0];
+            mbytes[1] = 0x01;
+            mbytes[2] = 0x41;
+            for (int i=3; i<15; i++) {
+                mbytes[i] = txbuf[i];
+            }
+            int addTx = 0;
+            for (int i =0 ; i<15; i++) {
+                addTx += mbytes[i];
+            }
+            mbytes[15] = addTx;
+            [_testPeripheral writeValue:[NSData dataWithBytes:mbytes length:16] forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+            
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"date":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2)}];
+        }else if (txbuf[0] == 0x90 && txbuf[2]==0x03){
+            unsigned char mbytes[16];
+            mbytes[0] = txbuf[0];
+            mbytes[1] = 0x01;
+            mbytes[2] = 0x03;
+            for (int i=3; i<15; i++) {
+                mbytes[i] = txbuf[i];
+            }
+            int addTx = 0;
+            for (int i =0 ; i<15; i++) {
+                addTx += mbytes[i];
+            }
+            mbytes[15] = addTx;
+            [_testPeripheral writeValue:[NSData dataWithBytes:mbytes length:16] forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
         }
     }
     
@@ -410,7 +466,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
 }
 
 -(void)connectTimeout:(CBPeripheral *)peripheral{
+    [self reset];
     NSLog(@"超时!");
+    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_CONNET_TIMEOUT object:nil userInfo:nil];
 }
 
 #pragma mark - function
@@ -425,10 +483,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
 }
 
 -(void)reset{
-    if (_ackTimer) {
-        [_ackTimer invalidate];
-        _ackTimer = nil;
-    }
+//    if (_ackTimer) {
+//        [_ackTimer invalidate];
+//        _ackTimer = nil;
+//    }
     if (_testPeripheral) {
         [_manager cancelPeripheralConnection:_testPeripheral];
         _testPeripheral = nil;

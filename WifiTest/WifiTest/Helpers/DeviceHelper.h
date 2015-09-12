@@ -11,15 +11,25 @@
 
 #define BLE_DEVICE_FOUND @"BLE_DEVICE_FOUND"
 
+#define BLE_DEVICE_CONNECTED @"BLE_DEVICE_CONNECTED"
+
 #define BLE_UPDATE_DATA @"BLE_UPDATE_DATA"
 
 #define BLE_DATA_WRITE @"BLE_DATA_WRITE"
 
 #define BLE_POWERLOW @"BLE_POWERLOW"
 
+#define BLE_POWER_OFF @"BLE_POWER_OFF"
+
+#define BLE_POWER_ON @"BLE_POWER_ON"
+
+#define BLE_CONNET_TIMEOUT @"BLE_CONNET_TIMEOUT"
+
 @interface DeviceHelper : NSObject
 
 @property(nonatomic,strong) NSMutableArray *deviceNames;
+
+-(BOOL)isConnected;
 
 -(void)scan;
 

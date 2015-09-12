@@ -9,7 +9,7 @@
 #ifndef WifiTest_ThirdMacro_h
 #define WifiTest_ThirdMacro_h
 
-#define BAIDUMAPKEY  @"s4wy8AI0iaCNabSN23WHCzAS"
+#define BAIDUMAPKEY  @"FufNFX9PxAmGkyKLPAEaCxmK"
 
 
 #endif

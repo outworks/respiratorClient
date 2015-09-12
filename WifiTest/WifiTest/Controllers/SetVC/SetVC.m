@@ -11,7 +11,7 @@
 #import "ShareValue.h"
 #import "SexSelectionVC.h"
 #import "AppDelegate.h"
-
+#import "DeviceVC.h"
 
 @interface SetVC ()
 
@@ -73,7 +73,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.row == 0) {
+        DeviceVC *t_vc = [[DeviceVC alloc]init];
+        [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
+    }
     if (indexPath.row == 3) {
         SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
         t_vc.member = [ShareValue sharedShareValue].member;

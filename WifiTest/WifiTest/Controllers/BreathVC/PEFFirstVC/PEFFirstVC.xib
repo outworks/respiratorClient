@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PEFFirstVC">
             <connections>
+                <outlet property="btn_test" destination="Hvt-B1-YGB" id="PLy-oB-Gqu"/>
                 <outlet property="lb_info" destination="wJz-wd-dPE" id="Xyc-Ow-YgO"/>
                 <outlet property="lb_pef" destination="3m9-rv-uyW" id="6qS-xD-0qi"/>
                 <outlet property="lb_state" destination="gAK-ph-EwB" id="SEl-ew-XFt"/>
@@ -92,7 +93,7 @@
                 <constraint firstItem="IlD-aX-JLG" firstAttribute="top" secondItem="GE7-Ye-eFW" secondAttribute="bottom" constant="33" id="fUe-9h-33z"/>
                 <constraint firstItem="Hvt-B1-YGB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="iiG-Dt-mFe"/>
             </constraints>
-            <point key="canvasLocation" x="607" y="445"/>
+            <point key="canvasLocation" x="122" y="451"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -12,8 +12,9 @@
 #import "PNChart.h"
 
 #import "DataAPI.h"
-#import "TestTool.h"
+//#import "TestTool.h"
 #import "DataTools.h"
+#import "DeviceHelper.h"
 
 @interface MotionFirstVC (){
     ShowHUD *_hud;
@@ -134,6 +135,7 @@
     }];
 }
 
+/*
 -(void)commitData{
     
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
@@ -152,35 +154,101 @@
         } duration:1.5f inView:self.view];
     }];
 }
+ */
 
 #pragma mark - buttonAction 
 
 - (IBAction)testAcion:(id)sender {
-    
-    _hud = [ShowHUD showText:@"测试中.." configParameter:^(ShowHUD *config) {
-    } inView:self.view];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    [[GCDQueue globalQueue] execute:^{
-        
-        [[TestTool sharedTestTool] test];
-        
-        NSLog(@"%f",[TestTool sharedTestTool].pef);
-        NSLog(@"%f",[TestTool sharedTestTool].fvc);
-        
-        NSLog(@"%2f",[TestTool sharedTestTool].pef/[[ShareValue sharedShareValue].member.defPef floatValue]);
-        [weakSelf commitData];
-        
+    [self startListening];
+    if (![DeviceHelper sharedDeviceHelper].isConnected) {
+        [[DeviceHelper sharedDeviceHelper]scan];
+        _hud = [ShowHUD showText:@"正在搜索设备，请确定设备已打开" configParameter:^(ShowHUD *config) {
+        } inView:self.view];
+    }else{
+        _hud = [ShowHUD showText:@"请对设备呼气" configParameter:^(ShowHUD *config) {
+        } inView:self.view];
+    }
+    /*
+     __weak typeof(self) weakSelf = self;
+     
+     [[GCDQueue globalQueue] execute:^{
+     
+     [[TestTool sharedTestTool] test];
+     
+     NSLog(@"%f",[TestTool sharedTestTool].pef);
+     NSLog(@"%f",[TestTool sharedTestTool].fvc);
+     
+     NSLog(@"%2f",[TestTool sharedTestTool].pef/[[ShareValue sharedShareValue].member.defPef floatValue]);
+     [weakSelf commitData];
+     
+     }];
+     */
+}
+
+-(void)deviceFound:(NSNotification *)notification{
+    _hud.text = @"发现设备正在连接...";
+    [[DeviceHelper sharedDeviceHelper]connectDeviceByName:[DeviceHelper sharedDeviceHelper].deviceNames.firstObject];
+}
+
+
+-(void)deviceConneted:(NSNotification *)notification{
+    _hud.text = @"设备已连接，等待用户呼气...";
+}
+
+-(void)dataUpdate:(NSNotification *)notification{
+    _hud.text = @"监测到用户呼气，请稍候...";
+    DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
+    t_request.mid = [ShareValue sharedShareValue].member.mid;
+    NSNumber *x = [notification.userInfo objectForKey:@"X"];
+    NSNumber *x1 = [notification.userInfo objectForKey:@"X1"];
+    NSNumber *x2 = [notification.userInfo objectForKey:@"X2"];
+    float pef = 29.704* x.intValue - 879.52;
+    float fev1 = 0.00547 * x1.intValue + 1.0573;
+    float fvc = 8.88*x2.intValue+1.123;;
+    t_request.pef = @(pef);
+    t_request.fev1 = @(fev1);
+    t_request.fvc = @(fvc);
+    t_request.inputType = @1;
+    __weak __typeof(self) weak = self;
+    [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
+        [_hud hide];
+        [weak reloadData];
+    } Fail:^(int code, NSString *failDescript) {
+        [_hud hide];
+        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:self.view];
     }];
     
 }
 
+-(void)powerLow:(NSNotification *)notification{
+    [ShowHUD showError:@"监测到用户呼气，请稍候..." configParameter:^(ShowHUD *config) {
+    } duration:1.5f inView:self.view];
+}
+
+-(void)connectTimeout:(NSNotification *)notification{
+    [ShowHUD showError:@"连接超时，请确定设备已打开" configParameter:^(ShowHUD *config) {
+    } duration:1.5f inView:self.view];
+}
+
+-(void)startListening{
+    [self stopListening];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
+}
+
+-(void)stopListening{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - dealloc
 
 -(void)dealloc{
-    NSLog(@"MotionFirst dealloc");
+    [self stopListening];
+    NSLog(@"DailyFirstVC dealloc ");
 }
 
 - (void)didReceiveMemoryWarning {

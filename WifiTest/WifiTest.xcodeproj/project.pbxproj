@@ -1839,7 +1839,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e76726c9-2ea1-4cdc-84ed-760a3be4d86e";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};

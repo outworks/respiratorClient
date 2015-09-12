@@ -14,9 +14,12 @@
 #import "DataAPI.h"
 #import "TestTool.h"
 #import "DataTools.h"
+#import "DeviceHelper.h"
 
 @interface DailyFirstVC (){
     ShowHUD *_hud;
+    
+    __weak IBOutlet UIButton *btn_test;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *v_bg;
@@ -133,11 +136,11 @@
         
     } Fail:^(int code, NSString *failDescript) {
         _lb_info.text = @"您今天还没测试哦";
-        
         [self loadCircleChart:0];
     }];
 }
 
+/*
 -(void)commitData{
     
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
@@ -156,14 +159,21 @@
         } duration:1.5f inView:self.view];
     }];
 }
+ */
+
 
 #pragma mark - buttonAction
 
 - (IBAction)testAcion:(id)sender {
-    
-    _hud = [ShowHUD showText:@"测试中.." configParameter:^(ShowHUD *config) {
-    } inView:self.view];
-    
+    [self startListening];
+    if (![DeviceHelper sharedDeviceHelper].isConnected) {
+        [[DeviceHelper sharedDeviceHelper]scan];
+        [btn_test setEnabled:NO];
+        [btn_test setTitle:@"正在搜索设备，请确定设备已打开" forState:UIControlStateNormal];
+    }else{
+        [btn_test setTitle:@"请对设备呼气" forState:UIControlStateNormal];
+    }
+    /*
     __weak typeof(self) weakSelf = self;
     
     [[GCDQueue globalQueue] execute:^{
@@ -177,13 +187,77 @@
         [weakSelf commitData];
         
     }];
+     */
+}
+
+-(void)deviceFound:(NSNotification *)notification{
+    btn_test.enabled = NO;
+    [btn_test setTitle:@"发现设备正在连接" forState:UIControlStateNormal];
+    [[DeviceHelper sharedDeviceHelper]connectDeviceByName:[DeviceHelper sharedDeviceHelper].deviceNames.firstObject];
+}
+
+
+-(void)deviceConneted:(NSNotification *)notification{
+    btn_test.enabled = NO;
+    [btn_test setTitle:@"设备已连接，等待用户呼气" forState:UIControlStateNormal];
+}
+
+-(void)dataUpdate:(NSNotification *)notification{
+    btn_test.enabled = NO;
+    [btn_test setTitle:@"监测到用户呼气，请稍候..." forState:UIControlStateNormal];
+    DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
+    t_request.mid = [ShareValue sharedShareValue].member.mid;
+    NSNumber *x = [notification.userInfo objectForKey:@"X"];
+    NSNumber *x1 = [notification.userInfo objectForKey:@"X1"];
+    NSNumber *x2 = [notification.userInfo objectForKey:@"X2"];
+    float pef = 29.704* x.intValue - 879.52;
+    float fev1 = 0.00547 * x1.intValue + 1.0573;
+    float fvc = 8.88*x2.intValue+1.123;;
+    t_request.pef = @(pef);
+    t_request.fev1 = @(fev1);
+    t_request.fvc = @(fvc);
+    t_request.inputType = @0;
+    __weak __typeof(self) weak = self;
+    [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
+        [_hud hide];
+        [weak reloadData];
+    } Fail:^(int code, NSString *failDescript) {
+        [_hud hide];
+        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:self.view];
+    }];
     
+}
+
+-(void)powerLow:(NSNotification *)notification{
+    btn_test.enabled = YES;
+    [btn_test setTitle:@"设备电量低，请更换电池" forState:UIControlStateNormal];
+}
+
+-(void)connectTimeout:(NSNotification *)notification{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"连接超时，请确定设备已打开" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+    [alertView show];
+    btn_test.enabled = YES;
+    [btn_test setTitle:@"测试" forState:UIControlStateNormal];
+}
+
+-(void)startListening{
+    [self stopListening];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
+}
+
+-(void)stopListening{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - dealloc 
 
 -(void)dealloc{
-    
+    [self stopListening];
     NSLog(@"DailyFirstVC dealloc ");
 }
 

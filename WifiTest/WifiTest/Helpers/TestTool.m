@@ -7,7 +7,7 @@
 //
 
 #import "TestTool.h"
-
+#import "DeviceHelper.h"
 
 
 @implementation DataItem
@@ -64,12 +64,12 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(TestTool)
 
 -(float)pef{
-    float y = 29.704*_maxDBC - 879.52;
+    float y = 29.704* _maxDBC - 879.52;
     return y;
 }
 
 -(float)fev1{
-    float y = 0.0547 * _areaSum + 1.0573;
+    float y = 0.00547 * _areaSum + 1.0573;
     return y;
 }
 
@@ -81,7 +81,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(TestTool)
 
 
 -(void)test{
-
+    
     NSArray *arr = [self getTestDatas];
     [self getSecondDataItmeFormDatas:arr];
 }
