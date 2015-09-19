@@ -12,6 +12,7 @@
 
 #define M_USERNAME @"M_USERNAME"
 #define M_PASSWORD @"M_PASSWORD"
+#define M_BINDNO @"M_BINDNO"
 
 @implementation ShareValue
 
@@ -33,6 +34,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ShareValue)
 
 -(NSString *)m_username{
     return [UserDefaults objectForKey:M_USERNAME];
+}
+
+-(void)setBindNo:(NSString *)bindNo{
+    [UserDefaults setObject:bindNo forKey:M_BINDNO];
+}
+
+-(NSString *)bindNo{
+    return [UserDefaults objectForKey:M_BINDNO];
 }
 
 @end

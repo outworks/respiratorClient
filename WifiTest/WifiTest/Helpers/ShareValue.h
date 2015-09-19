@@ -18,5 +18,7 @@ SYNTHESIZE_SINGLETON_FOR_HEADER(ShareValue)
 @property(nonatomic,readwrite) NSString *m_username;
 @property(nonatomic,readwrite) NSString *m_password;
 
+@property(nonatomic,readwrite) NSString *bindNo;
+
 
 @end

@@ -67,13 +67,15 @@
 -(void)appendRecive:(NSNotification *)notification{
     NSString *data = [notification.userInfo objectForKey:@"data"];
     NSString *content = _tv_content.text;
-    _tv_content.text = [NSString stringWithFormat:@"receive Data：%@\n%@",data,content];
+    NSString *message = [notification.userInfo objectForKey:@"msg"];
+    _tv_content.text = [NSString stringWithFormat:@"%@:\n%@\n%@\n\n",message,data,content];
 }
 
 -(void)appendSend:(NSNotification *)notification{
     NSString *data = [notification.userInfo objectForKey:@"data"];
+    NSString *msg = [notification.userInfo objectForKey:@"msg"];
     NSString *content = _tv_content.text;
-    _tv_content.text = [NSString stringWithFormat:@"sended Data：%@\n%@",data,content];
+    _tv_content.text = [NSString stringWithFormat:@"%@\n：%@\n%@\n\n",msg,data,content];
 }
 
 -(void)dealloc{
