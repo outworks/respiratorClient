@@ -330,7 +330,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:[NSData dataWithBytes:mbytes length:16] ],@"msg":@"回应时间同步"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data ],@"msg":@"回应时间同步"}];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x02){//低电量
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"MCU低电量"}];
@@ -362,8 +362,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
                     addTx += mbytes[i];
                 }
                 mbytes[15] = addTx;
-                [_testPeripheral writeValue:[NSData dataWithBytes:mbytes length:16] forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
-                [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:[NSData dataWithBytes:mbytes length:16] ],@"msg":@"回应绑定"}];
+                NSData *data = [NSData dataWithBytes:mbytes length:16];
+                [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+                [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data ],@"msg":@"回应绑定"}];
                 [[NSNotificationCenter defaultCenter]postNotificationName:BLE_BINDNAME_SUCCESS object:nil userInfo:@{@"bindNo":noString}];
             }else{
                 [[NSNotificationCenter defaultCenter]postNotificationName:BLE_BINDNAME_NOTSAME object:nil userInfo:@{@"bindNo":noString}];
@@ -395,10 +396,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
                 addTx += mbytes[i];
             }
             mbytes[15] = addTx;
-            [_testPeripheral writeValue:[NSData dataWithBytes:mbytes length:16] forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+            NSData *data = [NSData dataWithBytes:mbytes length:16];
+            [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             
-            
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:[NSData dataWithBytes:mbytes length:16] ],@"msg":@"回应呼吸数据"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"回应呼吸数据"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"date":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
         }
 //        else if (txbuf[0] == 0x90 && txbuf[2]==0x03){
