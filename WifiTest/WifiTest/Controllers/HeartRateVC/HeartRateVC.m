@@ -85,7 +85,7 @@
 - (void)cleanup
 {
     // Don't do anything if we're not connected
-    if (!_peripheral.isConnected) {
+    if (!_peripheral) {
         return;
     }
     
@@ -185,9 +185,10 @@
         CBPeripheral *aPeripheral = [peripherals objectAtIndex: 0];
         /* reconnecting to the peripheral will break the connection. Cancelling the connection doesn't seem to work */
         [_centralManager connectPeripheral: aPeripheral options: nil];
+        [_centralManager retrieveConnectedPeripheralsWithServices:aPeripheral.services];
     }
-    
-    [_centralManager retrieveConnectedPeripherals];
+   
+//    [_centralManager retrieveConnectedPeripherals];
 }
 
 
@@ -214,7 +215,8 @@
     [ShowHUD showTextOnly:@"失去连接，重新连接" configParameter:^(ShowHUD *config) {
     } duration:1.5f inView:self.view];
     if (_peripheral) {
-        [_centralManager retrievePeripherals:[NSArray arrayWithObject:(id)_peripheral.UUID]];
+        [_centralManager retrievePeripheralsWithIdentifiers:@[_peripheral.identifier]];
+//        [_centralManager retrievePeripherals:[NSArray arrayWithObject:(id)_peripheral.UUID]];
     }
 
 }

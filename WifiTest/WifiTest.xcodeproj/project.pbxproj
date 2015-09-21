@@ -11,7 +11,6 @@
 		6D36A8E51B47A47700B834A5 /* 1432022533589@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */; };
 		6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */; };
 		6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */; };
-		6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */; };
 		6DE9A7B41B525EA8000DD6D6 /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B21B525EA8000DD6D6 /* SetCell.m */; };
 		6DE9A7B51B525EA8000DD6D6 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */; };
 		6DF733F81B71E02800F94397 /* HCatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF733ED1B71E02800F94397 /* HCatBar.m */; };
@@ -26,6 +25,7 @@
 		6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF734081B71F91800F94397 /* DailySecondVC.xib */; };
 		6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */; };
 		6DF7340F1B71F92A00F94397 /* DailyThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */; };
+		ACC157B11BAF8B1800820D8D /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */; settings = {ASSET_TAGS = (); }; };
 		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
 		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
@@ -219,7 +219,6 @@
 		6D36A8E41B47A47700B834A5 /* 1432022533589@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1432022533589@2x.jpg"; sourceTree = "<group>"; };
 		6DBC7CF61B526A6900ECACDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6DBC7CF81B526A7900ECACDF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = WifiTest/BaiduMapAPI.framework; sourceTree = "<group>"; };
 		6DE9A7B11B525EA8000DD6D6 /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		6DE9A7B21B525EA8000DD6D6 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
@@ -244,6 +243,7 @@
 		6DF7340B1B71F92A00F94397 /* DailyThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyThirdVC.h; sourceTree = "<group>"; };
 		6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyThirdVC.m; sourceTree = "<group>"; };
 		6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyThirdVC.xib; sourceTree = "<group>"; };
+		ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = WifiTest/BaiduMapAPI.framework; sourceTree = "<group>"; };
 		CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgreementVC.h; sourceTree = "<group>"; };
 		CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgreementVC.m; sourceTree = "<group>"; };
 		CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgreementVC.xib; sourceTree = "<group>"; };
@@ -570,9 +570,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DBC7CFD1B526B1400ECACDF /* BaiduMapAPI.framework in Frameworks */,
 				6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */,
 				6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */,
+				ACC157B11BAF8B1800820D8D /* BaiduMapAPI.framework in Frameworks */,
 				CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */,
 				CE1CC2991B2C83CA0076C942 /* MobileCoreServices.framework in Frameworks */,
 				CE1CC2971B2C83C20076C942 /* SystemConfiguration.framework in Frameworks */,
@@ -652,7 +652,7 @@
 		CE1CC0D91B2C68180076C942 = {
 			isa = PBXGroup;
 			children = (
-				6DBC7CFC1B526B1400ECACDF /* BaiduMapAPI.framework */,
+				ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */,
 				CE1CC0E41B2C68180076C942 /* WifiTest */,
 				CE1CC2551B2C82050076C942 /* FrameWork */,
 				CE1CC0FE1B2C68180076C942 /* WifiTestTests */,
@@ -1840,10 +1840,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/WifiTest/FrameWork",
-					"/Users/nd/Downloads/BaiduMap_IOSSDK_v2.8.0_All/BaiduMap_IOSSDK_v2.8.0_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)/",
 					"$(PROJECT_DIR)/WifiTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1853,7 +1853,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/WifiTest/FrameWork",
+					"$(PROJECT_DIR)/",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1866,10 +1866,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/WifiTest/FrameWork",
-					"/Users/nd/Downloads/BaiduMap_IOSSDK_v2.8.0_All/BaiduMap_IOSSDK_v2.8.0_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)/",
 					"$(PROJECT_DIR)/WifiTest",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1879,7 +1879,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/WifiTest/FrameWork",
+					"$(PROJECT_DIR)/",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

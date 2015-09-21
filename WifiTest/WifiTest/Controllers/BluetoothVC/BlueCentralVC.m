@@ -291,7 +291,7 @@
 - (void)cleanup
 {
     // Don't do anything if we're not connected
-    if (!_peripheral.isConnected) {
+    if (!_peripheral) {
         return;
     }
     
