@@ -248,7 +248,7 @@
 
 -(void)dealloc{
     [self stopListening];
-    NSLog(@"DailyFirstVC dealloc ");
+    NSLog(@"MotionFirstVC dealloc ");
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,10 +7,13 @@
 //
 
 #import "MainVC.h"
+
 #import "BreathVC.h"
 #import "AirQualityVC.h"
 #import "NearbyPharVC.h"
+#import "NearbyHospitalVC.h"
 #import "SetVC.h"
+
 #import "DataTools.h"
 
 #import "MotionDetectionVC.h"
@@ -46,40 +49,51 @@
     }
     
     self.vc_tab = [[UITabBarController alloc] init];
-    [_vc_tab.tabBar setBackgroundColor:UIColorFromRGB(0xefefe)];
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:_vc_tab.tabBar.bounds];
+    bgView.backgroundColor = UIColorFromRGBA(0x1d2124,0.95f);
+    [_vc_tab.tabBar insertSubview:bgView atIndex:0];
+    UIImage* tabBarBackground = [UIImage imageNamed:@"菜单栏"];
+    UIImageView *imageV_tabBarBg = [[UIImageView alloc] initWithImage:tabBarBackground];
+    [imageV_tabBarBg setFrame:bgView.bounds];
+    [bgView addSubview:imageV_tabBarBg];
+    [_vc_tab.tabBar setBackgroundImage:tabBarBackground];
+    _vc_tab.tabBar.opaque = YES;
+    
     [_vc_tab.view setFrame:self.view.frame];
-    //[_vc_tab.tabBar setTranslucent:NO];
+    [_vc_tab.tabBar setTranslucent:NO];
     [_vc_tab setDelegate:(id<UITabBarControllerDelegate>)self];
     [self.view addSubview:_vc_tab.view];
     
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeLeading attr2:NSLayoutAttributeLeading constant:0];
-    
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeBottom attr2: NSLayoutAttributeBottom constant:0];
     [self setEdge:self.view view:_vc_tab.view attr1:NSLayoutAttributeTrailing attr2:NSLayoutAttributeTrailing constant:0];
-        
-    MotionDetectionVC *breathVC = [[MotionDetectionVC alloc] init];
-    AirQualityVC *airQualityVC = [[AirQualityVC alloc] init];
-    NearbyPharVC *nearbyPharVC = [[NearbyPharVC alloc] init];
-    SetVC *setVC = [[SetVC alloc] init];
+    
     UINavigationController *nav_breath;
     
     if (_contentType == DailyType) {
-        DailyDetectionVC *breathVC = [[DailyDetectionVC alloc] init];
-        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+        DailyDetectionVC *breathVC  = [[DailyDetectionVC alloc] init];
+        nav_breath                  = [[UINavigationController alloc]initWithRootViewController:breathVC];
     }else if (_contentType == MotionType){
         MotionDetectionVC *breathVC = [[MotionDetectionVC alloc] init];
-        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+        nav_breath                  = [[UINavigationController alloc]initWithRootViewController:breathVC];
     }else if (_contentType == MedicationType){
-        DrugDetectionVC *breathVC = [[DrugDetectionVC alloc] init];
-        nav_breath = [[UINavigationController alloc]initWithRootViewController:breathVC];
+        DrugDetectionVC *breathVC   = [[DrugDetectionVC alloc] init];
+        nav_breath                  = [[UINavigationController alloc]initWithRootViewController:breathVC];
     }
+    AirQualityVC *airQualityVC          = [[AirQualityVC alloc] init];
+    NearbyPharVC *nearbyPharVC          = [[NearbyPharVC alloc] init];
+    NearbyHospitalVC *nearbyHospitalVC  = [[NearbyHospitalVC alloc] init];
+    SetVC *setVC                        = [[SetVC alloc] init];
     
     
-     UINavigationController *nav_airQuality = [[UINavigationController  alloc]initWithRootViewController:airQualityVC];
-     UINavigationController *nav_visitMap = [[UINavigationController alloc]initWithRootViewController:nearbyPharVC];
-     UINavigationController *nav_set = [[UINavigationController alloc]initWithRootViewController:setVC];
     
-    _vc_tab.viewControllers = @[nav_breath, nav_airQuality, nav_visitMap,nav_set];
+    UINavigationController *nav_airQuality      = [[UINavigationController  alloc]initWithRootViewController:airQualityVC];
+    UINavigationController *nav_nearbyPhar      = [[UINavigationController alloc]initWithRootViewController:nearbyPharVC];
+    UINavigationController *nav_nearbyHospital  = [[UINavigationController alloc]initWithRootViewController:nearbyHospitalVC];
+    UINavigationController *nav_set             = [[UINavigationController alloc]initWithRootViewController:setVC];
+    
+    _vc_tab.viewControllers = @[nav_breath, nav_airQuality, nav_nearbyPhar,nav_nearbyHospital,nav_set];
     
     NSArray *ar = _vc_tab.viewControllers;
     NSMutableArray *arr_t = [NSMutableArray new];
@@ -90,30 +104,54 @@
          {
              case 0:
              {
-                 ;
-                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon1-n"] selectedImage:[UIImage imageNamed:@"icon1-s"]];
-                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+                 UIImage *image_normal = [[UIImage imageNamed:@"底部图标-呼吸量测-默认.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 UIImage *image_selected = [[UIImage imageNamed:@"底部图标-呼吸量测-选中.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 item = [[UITabBarItem alloc] initWithTitle:@"呼吸量测" image:image_normal selectedImage:image_selected];
+                 
                  break;
              }
              case 1:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon2-n"] selectedImage:[UIImage imageNamed:@"icon2-s"]];
-                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+                 
+                 UIImage *image_normal = [[UIImage imageNamed:@"底部图标-空气质量-默认"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 UIImage *image_selected = [[UIImage imageNamed:@"底部图标-空气质量-选中"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 item = [[UITabBarItem alloc] initWithTitle:@"空气质量" image:image_normal selectedImage:image_selected];
+                 
                  break;
              }
              case 2:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon3-n"] selectedImage:[UIImage imageNamed:@"icon3-s"]];
-                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+                 UIImage *image_normal = [[UIImage imageNamed:@"底部图标-附近药局-默认"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 UIImage *image_selected = [[UIImage imageNamed:@"底部图标-附近药局-选中"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 item = [[UITabBarItem alloc] initWithTitle:@"附近药局" image:image_normal selectedImage:image_selected];
+                 
                  break;
              }
              case 3:
              {
-                 item = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"icon4-n"] selectedImage:[UIImage imageNamed:@"icon4-s"]];
-                 item.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+                 UIImage *image_normal = [[UIImage imageNamed:@"底部图标-附近医院-默认"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 UIImage *image_selected = [[UIImage imageNamed:@"底部图标-附近医院-选中"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 item = [[UITabBarItem alloc] initWithTitle:@"附近医院" image:image_normal selectedImage:image_selected];
+                 
+                 break;
+             }
+             case 4:
+             {
+                 UIImage *image_normal = [[UIImage imageNamed:@"底部图标-系统设置-默认"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 UIImage *image_selected = [[UIImage imageNamed:@"底部图标-系统设置-选中"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                 item = [[UITabBarItem alloc] initWithTitle:@"系统设置" image:image_normal selectedImage:image_selected];
+                 
                  break;
              }
          }
+         
+         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                       UIColorFromRGB(0x50c0c3), UITextAttributeTextColor,
+                                       nil] forState:UIControlStateHighlighted];
+         [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                       [UIColor whiteColor], UITextAttributeTextColor,
+                                       nil] forState:UIControlStateNormal];
+         
          viewController.tabBarItem = item;
          [arr_t addObject:viewController];
      }];
@@ -130,7 +168,7 @@
     
 }
 
-#pragma mark - 
+#pragma mark -
 
 -(void)loadFunction:(NSNotification *)note{
     
@@ -145,13 +183,13 @@
             _contentType = MotionType;
         }else{
             _contentType = MedicationType;
-           
+            
         }
         
         [self initTabBar];
         [_vc_tab setSelectedIndex:0];
     }
-
+    
 }
 
 #pragma mark - navigationControllerDelegate
@@ -165,10 +203,10 @@
     
 }
 
-#pragma mark - dealloc 
+#pragma mark - dealloc
 
 -(void)dealloc{
-     [NotificationCenter removeObserver:self];
+    [NotificationCenter removeObserver:self];
     NSLog(@"MainVC dealloc");
 }
 
@@ -178,13 +216,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

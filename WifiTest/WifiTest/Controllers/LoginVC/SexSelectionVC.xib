@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SexSelectionVC">
@@ -13,12 +13,12 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+        <view clearsContextBeforeDrawing="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U6-c1-myq">
-                    <rect key="frame" x="57" y="436" width="206" height="39"/>
+                    <rect key="frame" x="57" y="404" width="206" height="39"/>
                     <color key="backgroundColor" red="0.17768449589999999" green="0.66176465510000004" blue="0.931640625" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="206" id="TAa-aL-RF0"/>
@@ -33,7 +33,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIy-TJ-9fh">
-                    <rect key="frame" x="77" y="216" width="49" height="135"/>
+                    <rect key="frame" x="77" y="184" width="49" height="135"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="bP5-Cq-TZf"/>
                         <constraint firstAttribute="width" constant="49" id="mc7-le-hE0"/>
@@ -47,7 +47,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImW-qy-Hc9">
-                    <rect key="frame" x="194" y="216" width="49" height="135"/>
+                    <rect key="frame" x="194" y="184" width="49" height="135"/>
                     <state key="normal" title="Button" image="female">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -57,13 +57,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择性别" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0K-R4-jL0">
-                    <rect key="frame" x="108" y="94" width="105" height="26"/>
+                    <rect key="frame" x="108" y="62" width="105" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.1137254902" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="1U6-c1-myq" secondAttribute="centerY" priority="750" constant="-171.5" id="06k-Qo-hcb"/>
                 <constraint firstItem="ImW-qy-Hc9" firstAttribute="height" secondItem="pIy-TJ-9fh" secondAttribute="height" id="7sZ-4R-wMm"/>
@@ -78,6 +78,7 @@
                 <constraint firstItem="ImW-qy-Hc9" firstAttribute="width" secondItem="pIy-TJ-9fh" secondAttribute="width" id="cjY-Cw-zke"/>
                 <constraint firstAttribute="centerY" secondItem="e0K-R4-jL0" secondAttribute="centerY" priority="750" constant="177.5" id="mUw-y0-amj"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="250" y="454"/>
         </view>
     </objects>

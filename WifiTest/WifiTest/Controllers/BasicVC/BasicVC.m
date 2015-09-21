@@ -18,21 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setTranslucent:NO];
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.090 green:0.706 blue:0.839 alpha:1.000]];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
+    //    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
+    //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.090 green:0.706 blue:0.839 alpha:1.000]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorFromRGB(0x50c0ce),NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
     
-     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {        // Load resources for iOS 6.1 or earlier
-         self.navigationController.navigationBar.tintColor = RGB(45, 169, 238);
-     } else {        // Load resources for iOS 7 or later
-         self.navigationController.navigationBar.barTintColor = RGB(45, 169, 238);
-     }
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {        // Load resources for iOS 6.1 or earlier
+        self.navigationController.navigationBar.tintColor = UIColorFromRGB(0x1d2124);
+    } else {        // Load resources for iOS 7 or later
+        self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x1d2124);
+    }
     
-    UIImage *image = [UIImage imageNamed:@"back"];
+    UIImage *image = [UIImage imageNamed:@"图标-返回-默认"];
     CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
     [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"图标-返回-默认"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"图标-返回-选中"] forState:UIControlStateHighlighted];
+    [button setImage:[UIImage imageNamed:@"图标-返回-选中"] forState:UIControlStateSelected];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = item;
     
@@ -41,7 +43,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setDelegate:(id<UINavigationControllerDelegate>)self];
-
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -50,7 +52,7 @@
 }
 
 
-#pragma mark - private methods 
+#pragma mark - private methods
 
 -(void)backAction{
     [self.navigationController popViewControllerAnimated:YES];
@@ -81,13 +83,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -32,6 +32,7 @@
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+     self.window.backgroundColor = UIColorFromRGBA(0x1d2124,0.95f);
     
     ProductVC *t_vc = [[ProductVC alloc]init];
     _nav = [[UINavigationController alloc]initWithRootViewController:t_vc];

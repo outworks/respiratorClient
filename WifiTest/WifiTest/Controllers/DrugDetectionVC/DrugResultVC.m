@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIButton *btn_back;
+
 
 @end
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _arr_data = [NSMutableArray array];
-    [ShareFun getCorner:_btn_back];
+
     [self loadData];
     // Do any additional setup after loading the view from its nib.
 }
@@ -88,7 +88,7 @@
                 NSMutableDictionary *t_dic = _arr_data[i];
                 
                 DrugResultView *t_drugResultView = [DrugResultView initCustomView];
-                t_drugResultView.frame = CGRectMake(i*ScreenWidth, -20, ScreenWidth, ScreenHeight);
+                t_drugResultView.frame = CGRectMake(i*ScreenWidth, 0, ScreenWidth, ScreenHeight-64);
                 Monidata *t_before = [t_dic objectForKey:@"beforeDrug"];
                 Monidata *t_after = [t_dic objectForKey:@"afterDrug"];
                 if (t_before) {
@@ -103,7 +103,7 @@
                                
             }
             
-            [_scrollView setContentSize:CGSizeMake(_arr_data.count *ScreenWidth, ScreenHeight-20)];
+            [_scrollView setContentSize:CGSizeMake(_arr_data.count *ScreenWidth, ScreenHeight-64)];
             
             _pageControl.numberOfPages = _arr_data.count;//指定页面个数
             _pageControl.currentPage = 0;//指定pagecontroll的值，默认选中的小白点（第一个）
@@ -132,7 +132,7 @@
 #pragma mark - buttonAction 
 
 //返回
-- (IBAction)backAction:(id)sender {
+- (void)backAction{
     
     [ApplicationDelegate.nav popViewControllerAnimated:YES];
 }
@@ -147,17 +147,6 @@
     CGRect bounds = scrollView.frame;
     
     [_pageControl setCurrentPage:offset.x / bounds.size.width];
-    
-}
-
-
-#pragma mark - navigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if ([viewController isKindOfClass:[self class]]) {
-        self.navigationController.navigationBarHidden = YES;
-        
-    }
     
 }
 

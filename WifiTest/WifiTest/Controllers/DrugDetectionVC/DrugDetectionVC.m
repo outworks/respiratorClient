@@ -52,9 +52,6 @@
 @property (nonatomic,strong) Monidata *beforeMonidata;
 @property (nonatomic,strong) Monidata *afterMonidata;
 
-
-@property (weak, nonatomic) IBOutlet UIButton *btn_commodity;
-@property (weak, nonatomic) IBOutlet UIButton *btn_back;
 @property (weak, nonatomic) IBOutlet UIButton *btn_drugResult;
 
 
@@ -65,8 +62,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"今日用药检测";
+    
+    UIImage *image = [UIImage imageNamed:@"图标-商城-默认"];
+    CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
+    [button addTarget:self action:@selector(commodityAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"图标-商城-默认"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"图标-商城-选中"] forState:UIControlStateHighlighted];
+    [button setImage:[UIImage imageNamed:@"图标-商城-选中"] forState:UIControlStateSelected];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = item;
+    
     _isUp = NO;
+    
     [self initUI];
+    
     
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
@@ -82,13 +93,12 @@
 #pragma mark - loadUI
 
 -(void)initUI{
-    [ShareFun getCorner:_btn_commodity withCorner:_btn_commodity.frame.size.height/2 withBorderWidth:1.f withBorderColor:[UIColor clearColor]];
+    
     [ShareFun getCorner:_btn_drugResult withCorner:_btn_drugResult.frame.size.height/2 withBorderWidth:1.f withBorderColor:[UIColor clearColor]];
-    [ShareFun getCorner:_btn_back];
     [ShareFun getCorner:_v_measure withCorner: 10.0f withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     [ShareFun getCorner:_btn_drugDetail withCorner: _btn_drugDetail.frame.size.height/2 withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     
-    NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
+    NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
     t_bottom.identifier = @"1112";
     [self.view addConstraint:t_bottom];
 }
@@ -183,7 +193,7 @@
             } afterDelay:3.0f*NSEC_PER_SEC];
             
         }
-    
+        
     } Fail:^(int code, NSString *failDescript) {
         weak.isTesting = NO;
         weak.lb_state.text = @"量测开始";
@@ -213,7 +223,7 @@
         _v_measure.hidden = NO;
         _btn_drugResult.hidden = NO;
     }
-
+    
 }
 
 - (IBAction)btnTestAction:(id)sender {
@@ -257,12 +267,12 @@
         
         _lb_stateContent.text = @"用药后呼吸状态";
     }
-   
+    
     
 }
 
 //返回
-- (IBAction)backAction:(id)sender {
+- (void)backAction {
     
     [ApplicationDelegate.nav popViewControllerAnimated:YES];
 }
@@ -309,7 +319,7 @@
             }
         }
         
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:49];
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
         t_bottom.identifier = @"11121";
         [self.view addConstraint:t_bottom];
         
@@ -323,7 +333,7 @@
             }
         }
         
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
         t_bottom.identifier = @"1112";
         [self.view addConstraint:t_bottom];
         
@@ -393,21 +403,11 @@
 }
 
 
-#pragma mark - navigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if ([viewController isKindOfClass:[self class]]) {
-        self.navigationController.navigationBarHidden = YES;
-        
-    }
-    
-}
-
 #pragma mark - dealloc
 
 - (void)dealloc{
     NSLog(@"DrugDetectionVC dealloc");
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -416,13 +416,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -11,43 +11,32 @@
 
 @interface CommodityVC ()
 
-@property (weak, nonatomic) IBOutlet UIButton *btn_back;
-
-
 @end
 
 @implementation CommodityVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     [ShareFun getCorner:_btn_back];
+    self.navigationItem.title = @"回馈商场";
     // Do any additional setup after loading the view from its nib.
 }
 
 #pragma mark - buttonAction
 
 //返回
-- (IBAction)backAction:(id)sender {
+- (void)backAction{
     
     [ApplicationDelegate.nav dismissViewControllerAnimated:YES completion:^{
     }];
 }
 
 
-#pragma mark - navigationControllerDelegate
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if ([viewController isKindOfClass:[self class]]) {
-        self.navigationController.navigationBarHidden = YES;
-        
-    }
-    
-}
 
-#pragma mark - dealloc 
+#pragma mark - dealloc
 
 -(void)dealloc{
-
+    
     NSLog(@"CommodityVC dealloc");
 }
 
@@ -57,13 +46,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

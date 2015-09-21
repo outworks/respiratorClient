@@ -19,8 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIButton *btn_commodity;
-@property (weak, nonatomic) IBOutlet UIButton *btn_back;
 
 @property (weak, nonatomic) IBOutlet UIView *v_bottom;
 @property (weak, nonatomic) IBOutlet UIButton *btn_upOrDown;
@@ -38,9 +36,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"生活日常检测";
+    
+    UIImage *image = [UIImage imageNamed:@"图标-商城-默认"];
+    CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
+    [button addTarget:self action:@selector(commodityAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"图标-商城-默认"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"图标-商城-选中"] forState:UIControlStateHighlighted];
+    [button setImage:[UIImage imageNamed:@"图标-商城-选中"] forState:UIControlStateSelected];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = item;
+    
     [self initUI];
     _isUp = NO;
-
+    
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
     [[self view] addGestureRecognizer:recognizer];
@@ -62,9 +73,6 @@
 
 - (void) initUI{
     
-    [ShareFun getCorner:_btn_commodity withCorner:_btn_commodity.frame.size.height/2 withBorderWidth:1.f withBorderColor:[UIColor clearColor]];
-    [ShareFun getCorner:_btn_back];
-    
     _firstVC = [[DailyFirstVC alloc] init];
     _firstVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     [_scrollView addSubview:_firstVC.view];
@@ -81,10 +89,10 @@
     
     _pageControl.numberOfPages = 3;//指定页面个数
     _pageControl.currentPage = 0;//指定pagecontroll的值，默认选中的小白点（第一个）
-    _pageControl.pageIndicatorTintColor =[UIColor lightGrayColor];
-    _pageControl.currentPageIndicatorTintColor = RGB(45, 169, 238);
+    _pageControl.pageIndicatorTintColor =UIColorFromRGB(0x131415);
+    _pageControl.currentPageIndicatorTintColor = UIColorFromRGB(0x3fB4C4);
     
-    NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
+    NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
     t_bottom.identifier = @"1112";
     [self.view addConstraint:t_bottom];
     
@@ -93,8 +101,7 @@
 #pragma mark - button Methods
 
 //返回
-- (IBAction)backAction:(id)sender {
-    
+- (void)backAction{
     [ApplicationDelegate.nav popViewControllerAnimated:YES];
 }
 
@@ -129,7 +136,7 @@
             }
         }
         
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:49];
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
         t_bottom.identifier = @"11121";
         [self.view addConstraint:t_bottom];
         
@@ -143,7 +150,7 @@
             }
         }
         
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
+        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
         t_bottom.identifier = @"1112";
         [self.view addConstraint:t_bottom];
         
@@ -175,13 +182,33 @@
 
 #pragma makr - UIScrollViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    
+    
+    
+    
+}
+
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     //更新UIPageControl的当前页
     CGPoint offset = scrollView.contentOffset;
     CGRect bounds = scrollView.frame;
     
-    [_pageControl setCurrentPage:offset.x / bounds.size.width];
+    NSInteger page = offset.x / bounds.size.width;
+    
+    [_pageControl setCurrentPage:page];
+    
+    if (page == 0) {
+        self.navigationItem.title = @"生活日常检测";
+    } else if( page == 1 ){
+        self.navigationItem.title = @"日常检测量测记录";
+    } else {
+        self.navigationItem.title = @"日常检测量测记录";
+    }
+    
     
 }
 
@@ -192,7 +219,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if ([viewController isKindOfClass:[self class]]) {
-        self.navigationController.navigationBarHidden = YES;
+        self.navigationController.navigationBarHidden = NO;
         
     }
     
@@ -236,13 +263,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

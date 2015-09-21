@@ -117,7 +117,7 @@
 //颜色数组
 - (NSArray *)HCatChart_ColorArray:(HCatChart *)chart
 {
-    return @[HCatGreen,HCatRed,HCatBrown];
+    return @[UIColorFromRGB(0x3EB3BF),UIColorFromRGB(0x1F3C60),HCatBrown];
 }
 
 
@@ -130,10 +130,10 @@
         _lb_fev1.text = [t_monidata.fev1 stringValue];
         _lb_time.text = t_monidata.saveTime;
         _lb_state.text = t_monidata.stateString;
-
+        
     }
     
-
+    
 }
 
 
@@ -151,13 +151,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

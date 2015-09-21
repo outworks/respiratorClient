@@ -23,24 +23,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initUI];
+    self.title = @"请选择量测功能";
+    
     
     // Do any additional setup after loading the view from its nib.
 }
 
-#pragma mark - private methods
-
-
-- (void)initUI{
-    [ShareFun getCorner:_btn_daily withBorderWidth:2.f withBorderColor:RGB(45, 169, 238)];
-    [ShareFun getCorner:_btn_medication withBorderWidth:2.f withBorderColor:RGB(45, 169, 238)];
-    [ShareFun getCorner:_btn_motion withBorderWidth:2.f withBorderColor:RGB(45, 169, 238)];
-    UIImage *t_image = [ShareFun getUIImagewithColor:RGB(45, 169, 238) withSize:_btn_daily.frame.size];
-    [_btn_daily setBackgroundImage:t_image forState:UIControlStateSelected];
-    [_btn_medication setBackgroundImage:t_image forState:UIControlStateSelected];
-    [_btn_motion setBackgroundImage:t_image forState:UIControlStateSelected];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _btn_daily.selected = NO;
+    _btn_medication.selected = NO;
+    _btn_motion.selected = NO;
+    
 }
-
 
 
 #pragma mark - buttonAction
@@ -74,7 +69,7 @@
     _btn_daily.selected = NO;
     _btn_medication.selected = YES;
     _btn_motion.selected = NO;
-
+    
     MainVC *t_vc = [[MainVC alloc] init];
     t_vc.contentType = MedicationType;
     [self.navigationController pushViewController:t_vc animated:YES];
@@ -85,18 +80,18 @@
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if ([viewController isKindOfClass:[self class]]) {
-        self.navigationController.navigationBarHidden = YES;
+        self.navigationController.navigationBarHidden = NO;
     }
     
 }
 
 
-#pragma mark - dealloc 
+#pragma mark - dealloc
 
 - (void)dealloc{
-
+    
     NSLog(@"FunctionSwitchVC dealloc");
-
+    
 }
 
 
@@ -106,13 +101,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
