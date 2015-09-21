@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"生活日常检测";
+    self.navigationItem.title = @"日常检测";
     
     UIImage *image = [UIImage imageNamed:@"图标-商城-默认"];
     CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
@@ -202,11 +202,11 @@
     [_pageControl setCurrentPage:page];
     
     if (page == 0) {
-        self.navigationItem.title = @"生活日常检测";
+        self.navigationItem.title = @"日常检测";
     } else if( page == 1 ){
-        self.navigationItem.title = @"日常检测量测记录";
+        self.navigationItem.title = @"日常监测记录";
     } else {
-        self.navigationItem.title = @"日常检测量测记录";
+        self.navigationItem.title = @"尖峰呼气流量记录";
     }
     
     
