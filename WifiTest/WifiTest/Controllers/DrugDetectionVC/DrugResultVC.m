@@ -7,7 +7,6 @@
 //
 
 #import "DrugResultVC.h"
-#import "AppDelegate.h"
 #import "DataAPI.h"
 #import "DrugResultView.h"
 

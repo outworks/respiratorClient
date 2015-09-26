@@ -7,7 +7,6 @@
 //
 
 #import "DrugDetectionVC.h"
-#import "AppDelegate.h"
 #import "DataAPI.h"
 #import "TestTool.h"
 #import "DrugResultVC.h"

@@ -10,8 +10,8 @@
 #import "SetCell.h"
 #import "ShareValue.h"
 #import "SexSelectionVC.h"
-#import "AppDelegate.h"
 #import "DeviceVC.h"
+#import "SmartAlarmVC.h"
 
 @interface SetVC ()
 
@@ -26,9 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"系统设置";
-    _data = @[@"我的装置",@"智能闹钟",@"服务",@"设定",@"分享"];
+    _data = @[@"我的设备",@"智能闹钟",@"基本资料",@"产品说明"];
 }
 
+
+#pragma mark  - UITableView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -48,7 +50,10 @@
         
     }
     
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+    cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0x1d2124);
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.lb_title.highlightedTextColor = [UIColor lightGrayColor];
     
     if (indexPath.row != 0) {
         cell.imageV_topLine.hidden = YES;
@@ -65,19 +70,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 46;
+    return 50;
     
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         DeviceVC *t_vc = [[DeviceVC alloc]init];
         [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
-    }
-    if (indexPath.row == 3) {
+    } else if (indexPath.row == 1) {
+        SmartAlarmVC *t_vc = [[SmartAlarmVC alloc]init];
+        [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
+    }else if (indexPath.row == 2) {
         SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
         t_vc.member = [ShareValue sharedShareValue].member;
         t_vc.isRegiest = NO;
@@ -85,6 +92,19 @@
     }
     
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+
+    if (scrollView.contentOffset.y < 0) {
+        CGPoint position = CGPointMake(0, 0);
+        [scrollView setContentOffset:position animated:NO];
+        return;
+    }
+    
+    
+}
+
 
 
 
@@ -100,7 +120,7 @@
 
 -(void)dealloc{
     
-    
+    NSLog(@"SetVC dealloc");
 }
 
 - (void)didReceiveMemoryWarning {

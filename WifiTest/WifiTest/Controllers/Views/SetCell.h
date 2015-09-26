@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_title;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageV_topLine;
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_bottomLine;
 
 
 @end

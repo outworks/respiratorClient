@@ -7,7 +7,6 @@
 //
 
 #import "DailyDetectionVC.h"
-#import "AppDelegate.h"
 #import "DailyFirstVC.h"
 #import "DailySecondVC.h"
 #import "DailyThirdVC.h"

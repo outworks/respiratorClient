@@ -7,7 +7,6 @@
 //
 
 #import "MotionDetectionVC.h"
-#import "AppDelegate.h"
 #import "MotionFirstVC.h"
 #import "MotionSecondVC.h"
 #import "MotionThirdVC.h"

@@ -24,6 +24,7 @@
 #import "ShowHUD.h"
 #import "ShareFun.h"
 #import "ShareValue.h"
+#import "AppDelegate.h"
 
 #import <UIKit/UIKit.h>
 

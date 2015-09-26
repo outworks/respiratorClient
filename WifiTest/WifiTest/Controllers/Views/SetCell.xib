@@ -15,47 +15,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkG-L2-xS2">
-                        <rect key="frame" x="10" y="67" width="42" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="254" id="O2r-23-o4o"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.31372549020000001" green="0.75294117650000003" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjr-fQ-cV4">
-                        <rect key="frame" x="10" y="154" width="310" height="1"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="0.0" y="154" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Kx8-X5-h36"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="更多" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-nv-TFK">
-                        <rect key="frame" x="296" y="71" width="8" height="14"/>
+                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-xt-xxa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="uA3-G3-OjY"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkG-L2-xS2">
+                        <rect key="frame" x="15" y="67" width="40" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="254" id="O2r-23-o4o"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <color key="backgroundColor" red="0.082352941176470587" green="0.094117647058823528" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="centerY" secondItem="ePB-nv-TFK" secondAttribute="centerY" id="0dn-Gw-G01"/>
+                    <constraint firstItem="z6r-xt-xxa" firstAttribute="top" secondItem="Xrj-Mw-wFm" secondAttribute="top" id="4Pk-Lu-2qp"/>
                     <constraint firstAttribute="bottomMargin" secondItem="gjr-fQ-cV4" secondAttribute="bottom" constant="-8" id="BXs-e9-1Lg"/>
-                    <constraint firstItem="EkG-L2-xS2" firstAttribute="leading" secondItem="Xrj-Mw-wFm" secondAttribute="leading" constant="10" id="MWb-kf-ApB"/>
-                    <constraint firstAttribute="trailing" secondItem="ePB-nv-TFK" secondAttribute="trailing" constant="16" id="bNF-JH-b0z"/>
+                    <constraint firstItem="EkG-L2-xS2" firstAttribute="leading" secondItem="Xrj-Mw-wFm" secondAttribute="leading" constant="15" id="MWb-kf-ApB"/>
                     <constraint firstAttribute="trailing" secondItem="gjr-fQ-cV4" secondAttribute="trailing" id="fTs-UV-bM3"/>
-                    <constraint firstItem="gjr-fQ-cV4" firstAttribute="leading" secondItem="Xrj-Mw-wFm" secondAttribute="leading" constant="10" id="wce-BI-U4n"/>
+                    <constraint firstItem="z6r-xt-xxa" firstAttribute="leading" secondItem="Xrj-Mw-wFm" secondAttribute="leading" id="nwm-3Z-Ap3"/>
+                    <constraint firstItem="gjr-fQ-cV4" firstAttribute="leading" secondItem="Xrj-Mw-wFm" secondAttribute="leading" id="wce-BI-U4n"/>
                     <constraint firstAttribute="centerY" secondItem="EkG-L2-xS2" secondAttribute="centerY" constant="0.5" id="yX2-R8-Prj"/>
+                    <constraint firstAttribute="trailing" secondItem="z6r-xt-xxa" secondAttribute="trailing" id="zew-r8-TUC"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="imageV_bottomLine" destination="gjr-fQ-cV4" id="jhh-nV-V3A"/>
+                <outlet property="imageV_topLine" destination="z6r-xt-xxa" id="wW0-go-RDN"/>
                 <outlet property="lb_title" destination="EkG-L2-xS2" id="gaT-Hy-usk"/>
             </connections>
             <point key="canvasLocation" x="139" y="486"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="更多" width="8" height="14"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

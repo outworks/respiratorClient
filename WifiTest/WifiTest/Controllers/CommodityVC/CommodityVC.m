@@ -7,7 +7,7 @@
 //
 
 #import "CommodityVC.h"
-#import "AppDelegate.h"
+
 
 @interface CommodityVC ()
 

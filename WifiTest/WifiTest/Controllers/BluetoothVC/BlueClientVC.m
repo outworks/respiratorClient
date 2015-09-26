@@ -7,7 +7,6 @@
 //
 
 #import "BlueClientVC.h"
-#import "AppDelegate.h"
 #import "BlueCentralVC.h"
 #import "BluePeripheralVC.h"
 #import "HeartRateVC.h"

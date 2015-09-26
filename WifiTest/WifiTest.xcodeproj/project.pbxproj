@@ -25,7 +25,6 @@
 		6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF734081B71F91800F94397 /* DailySecondVC.xib */; };
 		6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */; };
 		6DF7340F1B71F92A00F94397 /* DailyThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */; };
-		ACC157B11BAF8B1800820D8D /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */; settings = {ASSET_TAGS = (); }; };
 		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
 		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
@@ -98,10 +97,6 @@
 		CE1CC2951B2C83B80076C942 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1CC2941B2C83B80076C942 /* Security.framework */; };
 		CE1CC2971B2C83C20076C942 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1CC2961B2C83C20076C942 /* SystemConfiguration.framework */; };
 		CE1CC2991B2C83CA0076C942 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1CC2981B2C83CA0076C942 /* MobileCoreServices.framework */; };
-		CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC29F1B2C8F7E0076C942 /* MMDrawerBarButtonItem.m */; };
-		CE1CC2A81B2C8F7E0076C942 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2A21B2C8F7E0076C942 /* MMDrawerController.m */; };
-		CE1CC2A91B2C8F7E0076C942 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2A41B2C8F7E0076C942 /* MMDrawerVisualState.m */; };
-		CE1CC2AA1B2C8F7E0076C942 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2A61B2C8F7E0076C942 /* UIViewController+MMDrawerController.m */; };
 		CE1CC2B41B2C92E00076C942 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B21B2C92E00076C942 /* LoginVC.m */; };
 		CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B31B2C92E00076C942 /* LoginVC.xib */; };
 		CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */; };
@@ -116,6 +111,11 @@
 		CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */; };
 		CE50C4321BAFB05800C8DBDE /* NearbyHospitalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50C4301BAFB05800C8DBDE /* NearbyHospitalVC.m */; };
 		CE50C4331BAFB05800C8DBDE /* NearbyHospitalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE50C4311BAFB05800C8DBDE /* NearbyHospitalVC.xib */; };
+		CE50ED331BB5E52500A7B324 /* SmartAlarmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50ED311BB5E52500A7B324 /* SmartAlarmVC.m */; };
+		CE50ED341BB5E52500A7B324 /* SmartAlarmVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE50ED321BB5E52500A7B324 /* SmartAlarmVC.xib */; };
+		CE50ED381BB5E63700A7B324 /* SmartAlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50ED361BB5E63700A7B324 /* SmartAlarmCell.m */; };
+		CE50ED391BB5E63700A7B324 /* SmartAlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE50ED371BB5E63700A7B324 /* SmartAlarmCell.xib */; };
+		CE50ED3C1BB5ED9C00A7B324 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50ED3B1BB5ED9C00A7B324 /* Alarm.m */; };
 		CE5965B21B483AAD00F730C1 /* CCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965B11B483AAD00F730C1 /* CCProgressView.m */; };
 		CE5965BD1B48421300F730C1 /* TestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5965BC1B48421300F730C1 /* TestTool.m */; };
 		CE71927D1B388D7900087024 /* BaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE71927C1B388D7900087024 /* BaseAPI.m */; };
@@ -134,8 +134,11 @@
 		CE7192AC1B38994200087024 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192A71B38994200087024 /* GCDTimer.m */; };
 		CE7192B21B389DCE00087024 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192B11B389DCE00087024 /* Member.m */; };
 		CE7192B51B389DF000087024 /* MemberAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192B41B389DF000087024 /* MemberAPI.m */; };
-		CE7192BF1B38BA0700087024 /* TRSDialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192BC1B38BA0700087024 /* TRSDialScrollView.m */; };
-		CE7192C01B38BA0700087024 /* TRSDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7192BE1B38BA0700087024 /* TRSDialView.m */; };
+		CE7307F81BB495A900EDF4D2 /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7307F71BB495A900EDF4D2 /* BaiduMapAPI.framework */; };
+		CE7975F71BB6060B0096FC44 /* SmartAlarmSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7975F51BB6060B0096FC44 /* SmartAlarmSetVC.m */; };
+		CE7975F81BB6060B0096FC44 /* SmartAlarmSetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7975F61BB6060B0096FC44 /* SmartAlarmSetVC.xib */; };
+		CE7975FD1BB60F070096FC44 /* MGConferenceDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7975FB1BB60F070096FC44 /* MGConferenceDatePicker.m */; };
+		CE7976011BB617ED0096FC44 /* LRPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7976001BB617ED0096FC44 /* LRPicker.m */; };
 		CE85B34D1B698C4600EB5D8F /* ProductVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE85B34B1B698C4600EB5D8F /* ProductVC.m */; };
 		CE85B34E1B698C4600EB5D8F /* ProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE85B34C1B698C4600EB5D8F /* ProductVC.xib */; };
 		CE8970B21B3E2DA1008BB59D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8970B01B3E2DA1008BB59D /* MainVC.m */; };
@@ -243,7 +246,6 @@
 		6DF7340B1B71F92A00F94397 /* DailyThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyThirdVC.h; sourceTree = "<group>"; };
 		6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyThirdVC.m; sourceTree = "<group>"; };
 		6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyThirdVC.xib; sourceTree = "<group>"; };
-		ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = WifiTest/BaiduMapAPI.framework; sourceTree = "<group>"; };
 		CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgreementVC.h; sourceTree = "<group>"; };
 		CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgreementVC.m; sourceTree = "<group>"; };
 		CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgreementVC.xib; sourceTree = "<group>"; };
@@ -379,15 +381,6 @@
 		CE1CC2941B2C83B80076C942 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		CE1CC2961B2C83C20076C942 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE1CC2981B2C83CA0076C942 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		CE1CC29E1B2C8F7E0076C942 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		CE1CC29F1B2C8F7E0076C942 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		CE1CC2A01B2C8F7E0076C942 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		CE1CC2A11B2C8F7E0076C942 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		CE1CC2A21B2C8F7E0076C942 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
-		CE1CC2A31B2C8F7E0076C942 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
-		CE1CC2A41B2C8F7E0076C942 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		CE1CC2A51B2C8F7E0076C942 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		CE1CC2A61B2C8F7E0076C942 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		CE1CC2B11B2C92E00076C942 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		CE1CC2B21B2C92E00076C942 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CE1CC2B31B2C92E00076C942 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -409,6 +402,14 @@
 		CE50C42F1BAFB05800C8DBDE /* NearbyHospitalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyHospitalVC.h; sourceTree = "<group>"; };
 		CE50C4301BAFB05800C8DBDE /* NearbyHospitalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyHospitalVC.m; sourceTree = "<group>"; };
 		CE50C4311BAFB05800C8DBDE /* NearbyHospitalVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyHospitalVC.xib; sourceTree = "<group>"; };
+		CE50ED301BB5E52500A7B324 /* SmartAlarmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartAlarmVC.h; sourceTree = "<group>"; };
+		CE50ED311BB5E52500A7B324 /* SmartAlarmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartAlarmVC.m; sourceTree = "<group>"; };
+		CE50ED321BB5E52500A7B324 /* SmartAlarmVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmartAlarmVC.xib; sourceTree = "<group>"; };
+		CE50ED351BB5E63700A7B324 /* SmartAlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartAlarmCell.h; sourceTree = "<group>"; };
+		CE50ED361BB5E63700A7B324 /* SmartAlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartAlarmCell.m; sourceTree = "<group>"; };
+		CE50ED371BB5E63700A7B324 /* SmartAlarmCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmartAlarmCell.xib; sourceTree = "<group>"; };
+		CE50ED3A1BB5ED9C00A7B324 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		CE50ED3B1BB5ED9C00A7B324 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		CE5965B01B483AAD00F730C1 /* CCProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCProgressView.h; sourceTree = "<group>"; };
 		CE5965B11B483AAD00F730C1 /* CCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProgressView.m; sourceTree = "<group>"; };
 		CE5965BB1B48421300F730C1 /* TestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTool.h; sourceTree = "<group>"; };
@@ -448,10 +449,15 @@
 		CE7192B11B389DCE00087024 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		CE7192B31B389DF000087024 /* MemberAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberAPI.h; sourceTree = "<group>"; };
 		CE7192B41B389DF000087024 /* MemberAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberAPI.m; sourceTree = "<group>"; };
-		CE7192BB1B38BA0700087024 /* TRSDialScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSDialScrollView.h; sourceTree = "<group>"; };
-		CE7192BC1B38BA0700087024 /* TRSDialScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSDialScrollView.m; sourceTree = "<group>"; };
-		CE7192BD1B38BA0700087024 /* TRSDialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSDialView.h; sourceTree = "<group>"; };
-		CE7192BE1B38BA0700087024 /* TRSDialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSDialView.m; sourceTree = "<group>"; };
+		CE7307F71BB495A900EDF4D2 /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI.framework; sourceTree = "<group>"; };
+		CE7975F41BB6060B0096FC44 /* SmartAlarmSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartAlarmSetVC.h; sourceTree = "<group>"; };
+		CE7975F51BB6060B0096FC44 /* SmartAlarmSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartAlarmSetVC.m; sourceTree = "<group>"; };
+		CE7975F61BB6060B0096FC44 /* SmartAlarmSetVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmartAlarmSetVC.xib; sourceTree = "<group>"; };
+		CE7975FA1BB60F070096FC44 /* MGConferenceDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGConferenceDatePicker.h; sourceTree = "<group>"; };
+		CE7975FB1BB60F070096FC44 /* MGConferenceDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGConferenceDatePicker.m; sourceTree = "<group>"; };
+		CE7975FC1BB60F070096FC44 /* MGConferenceDatePickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGConferenceDatePickerDelegate.h; sourceTree = "<group>"; };
+		CE7975FF1BB617ED0096FC44 /* LRPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRPicker.h; sourceTree = "<group>"; };
+		CE7976001BB617ED0096FC44 /* LRPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRPicker.m; sourceTree = "<group>"; };
 		CE85B34A1B698C4600EB5D8F /* ProductVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductVC.h; sourceTree = "<group>"; };
 		CE85B34B1B698C4600EB5D8F /* ProductVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductVC.m; sourceTree = "<group>"; };
 		CE85B34C1B698C4600EB5D8F /* ProductVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductVC.xib; sourceTree = "<group>"; };
@@ -572,7 +578,7 @@
 			files = (
 				6DBC7CF91B526A7900ECACDF /* OpenGLES.framework in Frameworks */,
 				6DBC7CF71B526A6900ECACDF /* CoreLocation.framework in Frameworks */,
-				ACC157B11BAF8B1800820D8D /* BaiduMapAPI.framework in Frameworks */,
+				CE7307F81BB495A900EDF4D2 /* BaiduMapAPI.framework in Frameworks */,
 				CED286231B48003800355DEB /* CoreBluetooth.framework in Frameworks */,
 				CE1CC2991B2C83CA0076C942 /* MobileCoreServices.framework in Frameworks */,
 				CE1CC2971B2C83C20076C942 /* SystemConfiguration.framework in Frameworks */,
@@ -652,7 +658,7 @@
 		CE1CC0D91B2C68180076C942 = {
 			isa = PBXGroup;
 			children = (
-				ACC157B01BAF8B1800820D8D /* BaiduMapAPI.framework */,
+				CE7307F71BB495A900EDF4D2 /* BaiduMapAPI.framework */,
 				CE1CC0E41B2C68180076C942 /* WifiTest */,
 				CE1CC2551B2C82050076C942 /* FrameWork */,
 				CE1CC0FE1B2C68180076C942 /* WifiTestTests */,
@@ -719,11 +725,11 @@
 		CE1CC10B1B2C6A320076C942 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				CE7975FE1BB617D30096FC44 /* LRPicker */,
+				CE7975F91BB60F070096FC44 /* MGConferenceDatePicker */,
 				6DF733EB1B71E02800F94397 /* ChartView */,
 				CE8970DE1B3E35D0008BB59D /* PNChart */,
-				CE7192BA1B38BA0700087024 /* TRSDialScrollView */,
 				CE71929F1B38994200087024 /* YXGCD */,
-				CE1CC29D1B2C8F7E0076C942 /* MMDrawerController */,
 				CE1CC10C1B2C6A320076C942 /* AFNetworking */,
 				CE1CC1331B2C6A320076C942 /* IQKeyBoardManager */,
 				CE1CC1581B2C6A320076C942 /* LKDBHelper */,
@@ -1032,6 +1038,8 @@
 				CEA8E1131B3E534300A47BFC /* Monidata.m */,
 				CEA8E1151B3E53DA00A47BFC /* DateMonidata.h */,
 				CEA8E1161B3E53DA00A47BFC /* DateMonidata.m */,
+				CE50ED3A1BB5ED9C00A7B324 /* Alarm.h */,
+				CE50ED3B1BB5ED9C00A7B324 /* Alarm.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1084,22 +1092,6 @@
 			path = WifiTest/FrameWork;
 			sourceTree = "<group>";
 		};
-		CE1CC29D1B2C8F7E0076C942 /* MMDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				CE1CC29E1B2C8F7E0076C942 /* MMDrawerBarButtonItem.h */,
-				CE1CC29F1B2C8F7E0076C942 /* MMDrawerBarButtonItem.m */,
-				CE1CC2A01B2C8F7E0076C942 /* MMDrawerController+Subclass.h */,
-				CE1CC2A11B2C8F7E0076C942 /* MMDrawerController.h */,
-				CE1CC2A21B2C8F7E0076C942 /* MMDrawerController.m */,
-				CE1CC2A31B2C8F7E0076C942 /* MMDrawerVisualState.h */,
-				CE1CC2A41B2C8F7E0076C942 /* MMDrawerVisualState.m */,
-				CE1CC2A51B2C8F7E0076C942 /* UIViewController+MMDrawerController.h */,
-				CE1CC2A61B2C8F7E0076C942 /* UIViewController+MMDrawerController.m */,
-			);
-			path = MMDrawerController;
-			sourceTree = "<group>";
-		};
 		CE1CC2B01B2C92E00076C942 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +1135,9 @@
 				6DE9A7B11B525EA8000DD6D6 /* SetCell.h */,
 				6DE9A7B21B525EA8000DD6D6 /* SetCell.m */,
 				6DE9A7B31B525EA8000DD6D6 /* SetCell.xib */,
+				CE50ED351BB5E63700A7B324 /* SmartAlarmCell.h */,
+				CE50ED361BB5E63700A7B324 /* SmartAlarmCell.m */,
+				CE50ED371BB5E63700A7B324 /* SmartAlarmCell.xib */,
 			);
 			name = Views;
 			path = Controllers/Views;
@@ -1190,15 +1185,23 @@
 			path = YXGCD;
 			sourceTree = "<group>";
 		};
-		CE7192BA1B38BA0700087024 /* TRSDialScrollView */ = {
+		CE7975F91BB60F070096FC44 /* MGConferenceDatePicker */ = {
 			isa = PBXGroup;
 			children = (
-				CE7192BB1B38BA0700087024 /* TRSDialScrollView.h */,
-				CE7192BC1B38BA0700087024 /* TRSDialScrollView.m */,
-				CE7192BD1B38BA0700087024 /* TRSDialView.h */,
-				CE7192BE1B38BA0700087024 /* TRSDialView.m */,
+				CE7975FA1BB60F070096FC44 /* MGConferenceDatePicker.h */,
+				CE7975FB1BB60F070096FC44 /* MGConferenceDatePicker.m */,
+				CE7975FC1BB60F070096FC44 /* MGConferenceDatePickerDelegate.h */,
 			);
-			path = TRSDialScrollView;
+			path = MGConferenceDatePicker;
+			sourceTree = "<group>";
+		};
+		CE7975FE1BB617D30096FC44 /* LRPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CE7975FF1BB617ED0096FC44 /* LRPicker.h */,
+				CE7976001BB617ED0096FC44 /* LRPicker.m */,
+			);
+			path = LRPicker;
 			sourceTree = "<group>";
 		};
 		CE85B3491B698C3000EB5D8F /* ProductVC */ = {
@@ -1230,6 +1233,12 @@
 				DF57F12F1B73B548001B1536 /* DeviceVC.h */,
 				DF57F1301B73B548001B1536 /* DeviceVC.m */,
 				DF57F1311B73B548001B1536 /* DeviceVC.xib */,
+				CE50ED301BB5E52500A7B324 /* SmartAlarmVC.h */,
+				CE50ED311BB5E52500A7B324 /* SmartAlarmVC.m */,
+				CE50ED321BB5E52500A7B324 /* SmartAlarmVC.xib */,
+				CE7975F41BB6060B0096FC44 /* SmartAlarmSetVC.h */,
+				CE7975F51BB6060B0096FC44 /* SmartAlarmSetVC.m */,
+				CE7975F61BB6060B0096FC44 /* SmartAlarmSetVC.xib */,
 			);
 			path = SetVC;
 			sourceTree = "<group>";
@@ -1555,6 +1564,7 @@
 				CE96B76F1B6F96DA004E341B /* MotionDetectionVC.xib in Resources */,
 				6D36A8E31B47A0C900B834A5 /* Head.jpg in Resources */,
 				CE1CC1D61B2C6A320076C942 /* IQKeyboardManager.bundle in Resources */,
+				CE50ED391BB5E63700A7B324 /* SmartAlarmCell.xib in Resources */,
 				CE1CC24E1B2C7BBA0076C942 /* 底板.jpg in Resources */,
 				CE96B7811B6F984B004E341B /* MotionThirdVC.xib in Resources */,
 				CE8970B31B3E2DA1008BB59D /* MainVC.xib in Resources */,
@@ -1564,6 +1574,7 @@
 				CE50C4331BAFB05800C8DBDE /* NearbyHospitalVC.xib in Resources */,
 				CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */,
 				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
+				CE50ED341BB5E52500A7B324 /* SmartAlarmVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */,
 				CED8BE211B8921AB0071ECEC /* DrugResultView.xib in Resources */,
@@ -1571,6 +1582,7 @@
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
 				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
+				CE7975F81BB6060B0096FC44 /* SmartAlarmSetVC.xib in Resources */,
 				6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE326F251B87F52400ABECD0 /* DrugResultVC.xib in Resources */,
@@ -1616,6 +1628,7 @@
 				CE1CC1F71B2C6A320076C942 /* SDWebImageCompat.m in Sources */,
 				CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */,
 				CE1CC1F81B2C6A320076C942 /* SDWebImageDecoder.m in Sources */,
+				CE7975F71BB6060B0096FC44 /* SmartAlarmSetVC.m in Sources */,
 				CE1CC1DE1B2C6A320076C942 /* LKDB+Mapping.m in Sources */,
 				CE71929B1B38905D00087024 /* AFURLConnectionOperation.m in Sources */,
 				CE1CC1F31B2C6A320076C942 /* Reachability.m in Sources */,
@@ -1636,7 +1649,6 @@
 				CE1CC1D01B2C6A320076C942 /* IQSegmentedNextPrevious.m in Sources */,
 				CE7192981B38905D00087024 /* AFJSONRequestOperation.m in Sources */,
 				CE1CC1F61B2C6A320076C942 /* SDImageCache.m in Sources */,
-				CE1CC2AA1B2C8F7E0076C942 /* UIViewController+MMDrawerController.m in Sources */,
 				CE1CC1D81B2C6A320076C942 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				CE7192B51B389DF000087024 /* MemberAPI.m in Sources */,
 				CE1CC1F41B2C6A320076C942 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1648,6 +1660,7 @@
 				CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */,
 				CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */,
 				CE8971011B3E35D0008BB59D /* PNColor.m in Sources */,
+				CE50ED381BB5E63700A7B324 /* SmartAlarmCell.m in Sources */,
 				CE1CC1FD1B2C6A320076C942 /* UIButton+WebCache.m in Sources */,
 				CE1CC1DC1B2C6A320076C942 /* FMDatabaseQueue.m in Sources */,
 				CE1CC1E31B2C6A320076C942 /* MBProgressHUD.m in Sources */,
@@ -1657,11 +1670,9 @@
 				CE89710A1B3E35D0008BB59D /* PNScatterChartDataItem.m in Sources */,
 				CE1CC1E11B2C6A320076C942 /* NSObject+LKDBHelper.m in Sources */,
 				CE1CC20C1B2C70360076C942 /* ShareValue.m in Sources */,
-				CE1CC2A91B2C8F7E0076C942 /* MMDrawerVisualState.m in Sources */,
 				CE1CC1DF1B2C6A320076C942 /* LKDBHelper.m in Sources */,
 				CE1CC2531B2C7C7C0076C942 /* BasicVC.m in Sources */,
 				6DF733FB1B71E02800F94397 /* HCatChartLabel.m in Sources */,
-				CE7192C01B38BA0700087024 /* TRSDialView.m in Sources */,
 				CE1CC1CE1B2C6A320076C942 /* IQKeyboardManager.m in Sources */,
 				CE1CC1DA1B2C6A320076C942 /* FMDatabaseAdditions.m in Sources */,
 				CE1CC20B1B2C70360076C942 /* ShareFun.m in Sources */,
@@ -1669,11 +1680,10 @@
 				CE8971041B3E35D0008BB59D /* PNLineChartData.m in Sources */,
 				CE1CC1E21B2C6A320076C942 /* NSObject+LKModel.m in Sources */,
 				CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */,
-				CE7192BF1B38BA0700087024 /* TRSDialScrollView.m in Sources */,
+				CE50ED3C1BB5ED9C00A7B324 /* Alarm.m in Sources */,
 				CE7192AB1B38994200087024 /* GCDSemaphore.m in Sources */,
 				6DF734091B71F91800F94397 /* DailySecondVC.m in Sources */,
 				CE8970DC1B3E2DCD008BB59D /* AirQualityVC.m in Sources */,
-				CE1CC2A71B2C8F7E0076C942 /* MMDrawerBarButtonItem.m in Sources */,
 				CE1CC2021B2C6A320076C942 /* UIImageView+WebCache.m in Sources */,
 				CED8BE1F1B89216E0071ECEC /* DrugResultView.m in Sources */,
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
@@ -1681,6 +1691,7 @@
 				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
 				6DF733F91B71E02800F94397 /* HCatBarChart.m in Sources */,
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
+				CE50ED331BB5E52500A7B324 /* SmartAlarmVC.m in Sources */,
 				CE8970D41B3E2DBE008BB59D /* PEFSecondVC.m in Sources */,
 				CE71929D1B38905D00087024 /* UIImageView+AFNetworking.m in Sources */,
 				DF57F1371B73B611001B1536 /* DeviceHelper.m in Sources */,
@@ -1697,6 +1708,7 @@
 				CEA8E11A1B3E54DD00A47BFC /* DataAPI.m in Sources */,
 				CE1CC1FB1B2C6A320076C942 /* SDWebImageManager.m in Sources */,
 				CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */,
+				CE7976011BB617ED0096FC44 /* LRPicker.m in Sources */,
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
 				CE96B76E1B6F96DA004E341B /* MotionDetectionVC.m in Sources */,
@@ -1713,6 +1725,7 @@
 				CEA7946D1B6FDF3300B3774B /* DrugDetectionVC.m in Sources */,
 				DF57F1321B73B548001B1536 /* DeviceVC.m in Sources */,
 				CE1CC1FC1B2C6A320076C942 /* SDWebImagePrefetcher.m in Sources */,
+				CE7975FD1BB60F070096FC44 /* MGConferenceDatePicker.m in Sources */,
 				CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */,
 				CE1CC2001B2C6A320076C942 /* UIImage+WebP.m in Sources */,
 				CE7192B21B389DCE00087024 /* Member.m in Sources */,
@@ -1723,7 +1736,6 @@
 				CE7192971B38905D00087024 /* AFImageRequestOperation.m in Sources */,
 				DF509F6E1B3E811900A422E7 /* DataTools.m in Sources */,
 				CE1CC0E81B2C68180076C942 /* main.m in Sources */,
-				CE1CC2A81B2C8F7E0076C942 /* MMDrawerController.m in Sources */,
 				CE8971071B3E35D0008BB59D /* PNPieChartDataItem.m in Sources */,
 				CE1CC1E41B2C6A320076C942 /* ShowHUD.m in Sources */,
 			);
@@ -1845,6 +1857,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/",
 					"$(PROJECT_DIR)/WifiTest",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WifiTest/WifiTest.pch";
@@ -1871,6 +1884,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/",
 					"$(PROJECT_DIR)/WifiTest",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WifiTest/WifiTest.pch";
