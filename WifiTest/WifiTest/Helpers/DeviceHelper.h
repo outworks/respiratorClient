@@ -13,13 +13,21 @@
 
 #define BLE_DEVICE_CONNECTED @"BLE_DEVICE_CONNECTED"
 
+
+
 #define BLE_UPDATE_DATA @"BLE_UPDATE_DATA"
+
+#define BLE_HISTORY_DATA @"BLE_HISTORY_DATA"
 
 #define BLE_DATA_WRITE @"BLE_DATA_WRITE"
 
+#define BLE_DATA_NOTI @"BLE_DATA_NOTI"
+
 #define BLE_POWERLOW @"BLE_POWERLOW"
 
-#define BLE_BINDNAME_NOTSAME @"BLE_BINDNAME_NOTSAME"
+#define BLE_NOTOWERN @"BLE_NOTOWERN"
+
+#define BLE_RESTSUCCESS @"BLE_RESTSUCCESS"
 
 #define BLE_BINDNAME_SUCCESS @"BLE_BINDNAME_SUCCESS"
 
@@ -40,6 +48,8 @@
 -(void)stopScan;
 
 -(void)reset;
+
+-(BOOL)sendRestDeviceData;
 
 -(void)connectDeviceByName:(NSString *)deviceName;
 

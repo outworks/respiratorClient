@@ -24,7 +24,7 @@
     self.title = @"我的设备";
     [[DeviceHelper sharedDeviceHelper]scan];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadDatas) name:BLE_DEVICE_FOUND object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appendRecive:) name:BLE_UPDATE_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appendRecive:) name:BLE_DATA_NOTI object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appendSend:) name:BLE_DATA_WRITE object:nil];
 }
 
