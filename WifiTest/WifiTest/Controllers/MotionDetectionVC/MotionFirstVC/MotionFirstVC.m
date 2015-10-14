@@ -195,6 +195,31 @@
     _hud.text = @"设备已连接，等待用户呼气...";
 }
 
+-(void)historyData:(NSNotification *)notification{
+    NSNumber *x = [notification.userInfo objectForKey:@"X"];
+    NSNumber *x1 = [notification.userInfo objectForKey:@"X1"];
+    NSNumber *x2 = [notification.userInfo objectForKey:@"X2"];
+    DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
+    float pef = 29.704* x.intValue - 879.52;
+    float fev1 = 0.00547 * x1.intValue + 1.0573;
+    float fvc = 8.88*x2.intValue+1.123;;
+    t_request.pef = @(pef);
+    t_request.fev1 = @(fev1);
+    t_request.fvc = @(fvc);
+    t_request.inputType = @1;
+    t_request.dateTime = [notification.userInfo objectForKey:@"date"];
+    __weak __typeof(self) weak = self;
+    [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
+        [_hud hide];
+        [weak reloadData];
+    } Fail:^(int code, NSString *failDescript) {
+        [_hud hide];
+        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:self.view];
+    }];
+
+}
+
 -(void)dataUpdate:(NSNotification *)notification{
     _hud.text = @"监测到用户呼气，请稍候...";
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];

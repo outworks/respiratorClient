@@ -63,17 +63,16 @@
     return cell;
 }
 
-
 -(void)appendRecive:(NSNotification *)notification{
-    NSString *data = [notification.userInfo objectForKey:@"data"];
+    NSString *data = [notification.userInfo valueForKey:@"data"];
     NSString *content = _tv_content.text;
-    NSString *message = [notification.userInfo objectForKey:@"msg"];
+    NSString *message = [notification.userInfo valueForKey:@"msg"];
     _tv_content.text = [NSString stringWithFormat:@"%@:\n%@\n%@\n\n",message,data,content];
 }
 
 -(void)appendSend:(NSNotification *)notification{
-    NSString *data = [notification.userInfo objectForKey:@"data"];
-    NSString *msg = [notification.userInfo objectForKey:@"msg"];
+    NSString *data = [notification.userInfo valueForKey:@"data"];
+    NSString *msg = [notification.userInfo valueForKey:@"msg"];
     NSString *content = _tv_content.text;
     _tv_content.text = [NSString stringWithFormat:@"%@\n：%@\n%@\n\n",msg,data,content];
 }

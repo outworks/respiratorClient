@@ -12,7 +12,7 @@
 
 #import "ProductVC.h"
 #import "Alarm.h"
-#import "LK_NSDictionary2Object.h"
+
 #import <BaiduMapAPI/BMapKit.h>
 
 
@@ -29,7 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self thirdPartInit];
-    [self addAlarmLocalNotification];
+//    [self addAlarmLocalNotification];
     
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
@@ -50,51 +50,6 @@
     BOOL ret = [_mapManager start:BAIDUMAPKEY  generalDelegate:nil];
     if (!ret) {
         NSLog(@"manager start failed!");
-    }
-}
-
--(void)addAlarmLocalNotification{
-
-    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)])
-    {
-        
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
-        
-    }
-    
-    NSDate* now = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    comps = [calendar components:unitFlags fromDate:now];
-    NSInteger hour = [comps hour];
-    NSInteger min = [comps minute];
-    NSInteger sec = [comps second];
-    
-    NSArray *arr_alarms = [ShareValue sharedShareValue].arr_alarms;
-
-    for (NSDictionary *t_dic in arr_alarms) {
-        Alarm *t_alarm = [t_dic objectByClass:[Alarm class]];
-        if (t_alarm.status) {
-            NSArray *arr_time = [t_alarm.time componentsSeparatedByString:@":"];
-            NSInteger hs=[(NSString *)arr_time[0] integerValue] - hour;
-            NSInteger ms=[(NSString *)arr_time[1] integerValue] - min;
-            NSInteger hm=(hs*3600)+(ms*60)-sec;
-            NSLog(@"%ld",hm);
-            //建立后台消息对象
-            UILocalNotification *notification=[[UILocalNotification alloc] init];
-            if (notification!=nil)
-            {
-                notification.repeatInterval=kCFCalendarUnitDay;
-                NSDate *now1=[NSDate new];
-                notification.fireDate=[now1 dateByAddingTimeInterval:hm];//距现在多久后触发代理方法
-                notification.timeZone=[NSTimeZone defaultTimeZone];
-                notification.soundName = UILocalNotificationDefaultSoundName;
-                notification.alertBody = [NSString stringWithFormat:NSLocalizedString(@"你设置的时间是：%@：%@ .",nil),arr_time[0] ,arr_time[1]];
-                [[UIApplication sharedApplication]   scheduleLocalNotification:notification];
-            }
-        }
     }
 }
 

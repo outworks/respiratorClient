@@ -295,10 +295,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
         return;
     }
     NSData *data = characteristic.value;
+    NSLog(@"%@",[self dataToString:data]);
     if (data.length == 16) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"请求同步时间"}];
         const unsigned char *txbuf =[data bytes];
         if (txbuf[0] == 0x90 && txbuf[2]==0x01) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"请求同步时间"}];
             unsigned char mbytes[16];
             mbytes[0] = txbuf[0];
             mbytes[1] = 0x01;
@@ -331,14 +332,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data ],@"msg":@"回应时间同步"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data ],@"msg":@"回应时间同步"}];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x02){//低电量
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"电量低"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"电量低"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_POWERLOW object:nil userInfo:nil];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x03){
             NSString *noString = [[self dataToString:data] substringWithRange:NSMakeRange(3*2, 10*2)];
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":[NSString stringWithFormat:@"请求手机帐号,%@",noString]}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"请求手机帐号,%@",noString]}];
             unsigned char mbytes[16];
             mbytes[0] = txbuf[0];
             mbytes[1] = 0x01;
@@ -363,14 +364,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data ],@"msg":@"回传手机号"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data ],@"msg":@"回传手机号"}];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x41){
             int month = txbuf[3];
             int day = txbuf[4];
             int hour = txbuf[5];
             int minute = txbuf[6];
             int second = txbuf[7];
-            NSString *dateString = [NSString stringWithFormat:@"%02d%02d%02d%02d%02d",month,day,hour,minute,second];
+            NSString *dateString = [NSString stringWithFormat:@"%02d-%02d %02d:%02d:%02d",month,day,hour,minute,second];
             int x = txbuf[9] & 0xFF;
             x |= ((txbuf[8] << 8) & 0xFF00);
             int x1 = txbuf[11] & 0xFF;
@@ -394,9 +395,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
             
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"date":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"data":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
         }
         else if (txbuf[0] == 0x90 && txbuf[2]==0x05){
             int month = txbuf[3];
@@ -404,7 +405,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             int hour = txbuf[5];
             int minute = txbuf[6];
             int second = txbuf[7];
-            NSString *dateString = [NSString stringWithFormat:@"%02d%02d%02d%02d%02d",month,day,hour,minute,second];
+            NSString *dateString = [NSString stringWithFormat:@"%02d-%02d %02d:%02d:%02d",month,day,hour,minute,second];
             int x = txbuf[8] & 0xFF;
             x |= ((txbuf[9] << 8) & 0xFF00);
             int x1 = txbuf[10] & 0xFF;
@@ -427,11 +428,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"获得历史数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_HISTORY_DATA object:nil userInfo:@{@"date":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_HISTORY_DATA object:nil userInfo:@{@"data":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"回应呼吸数据"}];
         }
         else if (txbuf[0] == 0x90 && txbuf[2]==0x42){
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"停止"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"停止"}];
             [self clear];
             [self reset];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x06){
@@ -449,12 +450,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"发送读取历史记录指令"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"发送读取历史记录指令"}];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x07){
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"不是本机"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"不是本机"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_NOTOWERN object:nil userInfo:nil];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x08){
-            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"重置成功"}];
+            [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"重置成功"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_RESTSUCCESS object:nil userInfo:nil];
         }
     }
