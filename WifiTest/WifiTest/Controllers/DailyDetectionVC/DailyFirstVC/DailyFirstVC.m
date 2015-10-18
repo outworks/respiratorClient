@@ -190,6 +190,22 @@
      */
 }
 
+-(void)startListening{
+    [self stopListening];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(historyData:) name:BLE_HISTORY_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
+}
+
+-(void)stopListening{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Notification
+
 -(void)deviceFound:(NSNotification *)notification{
     btn_test.enabled = NO;
     [btn_test setTitle:@"发现设备正在连接" forState:UIControlStateNormal];
@@ -241,21 +257,12 @@
     [btn_test setTitle:@"测试" forState:UIControlStateNormal];
 }
 
--(void)startListening{
-    [self stopListening];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(historyData:) name:BLE_HISTORY_DATA object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
+- (void)historyData:(NSNotification *)note{
+    NSDictionary *t_dic = [note userInfo];
+    
 }
 
--(void)stopListening{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-#pragma mark - dealloc 
+#pragma mark - dealloc
 
 -(void)dealloc{
     [self stopListening];

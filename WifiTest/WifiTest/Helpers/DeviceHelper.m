@@ -551,6 +551,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     }
     return hexStr;
 }
+
 //连接指定的设备
 -(BOOL)connect:(CBPeripheral *)peripheral
 {
