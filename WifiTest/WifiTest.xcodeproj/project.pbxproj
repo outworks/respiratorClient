@@ -25,9 +25,9 @@
 		6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF734081B71F91800F94397 /* DailySecondVC.xib */; };
 		6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7340C1B71F92A00F94397 /* DailyThirdVC.m */; };
 		6DF7340F1B71F92A00F94397 /* DailyThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7340D1B71F92A00F94397 /* DailyThirdVC.xib */; };
-		ACD4D5D51BB96B0000A15B0A /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD4D5D41BB96B0000A15B0A /* BaiduMapAPI.framework */; settings = {ASSET_TAGS = (); }; };
-		ACD4D5D91BB99A3A00A15B0A /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACD4D5D81BB99A3900A15B0A /* mapapi.bundle */; settings = {ASSET_TAGS = (); }; };
-		ACD4D5DB1BB9A1A500A15B0A /* ring.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACD4D5DA1BB9A1A500A15B0A /* ring.caf */; settings = {ASSET_TAGS = (); }; };
+		ACD4D5D51BB96B0000A15B0A /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD4D5D41BB96B0000A15B0A /* BaiduMapAPI.framework */; };
+		ACD4D5D91BB99A3A00A15B0A /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACD4D5D81BB99A3900A15B0A /* mapapi.bundle */; };
+		ACD4D5DB1BB9A1A500A15B0A /* ring.caf in Resources */ = {isa = PBXBuildFile; fileRef = ACD4D5DA1BB9A1A500A15B0A /* ring.caf */; };
 		CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */; };
 		CE09CD221B6AE7BB007C22DA /* UserAgreementVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */; };
 		CE1CC0E81B2C68180076C942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC0E71B2C68180076C942 /* main.m */; };
@@ -1860,6 +1860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ADAM GEISS (8SJU4ZD534)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1878,7 +1879,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f81b4ecc-61bc-411a-8db9-72e80db62090";
 			};
 			name = Debug;
 		};
@@ -1905,7 +1906,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f81b4ecc-61bc-411a-8db9-72e80db62090";
 			};
 			name = Release;
 		};
