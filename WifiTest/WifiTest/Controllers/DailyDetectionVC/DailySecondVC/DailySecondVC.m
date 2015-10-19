@@ -80,15 +80,18 @@
 //横坐标标题数组
 - (NSArray *)HCatChart_xLableArray:(HCatChart *)chart{
     
-    NSMutableArray *t_dateArr = [NSMutableArray array];
     
+    NSMutableArray *t_dateArr = [NSMutableArray array];
+    if (!_mutArr) {
+        return t_dateArr;
+    }
     for (int i = 0; i < [_mutArr count]; i++) {
         Monidata *t_monidata = _mutArr[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         [t_dateArr addObject:t_dateStr];
     }
