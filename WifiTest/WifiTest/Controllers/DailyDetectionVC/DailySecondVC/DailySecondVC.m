@@ -89,9 +89,9 @@
         Monidata *t_monidata = _mutArr[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        [dateFormatter setDateFormat:@"HH:mm"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         [t_dateArr addObject:t_dateStr];
     }
