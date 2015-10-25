@@ -9,7 +9,7 @@
 #import "SetVC.h"
 #import "SetCell.h"
 #import "ShareValue.h"
-#import "SexSelectionVC.h"
+#import "UserNickNameVC.h"
 #import "DeviceVC.h"
 #import "SmartAlarmVC.h"
 
@@ -85,7 +85,7 @@
         SmartAlarmVC *t_vc = [[SmartAlarmVC alloc]init];
         [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
     }else if (indexPath.row == 2) {
-        SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
+        UserNickNameVC *t_vc = [[UserNickNameVC alloc] init];
         t_vc.member = [ShareValue sharedShareValue].member;
         t_vc.isRegiest = NO;
         [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
@@ -95,7 +95,6 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-
     if (scrollView.contentOffset.y < 0) {
         CGPoint position = CGPointMake(0, 0);
         [scrollView setContentOffset:position animated:NO];

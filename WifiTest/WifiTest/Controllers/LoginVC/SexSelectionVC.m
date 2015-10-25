@@ -7,9 +7,25 @@
 //
 
 #import "SexSelectionVC.h"
-#import "UserInfoVC.h"
+#import "UserAgeVC.h"
+
+typedef NS_ENUM(NSUInteger, SexType) {
+    SexTypeWoman = 0,
+    SexTypeMan = 1,
+};
 
 @interface SexSelectionVC ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_woman;
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_man;
+@property (weak, nonatomic) IBOutlet UILabel *lb_woman;
+@property (weak, nonatomic) IBOutlet UILabel *lb_man;
+@property (nonatomic,assign) SexType sexType;
+
+@property (weak, nonatomic) IBOutlet UIButton *btn_after;
+@property (weak, nonatomic) IBOutlet UIButton *btn_before;
+
+
 
 @end
 
@@ -18,53 +34,102 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (_isRegiest) {
-        self.navigationItem.title = @"注册";
-    }else{
-        self.navigationItem.title = @"用户信息";
-    }
+    self.navigationItem.title = @"性别";
 
+    [self initUI];
+    [self SexChange:_sexType];
     
     if (_member) {
         if ([_member.sex integerValue] == 0) {
-            [_btn_boy setSelected:YES];
+            _sexType = SexTypeMan;
+            [self SexChange:_sexType];
+            
         }else{
-            [_btn_girl setSelected:YES];
+            _sexType = SexTypeWoman;
+            [self SexChange:_sexType];
         }
     }
 }
 
+#pragma mark -
+#pragma mark - privateMethods
+
+
+- (void)initUI{
+
+    _lb_woman.layer.cornerRadius = _lb_woman.frame.size.height/2;
+    _lb_woman.layer.masksToBounds = YES;
+    
+    _lb_man.layer.cornerRadius = _lb_man.frame.size.height/2;
+    _lb_man.layer.masksToBounds = YES;
+    
+
+    UIImage *image_t = [UIImage imageNamed:@"icon_segment_righ_2"];
+    UIEdgeInsets inset = UIEdgeInsetsMake(image_t.size.height/2, image_t.size.width/4, image_t.size.height/2, image_t.size.width*3/4);
+    [_btn_before setBackgroundImage:[image_t resizableImageWithCapInsets:inset] forState:UIControlStateNormal];
+     UIImage *image_t2 = [UIImage imageNamed:@"icon_segment_right_h_2"];
+    [_btn_before setBackgroundImage:[image_t resizableImageWithCapInsets:inset] forState:UIControlStateNormal];
+    [_btn_before setBackgroundImage:[image_t2 resizableImageWithCapInsets:inset] forState:UIControlStateHighlighted];
+    
+    image_t = [UIImage imageNamed:@"icon_segment_left"];
+    inset = UIEdgeInsetsMake(image_t.size.height/2, image_t.size.width*3/4, image_t.size.height/2, image_t.size.width/4);
+    [_btn_after setBackgroundImage:[image_t resizableImageWithCapInsets:inset] forState:UIControlStateNormal];
+    image_t2 = [UIImage imageNamed:@"icon_segment_left_h"];
+    [_btn_after setBackgroundImage:[image_t2 resizableImageWithCapInsets:inset] forState:UIControlStateHighlighted];
+    
+    
+}
+
+- (void)SexChange:(SexType) sexType{
+    if (_sexType == SexTypeMan) {
+        
+        [_imageV_man setImage:[UIImage imageNamed:@"icon_man_h"]];
+        [_imageV_woman setImage:[UIImage imageNamed:@"icon_woman"]];
+        [_lb_man setBackgroundColor:RGB(74, 109, 168)];
+        [_lb_woman setBackgroundColor:RGB(81, 86, 90)];
+        
+    }else if(_sexType == SexTypeWoman){
+        
+        [_imageV_man setImage:[UIImage imageNamed:@"icon_man"]];
+        [_imageV_woman setImage:[UIImage imageNamed:@"icon_woman_h"]];
+        [_lb_man setBackgroundColor:RGB(81, 86, 90)];
+        [_lb_woman setBackgroundColor:RGB(252, 129, 134)];
+    }
+    
+
+}
+
+
 #pragma mark - buttonAction 
 
 - (IBAction)btnBoyAction:(id)sender {
-    _btn_boy.selected = YES;
-    _btn_girl.selected = NO;
+    _sexType = SexTypeMan;
+    [self SexChange:_sexType];
 }
 
 - (IBAction)btnGirlAction:(id)sender {
-    _btn_girl.selected = YES;
-    _btn_boy.selected = NO;
+    _sexType = SexTypeWoman;
+    [self SexChange:_sexType];
 }
 
-
-
-- (IBAction)nextAction:(id)sender {
+- (IBAction)afterAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
     
-    if (!_btn_girl.selected && !_btn_boy.selected) {
-        [ShowHUD showError:@"请选择性别" configParameter:^(ShowHUD *config) {
-        } duration:1.5f inView:self.view];
-        return;
+}
+
+- (IBAction)beforeAction:(id)sender {
+    
+    if (_sexType == SexTypeMan) {
+        _member.sex = @0;
+    }else if(_sexType == SexTypeWoman){
+        _member.sex = @1;
     }
     
-    UserInfoVC *t_vc = [[UserInfoVC alloc] init];
-    if (_btn_boy.selected) {
-        t_vc.sex = @0;
-    }else if(_btn_girl.selected){
-        t_vc.sex = @1;
-    }
+    UserAgeVC *t_vc = [[UserAgeVC alloc] init];
     t_vc.member = _member;
     t_vc.isRegiest = _isRegiest;
     [self.navigationController pushViewController:t_vc animated:YES];
+    
 }
 
 #pragma mark - dealloc 

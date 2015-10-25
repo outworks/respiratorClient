@@ -9,6 +9,7 @@
 #import "RegiestVC.h"
 #import "UserAgreementVC.h"
 #import "MemberAPI.h"
+#import "UserNickNameVC.h"
 #import "SexSelectionVC.h"
 
 @interface RegiestVC ()
@@ -104,7 +105,7 @@
         [ShareValue sharedShareValue].member = data;
         
         [[GCDQueue mainQueue] execute:^{
-            SexSelectionVC *t_vc = [[SexSelectionVC alloc] init];
+            UserNickNameVC *t_vc = [[UserNickNameVC alloc] init];
             t_vc.member = [ShareValue sharedShareValue].member;
             t_vc.isRegiest = YES;
             [weakSelf.navigationController pushViewController:t_vc animated:YES];

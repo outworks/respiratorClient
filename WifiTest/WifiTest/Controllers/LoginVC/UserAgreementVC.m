@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"用户协议";
-    
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark - 
+#pragma mark - private
+
+- (void)initUI{
+    UIImage * image_t = [UIImage imageNamed:@"loginBg"];
+    UIEdgeInsets inset = UIEdgeInsetsMake(image_t.size.height/2, image_t.size.width/2, image_t.size.height/2, image_t.size.width/2);
+    [_btn_determine setBackgroundImage:[image_t resizableImageWithCapInsets:inset] forState:UIControlStateNormal];
+
+ 
 }
 
 #pragma mark - butttonAction 

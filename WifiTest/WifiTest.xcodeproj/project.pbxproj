@@ -108,8 +108,6 @@
 		CE326F251B87F52400ABECD0 /* DrugResultVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE326F231B87F52400ABECD0 /* DrugResultVC.xib */; };
 		CE4816261B6C1E2E007CC332 /* SexSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */; };
 		CE4816271B6C1E2E007CC332 /* SexSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */; };
-		CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4816291B6C2BF0007CC332 /* UserInfoVC.m */; };
-		CE48162C1B6C2BF0007CC332 /* UserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */; };
 		CE4816301B6C35BC007CC332 /* RegiestSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */; };
 		CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */; };
 		CE50C4321BAFB05800C8DBDE /* NearbyHospitalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE50C4301BAFB05800C8DBDE /* NearbyHospitalVC.m */; };
@@ -192,6 +190,14 @@
 		CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC0CF711B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib */; };
 		CECE1DAC1B5295E5009CBECD /* HeartRateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */; };
 		CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */; };
+		CED24C641BDD548F00481F51 /* UserNickNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C621BDD548F00481F51 /* UserNickNameVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C651BDD548F00481F51 /* UserNickNameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C631BDD548F00481F51 /* UserNickNameVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C691BDD76C900481F51 /* UserAgeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C671BDD76C900481F51 /* UserAgeVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C6A1BDD76C900481F51 /* UserAgeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C681BDD76C900481F51 /* UserAgeVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C6E1BDD867600481F51 /* UserHeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C6C1BDD867600481F51 /* UserHeightVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C6F1BDD867600481F51 /* UserHeightVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C6D1BDD867600481F51 /* UserHeightVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C731BDD8BBD00481F51 /* UserWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C711BDD8BBD00481F51 /* UserWeightVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C741BDD8BBD00481F51 /* UserWeightVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C721BDD8BBD00481F51 /* UserWeightVC.xib */; settings = {ASSET_TAGS = (); }; };
 		CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286131B47DB7F00355DEB /* BlueClientVC.m */; };
 		CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED286141B47DB7F00355DEB /* BlueClientVC.xib */; };
 		CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286181B47F6D800355DEB /* BlueCentralVC.m */; };
@@ -398,9 +404,6 @@
 		CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SexSelectionVC.h; sourceTree = "<group>"; };
 		CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SexSelectionVC.m; sourceTree = "<group>"; };
 		CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SexSelectionVC.xib; sourceTree = "<group>"; };
-		CE4816281B6C2BF0007CC332 /* UserInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoVC.h; sourceTree = "<group>"; };
-		CE4816291B6C2BF0007CC332 /* UserInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoVC.m; sourceTree = "<group>"; };
-		CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoVC.xib; sourceTree = "<group>"; };
 		CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegiestSuccessVC.h; sourceTree = "<group>"; };
 		CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegiestSuccessVC.m; sourceTree = "<group>"; };
 		CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegiestSuccessVC.xib; sourceTree = "<group>"; };
@@ -550,6 +553,18 @@
 		CECE1DA91B5295E5009CBECD /* HeartRateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartRateVC.h; sourceTree = "<group>"; };
 		CECE1DAA1B5295E5009CBECD /* HeartRateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartRateVC.m; sourceTree = "<group>"; };
 		CECE1DAB1B5295E5009CBECD /* HeartRateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeartRateVC.xib; sourceTree = "<group>"; };
+		CED24C611BDD548F00481F51 /* UserNickNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNickNameVC.h; sourceTree = "<group>"; };
+		CED24C621BDD548F00481F51 /* UserNickNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNickNameVC.m; sourceTree = "<group>"; };
+		CED24C631BDD548F00481F51 /* UserNickNameVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserNickNameVC.xib; sourceTree = "<group>"; };
+		CED24C661BDD76C900481F51 /* UserAgeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgeVC.h; sourceTree = "<group>"; };
+		CED24C671BDD76C900481F51 /* UserAgeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgeVC.m; sourceTree = "<group>"; };
+		CED24C681BDD76C900481F51 /* UserAgeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAgeVC.xib; sourceTree = "<group>"; };
+		CED24C6B1BDD867600481F51 /* UserHeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHeightVC.h; sourceTree = "<group>"; };
+		CED24C6C1BDD867600481F51 /* UserHeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHeightVC.m; sourceTree = "<group>"; };
+		CED24C6D1BDD867600481F51 /* UserHeightVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserHeightVC.xib; sourceTree = "<group>"; };
+		CED24C701BDD8BBD00481F51 /* UserWeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserWeightVC.h; sourceTree = "<group>"; };
+		CED24C711BDD8BBD00481F51 /* UserWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWeightVC.m; sourceTree = "<group>"; };
+		CED24C721BDD8BBD00481F51 /* UserWeightVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserWeightVC.xib; sourceTree = "<group>"; };
 		CED286121B47DB7F00355DEB /* BlueClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueClientVC.h; sourceTree = "<group>"; };
 		CED286131B47DB7F00355DEB /* BlueClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueClientVC.m; sourceTree = "<group>"; };
 		CED286141B47DB7F00355DEB /* BlueClientVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueClientVC.xib; sourceTree = "<group>"; };
@@ -1101,21 +1116,13 @@
 		CE1CC2B01B2C92E00076C942 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
+				CED24C601BDD52BA00481F51 /* userInfoSet */,
 				CE1CC2B11B2C92E00076C942 /* LoginVC.h */,
 				CE1CC2B21B2C92E00076C942 /* LoginVC.m */,
 				CE1CC2B31B2C92E00076C942 /* LoginVC.xib */,
 				CE1CC2B61B2C96AF0076C942 /* RegiestVC.h */,
 				CE1CC2B71B2C96AF0076C942 /* RegiestVC.m */,
 				CE1CC2B81B2C96AF0076C942 /* RegiestVC.xib */,
-				CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */,
-				CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */,
-				CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */,
-				CE4816281B6C2BF0007CC332 /* UserInfoVC.h */,
-				CE4816291B6C2BF0007CC332 /* UserInfoVC.m */,
-				CE48162A1B6C2BF0007CC332 /* UserInfoVC.xib */,
-				CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */,
-				CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */,
-				CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */,
 				CE09CD1E1B6AE7BB007C22DA /* UserAgreementVC.h */,
 				CE09CD1F1B6AE7BB007C22DA /* UserAgreementVC.m */,
 				CE09CD201B6AE7BB007C22DA /* UserAgreementVC.xib */,
@@ -1441,6 +1448,31 @@
 			path = HeartRateVC;
 			sourceTree = "<group>";
 		};
+		CED24C601BDD52BA00481F51 /* userInfoSet */ = {
+			isa = PBXGroup;
+			children = (
+				CED24C611BDD548F00481F51 /* UserNickNameVC.h */,
+				CED24C621BDD548F00481F51 /* UserNickNameVC.m */,
+				CED24C631BDD548F00481F51 /* UserNickNameVC.xib */,
+				CE4816231B6C1E2E007CC332 /* SexSelectionVC.h */,
+				CE4816241B6C1E2E007CC332 /* SexSelectionVC.m */,
+				CE4816251B6C1E2E007CC332 /* SexSelectionVC.xib */,
+				CED24C661BDD76C900481F51 /* UserAgeVC.h */,
+				CED24C671BDD76C900481F51 /* UserAgeVC.m */,
+				CED24C681BDD76C900481F51 /* UserAgeVC.xib */,
+				CED24C6B1BDD867600481F51 /* UserHeightVC.h */,
+				CED24C6C1BDD867600481F51 /* UserHeightVC.m */,
+				CED24C6D1BDD867600481F51 /* UserHeightVC.xib */,
+				CED24C701BDD8BBD00481F51 /* UserWeightVC.h */,
+				CED24C711BDD8BBD00481F51 /* UserWeightVC.m */,
+				CED24C721BDD8BBD00481F51 /* UserWeightVC.xib */,
+				CE48162D1B6C35BC007CC332 /* RegiestSuccessVC.h */,
+				CE48162E1B6C35BC007CC332 /* RegiestSuccessVC.m */,
+				CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */,
+			);
+			name = userInfoSet;
+			sourceTree = "<group>";
+		};
 		CED286111B47DB0700355DEB /* BluetoothVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1550,8 +1582,8 @@
 				ACD4D5DB1BB9A1A500A15B0A /* ring.caf in Resources */,
 				ACD4D5D91BB99A3A00A15B0A /* mapapi.bundle in Resources */,
 				CE85B34E1B698C4600EB5D8F /* ProductVC.xib in Resources */,
-				CE48162C1B6C2BF0007CC332 /* UserInfoVC.xib in Resources */,
 				CE1CC2B51B2C92E00076C942 /* LoginVC.xib in Resources */,
+				CED24C651BDD548F00481F51 /* UserNickNameVC.xib in Resources */,
 				CE1CC0F61B2C68180076C942 /* LaunchScreen.xib in Resources */,
 				CE8970D71B3E2DBE008BB59D /* PEFThirdVC.xib in Resources */,
 				CE8970B91B3E2DB0008BB59D /* SetVC.xib in Resources */,
@@ -1562,10 +1594,12 @@
 				CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */,
 				6DF734051B71F8ED00F94397 /* DailyFirstVC.xib in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
+				CED24C6F1BDD867600481F51 /* UserHeightVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
 				DF57F1331B73B548001B1536 /* DeviceVC.xib in Resources */,
 				CECE1DAD1B5295E5009CBECD /* HeartRateVC.xib in Resources */,
 				CE8970BF1B3E2DB7008BB59D /* NearbyPharVC.xib in Resources */,
+				CED24C6A1BDD76C900481F51 /* UserAgeVC.xib in Resources */,
 				CEA794731B6FF56400B3774B /* DailyDetectionVC.xib in Resources */,
 				CE8970D51B3E2DBE008BB59D /* PEFSecondVC.xib in Resources */,
 				CEA7946E1B6FDF3300B3774B /* DrugDetectionVC.xib in Resources */,
@@ -1584,6 +1618,7 @@
 				CEC0CF731B6E6FEA00ACDCE3 /* FunctionSwitchVC.xib in Resources */,
 				CE50ED341BB5E52500A7B324 /* SmartAlarmVC.xib in Resources */,
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
+				CED24C741BDD8BBD00481F51 /* UserWeightVC.xib in Resources */,
 				CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */,
 				CED8BE211B8921AB0071ECEC /* DrugResultView.xib in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
@@ -1634,7 +1669,6 @@
 				CE8970FD1B3E35D0008BB59D /* PNBar.m in Sources */,
 				CE50C4321BAFB05800C8DBDE /* NearbyHospitalVC.m in Sources */,
 				CE1CC1F71B2C6A320076C942 /* SDWebImageCompat.m in Sources */,
-				CE48162B1B6C2BF0007CC332 /* UserInfoVC.m in Sources */,
 				CE1CC1F81B2C6A320076C942 /* SDWebImageDecoder.m in Sources */,
 				CE7975F71BB6060B0096FC44 /* SmartAlarmSetVC.m in Sources */,
 				CE1CC1DE1B2C6A320076C942 /* LKDB+Mapping.m in Sources */,
@@ -1646,6 +1680,7 @@
 				CE1CC1F51B2C6A320076C942 /* NSData+ImageContentType.m in Sources */,
 				CE09CD211B6AE7BB007C22DA /* UserAgreementVC.m in Sources */,
 				CE8971021B3E35D0008BB59D /* PNGenericChart.m in Sources */,
+				CED24C731BDD8BBD00481F51 /* UserWeightVC.m in Sources */,
 				CE7192AC1B38994200087024 /* GCDTimer.m in Sources */,
 				CE8971001B3E35D0008BB59D /* PNCircleChart.m in Sources */,
 				CE1CC2031B2C6A320076C942 /* UIView+WebCacheOperation.m in Sources */,
@@ -1665,6 +1700,7 @@
 				CE71927D1B388D7900087024 /* BaseAPI.m in Sources */,
 				CE7192AA1B38994200087024 /* GCDQueue.m in Sources */,
 				CE7192961B38905D00087024 /* AFHTTPRequestOperation.m in Sources */,
+				CED24C6E1BDD867600481F51 /* UserHeightVC.m in Sources */,
 				CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */,
 				CEA8E1171B3E53DA00A47BFC /* DateMonidata.m in Sources */,
 				CE8971011B3E35D0008BB59D /* PNColor.m in Sources */,
@@ -1696,6 +1732,7 @@
 				CED8BE1F1B89216E0071ECEC /* DrugResultView.m in Sources */,
 				CE1CC1DD1B2C6A320076C942 /* FMResultSet.m in Sources */,
 				CE96B77B1B6F983A004E341B /* MotionSecondVC.m in Sources */,
+				CED24C641BDD548F00481F51 /* UserNickNameVC.m in Sources */,
 				CE5965BD1B48421300F730C1 /* TestTool.m in Sources */,
 				6DF733F91B71E02800F94397 /* HCatBarChart.m in Sources */,
 				CE8970FF1B3E35D0008BB59D /* PNChartLabel.m in Sources */,
@@ -1732,6 +1769,7 @@
 				CE71929A1B38905D00087024 /* AFPropertyListRequestOperation.m in Sources */,
 				CEA7946D1B6FDF3300B3774B /* DrugDetectionVC.m in Sources */,
 				DF57F1321B73B548001B1536 /* DeviceVC.m in Sources */,
+				CED24C691BDD76C900481F51 /* UserAgeVC.m in Sources */,
 				CE1CC1FC1B2C6A320076C942 /* SDWebImagePrefetcher.m in Sources */,
 				CE7975FD1BB60F070096FC44 /* MGConferenceDatePicker.m in Sources */,
 				CE8971081B3E35D0008BB59D /* PNScatterChart.m in Sources */,
