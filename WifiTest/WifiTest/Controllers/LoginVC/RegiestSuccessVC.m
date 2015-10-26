@@ -12,6 +12,9 @@
 
 @interface RegiestSuccessVC ()
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_finish;
+
+
 @end
 
 @implementation RegiestSuccessVC
@@ -19,12 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"注册成功";
+    [self initUI];
     // Do any additional setup after loading the view from its nib.
 }
 
 #pragma mark - private methods
 
+- (void)initUI{
 
+    UIImage * image_t = [UIImage imageNamed:@"loginBg"];
+    UIEdgeInsets inset = UIEdgeInsetsMake(image_t.size.height/2, image_t.size.width/2, image_t.size.height/2, image_t.size.width/2);
+    [_btn_finish setBackgroundImage:[image_t resizableImageWithCapInsets:inset] forState:UIControlStateNormal];
+
+}
 
 #pragma mark - buttonAciton 
 

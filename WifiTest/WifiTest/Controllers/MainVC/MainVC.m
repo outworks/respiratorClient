@@ -18,6 +18,7 @@
 
 #import "MotionDetectionVC.h"
 #import "DrugDetectionVC.h"
+#import "DrugDetictVC.h"
 #import "DailyDetectionVC.h"
 
 @interface MainVC ()
@@ -28,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NotificationCenter addObserver:self selector:@selector(loadFunction:) name:NOTIFICATION_FUNCTIONCHANGE object:nil];
     [self initTabBar];
     [_vc_tab setSelectedIndex:0];
     // Do any additional setup after loading the view from its nib.
@@ -78,7 +78,7 @@
         MotionDetectionVC *breathVC = [[MotionDetectionVC alloc] init];
         nav_breath                  = [[UINavigationController alloc]initWithRootViewController:breathVC];
     }else if (_contentType == MedicationType){
-        DrugDetectionVC *breathVC   = [[DrugDetectionVC alloc] init];
+        DrugDetictVC *breathVC   = [[DrugDetictVC alloc] init];
         nav_breath                  = [[UINavigationController alloc]initWithRootViewController:breathVC];
     }
     AirQualityVC *airQualityVC          = [[AirQualityVC alloc] init];
@@ -168,29 +168,6 @@
     
 }
 
-#pragma mark -
-
--(void)loadFunction:(NSNotification *)note{
-    
-    NSDictionary *t_dic = [note userInfo];
-    
-    if (t_dic != nil) {
-        
-        NSString *contentType = [t_dic objectForKey:@"contentType"];
-        if ([contentType isEqualToString:@"daily"]) {
-            _contentType = DailyType;
-        }else if ([contentType isEqualToString:@"motion"]) {
-            _contentType = MotionType;
-        }else{
-            _contentType = MedicationType;
-            
-        }
-        
-        [self initTabBar];
-        [_vc_tab setSelectedIndex:0];
-    }
-    
-}
 
 #pragma mark - navigationControllerDelegate
 
@@ -206,7 +183,6 @@
 #pragma mark - dealloc
 
 -(void)dealloc{
-    [NotificationCenter removeObserver:self];
     NSLog(@"MainVC dealloc");
 }
 

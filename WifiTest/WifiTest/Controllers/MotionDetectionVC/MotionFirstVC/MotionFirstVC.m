@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lb_state;
 @property (weak, nonatomic) IBOutlet UILabel *lb_info;
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_test;
+
+
 @property (strong,nonatomic) CCProgressView *progress;
 @property (nonatomic,strong) PNCircleChart * circleChart;
 
@@ -90,7 +93,8 @@
 #pragma mark - private methods
 
 - (void) initUI{
-
+    
+    
     [ShareFun getCorner:_v_bg withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     [self reloadData];
 }
@@ -162,11 +166,15 @@
     [self startListening];
     if (![DeviceHelper sharedDeviceHelper].isConnected) {
         [[DeviceHelper sharedDeviceHelper]scan];
-        _hud = [ShowHUD showText:@"正在搜索设备，请确定设备已打开" configParameter:^(ShowHUD *config) {
-        } inView:self.view];
+        [_btn_test setEnabled:NO];
+        [_btn_test setTitle:@"正在搜索设备，请确定设备已打开" forState:UIControlStateNormal];
+        
+//        _hud = [ShowHUD showText:@"正在搜索设备，请确定设备已打开" configParameter:^(ShowHUD *config) {
+//        } inView:self.view];
     }else{
-        _hud = [ShowHUD showText:@"请对设备呼气" configParameter:^(ShowHUD *config) {
-        } inView:self.view];
+        [_btn_test setTitle:@"请对设备呼气" forState:UIControlStateNormal];
+//        _hud = [ShowHUD showText:@"请对设备呼气" configParameter:^(ShowHUD *config) {
+//        } inView:self.view];
     }
     /*
      __weak typeof(self) weakSelf = self;
@@ -186,16 +194,21 @@
 }
 
 -(void)deviceFound:(NSNotification *)notification{
-    _hud.text = @"发现设备正在连接...";
+//    _hud.text = @"发现设备正在连接...";
+    _btn_test.enabled = NO;
+    [_btn_test setTitle:@"发现设备正在连接" forState:UIControlStateNormal];
     [[DeviceHelper sharedDeviceHelper]connectDeviceByName:[DeviceHelper sharedDeviceHelper].deviceNames.firstObject];
 }
 
 
 -(void)deviceConneted:(NSNotification *)notification{
-    _hud.text = @"设备已连接，等待用户呼气...";
+    //_hud.text = @"设备已连接，等待用户呼气...";
+    _btn_test.enabled = NO;
+    [_btn_test setTitle:@"设备已连接，等待用户呼气" forState:UIControlStateNormal];
 }
 
 -(void)historyData:(NSNotification *)notification{
+    
     NSNumber *x = [notification.userInfo objectForKey:@"X"];
     NSNumber *x1 = [notification.userInfo objectForKey:@"X1"];
     NSNumber *x2 = [notification.userInfo objectForKey:@"X2"];
@@ -221,7 +234,9 @@
 }
 
 -(void)dataUpdate:(NSNotification *)notification{
-    _hud.text = @"监测到用户呼气，请稍候...";
+    _btn_test.enabled = NO;
+    [_btn_test setTitle:@"监测到用户呼气，请稍候..." forState:UIControlStateNormal];
+    //_hud.text = @"监测到用户呼气，请稍候...";
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
     t_request.mid = [ShareValue sharedShareValue].member.mid;
     NSNumber *x = [notification.userInfo objectForKey:@"X"];
@@ -247,13 +262,19 @@
 }
 
 -(void)powerLow:(NSNotification *)notification{
+    _btn_test.enabled = YES;
+    [_btn_test setTitle:@"设备电量低，请更换电池" forState:UIControlStateNormal];
     [ShowHUD showError:@"监测到用户呼气，请稍候..." configParameter:^(ShowHUD *config) {
     } duration:1.5f inView:self.view];
 }
 
 -(void)connectTimeout:(NSNotification *)notification{
-    [ShowHUD showError:@"连接超时，请确定设备已打开" configParameter:^(ShowHUD *config) {
-    } duration:1.5f inView:self.view];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"连接超时，请确定设备已打开" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+    [alertView show];
+    _btn_test.enabled = YES;
+    [_btn_test setTitle:@"测试" forState:UIControlStateNormal];
+//    [ShowHUD showError:@"连接超时，请确定设备已打开" configParameter:^(ShowHUD *config) {
+//    } duration:1.5f inView:self.view];
 }
 
 -(void)startListening{

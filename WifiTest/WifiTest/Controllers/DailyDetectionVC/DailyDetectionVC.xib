@@ -7,10 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyDetectionVC">
             <connections>
-                <outlet property="btn_upOrDown" destination="q5Q-Mw-JRg" id="68r-7P-4yc"/>
                 <outlet property="pageControl" destination="4ca-bq-qcg" id="mBg-G7-J4Z"/>
                 <outlet property="scrollView" destination="IRc-Ix-8RU" id="Mqj-9p-qbi"/>
-                <outlet property="v_bottom" destination="9Bz-N3-Dnw" id="Egc-lH-1Vd"/>
                 <outlet property="view" destination="efA-av-rpM" id="cHj-JA-Fz0"/>
             </connections>
         </placeholder>
@@ -27,94 +25,16 @@
                     </connections>
                 </scrollView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-bq-qcg">
-                    <rect key="frame" x="139" y="441" width="39" height="37"/>
+                    <rect key="frame" x="139" y="457" width="39" height="37"/>
                 </pageControl>
-                <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Bz-N3-Dnw">
-                    <rect key="frame" x="0.0" y="540" width="320" height="142"/>
-                    <subviews>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5Q-Mw-JRg">
-                            <rect key="frame" x="124" y="-2" width="72" height="34"/>
-                            <state key="normal" title="向上">
-                                <color key="titleColor" red="0.1764705882" green="0.6588235294" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lp6-HG-lm7">
-                            <rect key="frame" x="0.0" y="28" width="320" height="1"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="ccL-vD-FEO"/>
-                            </constraints>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-HV-kLb">
-                            <rect key="frame" x="0.0" y="37" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Ttm-eV-ap0"/>
-                            </constraints>
-                            <state key="normal" title="日常">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="dailyAction:" destination="-1" eventType="touchUpInside" id="rOR-Bq-SKq"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCk-pC-iu3">
-                            <rect key="frame" x="0.0" y="71" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="ONP-pA-4Oi"/>
-                            </constraints>
-                            <state key="normal" title="运动">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="motionAction:" destination="-1" eventType="touchUpInside" id="G0A-9m-gxl"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFI-hn-elx">
-                            <rect key="frame" x="0.0" y="104" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="RNL-iY-YJT"/>
-                            </constraints>
-                            <state key="normal" title="用药">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="DrugAction:" destination="-1" eventType="touchUpInside" id="UZs-WJ-i6O"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.96282918979999998" green="0.96097167230000002" blue="0.96067119150000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Dgb-HV-kLb" firstAttribute="top" secondItem="Lp6-HG-lm7" secondAttribute="bottom" constant="8" id="4ls-cC-rUB"/>
-                        <constraint firstAttribute="trailing" secondItem="Lp6-HG-lm7" secondAttribute="trailing" id="Aef-tU-uV1"/>
-                        <constraint firstItem="OFI-hn-elx" firstAttribute="top" secondItem="iCk-pC-iu3" secondAttribute="bottom" constant="3" id="Cu0-bL-0gi"/>
-                        <constraint firstItem="iCk-pC-iu3" firstAttribute="leading" secondItem="9Bz-N3-Dnw" secondAttribute="leading" id="EZ1-SK-wQW"/>
-                        <constraint firstAttribute="centerY" secondItem="q5Q-Mw-JRg" secondAttribute="centerY" constant="56" id="Gw0-Xf-oSV"/>
-                        <constraint firstAttribute="trailing" secondItem="Dgb-HV-kLb" secondAttribute="trailing" id="JZ5-Vo-kU9"/>
-                        <constraint firstItem="Lp6-HG-lm7" firstAttribute="top" secondItem="9Bz-N3-Dnw" secondAttribute="top" constant="28" id="OYd-P2-h2R"/>
-                        <constraint firstAttribute="centerX" secondItem="q5Q-Mw-JRg" secondAttribute="centerX" id="Pgf-JU-JWo"/>
-                        <constraint firstAttribute="trailing" secondItem="OFI-hn-elx" secondAttribute="trailing" id="S4F-Xp-b7u"/>
-                        <constraint firstItem="iCk-pC-iu3" firstAttribute="top" secondItem="Dgb-HV-kLb" secondAttribute="bottom" constant="4" id="T7U-B3-Cuo"/>
-                        <constraint firstItem="OFI-hn-elx" firstAttribute="leading" secondItem="9Bz-N3-Dnw" secondAttribute="leading" id="WDQ-Dx-HBJ"/>
-                        <constraint firstItem="Lp6-HG-lm7" firstAttribute="leading" secondItem="9Bz-N3-Dnw" secondAttribute="leading" id="apD-1F-IYI"/>
-                        <constraint firstItem="Dgb-HV-kLb" firstAttribute="leading" secondItem="9Bz-N3-Dnw" secondAttribute="leading" id="bUu-mh-hV1"/>
-                        <constraint firstAttribute="height" constant="142" id="tUJ-wg-quo"/>
-                        <constraint firstAttribute="trailing" secondItem="iCk-pC-iu3" secondAttribute="trailing" id="vbZ-bK-ZzA"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.1137254902" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="4ca-bq-qcg" secondAttribute="centerX" constant="1.5" id="5LY-hO-pnG"/>
                 <constraint firstAttribute="bottom" secondItem="IRc-Ix-8RU" secondAttribute="bottom" id="6kH-ft-QNf"/>
-                <constraint firstAttribute="bottom" secondItem="4ca-bq-qcg" secondAttribute="bottom" constant="26" id="dgc-ei-Vm5"/>
+                <constraint firstAttribute="bottom" secondItem="4ca-bq-qcg" secondAttribute="bottom" constant="10" id="dgc-ei-Vm5"/>
                 <constraint firstItem="IRc-Ix-8RU" firstAttribute="top" secondItem="efA-av-rpM" secondAttribute="top" id="hph-o9-iaH"/>
-                <constraint firstAttribute="trailing" secondItem="9Bz-N3-Dnw" secondAttribute="trailing" id="ish-qE-rCk"/>
                 <constraint firstAttribute="trailing" secondItem="IRc-Ix-8RU" secondAttribute="trailing" id="kfM-MH-04F"/>
-                <constraint firstItem="9Bz-N3-Dnw" firstAttribute="leading" secondItem="efA-av-rpM" secondAttribute="leading" id="q2E-NS-0pf"/>
                 <constraint firstItem="IRc-Ix-8RU" firstAttribute="leading" secondItem="efA-av-rpM" secondAttribute="leading" id="x5T-JC-3fz"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

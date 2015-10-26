@@ -24,10 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *v_measureResults;
 @property (weak, nonatomic) IBOutlet UIView *v_drugDetail;
 
-@property (weak, nonatomic) IBOutlet UIView *v_bottom;
-@property (weak, nonatomic) IBOutlet UIButton *btn_upOrDown;
-@property (nonatomic,assign) BOOL isUp;
-
 @property (weak, nonatomic) IBOutlet UIButton *btn_test;
 @property (nonatomic,assign) BOOL isTesting; //是否在测量
 
@@ -61,7 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"今日用药检测";
+    self.navigationItem.title = @"使用药物";
     
     UIImage *image = [UIImage imageNamed:@"图标-商城-默认"];
     CGRect buttonFrame = CGRectMake(0, 0, image.size.width, image.size.height);
@@ -73,18 +69,7 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = item;
     
-    _isUp = NO;
-    
     [self initUI];
-    
-    
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
-    [[self view] addGestureRecognizer:recognizer];
-    
-    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
-    [[self view] addGestureRecognizer:recognizer];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -97,9 +82,6 @@
     [ShareFun getCorner:_v_measure withCorner: 10.0f withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     [ShareFun getCorner:_btn_drugDetail withCorner: _btn_drugDetail.frame.size.height/2 withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
     
-    NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
-    t_bottom.identifier = @"1112";
-    [self.view addConstraint:t_bottom];
 }
 
 #pragma mark - private methods
@@ -291,116 +273,6 @@
     [ApplicationDelegate.nav pushViewController:t_vc animated:YES];
     
 }
-
-
-
-#pragma mark - buttonActionNormal
-
-
-//向上或向下
-
--(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
-    
-    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
-        _isUp = NO;
-    }
-    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
-        _isUp = YES;
-    }
-    
-    if (_isUp) {
-        [_btn_upOrDown setTitle:@"向下" forState:UIControlStateNormal];
-        NSArray *array = self.view.constraints;
-        for (NSLayoutConstraint *constraint in array) {
-            //NSLog(@"%@", constraint.identifier);
-            if ([constraint.identifier isEqual:@"1112"]) {
-                [self.view removeConstraint:constraint];
-            }
-        }
-        
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
-        t_bottom.identifier = @"11121";
-        [self.view addConstraint:t_bottom];
-        
-    }else{
-        [_btn_upOrDown setTitle:@"向上" forState:UIControlStateNormal];
-        NSArray *array = self.view.constraints;
-        for (NSLayoutConstraint *constraint in array) {
-            //NSLog(@"%@", constraint.identifier);
-            if ([constraint.identifier isEqual:@"11121"]) {
-                [self.view removeConstraint:constraint];
-            }
-        }
-        
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeTop multiplier:1.0 constant:29];
-        t_bottom.identifier = @"1112";
-        [self.view addConstraint:t_bottom];
-        
-    }
-    
-}
-
-
-
-//向上或向下
-- (IBAction)upOrdownAction:(id)sender {
-    
-    _isUp = !_isUp;
-    
-    if (_isUp) {
-        
-        NSArray *array = self.view.constraints;
-        for (NSLayoutConstraint *constraint in array) {
-            //NSLog(@"%@", constraint.identifier);
-            if ([constraint.identifier isEqual:@"1112"]) {
-                [self.view removeConstraint:constraint];
-            }
-        }
-        
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:49];
-        t_bottom.identifier = @"11121";
-        [self.view addConstraint:t_bottom];
-        
-        
-        
-    }else{
-        
-        NSArray *array = self.view.constraints;
-        for (NSLayoutConstraint *constraint in array) {
-            //NSLog(@"%@", constraint.identifier);
-            if ([constraint.identifier isEqual:@"11121"]) {
-                [self.view removeConstraint:constraint];
-            }
-        }
-        
-        NSLayoutConstraint * t_bottom = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:_v_bottom attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-64];
-        t_bottom.identifier = @"1112";
-        [self.view addConstraint:t_bottom];
-        
-    }
-    
-}
-
-//日常
-- (IBAction)dailyAction:(id)sender {
-    NSDictionary *t_dic = @{@"contentType":@"daily"};
-    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
-}
-
-//运动
-- (IBAction)motionAction:(id)sender {
-    NSDictionary *t_dic = @{@"contentType":@"motion"};
-    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
-    
-}
-
-//用药
-- (IBAction)DrugAction:(id)sender {
-    NSDictionary *t_dic = @{@"contentType":@"drug"};
-    [NotificationCenter postNotificationName:NOTIFICATION_FUNCTIONCHANGE object:nil userInfo:t_dic];
-    
-}
-
 
 #pragma mark - dealloc
 

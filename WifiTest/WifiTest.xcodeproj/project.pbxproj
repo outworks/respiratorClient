@@ -198,6 +198,14 @@
 		CED24C6F1BDD867600481F51 /* UserHeightVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C6D1BDD867600481F51 /* UserHeightVC.xib */; settings = {ASSET_TAGS = (); }; };
 		CED24C731BDD8BBD00481F51 /* UserWeightVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C711BDD8BBD00481F51 /* UserWeightVC.m */; settings = {ASSET_TAGS = (); }; };
 		CED24C741BDD8BBD00481F51 /* UserWeightVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C721BDD8BBD00481F51 /* UserWeightVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C781BDDA8ED00481F51 /* DrugDetictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C761BDDA8ED00481F51 /* DrugDetictVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C791BDDA8ED00481F51 /* DrugDetictVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C771BDDA8ED00481F51 /* DrugDetictVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C7D1BDDB78200481F51 /* DrugDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C7B1BDDB78200481F51 /* DrugDetailVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C7E1BDDB78200481F51 /* DrugDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C7C1BDDB78200481F51 /* DrugDetailVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C821BDDBF7D00481F51 /* DurgMeasureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C801BDDBF7D00481F51 /* DurgMeasureVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C831BDDBF7D00481F51 /* DurgMeasureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C811BDDBF7D00481F51 /* DurgMeasureVC.xib */; settings = {ASSET_TAGS = (); }; };
+		CED24C881BDDD68F00481F51 /* DrugResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED24C861BDDD68F00481F51 /* DrugResultsVC.m */; settings = {ASSET_TAGS = (); }; };
+		CED24C891BDDD68F00481F51 /* DrugResultsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED24C871BDDD68F00481F51 /* DrugResultsVC.xib */; settings = {ASSET_TAGS = (); }; };
 		CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286131B47DB7F00355DEB /* BlueClientVC.m */; };
 		CED286161B47DB7F00355DEB /* BlueClientVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED286141B47DB7F00355DEB /* BlueClientVC.xib */; };
 		CED2861A1B47F6D800355DEB /* BlueCentralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED286181B47F6D800355DEB /* BlueCentralVC.m */; };
@@ -565,6 +573,18 @@
 		CED24C701BDD8BBD00481F51 /* UserWeightVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserWeightVC.h; sourceTree = "<group>"; };
 		CED24C711BDD8BBD00481F51 /* UserWeightVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWeightVC.m; sourceTree = "<group>"; };
 		CED24C721BDD8BBD00481F51 /* UserWeightVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserWeightVC.xib; sourceTree = "<group>"; };
+		CED24C751BDDA8ED00481F51 /* DrugDetictVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetictVC.h; sourceTree = "<group>"; };
+		CED24C761BDDA8ED00481F51 /* DrugDetictVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetictVC.m; sourceTree = "<group>"; };
+		CED24C771BDDA8ED00481F51 /* DrugDetictVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugDetictVC.xib; sourceTree = "<group>"; };
+		CED24C7A1BDDB78200481F51 /* DrugDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetailVC.h; sourceTree = "<group>"; };
+		CED24C7B1BDDB78200481F51 /* DrugDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetailVC.m; sourceTree = "<group>"; };
+		CED24C7C1BDDB78200481F51 /* DrugDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugDetailVC.xib; sourceTree = "<group>"; };
+		CED24C7F1BDDBF7D00481F51 /* DurgMeasureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DurgMeasureVC.h; sourceTree = "<group>"; };
+		CED24C801BDDBF7D00481F51 /* DurgMeasureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DurgMeasureVC.m; sourceTree = "<group>"; };
+		CED24C811BDDBF7D00481F51 /* DurgMeasureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DurgMeasureVC.xib; sourceTree = "<group>"; };
+		CED24C851BDDD68F00481F51 /* DrugResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugResultsVC.h; sourceTree = "<group>"; };
+		CED24C861BDDD68F00481F51 /* DrugResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugResultsVC.m; sourceTree = "<group>"; };
+		CED24C871BDDD68F00481F51 /* DrugResultsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrugResultsVC.xib; sourceTree = "<group>"; };
 		CED286121B47DB7F00355DEB /* BlueClientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueClientVC.h; sourceTree = "<group>"; };
 		CED286131B47DB7F00355DEB /* BlueClientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueClientVC.m; sourceTree = "<group>"; };
 		CED286141B47DB7F00355DEB /* BlueClientVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlueClientVC.xib; sourceTree = "<group>"; };
@@ -1385,6 +1405,7 @@
 		CE96B76A1B6F96B8004E341B /* DrugDetectionVC */ = {
 			isa = PBXGroup;
 			children = (
+				CED24C841BDDD5E400481F51 /* drugDetictVC */,
 				CEA7946A1B6FDF3300B3774B /* DrugDetectionVC.h */,
 				CEA7946B1B6FDF3300B3774B /* DrugDetectionVC.m */,
 				CEA7946C1B6FDF3300B3774B /* DrugDetectionVC.xib */,
@@ -1471,6 +1492,25 @@
 				CE48162F1B6C35BC007CC332 /* RegiestSuccessVC.xib */,
 			);
 			name = userInfoSet;
+			sourceTree = "<group>";
+		};
+		CED24C841BDDD5E400481F51 /* drugDetictVC */ = {
+			isa = PBXGroup;
+			children = (
+				CED24C751BDDA8ED00481F51 /* DrugDetictVC.h */,
+				CED24C761BDDA8ED00481F51 /* DrugDetictVC.m */,
+				CED24C771BDDA8ED00481F51 /* DrugDetictVC.xib */,
+				CED24C7A1BDDB78200481F51 /* DrugDetailVC.h */,
+				CED24C7B1BDDB78200481F51 /* DrugDetailVC.m */,
+				CED24C7C1BDDB78200481F51 /* DrugDetailVC.xib */,
+				CED24C7F1BDDBF7D00481F51 /* DurgMeasureVC.h */,
+				CED24C801BDDBF7D00481F51 /* DurgMeasureVC.m */,
+				CED24C811BDDBF7D00481F51 /* DurgMeasureVC.xib */,
+				CED24C851BDDD68F00481F51 /* DrugResultsVC.h */,
+				CED24C861BDDD68F00481F51 /* DrugResultsVC.m */,
+				CED24C871BDDD68F00481F51 /* DrugResultsVC.xib */,
+			);
+			name = drugDetictVC;
 			sourceTree = "<group>";
 		};
 		CED286111B47DB0700355DEB /* BluetoothVC */ = {
@@ -1593,6 +1633,7 @@
 				CE1CC1E51B2C6A320076C942 /* showhud_error@2x.png in Resources */,
 				CE4816311B6C35BC007CC332 /* RegiestSuccessVC.xib in Resources */,
 				6DF734051B71F8ED00F94397 /* DailyFirstVC.xib in Resources */,
+				CED24C831BDDBF7D00481F51 /* DurgMeasureVC.xib in Resources */,
 				CE8970D31B3E2DBE008BB59D /* PEFFirstVC.xib in Resources */,
 				CED24C6F1BDD867600481F51 /* UserHeightVC.xib in Resources */,
 				CE1CC1E61B2C6A320076C942 /* showhud_success@2x.png in Resources */,
@@ -1620,13 +1661,16 @@
 				CE1CC0F31B2C68180076C942 /* Images.xcassets in Resources */,
 				CED24C741BDD8BBD00481F51 /* UserWeightVC.xib in Resources */,
 				CEE645AC1B7500EF00E4A335 /* CommodityVC.xib in Resources */,
+				CED24C791BDDA8ED00481F51 /* DrugDetictVC.xib in Resources */,
 				CED8BE211B8921AB0071ECEC /* DrugResultView.xib in Resources */,
 				CE8970DD1B3E2DCD008BB59D /* AirQualityVC.xib in Resources */,
 				CE1CC2541B2C7C7C0076C942 /* BasicVC.xib in Resources */,
 				CE1CC24D1B2C7BBA0076C942 /* 头像.jpg in Resources */,
 				CED2861B1B47F6D800355DEB /* BlueCentralVC.xib in Resources */,
+				CED24C7E1BDDB78200481F51 /* DrugDetailVC.xib in Resources */,
 				CE7975F81BB6060B0096FC44 /* SmartAlarmSetVC.xib in Resources */,
 				6DF7340A1B71F91800F94397 /* DailySecondVC.xib in Resources */,
+				CED24C891BDDD68F00481F51 /* DrugResultsVC.xib in Resources */,
 				CE1CC1E71B2C6A320076C942 /* showhud_warning@2x.png in Resources */,
 				CE326F251B87F52400ABECD0 /* DrugResultVC.xib in Resources */,
 				CE8970D11B3E2DBE008BB59D /* BreathVC.xib in Resources */,
@@ -1665,6 +1709,7 @@
 				6DF7340E1B71F92A00F94397 /* DailyThirdVC.m in Sources */,
 				CE1CC1D41B2C6A320076C942 /* IQToolbar.m in Sources */,
 				CE1CC1CF1B2C6A320076C942 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				CED24C7D1BDDB78200481F51 /* DrugDetailVC.m in Sources */,
 				CE1CC1E01B2C6A320076C942 /* LKDBUtils.m in Sources */,
 				CE8970FD1B3E35D0008BB59D /* PNBar.m in Sources */,
 				CE50C4321BAFB05800C8DBDE /* NearbyHospitalVC.m in Sources */,
@@ -1712,6 +1757,7 @@
 				CE8970BE1B3E2DB7008BB59D /* NearbyPharVC.m in Sources */,
 				CE1CC1D31B2C6A320076C942 /* IQTitleBarButtonItem.m in Sources */,
 				CE89710A1B3E35D0008BB59D /* PNScatterChartDataItem.m in Sources */,
+				CED24C881BDDD68F00481F51 /* DrugResultsVC.m in Sources */,
 				CE1CC1E11B2C6A320076C942 /* NSObject+LKDBHelper.m in Sources */,
 				CE1CC20C1B2C70360076C942 /* ShareValue.m in Sources */,
 				CE1CC1DF1B2C6A320076C942 /* LKDBHelper.m in Sources */,
@@ -1725,6 +1771,7 @@
 				CE1CC1E21B2C6A320076C942 /* NSObject+LKModel.m in Sources */,
 				CE1CC2B91B2C96AF0076C942 /* RegiestVC.m in Sources */,
 				CE50ED3C1BB5ED9C00A7B324 /* Alarm.m in Sources */,
+				CED24C781BDDA8ED00481F51 /* DrugDetictVC.m in Sources */,
 				CE7192AB1B38994200087024 /* GCDSemaphore.m in Sources */,
 				6DF734091B71F91800F94397 /* DailySecondVC.m in Sources */,
 				CE8970DC1B3E2DCD008BB59D /* AirQualityVC.m in Sources */,
@@ -1754,6 +1801,7 @@
 				CE1CC1FB1B2C6A320076C942 /* SDWebImageManager.m in Sources */,
 				CED286151B47DB7F00355DEB /* BlueClientVC.m in Sources */,
 				CE7976011BB617ED0096FC44 /* LRPicker.m in Sources */,
+				CED24C821BDDBF7D00481F51 /* DurgMeasureVC.m in Sources */,
 				CE7192951B38905D00087024 /* AFHTTPClient.m in Sources */,
 				CE1CC1EF1B2C6A320076C942 /* LK_NSDictionary2Object.m in Sources */,
 				CE96B76E1B6F96DA004E341B /* MotionDetectionVC.m in Sources */,

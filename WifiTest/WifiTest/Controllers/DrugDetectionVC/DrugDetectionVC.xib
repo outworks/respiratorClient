@@ -10,7 +10,6 @@
                 <outlet property="btn_drugDetail" destination="UgZ-0j-LqJ" id="mLr-qn-hvf"/>
                 <outlet property="btn_drugResult" destination="NDn-kc-8WD" id="f4w-tZ-jK7"/>
                 <outlet property="btn_test" destination="hiv-qH-GdC" id="uin-Do-eBf"/>
-                <outlet property="btn_upOrDown" destination="nbR-dj-7WL" id="09K-Ni-zXy"/>
                 <outlet property="lb_afterFEV1" destination="L6C-00-D4D" id="rto-gx-SEl"/>
                 <outlet property="lb_afterFEV1FVC" destination="xMd-gX-1fY" id="5e0-8U-F1U"/>
                 <outlet property="lb_afterFVC" destination="YbX-9m-sAw" id="zOg-Dc-au9"/>
@@ -26,7 +25,6 @@
                 <outlet property="lb_state" destination="Hxf-IO-2Wn" id="lZi-1P-8BV"/>
                 <outlet property="lb_stateContent" destination="mQ7-DG-hma" id="AQa-XE-2la"/>
                 <outlet property="tf_drug" destination="4kQ-36-ETY" id="GBF-Mu-6Tb"/>
-                <outlet property="v_bottom" destination="WeQ-0G-JeO" id="Yge-6x-UY2"/>
                 <outlet property="v_drugDetail" destination="gul-Bn-NG0" id="b55-00-vL4"/>
                 <outlet property="v_measure" destination="ozI-M9-JeD" id="xcs-fM-U1x"/>
                 <outlet property="v_measureResults" destination="tVi-BC-nSm" id="Pad-na-Nlh"/>
@@ -282,82 +280,6 @@ Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療�
                         <action selector="drugResultAction:" destination="-1" eventType="touchUpInside" id="s9k-US-XmK"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-0G-JeO">
-                    <rect key="frame" x="-2" y="539" width="320" height="142"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-dj-7WL">
-                            <rect key="frame" x="142" y="-2" width="36" height="34"/>
-                            <state key="normal" title="向上">
-                                <color key="titleColor" red="0.1764705882" green="0.6588235294" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d95-YT-SrU">
-                            <rect key="frame" x="0.0" y="28" width="320" height="1"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="AuL-9V-Y6e"/>
-                            </constraints>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apP-tm-ZcY">
-                            <rect key="frame" x="0.0" y="37" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="y6R-HZ-D5W"/>
-                            </constraints>
-                            <state key="normal" title="日常">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="dailyAction:" destination="-1" eventType="touchUpInside" id="dr9-Lo-PZi"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUV-XE-FpY">
-                            <rect key="frame" x="0.0" y="71" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="fbB-x5-LAl"/>
-                            </constraints>
-                            <state key="normal" title="运动">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="motionAction:" destination="-1" eventType="touchUpInside" id="59s-oz-fgZ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gac-e0-bU2">
-                            <rect key="frame" x="0.0" y="104" width="320" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Aj7-qI-igX"/>
-                            </constraints>
-                            <state key="normal" title="用药">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="DrugAction:" destination="-1" eventType="touchUpInside" id="Nrz-7g-gkS"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.96282918979999998" green="0.96097167230000002" blue="0.96067119150000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="gac-e0-bU2" firstAttribute="top" secondItem="GUV-XE-FpY" secondAttribute="bottom" constant="3" id="6jV-nU-kYr"/>
-                        <constraint firstAttribute="height" constant="142" id="Ddu-ou-c6h"/>
-                        <constraint firstItem="apP-tm-ZcY" firstAttribute="leading" secondItem="WeQ-0G-JeO" secondAttribute="leading" id="LbZ-Hq-ixt"/>
-                        <constraint firstItem="d95-YT-SrU" firstAttribute="leading" secondItem="WeQ-0G-JeO" secondAttribute="leading" id="WJo-uR-EVO"/>
-                        <constraint firstItem="gac-e0-bU2" firstAttribute="leading" secondItem="WeQ-0G-JeO" secondAttribute="leading" id="Xfx-tt-4hR"/>
-                        <constraint firstItem="GUV-XE-FpY" firstAttribute="leading" secondItem="WeQ-0G-JeO" secondAttribute="leading" id="ZFE-bR-VqF"/>
-                        <constraint firstItem="GUV-XE-FpY" firstAttribute="top" secondItem="apP-tm-ZcY" secondAttribute="bottom" constant="4" id="bER-IK-PxX"/>
-                        <constraint firstAttribute="trailing" secondItem="gac-e0-bU2" secondAttribute="trailing" id="dua-gb-SAe"/>
-                        <constraint firstAttribute="trailing" secondItem="d95-YT-SrU" secondAttribute="trailing" id="egV-Fp-m9M"/>
-                        <constraint firstAttribute="trailing" secondItem="GUV-XE-FpY" secondAttribute="trailing" id="gFh-5i-910"/>
-                        <constraint firstAttribute="trailing" secondItem="apP-tm-ZcY" secondAttribute="trailing" id="gsS-K7-DUU"/>
-                        <constraint firstAttribute="centerY" secondItem="nbR-dj-7WL" secondAttribute="centerY" constant="56" id="k3x-re-BWg"/>
-                        <constraint firstItem="d95-YT-SrU" firstAttribute="top" secondItem="WeQ-0G-JeO" secondAttribute="top" constant="28" id="qlK-Zk-nS6"/>
-                        <constraint firstAttribute="centerX" secondItem="nbR-dj-7WL" secondAttribute="centerX" id="xdm-3P-Ezh"/>
-                        <constraint firstItem="apP-tm-ZcY" firstAttribute="top" secondItem="d95-YT-SrU" secondAttribute="bottom" constant="8" id="z6O-BM-xZu"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.1137254902" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -374,17 +296,14 @@ Montelukast是一種稱為leukotriene的拮 抗劑,可以用來防止和治療�
                 <constraint firstAttribute="trailing" secondItem="ul1-mh-9nN" secondAttribute="trailing" id="Opj-Qn-whp"/>
                 <constraint firstItem="160-D7-Wku" firstAttribute="centerY" secondItem="4kQ-36-ETY" secondAttribute="centerY" constant="1.5" id="PEy-Bh-SJB"/>
                 <constraint firstAttribute="trailing" secondItem="tVi-BC-nSm" secondAttribute="trailing" id="S79-B3-r0A"/>
-                <constraint firstItem="WeQ-0G-JeO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="539" id="T3T-Sv-k5C"/>
                 <constraint firstItem="gul-Bn-NG0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tce-o9-G3k"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ozI-M9-JeD" secondAttribute="bottom" constant="159" id="VEw-HV-q1R"/>
                 <constraint firstItem="gul-Bn-NG0" firstAttribute="top" secondItem="ul1-mh-9nN" secondAttribute="bottom" constant="1" id="Vhf-7G-FPk"/>
                 <constraint firstAttribute="bottom" secondItem="tVi-BC-nSm" secondAttribute="bottom" id="fUB-yn-JwM"/>
                 <constraint firstAttribute="trailing" secondItem="UgZ-0j-LqJ" secondAttribute="trailing" constant="8" id="lMs-j7-rp9"/>
                 <constraint firstAttribute="centerX" secondItem="NDn-kc-8WD" secondAttribute="centerX" id="pG4-Kc-3pe"/>
-                <constraint firstAttribute="trailing" secondItem="WeQ-0G-JeO" secondAttribute="trailing" constant="2" id="qSA-Sl-773"/>
                 <constraint firstItem="4kQ-36-ETY" firstAttribute="leading" secondItem="160-D7-Wku" secondAttribute="trailing" constant="5" id="qX1-ZY-gUX"/>
                 <constraint firstAttribute="bottom" secondItem="gul-Bn-NG0" secondAttribute="bottom" id="vRp-m9-yFP"/>
-                <constraint firstItem="WeQ-0G-JeO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-2" id="xI7-eL-rzd"/>
                 <constraint firstItem="tVi-BC-nSm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xac-tl-xha"/>
                 <constraint firstAttribute="centerX" secondItem="ozI-M9-JeD" secondAttribute="centerX" id="yBL-4g-wpt"/>
             </constraints>

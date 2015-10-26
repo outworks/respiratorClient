@@ -12,7 +12,9 @@
 #import "RegiestSuccessVC.h"
 #import "MemberAPI.h"
 
-@interface UserWeightVC ()
+@interface UserWeightVC (){
+    ShowHUD *_hud;
+}
 
 @property (nonatomic,strong) LRPicker *picker;
 
@@ -93,7 +95,18 @@
     request.height = _member.height;
     request.age = _member.age;
     
+    _hud = [ShowHUD showText:@"请求中" configParameter:^(ShowHUD *config) {
+    } inView:ApplicationDelegate.window];
+    
+    
     [MemberAPI MemberUpdateWithRequest:request completionBlockWithSuccess:^(Member *data) {
+        if (_hud) {
+            [_hud hide];
+        }
+        
+        [ShowHUD showSuccess:@"提交成功" configParameter:^(ShowHUD *config) {
+        } duration:1.5f inView:ApplicationDelegate.window];
+        
         _member = data;
         [ShareValue sharedShareValue].member = _member;
         
