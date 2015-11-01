@@ -67,14 +67,14 @@
     if (_beforeMonidata) {
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:ss"];
         NSDate *date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:ss"];
         date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_beforeTime = [dateFormatter stringFromDate:date];
         
         _lb_date.text = t_dateStr;
@@ -88,14 +88,14 @@
     
     if (_afterMonidata) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:ss"];
         NSDate *date= [dateFormatter dateFromString:_afterMonidata.saveTime];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:ss"];
         date= [dateFormatter dateFromString:_afterMonidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_afterTime = [dateFormatter stringFromDate:date];
         
         _lb_date.text = t_dateStr;

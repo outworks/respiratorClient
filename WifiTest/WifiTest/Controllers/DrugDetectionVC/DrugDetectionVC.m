@@ -92,19 +92,19 @@
     _v_measure.hidden = YES;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *t_dateStr = [dateFormatter stringFromDate:date];
     
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     date= [dateFormatter dateFromString:_beforeMonidata.saveTime];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *t_beforeTime = [dateFormatter stringFromDate:date];
     
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     date= [dateFormatter dateFromString:_afterMonidata.saveTime];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *t_afterTime = [dateFormatter stringFromDate:date];
     
     _lb_date.text = t_dateStr;

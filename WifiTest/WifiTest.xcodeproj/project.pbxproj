@@ -1965,7 +1965,7 @@
 					"$(PROJECT_DIR)/",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nd.famlink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.99.face;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1993,7 +1993,7 @@
 					"$(PROJECT_DIR)/",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nd.famlink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.99.face;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -47,9 +47,9 @@
         Monidata *t_monidata = _arr_motidatas[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         
         [t_dateArr addObject:t_dateStr];
@@ -104,9 +104,9 @@
         Monidata *t_monidata = _arr_motidatas[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         
         [t_dateArr addObject:t_dateStr];
@@ -158,9 +158,9 @@
         Monidata *t_monidata = _arr_motidatas[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
 
         [t_dateArr addObject:t_dateStr];
