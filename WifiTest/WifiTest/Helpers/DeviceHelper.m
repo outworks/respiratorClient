@@ -433,7 +433,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
         }
         else if (txbuf[0] == 0x90 && txbuf[2]==0x42){
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"停止"}];
-            [self clear];
             [self reset];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x06){
             unsigned char mbytes[16];
@@ -585,16 +584,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
 }
 
 -(void)reset{
-//    if (_ackTimer) {
-//        [_ackTimer invalidate];
-//        _ackTimer = nil;
-//    }
     if (_testPeripheral) {
         [_manager cancelPeripheralConnection:_testPeripheral];
         _testPeripheral = nil;
     }
     [self clear];
     [_manager stopScan];
+    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICES_REST object:nil];
 }
 
 @end

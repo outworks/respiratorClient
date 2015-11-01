@@ -26,6 +26,7 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadDatas) name:BLE_DEVICE_FOUND object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appendRecive:) name:BLE_DATA_NOTI object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(appendSend:) name:BLE_DATA_WRITE object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(datasReset:) name:BLE_DEVICES_REST object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +76,11 @@
     NSString *msg = [notification.userInfo valueForKey:@"msg"];
     NSString *content = _tv_content.text;
     _tv_content.text = [NSString stringWithFormat:@"%@\n：%@\n%@\n\n",msg,data,content];
+}
+
+-(void)datasReset:(NSNotification *)notification{
+    [[DeviceHelper sharedDeviceHelper]scan];
+    [self reloadDatas];
 }
 
 -(void)dealloc{
