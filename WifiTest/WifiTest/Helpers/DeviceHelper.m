@@ -471,6 +471,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             NSLog(@"硬件停止工作指令:%@",[self dataToString:data]);
             
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"停止"}];
+            [self reset];
             
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x06){
             
@@ -653,7 +654,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
 }
 
 -(void)scan{
-    
     [_manager scanForPeripheralsWithServices:nil options:nil];
 }
 
