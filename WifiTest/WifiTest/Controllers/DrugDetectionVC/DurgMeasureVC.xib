@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DurgMeasureVC">
@@ -53,9 +53,6 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <state key="normal" title="量测开始"/>
-                            <connections>
-                                <action selector="drugMeasureAction:" destination="-1" eventType="touchUpInside" id="NE2-BP-Zds"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,19 +83,19 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="图标-蓝牙-未连接" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-y9-8QJ">
+                    <rect key="frame" x="241" y="463" width="14" height="19"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hb-wJ-9Vd">
-                    <rect key="frame" x="98" y="458" width="125" height="30"/>
+                    <rect key="frame" x="83" y="458" width="155" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="设备未连接,请连接">
+                    <state key="normal" title="设备未连接,请点击连接">
                         <color key="titleColor" red="0.43921568630000002" green="0.33333333329999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="scanAcion:" destination="-1" eventType="touchUpInside" id="zhC-Hy-ahG"/>
                     </connections>
                 </button>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="icon_bluetooth_drug" translatesAutoresizingMaskIntoConstraints="NO" id="zoW-y9-8QJ">
-                    <rect key="frame" x="226" y="463" width="14" height="19"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.1137254902" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -118,9 +115,9 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_bluetooth_drug" width="14" height="19"/>
         <image name="icon_drug_bg_1" width="310" height="310"/>
         <image name="icon_drug_bg_2" width="310" height="310"/>
         <image name="icon_drug_bg_3" width="310" height="310"/>
+        <image name="图标-蓝牙-未连接" width="14" height="19"/>
     </resources>
 </document>

@@ -17,7 +17,6 @@
 #import "DataTools.h"
 
 #import "MotionDetectionVC.h"
-#import "DrugDetectionVC.h"
 #import "DrugDetictVC.h"
 #import "DailyDetectionVC.h"
 

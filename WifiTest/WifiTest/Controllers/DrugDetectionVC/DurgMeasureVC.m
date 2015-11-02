@@ -49,119 +49,38 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
     _drugTime = DrugTimeAfterBegin;
     
     [self initUI];
-    
+    [self scanAcion:nil];
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark -
+#pragma mark - initUI
+
+- (void)initUI{
+    
+    _lb_drugName.text = _drugName;
+    self.btn_drugTip.userInteractionEnabled = NO;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(110, 85, 120),NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
+    
 }
 
 #pragma mark -
 #pragma mark privateMethods
 
-- (void)initUI{
-    
-    _lb_drugName.text = _drugName;
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB(110, 85, 120),NSFontAttributeName:[UIFont fontWithName:@"STHeitiSC-Medium" size:21.0]}];
-    _imageV_bluetooth.hidden = YES;
 
+
+-(void)startListening{
+    [self stopListening];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceRest:) name:BLE_DEVICES_REST object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
 }
 
-
-#pragma mark -
-#pragma mark buttonAction
-
-- (IBAction)drugMeasureAction:(id)sender {
-    
-    [self scanAcion:nil];
-//    __weak __typeof(*&self) weakSelf = self;
-//    
-//    if (_drugTime == DrugTimeAfterBegin) {
-//        [[TestTool sharedTestTool] test];
-//        
-//        NSLog(@"%f",[TestTool sharedTestTool].pef);
-//        NSLog(@"%f",[TestTool sharedTestTool].fvc);
-//        
-//        NSLog(@"%2f",[TestTool sharedTestTool].pef/[[ShareValue sharedShareValue].member.defPef floatValue]);
-//        [weakSelf commitData:@1];
-//        
-//    }else if (_drugTime == DrugTimeBeforeBegin){
-//        
-//        NSLog(@"%f",[TestTool sharedTestTool].pef);
-//        NSLog(@"%f",[TestTool sharedTestTool].fvc);
-//        
-//        NSLog(@"%2f",[TestTool sharedTestTool].pef/[[ShareValue sharedShareValue].member.defPef floatValue]);
-//        [weakSelf commitData:@2];
-//    
-//    }
-    
-}
-
-
--(void)commitData:(NSNumber *)otherType{
-    
-    DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
-    t_request.mid = [ShareValue sharedShareValue].member.mid;
-    t_request.pef = @([TestTool sharedTestTool].pef);
-    t_request.fev1 = @([TestTool sharedTestTool].fev1);
-    t_request.fvc = @([TestTool sharedTestTool].fvc);
-    t_request.inputType = @2;
-    t_request.otherType = otherType;
-    __weak __typeof(*&self) weak = self;
-    [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
-        
-        if ([otherType isEqualToNumber:@1]) {
-            
-            weak.btn_drugTip.userInteractionEnabled = NO;
-            weak.drugTime = DrugTimeAfterEnd;
-            [weak.btn_drugTip setTitle:@"量测完成" forState:UIControlStateNormal];
-            weak.lb_drugAction.text = @"请服药...";
-            weak.afterMonidata = data;
-            [weak changeState];
-        }else{
-            
-            weak.btn_drugTip.userInteractionEnabled = NO;
-            weak.drugTime = DrugTimeBeforeEnd;
-            [weak.btn_drugTip setTitle:@"量测完成" forState:UIControlStateNormal];
-            weak.lb_drugAction.text = @"";
-            weak.beforeMonidata = data;
-            
-            [[GCDQueue mainQueue] execute:^{
-                
-                weak.btn_drugTip.userInteractionEnabled = YES;
-                weak.drugTime = DrugTimeAfterBegin;
-                [weak.btn_drugTip setTitle:@"量测开始" forState:UIControlStateNormal];
-                weak.lb_drugAction.text = @"请吹气...";
-                
-            } afterDelay:1.5*NSEC_PER_SEC];
-            
-            [weak showGrugResults];
-            
-            
-            
-        }
-        
-    } Fail:^(int code, NSString *failDescript) {
-        
-        if ([otherType isEqualToNumber:@1]) {
-            
-            weak.btn_drugTip.userInteractionEnabled = NO;
-            weak.drugTime = DrugTimeAfterBegin;
-            [weak.btn_drugTip setTitle:@"量测开始" forState:UIControlStateNormal];
-            weak.lb_drugAction.text = @"请吹气...";
-            [self changeState];
-            
-        }else{
-        
-            weak.drugTime = DrugTimeBeforeBegin;
-            [weak.btn_drugTip setTitle:@"量测开始" forState:UIControlStateNormal];
-            weak.lb_drugAction.text = @"请吹气...";
-        
-        }
-        
-        [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
-        } duration:1.5f inView:self.view];
-       
-    }];
-    
+-(void)stopListening{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)showGrugResults{
@@ -214,32 +133,20 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
 #pragma mark - buttonAction
 
 - (IBAction)scanAcion:(id)sender {
+    
     [self startListening];
     if (![DeviceHelper sharedDeviceHelper].isConnected) {
         [[DeviceHelper sharedDeviceHelper]scan];
-        [_btn_blubTooth setUserInteractionEnabled:NO];
-        _imageV_bluetooth.hidden = YES;
+        [_btn_blubTooth setEnabled:NO];
         [_btn_blubTooth setTitle:@"正在搜索设备，请确定设备已打开" forState:UIControlStateNormal];
     }else{
         [_btn_blubTooth setTitle:@"设备已连接" forState:UIControlStateNormal];
-        _imageV_bluetooth.hidden = NO;
+         [_imageV_bluetooth setImage:[UIImage imageNamed:@"icon_blue_motion"]];
     }
     
 }
 
--(void)startListening{
-    [self stopListening];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(historyData:) name:BLE_HISTORY_DATA object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
-}
 
--(void)stopListening{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 #pragma mark - Notification
 
@@ -252,7 +159,7 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
 
 -(void)deviceConneted:(NSNotification *)notification{
     _btn_blubTooth.enabled = NO;
-    _imageV_bluetooth.hidden = NO;
+     [_imageV_bluetooth setImage:[UIImage imageNamed:@"icon_blue_motion"]];
     [_btn_blubTooth setTitle:@"设备已连接" forState:UIControlStateNormal];
 }
 
@@ -282,8 +189,7 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
     [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
         
         if ([otherType isEqualToNumber:@1]) {
-            
-            weak.btn_drugTip.userInteractionEnabled = NO;
+        
             weak.drugTime = DrugTimeAfterEnd;
             [weak.btn_drugTip setTitle:@"量测完成" forState:UIControlStateNormal];
             weak.lb_drugAction.text = @"请服药...";
@@ -291,32 +197,29 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
             [weak changeState];
         }else{
             
-            weak.btn_drugTip.userInteractionEnabled = NO;
             weak.drugTime = DrugTimeBeforeEnd;
             [weak.btn_drugTip setTitle:@"量测完成" forState:UIControlStateNormal];
             weak.lb_drugAction.text = @"";
             weak.beforeMonidata = data;
             
             [[GCDQueue mainQueue] execute:^{
-                
-                weak.btn_drugTip.userInteractionEnabled = YES;
+            
                 weak.drugTime = DrugTimeAfterBegin;
+                weak.lb_drugTime.text = @"用药前";
                 [weak.btn_drugTip setTitle:@"量测开始" forState:UIControlStateNormal];
                 weak.lb_drugAction.text = @"请吹气...";
                 
             } afterDelay:1.5*NSEC_PER_SEC];
             
             [weak showGrugResults];
-            
-            
-            
+        
         }
         
     } Fail:^(int code, NSString *failDescript) {
         
         if ([otherType isEqualToNumber:@1]) {
             
-            weak.btn_drugTip.userInteractionEnabled = NO;
+            
             weak.drugTime = DrugTimeAfterBegin;
             [weak.btn_drugTip setTitle:@"量测开始" forState:UIControlStateNormal];
             weak.lb_drugAction.text = @"请吹气...";
@@ -338,22 +241,21 @@ typedef NS_ENUM(NSUInteger, DrugTime) {
 
 -(void)powerLow:(NSNotification *)notification{
     _btn_blubTooth.enabled = YES;
-    
     [_btn_blubTooth setTitle:@"设备电量低，请更换电池" forState:UIControlStateNormal];
 }
 
 -(void)connectTimeout:(NSNotification *)notification{
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"连接超时，请确定设备已打开" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
     [alertView show];
-    _btn_blubTooth.enabled = YES;
-    [_btn_blubTooth setTitle:@"设备未连接,请连接" forState:UIControlStateNormal];
 }
 
-- (void)historyData:(NSNotification *)note{
-    NSDictionary *t_dic = [note userInfo];
+
+-(void)deviceRest:(NSNotification *)notification{
     
+    _btn_blubTooth.enabled = YES;
+    [_imageV_bluetooth setImage:[UIImage imageNamed:@"图标-蓝牙-未连接"]];
+    [_btn_blubTooth setTitle:@"设备未连接，请点击连接" forState:UIControlStateNormal];
 }
-
 
 
 

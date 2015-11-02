@@ -91,6 +91,7 @@
     MemberUpdateRequest *request = [[MemberUpdateRequest alloc] init];
     request.mid = _member.mid;
     request.sex = _member.sex;
+    request.nickname = _member.nickname;
     request.weight = _member.weight;
     request.height = _member.height;
     request.age = _member.age;

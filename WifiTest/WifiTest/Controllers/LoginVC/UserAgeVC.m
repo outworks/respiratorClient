@@ -51,9 +51,9 @@
     NSArray *arr_data       = @[t_hour,year,t_min,month];
     NSArray *arr_enbaled    = @[@(YES),@(NO),@(YES),@(NO)];
     
-    NSValue *value_hour     = [NSValue valueWithCGRect:CGRectMake(20, 0, 90, 200)];
+    NSValue *value_hour     = [NSValue valueWithCGRect:CGRectMake(20, 0, 95, 200)];
     NSValue *value_year     = [NSValue valueWithCGRect:CGRectMake(110, 0, 60, 200)];
-    NSValue *value_min      = [NSValue valueWithCGRect:CGRectMake(170, 0, 60, 200)];
+    NSValue *value_min      = [NSValue valueWithCGRect:CGRectMake(170, 0, 68, 200)];
     NSValue *value_month    = [NSValue valueWithCGRect:CGRectMake(240, 0, 60, 200)];
     
     NSArray *arr_frame      = @[value_hour,value_year,value_min,value_month];

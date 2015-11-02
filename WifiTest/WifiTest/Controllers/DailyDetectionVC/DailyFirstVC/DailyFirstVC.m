@@ -8,7 +8,7 @@
 
 #import "DailyFirstVC.h"
 
-#import "CCProgressView.h"
+//#import "CCProgressView.h"
 #import "PNChart.h"
 
 #import "DataAPI.h"
@@ -18,19 +18,17 @@
 
 @interface DailyFirstVC (){
     ShowHUD *_hud;
-    
-    __weak IBOutlet UIButton *btn_test;
+
 }
 
 @property (weak, nonatomic) IBOutlet UIView *v_bg;
 @property (weak, nonatomic) IBOutlet UILabel *lb_state;
 @property (weak, nonatomic) IBOutlet UILabel *lb_info;
 
-@property (weak, nonatomic) IBOutlet UILabel *lb_variability;
+@property (weak, nonatomic) IBOutlet UIButton *btn_bluetooth;
+@property (weak, nonatomic) IBOutlet UIImageView *imageV_bluetooth;
 
-@property (weak, nonatomic) IBOutlet UILabel *lb_pefPercent;
-
-@property (strong,nonatomic) CCProgressView *progress;
+//@property (strong,nonatomic) CCProgressView *progress;
 @property (nonatomic,strong) PNCircleChart * circleChart;
 
 @end
@@ -40,36 +38,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self reloadData];
+    [self ConectDeviceAcion:nil];
     // Do any additional setup after loading the view from its nib.
 }
 
 #pragma mark - loadUI
+
+- (void) initUI{
+    
+    //    [ShareFun getCorner:_v_bg withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
+    
+}
 
 -(void)loadCircleChart:(float)number{
     
     UIColor *color;
     
     if (number > 0.8) {
-        color = RGB(33, 211, 58);
+        color = RGB(150, 203, 62);
     }else if(number < 0.8 && number > 0.6){
-        color = RGB(237, 229, 107);
+        color = RGB(201, 204, 0);
     }else if(number < 0.6){
-        color = RGB(237, 14, 72);
+        color = RGB(255, 118, 124);
     }
     
     [self.circleChart removeFromSuperview];
-    self.circleChart = [[PNCircleChart alloc]initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-10, _v_bg.frame.size.width-10) total:@100 current:[NSNumber numberWithFloat:number*100] clockwise:YES shadow:YES shadowColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+    self.circleChart = [[PNCircleChart alloc]initWithFrame:CGRectMake(0,0, _v_bg.frame.size.width-35, _v_bg.frame.size.width-35) total:@100 current:[NSNumber numberWithFloat:number*100] clockwise:YES shadow:NO shadowColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
     self.circleChart.backgroundColor = [UIColor clearColor];
     self.circleChart.center = CGPointMake(_v_bg.frame.size.width/2, _v_bg.frame.size.width/2);
     [self.circleChart setStrokeColor:color];
     //[self.circleChart setStrokeColorGradientStart:[UIColor blueColor]];
-    [self.circleChart setLineWidth:@10];
+    [self.circleChart setLineWidth:@18];
     [self.circleChart strokeChart];
     [_v_bg addSubview:self.circleChart];
+    [_v_bg sendSubviewToBack:self.circleChart];
     
 }
 
-
+/*
 -(void)loadPrecentView:(float)number{
     
     UIColor *color;
@@ -89,16 +96,9 @@
     [self.v_bg sendSubviewToBack:_progress];
     [_progress setProgress:number animated:YES];
 }
-
+*/
 
 #pragma mark - private methods
-
-- (void) initUI{
-    
-    [ShareFun getCorner:_v_bg withBorderWidth:1.0f withBorderColor:RGB(45, 169, 238)];
-    [self reloadData];
-}
-
 
 -(void) reloadData{
     
@@ -116,22 +116,13 @@
             
             weakSelf.lb_info.text = @"尖峰呼气流量状态";
             weakSelf.lb_state.text = monidata.stateString;
-            if ([monidata.level integerValue] == 0) {
-                weakSelf.lb_state.textColor = RGB(33, 211, 58);
-            }else  if ([monidata.level integerValue] == 1) {
-                weakSelf.lb_state.textColor = RGB(237, 229, 107);
-            }else  if ([monidata.level integerValue] == 2) {
-                weakSelf.lb_state.textColor = RGB(237, 14, 72);
-            }
             float value =  [monidata.pef floatValue] / [[ShareValue sharedShareValue].member.defPef floatValue];
-            weakSelf.lb_variability.text =@"变异度:10%";
-            weakSelf.lb_pefPercent.text = [NSString stringWithFormat:@"尖峰呼气流量百分比:%.1f%%",value*100];
             [weakSelf loadCircleChart:value];
-            [self loadPrecentView:value];
+            //[self loadPrecentView:value];
         }else{
             _lb_info.text = @"您今天还没测试哦";
             [self loadCircleChart:0];
-            [self loadPrecentView:0];
+            //[self loadPrecentView:0];
         }
         
     } Fail:^(int code, NSString *failDescript) {
@@ -164,14 +155,15 @@
 
 #pragma mark - buttonAction
 
-- (IBAction)testAcion:(id)sender {
+- (IBAction)ConectDeviceAcion:(id)sender {
     [self startListening];
     if (![DeviceHelper sharedDeviceHelper].isConnected) {
         [[DeviceHelper sharedDeviceHelper]scan];
-        [btn_test setEnabled:NO];
-        [btn_test setTitle:@"正在搜索设备，请确定设备已打开" forState:UIControlStateNormal];
+        [_btn_bluetooth setEnabled:NO];
+        [_btn_bluetooth setTitle:@"正在搜索设备，请确定设备已打开" forState:UIControlStateNormal];
     }else{
-        [btn_test setTitle:@"请对设备呼气" forState:UIControlStateNormal];
+        [_btn_bluetooth setTitle:@"请对设备呼气" forState:UIControlStateNormal];
+        [_imageV_bluetooth setImage:[UIImage imageNamed:@"图标-蓝牙-已连接"]];
     }
     /*
     __weak typeof(self) weakSelf = self;
@@ -191,10 +183,12 @@
 }
 
 -(void)startListening{
+    
     [self stopListening];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceRest:) name:BLE_DEVICES_REST object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceFound:) name:BLE_DEVICE_FOUND object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dataUpdate:) name:BLE_UPDATE_DATA object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(historyData:) name:BLE_HISTORY_DATA object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(deviceConneted:) name:BLE_DEVICE_CONNECTED object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(powerLow:) name:BLE_POWERLOW object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(connectTimeout:) name:BLE_CONNET_TIMEOUT object:nil];
@@ -207,20 +201,21 @@
 #pragma mark - Notification
 
 -(void)deviceFound:(NSNotification *)notification{
-    btn_test.enabled = NO;
-    [btn_test setTitle:@"发现设备正在连接" forState:UIControlStateNormal];
+    _btn_bluetooth.enabled = NO;
+    [_btn_bluetooth setTitle:@"发现设备正在连接" forState:UIControlStateNormal];
     [[DeviceHelper sharedDeviceHelper]connectDeviceByName:[DeviceHelper sharedDeviceHelper].deviceNames.firstObject];
 }
 
 
 -(void)deviceConneted:(NSNotification *)notification{
-    btn_test.enabled = NO;
-    [btn_test setTitle:@"设备已连接，等待用户呼气" forState:UIControlStateNormal];
+    _btn_bluetooth.enabled = NO;
+    [_imageV_bluetooth setImage:[UIImage imageNamed:@"图标-蓝牙-已连接"]];
+    [_btn_bluetooth setTitle:@"设备已连接，等待用户呼气" forState:UIControlStateNormal];
 }
 
 -(void)dataUpdate:(NSNotification *)notification{
-    btn_test.enabled = NO;
-    [btn_test setTitle:@"监测到用户呼气，请稍候..." forState:UIControlStateNormal];
+    _btn_bluetooth.enabled = NO;
+    [_btn_bluetooth setTitle:@"监测到用户呼气，请稍候..." forState:UIControlStateNormal];
     DataCommitRequest *t_request = [[DataCommitRequest alloc] init];
     t_request.mid = [ShareValue sharedShareValue].member.mid;
     NSNumber *x = [notification.userInfo objectForKey:@"X"];
@@ -234,11 +229,27 @@
     t_request.fvc = @(fvc);
     t_request.inputType = @0;
     __weak __typeof(self) weak = self;
+    _hud = [ShowHUD showTextOnly:@"请求中..." configParameter:^(ShowHUD *config) {
+    } inView:ApplicationDelegate.window];
     [DataAPI dataCommitWithRequest:t_request completionBlockWithSuccess:^(Monidata *data) {
-        [_hud hide];
+        if (_hud) {
+            [_hud hide];
+            _hud = nil;
+        }
         [weak reloadData];
+        
+        _btn_bluetooth.enabled = NO;
+        [_btn_bluetooth setTitle:@"监测完成" forState:UIControlStateNormal];
+        
     } Fail:^(int code, NSString *failDescript) {
-        [_hud hide];
+        
+        if (_hud) {
+            [_hud hide];
+            _hud = nil;
+        }
+        _btn_bluetooth.enabled = NO;
+        [_btn_bluetooth setTitle:@"监测数据错误,请重新监测" forState:UIControlStateNormal];
+
         [ShowHUD showError:failDescript configParameter:^(ShowHUD *config) {
         } duration:1.5f inView:self.view];
     }];
@@ -246,21 +257,25 @@
 }
 
 -(void)powerLow:(NSNotification *)notification{
-    btn_test.enabled = YES;
-    [btn_test setTitle:@"设备电量低，请更换电池" forState:UIControlStateNormal];
+    _btn_bluetooth.enabled = YES;
+    [_btn_bluetooth setTitle:@"设备电量低，请更换电池" forState:UIControlStateNormal];
 }
 
 -(void)connectTimeout:(NSNotification *)notification{
+    
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"连接超时，请确定设备已打开" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
     [alertView show];
-    btn_test.enabled = YES;
-    [btn_test setTitle:@"测试" forState:UIControlStateNormal];
-}
-
-- (void)historyData:(NSNotification *)note{
-    NSDictionary *t_dic = [note userInfo];
     
 }
+
+-(void)deviceRest:(NSNotification *)notification{
+    
+    _btn_bluetooth.enabled = YES;
+    [_imageV_bluetooth setImage:[UIImage imageNamed:@"图标-蓝牙-未连接"]];
+    [_btn_bluetooth setTitle:@"设备未连接，请点击连接" forState:UIControlStateNormal];
+}
+
+
 
 #pragma mark - dealloc
 

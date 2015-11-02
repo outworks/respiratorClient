@@ -63,58 +63,52 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     return self;
 }
 
--(BOOL)isConnected{
-    return _testPeripheral;
-}
-
--(void)scan{
-    [_manager scanForPeripheralsWithServices:nil options:nil];
-}
-
--(void)stopScan{
-    [_manager stopScan];
-}
 
 #pragma mark - CBCentralManagerDelegate
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+    
     if (central.state == CBCentralManagerStatePoweredOn) {
+        
         [_manager scanForPeripheralsWithServices:nil options:nil];
+        
     }else if (central.state == CBCentralManagerStatePoweredOff) {
+        
         [[NSNotificationCenter defaultCenter]postNotificationName:BLE_POWER_OFF object:nil];
         [_manager stopScan];
         [self clear];
+        
     }else if (central.state == CBCentralManagerStateUnknown) {
         
     }
 }
 
+- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error{
+    //当central管理者与peripheral建立连接失败时调用
+    NSLog(@"%@(%@) didFailToConnectPeripheral",peripheral.name,peripheral.identifier.UUIDString);
+    
+}
+
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error{
+    //当已经与peripheral建立的连接断开时调用
+     NSLog(@"%@(%@) didDisconnectPeripheral",peripheral.name,peripheral.identifier.UUIDString);
+    [self reset];
+}
+
+
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI{
-    NSLog(@"dicoveredPeripherals:%@", peripheral);
+    //当和一个peripheral设备成功建立连接时调用
+    NSLog(@"didDiscoveredPeripherals:%@", peripheral);
+    
     if(![self.peripheralList containsObject:peripheral] && [peripheral.name isEqual:@"ForeverStrong"]){
+        
         [self.peripheralList addObject:peripheral];
-        NSString *perpheralName = [self peripheralName:peripheral];
+        NSString *perpheralName = [NSString stringWithFormat:@"%@(%@)",peripheral.name,peripheral.identifier.UUIDString];
         [self.deviceNames addObject:perpheralName];
         [self.deviceDict setObject:peripheral forKey:perpheralName];
         [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICE_FOUND object:nil];
+        
     }
-}
-
--(void)clear{
-    self.broadcastCharacteristic = nil;
-    self.readCharacteristic = nil;
-    
-    self.writeCharacteristic = nil;
-    
-   self.notifyCharacteristic = nil;
-    self.testPeripheral = nil;
-    [self.peripheralList removeAllObjects];
-    [self.deviceNames removeAllObjects];
-    [self.deviceDict removeAllObjects];
-}
-
--(NSString *)peripheralName:(CBPeripheral *)peripheral{
-    return [NSString stringWithFormat:@"%@(%@)",peripheral.name,peripheral.identifier.UUIDString];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
@@ -297,8 +291,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     NSData *data = characteristic.value;
     NSLog(@"%@",[self dataToString:data]);
     if (data.length == 16) {
+        
         const unsigned char *txbuf =[data bytes];
         if (txbuf[0] == 0x90 && txbuf[2]==0x01) {
+            
+            /************ 1.硬件发送同步时间指令 ************/
+            NSLog(@"1.硬件发送同步时间指令:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"请求同步时间"}];
             unsigned char mbytes[16];
             mbytes[0] = txbuf[0];
@@ -332,12 +331,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             
+            /************ 2.软件回应时间指令 ************/
+            NSLog(@"2.软件回应时间指令:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data ],@"msg":@"回应时间同步"}];
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x02){//低电量
+            
+            /************ 硬件发送电量低指令 ************/
+            NSLog(@"硬件发送电量低指令:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"电量低"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_POWERLOW object:nil userInfo:nil];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x03){
+            
+            /************ 3.硬件请求手机号码 ************/
+            NSLog(@"3.硬件请求手机号码:%@",[self dataToString:data]);
+            
             NSString *noString = [[self dataToString:data] substringWithRange:NSMakeRange(3*2, 10*2)];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"请求手机帐号,%@",noString]}];
             unsigned char mbytes[16];
@@ -363,9 +375,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
+            
+            /************ 4.软件回应手机号码 ************/
+            NSLog(@"4.软件回应手机号码:%@",[self dataToString:data]);
+            
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data ],@"msg":@"回传手机号"}];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x41){
+            
+            /************ 2.1.硬件发送单笔吹气数据 ************/
+            NSLog(@"2.1.硬件发送单笔吹气数据:%@",[self dataToString:data]);
+            
             int month = txbuf[3];
             int day = txbuf[4];
             int hour = txbuf[5];
@@ -393,18 +414,27 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
             
+            /************ 2.2.软件回应收到单笔吹气数据 ************/
+            NSLog(@"2.2.软件回应收到单笔吹气数据:%@",[self dataToString:data]);
+            
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
             
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_UPDATE_DATA object:nil userInfo:@{@"data":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            
         }
         else if (txbuf[0] == 0x90 && txbuf[2]==0x05){
+            
+            /************ 7.硬件回应历史记录 ************/
+            NSLog(@"7.硬件回应历史记录:%@",[self dataToString:data]);
+            
             int month = txbuf[3];
             int day = txbuf[4];
             int hour = txbuf[5];
             int minute = txbuf[6];
             int second = txbuf[7];
+            NSLog(@"历史记录时间点：%@",[NSString stringWithFormat:@"%02d-%02d %02d:%02d:%02d",month,day,hour,minute,second]);
             NSString *dateString = [NSString stringWithFormat:@"%02d-%02d %02d:%02d:%02d",month,day,hour,minute,second];
             int x = txbuf[8] & 0xFF;
             x |= ((txbuf[9] << 8) & 0xFF00);
@@ -426,15 +456,27 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
+            
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":[NSString stringWithFormat:@"获得历史数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_HISTORY_DATA object:nil userInfo:@{@"data":dateString,@"X":@(x),@"X1":@(x1),@"X2":@(x2),@"msg":[NSString stringWithFormat:@"获得数据X:%d,X1:%d,X2:%d",x,x1,x2]}];
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"回应呼吸数据"}];
-        }
-        else if (txbuf[0] == 0x90 && txbuf[2]==0x42){
+            
+        }else if (txbuf[0] == 0x90 && txbuf[2]==0x42){
+            
+            /************ 硬件停止工作指令 ************/
+            NSLog(@"硬件停止工作指令:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"停止"}];
-            [self reset];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x06){
+            
+            /************ 5.软件回应手机号码通过 ************/
+            NSLog(@"5.软件回应手机号码通过:%@",[self dataToString:data]);
+            
             unsigned char mbytes[16];
             mbytes[0] = 0x90;
             mbytes[1] = 0x01;
@@ -448,14 +490,30 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
+            
+            /************ 6.软件发送请求读取历史记录 ************/
+            
+            NSLog(@"6.软件发送请求读取历史记录:%@",[self dataToString:data]);
+            
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"发送读取历史记录指令"}];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x07){
+            
+            /************ 5.软件回应手机号码不通过 ************/
+            NSLog(@"5.软件回应手机号码不通过:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"不是本机"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_NOTOWERN object:nil userInfo:nil];
+            
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x08){
+            
+            /************ 8.硬件回传重置成功 ************/
+            NSLog(@"8.硬件回传重置成功:%@",[self dataToString:data]);
+            
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"重置成功"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_RESTSUCCESS object:nil userInfo:nil];
+            
         }
     }
     return;
@@ -488,33 +546,40 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     
 }
 
--(BOOL)sendRestDeviceData{
-    if (_testPeripheral && _writeCharacteristic) {
-        unsigned char mbytes[16];
-        mbytes[0] = 0x90;
-        mbytes[1] = 0x01;
-        mbytes[2] = 0x04;
-        for (int i=3; i<15; i++) {
-            mbytes[i] = 0x00;
-        }
-        int addTx = 0;
-        for (int i =0 ; i<15; i++) {
-            addTx += mbytes[i];
-        }
-        mbytes[15] = addTx;
-        NSData *data = [NSData dataWithBytes:mbytes length:16];
-        [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
-        [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"发送重置指令"}];
-        return YES;
-    }else{
-        return NO;
-    }
+
+#pragma mark - 
+#pragma mark - private methods
+
+//连接指定的设备
+
+-(BOOL)connectPeripheral:(CBPeripheral *)peripheral
+{
+    NSLog(@"connect start");
+    _testPeripheral = nil;
+    
+//    [_manager connectPeripheral:peripheral
+//                        options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
+    [_manager connectPeripheral:peripheral
+                        options:nil];
+    
+    //开一个定时器监控连接超时的情况
+    _connectTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(connectTimeout:) userInfo:peripheral repeats:NO];
+    
+    return (YES);
 }
 
 
-#pragma mark - function
+-(void)connectTimeout:(CBPeripheral *)peripheral{
+    
+    [self reset];
+    NSLog(@"超时!");
+    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_CONNET_TIMEOUT object:nil userInfo:nil];
+    
+}
+
 
 -(BOOL)checkData:(NSData *)data{
+    
     BOOL flag = false;
     const unsigned char *txbuf =  [data bytes];
     unsigned int tx_xor = 0;
@@ -537,7 +602,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     
 }
 
+
+
 -(NSString *)dataToString:(NSData *)data{
+    
     Byte *bytes = (Byte *)[data bytes];
     NSString *hexStr=@"";
     for(int i=0;i<[data length];i++)
@@ -551,46 +619,99 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
     return hexStr;
 }
 
-//连接指定的设备
--(BOOL)connect:(CBPeripheral *)peripheral
-{
-    NSLog(@"connect start");
-    _testPeripheral = nil;
+//-(NSString *)peripheralName:(CBPeripheral *)peripheral{
+//    
+//    return [NSString stringWithFormat:@"%@(%@)",peripheral.name,peripheral.identifier.UUIDString];
+//    
+//}
+
+-(void)clear{
     
-    [_manager connectPeripheral:peripheral
-                        options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
+    self.broadcastCharacteristic = nil;
     
-    //开一个定时器监控连接超时的情况
-    _connectTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(connectTimeout:) userInfo:peripheral repeats:NO];
+    self.readCharacteristic = nil;
     
-    return (YES);
+    self.writeCharacteristic = nil;
+    
+    self.notifyCharacteristic = nil;
+    
+    self.testPeripheral = nil;
+    
+    [self.peripheralList removeAllObjects];
+    [self.deviceNames removeAllObjects];
+    [self.deviceDict removeAllObjects];
 }
 
--(void)connectTimeout:(CBPeripheral *)peripheral{
-    [self reset];
-    NSLog(@"超时!");
-    [[NSNotificationCenter defaultCenter]postNotificationName:BLE_CONNET_TIMEOUT object:nil userInfo:nil];
+#pragma mark - 
+#pragma mark - public methods
+
+
+-(BOOL)isConnected{
+    
+    return _testPeripheral;
+    
 }
 
-#pragma mark - function
+-(void)scan{
+    
+    [_manager scanForPeripheralsWithServices:nil options:nil];
+}
+
+-(void)stopScan{
+    
+    [_manager stopScan];
+    
+}
+
 -(void)connectDeviceByName:(NSString *)deviceName{
+    
     CBPeripheral *peripheral = [self.deviceDict objectForKey:deviceName];
-    [_manager connectPeripheral:peripheral options:nil];
+    [self connectPeripheral:peripheral];
+
 }
 
 -(void)disconnectDeviceByName:(NSString *)deviceName{
+    
     CBPeripheral *peripheral = [self.deviceDict objectForKey:deviceName];
     [_manager cancelPeripheralConnection:peripheral];
+    
 }
 
 -(void)reset{
+    
     if (_testPeripheral) {
         [_manager cancelPeripheralConnection:_testPeripheral];
         _testPeripheral = nil;
     }
     [self clear];
+    
     [_manager stopScan];
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DEVICES_REST object:nil];
+}
+
+-(BOOL)sendRestDeviceData{
+    
+    if (_testPeripheral && _writeCharacteristic) {
+        unsigned char mbytes[16];
+        mbytes[0] = 0x90;
+        mbytes[1] = 0x01;
+        mbytes[2] = 0x04;
+        for (int i=3; i<15; i++) {
+            mbytes[i] = 0x00;
+        }
+        int addTx = 0;
+        for (int i =0 ; i<15; i++) {
+            addTx += mbytes[i];
+        }
+        mbytes[15] = addTx;
+        NSData *data = [NSData dataWithBytes:mbytes length:16];
+        [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
+        [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"date":[self dataToString:data],@"msg":@"发送重置指令"}];
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 @end

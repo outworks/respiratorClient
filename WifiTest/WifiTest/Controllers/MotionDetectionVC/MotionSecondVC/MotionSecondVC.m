@@ -70,7 +70,7 @@
     _chartView.chartMargin = 10.0f;
     [_chartView showInView:_v_barChart];
 
-
+    [self ClickedOnBarAtIndex:0];
 }
 
 
@@ -85,9 +85,9 @@
         Monidata *t_monidata = _mutArr[i];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *date= [dateFormatter dateFromString:t_monidata.saveTime];
-        [dateFormatter setDateFormat:@"HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *t_dateStr = [dateFormatter stringFromDate:date];
         [t_dateArr addObject:t_dateStr];
     }

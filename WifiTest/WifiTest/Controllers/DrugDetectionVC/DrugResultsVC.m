@@ -79,10 +79,10 @@
         
         _lb_date.text = t_dateStr;
         _lb_beforeTime.text = t_beforeTime;
-        _lb_beforePEF.text = [NSString stringWithFormat:@"PEF:%@",[_beforeMonidata.pef stringValue]];
-        _lb_beforeFEV1.text = [NSString stringWithFormat:@"FEV1:%@",[_beforeMonidata.fev1 stringValue]];
-        _lb_beforeFVC.text = [NSString stringWithFormat:@"FVC:%@",[_beforeMonidata.fvc stringValue]];
-        _lb_beforeFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC:%.2f%%",[_beforeMonidata.fev1 floatValue]/[_beforeMonidata.fvc floatValue]*100];
+        _lb_beforePEF.text = [NSString stringWithFormat:@"PEF：%@",[_beforeMonidata.pef stringValue]];
+        _lb_beforeFEV1.text = [NSString stringWithFormat:@"FEV1：%@",[_beforeMonidata.fev1 stringValue]];
+        _lb_beforeFVC.text = [NSString stringWithFormat:@"FVC：%@",[_beforeMonidata.fvc stringValue]];
+        _lb_beforeFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC：%.2f%%",[_beforeMonidata.fev1 floatValue]/[_beforeMonidata.fvc floatValue]*100];
         
     }
     
@@ -100,10 +100,10 @@
         
         _lb_date.text = t_dateStr;
         _lb_afterTime.text = t_afterTime;
-        _lb_afterPEF.text = [NSString stringWithFormat:@"PEF:%@",[_afterMonidata.pef stringValue]];
-        _lb_afterFEV1.text = [NSString stringWithFormat:@"FEV1:%@",[_afterMonidata.fev1 stringValue]];
-        _lb_afterFVC.text = [NSString stringWithFormat:@"FVC:%@",[_afterMonidata.fvc stringValue]];
-        _lb_afterFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC:%.2f%%",[_afterMonidata.fev1 floatValue]/[_afterMonidata.fvc floatValue]*100];
+        _lb_afterPEF.text = [NSString stringWithFormat:@"PEF：%@",[_afterMonidata.pef stringValue]];
+        _lb_afterFEV1.text = [NSString stringWithFormat:@"FEV1：%@",[_afterMonidata.fev1 stringValue]];
+        _lb_afterFVC.text = [NSString stringWithFormat:@"FVC：%@",[_afterMonidata.fvc stringValue]];
+        _lb_afterFEV1FVC.text = [NSString stringWithFormat:@"FEV1/FVC：%.2f%%",[_afterMonidata.fev1 floatValue]/[_afterMonidata.fvc floatValue]*100];
         
     }
     

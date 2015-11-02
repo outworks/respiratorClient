@@ -19,6 +19,7 @@
 #import "ARCSingletonTemplate.h"
 #import "ThirdMacro.h"
 #import "URLMacro.h"
+#import "BluetoothMacro.h"
 #import "BaseAPI.h"
 #import "YXGCD.h"
 #import "ShowHUD.h"
