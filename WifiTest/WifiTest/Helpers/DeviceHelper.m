@@ -375,10 +375,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             }
             mbytes[15] = addTx;
             NSData *data = [NSData dataWithBytes:mbytes length:16];
-            
+
             /************ 4.软件回应手机号码 ************/
             NSLog(@"4.软件回应手机号码:%@",[self dataToString:data]);
-            
             [_testPeripheral writeValue:data forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithoutResponse];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_WRITE object:nil userInfo:@{@"data":[self dataToString:data ],@"msg":@"回传手机号"}];
             
@@ -503,10 +502,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(DeviceHelper)
             
             /************ 5.软件回应手机号码不通过 ************/
             NSLog(@"5.软件回应手机号码不通过:%@",[self dataToString:data]);
-            
+            Byte *bytes = (Byte *)[data bytes];
+            NSString *oldPhone = @"";
+            for (int i=3; i<data.length - 1; i++) {
+                char temp = bytes[i];
+                oldPhone = [oldPhone stringByAppendingFormat:@"%c",temp];
+            }
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_DATA_NOTI object:nil userInfo:@{@"data":[self dataToString:data],@"msg":@"不是本机"}];
             [[NSNotificationCenter defaultCenter]postNotificationName:BLE_NOTOWERN object:nil userInfo:nil];
-            
+            [self sendRestDeviceData];
         }else if (txbuf[0] == 0x90 && txbuf[2]==0x08){
             
             /************ 8.硬件回传重置成功 ************/
