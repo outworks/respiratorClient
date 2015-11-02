@@ -44,13 +44,19 @@
     NSInteger min = 1000000000;
     
     for (NSArray * ary in yLabels) {
+        
         for (NSString *valueString in ary) {
+            
             NSInteger value = [valueString integerValue];
             if (value > max) {
+                
                 max = value;
+                
             }
             if (value < min) {
+                
                 min = value;
+                
             }
         }
     }
@@ -58,18 +64,26 @@
         max = 5;
     }
     if (self.showRange) {
+        
         _yValueMin = min;
+        
     }else{
-        _yValueMin = 0;
+        
+        _yValueMin = min;
+        
     }
+    
     _yValueMax = (int)max;
     
     if (_chooseRange.max!=_chooseRange.min) {
+        
         _yValueMax = _chooseRange.max;
         _yValueMin = _chooseRange.min;
+        
     }
     
     float level = (_yValueMax-_yValueMin) /4.0;
+    
     CGFloat chartCavanHeight = self.frame.size.height - HCatLabelHeight*3;
     CGFloat levelHeight = chartCavanHeight /4.0;
     
@@ -93,6 +107,7 @@
     
     //画横线
     for (int i=0; i<4; i++) {
+        
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(HCatYLabelwidth,HCatLabelHeight+i*levelHeight)];
@@ -116,6 +131,7 @@
        // shapeLayer.fillColor = [[UIColor whiteColor] CGColor];
         shapeLayer.lineWidth = 1;
         [self.layer addSublayer:shapeLayer];
+        
     }
 }
 

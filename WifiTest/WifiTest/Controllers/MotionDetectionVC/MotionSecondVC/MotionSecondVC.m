@@ -67,6 +67,7 @@
                                                    withSource:self
                                                     withStyle:ChartBarStyle];
     _chartView.barStorkColor = [UIColor grayColor];
+    _chartView.showRange = YES;
     _chartView.chartMargin = 10.0f;
     [_chartView showInView:_v_barChart];
 
