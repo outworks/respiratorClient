@@ -204,8 +204,14 @@
         CGFloat xPosition = _xLabelWidth/2.0;
         CGFloat chartCavanHeight = self.frame.size.height - HCatLabelHeight*3;
         
-        float grade = ((float)firstValue-_yValueMin) / ((float)_yValueMax-_yValueMin); //比例
+        if (_yValueMax == _yValueMin) {
+            
+        }
         
+        float grade = ((float)firstValue-_yValueMin) / ((float)_yValueMax-_yValueMin); //比例
+        if(_yValueMax == _yValueMin){
+            grade = 0;
+        }
         [self addPoint:CGPointMake(xPosition, chartCavanHeight - grade * chartCavanHeight+HCatLabelHeight)
                  index:i
                 isShow:_isShowTag
@@ -252,8 +258,6 @@
         [_chartLine addAnimation:pathAnimation forKey:@"strokeEndAnimation"];
         
         _chartLine.strokeEnd = 1.0;
-        
-        
     }
 
 
